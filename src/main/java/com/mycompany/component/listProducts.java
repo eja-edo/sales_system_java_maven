@@ -35,11 +35,11 @@ public class listProducts extends javax.swing.JPanel {
 
         setLayout(new java.awt.BorderLayout());
 
-        btnBack.setIcon(new javax.swing.ImageIcon("E:\\projectJava\\sales_system\\src\\main\\java\\com\\mycompany\\icon\\rsz_back.png")); // NOI18N
+        btnBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/rsz_back.png"))); // NOI18N
         btnBack.setBorder(null);
         add(btnBack, java.awt.BorderLayout.LINE_START);
 
-        btnNext.setIcon(new javax.swing.ImageIcon("E:\\projectJava\\sales_system\\src\\main\\java\\com\\mycompany\\icon\\rsz_next.png")); // NOI18N
+        btnNext.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/rsz_next.png"))); // NOI18N
         btnNext.setBorder(null);
         add(btnNext, java.awt.BorderLayout.LINE_END);
 

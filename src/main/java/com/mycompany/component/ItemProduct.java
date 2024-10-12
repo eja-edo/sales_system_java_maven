@@ -114,7 +114,7 @@ public class ItemProduct extends javax.swing.JPanel {
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setIcon(new javax.swing.ImageIcon("E:\\projectJava\\sales_system\\src\\main\\java\\com\\mycompany\\icon\\rsz_tragop.png")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/rsz_tragop.png"))); // NOI18N
         jLabel1.setRequestFocusEnabled(false);
         jLabel1.setVerifyInputWhenFocusTarget(false);
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 220, 31, 35));
@@ -149,7 +149,7 @@ public class ItemProduct extends javax.swing.JPanel {
         add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 265, 259, 46));
 
         rating.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
-        rating.setIcon(new javax.swing.ImageIcon("E:\\projectJava\\sales_system\\src\\main\\java\\com\\mycompany\\icon\\rsz_1star.png")); // NOI18N
+        rating.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/rsz_1star.png"))); // NOI18N
         rating.setText("5(10)");
         add(rating, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 374, 45, 13));
 
