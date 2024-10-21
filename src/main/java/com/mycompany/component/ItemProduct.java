@@ -137,7 +137,7 @@ public class ItemProduct extends javax.swing.JPanel {
         jLabel3.setForeground(new java.awt.Color(234, 112, 112));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("Quà tặng trang sức");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 341, 259, -1));
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 340, 259, -1));
 
         jScrollPane2.setBackground(new java.awt.Color(255, 255, 255));
         jScrollPane2.setBorder(null);
@@ -154,6 +154,7 @@ public class ItemProduct extends javax.swing.JPanel {
         add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 265, 259, 46));
 
         rating.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
+
         rating.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/rsz_1star.png"))); // NOI18N
         rating.setText("5(10)");
         add(rating, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 374, 45, 13));
