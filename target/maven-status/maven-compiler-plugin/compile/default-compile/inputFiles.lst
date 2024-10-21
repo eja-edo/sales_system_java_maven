@@ -1,10 +1,8 @@
 E:\projectJava\sales_system\src\main\java\com\mycompany\component\ItemProduct.java
 E:\projectJava\sales_system\src\main\java\com\mycompany\component\ListImgProduct.java
 E:\projectJava\sales_system\src\main\java\com\mycompany\component\listProducts.java
+E:\projectJava\sales_system\src\main\java\com\mycompany\component\test2.java
 E:\projectJava\sales_system\src\main\java\com\mycompany\main\Main.java
-E:\projectJava\sales_system\src\main\java\com\mycompany\main\Product_menu.java
-E:\projectJava\sales_system\src\main\java\com\mycompany\main\test2.java
-E:\projectJava\sales_system\src\main\java\com\mycompany\main\TestForm.java
 E:\projectJava\sales_system\src\main\java\com\mycompany\model\dao\LoginDAO.java
 E:\projectJava\sales_system\src\main\java\com\mycompany\model\dao\ProductDAO.java
 E:\projectJava\sales_system\src\main\java\com\mycompany\model\entity\Addresses.java
@@ -31,5 +29,9 @@ E:\projectJava\sales_system\src\main\java\com\mycompany\swing\MyTextField.java
 E:\projectJava\sales_system\src\main\java\com\mycompany\swing\PolygonCorner.java
 E:\projectJava\sales_system\src\main\java\com\mycompany\swing\ScrollBarWin11UI.java
 E:\projectJava\sales_system\src\main\java\com\mycompany\swing\ScrollPaneWin11.java
+E:\projectJava\sales_system\src\main\java\com\mycompany\test\ResourceChecker.java
+E:\projectJava\sales_system\src\main\java\com\mycompany\test\test.java
+E:\projectJava\sales_system\src\main\java\com\mycompany\test\TestForm.java
 E:\projectJava\sales_system\src\main\java\com\mycompany\utils\DBConnection.java
 E:\projectJava\sales_system\src\main\java\com\mycompany\utils\PasswordUtil.java
+E:\projectJava\sales_system\src\main\java\com\mycompany\utils\resizeIcon.java
