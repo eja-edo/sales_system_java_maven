@@ -25,30 +25,37 @@ public class LoginDAO {
         this.password = pass;
     }
     
-     public boolean login() {
-        String query = "SELECT password FROM users WHERE username = ?";
-        try (Connection conn = DBConnection.getConnection(); // Lấy kết nối từ pool
-             PreparedStatement stmt = conn.prepareStatement(query)) {
-            
-            stmt.setString(1, username);
-            ResultSet rs = stmt.executeQuery();
-
+public String login() {
+    String query = "EXEC getPassword @login = ?";
+    try (Connection conn = DBConnection.getConnection(); // Lấy kết nối từ pool
+         PreparedStatement stmt = conn.prepareStatement(query)) {
+         
+        stmt.setString(1, username);
+        try (ResultSet rs = stmt.executeQuery()) {
             // Kiểm tra xem có kết quả hay không
             if (rs.next()) {
-                String a = rs.getString("password");
-                System.out.println(a);
-                System.out.println(password);
-                return PasswordUtil.checkPassword(password , a);
+                String retrievedPassword = rs.getString("password");
+                // Kiểm tra mật khẩu
+                if (PasswordUtil.checkPassword(password, retrievedPassword)) {
+                    return "Đăng nhập thành công!";
+                } else {
+                    return "Mật khẩu không chính xác!";
+                }
+            } else {
+                return "Tài khoản không tồn tại!";
             }
-       
-        } catch (SQLException e) {
-            e.printStackTrace(); // Xử lý ngoại lệ
         }
-        return false; // Trả về null nếu không tìm thấy
+    } catch (SQLException e) {
+        // Ghi log lỗi và trả về thông điệp lỗi
+        e.printStackTrace(); // Bạn có thể ghi log thay vì in ra
+        return "Đã xảy ra lỗi khi kết nối đến cơ sở dữ liệu: " + e.getMessage();
     }
-      
+}
+
+
+
     private boolean isUsernameExists() {
-        String query = "SELECT COUNT(*) FROM users WHERE username = ?";
+        String query = "EXEC getPassword @login = ?";
         try (Connection conn = DBConnection.getConnection();
              PreparedStatement stmt = conn.prepareStatement(query)) {
              

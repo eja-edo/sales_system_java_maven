@@ -40,10 +40,6 @@ public class ListImgProduct extends javax.swing.JPanel {
         jList1.setModel(imageListModel);
         jList1.setCellRenderer((ListCellRenderer<? super String>) new ImageListRenderer());
         
-        for (int i = 1; i <= 10; i++) {
-            String imageUrl = "https://placehold.co/76x76/png/"; // Tạo các liên kết
-            addImage(imageUrl);
-        }
     }
 
     // Method to add an image URL to the list
