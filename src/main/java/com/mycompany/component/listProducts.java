@@ -4,19 +4,19 @@
  */
 package com.mycompany.component;
 
-/**
- *
- * @author duyan
- */
+import static com.mycompany.utils.resizeIcon.resizeIcon;
+import javax.swing.ImageIcon;
+
+
 public class listProducts extends javax.swing.JPanel {
 
-    /**
-     * Creates new form listProducts
-     */
     public listProducts() {
         initComponents();
         btnBack.setContentAreaFilled(false);
         btnNext.setContentAreaFilled(false);
+       
+        btnBack.setIcon(resizeIcon(new ImageIcon(getClass().getResource("/icon/back.png")),18,27));
+        btnNext.setIcon(resizeIcon(new ImageIcon(getClass().getResource("/icon/next.png")),18,27));
     }
 
     /**
@@ -35,11 +35,14 @@ public class listProducts extends javax.swing.JPanel {
 
         setLayout(new java.awt.BorderLayout());
 
-        btnBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/rsz_back.png"))); // NOI18N
         btnBack.setBorder(null);
+        btnBack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBackActionPerformed(evt);
+            }
+        });
         add(btnBack, java.awt.BorderLayout.LINE_START);
 
-        btnNext.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/rsz_next.png"))); // NOI18N
         btnNext.setBorder(null);
         add(btnNext, java.awt.BorderLayout.LINE_END);
 
@@ -50,6 +53,10 @@ public class listProducts extends javax.swing.JPanel {
 
         add(jScrollPane2, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnBackActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

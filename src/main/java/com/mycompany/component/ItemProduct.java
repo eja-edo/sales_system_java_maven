@@ -4,7 +4,8 @@
  */
 package com.mycompany.component;
 
-
+import com.mycompany.utils.resizeIcon;
+import static com.mycompany.utils.resizeIcon.resizeIcon;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Image;
@@ -30,7 +31,9 @@ public class ItemProduct extends javax.swing.JPanel {
     public ItemProduct() {
         initComponents();
  
-        
+        ImageIcon icon = new ImageIcon(getClass().getResource("/icon/traGop.png"));
+
+        TraGop.setIcon(resizeIcon(icon,31,35));
         imgProduct.addComponentListener(new ComponentAdapter() {
             @Override
             public void componentResized(ComponentEvent e) {
@@ -43,6 +46,8 @@ public class ItemProduct extends javax.swing.JPanel {
         SimpleAttributeSet center = new SimpleAttributeSet();
         StyleConstants.setAlignment(center, StyleConstants.ALIGN_CENTER);
         doc.setParagraphAttributes(0, doc.getLength(), center, false);
+        
+        
     }
 
     @Override
@@ -65,29 +70,29 @@ public class ItemProduct extends javax.swing.JPanel {
     
     
      public void scaleImg() {
-    try {
-        // Tải hình ảnh từ URL
-        URL url = new URL("https://placehold.co/259X259/png");  // Đảm bảo URL hợp lệ
-        Image img = ImageIO.read(url);  // Sử dụng ImageIO để tải hình ảnh từ URL
-        
-        // Kiểm tra nếu hình ảnh được tải thành công
-        if (img != null) {
-            // Kiểm tra kích thước imgProduct trước khi thay đổi kích thước hình ảnh
-            if (imgProduct.getWidth() > 0 && imgProduct.getHeight() > 0) {
-                // Thay đổi kích thước hình ảnh theo kích thước hiện tại của imgProduct
-                Image imgScale = img.getScaledInstance(imgProduct.getWidth(), imgProduct.getHeight(), Image.SCALE_SMOOTH);
-                ImageIcon imgIcon = new ImageIcon(imgScale);
-                
-                // Đặt hình ảnh đã thay đổi kích thước làm icon cho imgProduct
-                imgProduct.setIcon(imgIcon);
+        try {
+            // Tải hình ảnh từ URL
+            URL url = new URL("https://placehold.co/259X259/png");  // Đảm bảo URL hợp lệ
+            Image img = ImageIO.read(url);  // Sử dụng ImageIO để tải hình ảnh từ URL
+
+            // Kiểm tra nếu hình ảnh được tải thành công
+            if (img != null) {
+                // Kiểm tra kích thước imgProduct trước khi thay đổi kích thước hình ảnh
+                if (imgProduct.getWidth() > 0 && imgProduct.getHeight() > 0) {
+                    // Thay đổi kích thước hình ảnh theo kích thước hiện tại của imgProduct
+                    Image imgScale = img.getScaledInstance(imgProduct.getWidth(), imgProduct.getHeight(), Image.SCALE_SMOOTH);
+                    ImageIcon imgIcon = new ImageIcon(imgScale);
+
+                    // Đặt hình ảnh đã thay đổi kích thước làm icon cho imgProduct
+                    imgProduct.setIcon(imgIcon);
+                }
+            } else {
+                System.out.println("Error: Image could not be loaded from the URL.");
             }
-        } else {
-            System.out.println("Error: Image could not be loaded from the URL.");
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.out.println("Error loading image: " + e.getMessage());
         }
-    } catch (IOException e) {
-        e.printStackTrace();
-        System.out.println("Error loading image: " + e.getMessage());
-    }
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -98,7 +103,7 @@ public class ItemProduct extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
+        TraGop = new javax.swing.JLabel();
         imgProduct = new javax.swing.JLabel();
         price = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -113,14 +118,11 @@ public class ItemProduct extends javax.swing.JPanel {
         setPreferredSize(new java.awt.Dimension(260, 394));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-<<<<<<< HEAD
-=======
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/rsz_tragop.png"))); // NOI18N
->>>>>>> c8154a75e44bc6fe8eb0f7940a80a745ff968593
-        jLabel1.setRequestFocusEnabled(false);
-        jLabel1.setVerifyInputWhenFocusTarget(false);
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 220, 31, 35));
+        TraGop.setBackground(new java.awt.Color(255, 255, 255));
+        TraGop.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        TraGop.setRequestFocusEnabled(false);
+        TraGop.setVerifyInputWhenFocusTarget(false);
+        add(TraGop, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 220, 31, 35));
 
         imgProduct.setBackground(new java.awt.Color(102, 102, 102));
         add(imgProduct, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 260, 260));
@@ -152,10 +154,8 @@ public class ItemProduct extends javax.swing.JPanel {
         add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 265, 259, 46));
 
         rating.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
-<<<<<<< HEAD
-=======
+
         rating.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/rsz_1star.png"))); // NOI18N
->>>>>>> c8154a75e44bc6fe8eb0f7940a80a745ff968593
         rating.setText("5(10)");
         add(rating, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 374, 45, 13));
 
@@ -166,8 +166,8 @@ public class ItemProduct extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel TraGop;
     private javax.swing.JLabel imgProduct;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextPane jtitle;
