@@ -2,7 +2,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-package com.mycompany.component;
+package com.mycompany.tab;
+
+import com.mycompany.utils.RoundBorder;
+import java.awt.Color;
 
 /**
  *
@@ -15,6 +18,11 @@ public class detailProduct extends javax.swing.JPanel {
      */
     public detailProduct() {
         initComponents();
+        
+        for (int i = 1; i <= 10; i++) {
+            String imageUrl = "https://placehold.co/76x76/png/"; // Tạo các liên kết
+            listImgProduct.addImage(imageUrl);
+        }
     }
 
     /**
@@ -28,7 +36,7 @@ public class detailProduct extends javax.swing.JPanel {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
-        listImgProduct1 = new com.mycompany.component.ListImgProduct();
+        listImgProduct = new com.mycompany.component.ListImgProduct();
         jPanel3 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
@@ -49,11 +57,14 @@ public class detailProduct extends javax.swing.JPanel {
         jToggleButton4 = new javax.swing.JToggleButton();
         jToggleButton3 = new javax.swing.JToggleButton();
         jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        btnBuyNow = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        btnAddCart = new javax.swing.JButton();
+        btnCall = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        listOffer = new javax.swing.JList<>();
 
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setMinimumSize(new java.awt.Dimension(0, 0));
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
@@ -96,7 +107,7 @@ public class detailProduct extends javax.swing.JPanel {
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(0, 52, 104));
-        jLabel8.setText("8.203.000 đ");
+        jLabel8.setText("<html>8.203.000 <u>đ</u></html>");
 
         jLabel9.setBackground(new java.awt.Color(255, 255, 255));
         jLabel9.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
@@ -113,34 +124,39 @@ public class detailProduct extends javax.swing.JPanel {
         jLabel14.setToolTipText("");
 
         jPanel2.setMaximumSize(new java.awt.Dimension(0, 89));
+        jPanel2.setOpaque(false);
         jPanel2.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.LEFT));
 
+        jToggleButton1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jToggleButton1.setText("12");
-        jToggleButton1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jToggleButton1.setBorder(new RoundBorder(Color.BLACK, 18, 1));
         jToggleButton1.setContentAreaFilled(false);
         jToggleButton1.setMaximumSize(new java.awt.Dimension(32, 32));
         jToggleButton1.setMinimumSize(new java.awt.Dimension(32, 32));
         jToggleButton1.setPreferredSize(new java.awt.Dimension(32, 32));
         jPanel2.add(jToggleButton1);
 
+        jToggleButton2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jToggleButton2.setText("13");
-        jToggleButton2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jToggleButton2.setBorder(new RoundBorder(Color.BLACK, 18, 1));
         jToggleButton2.setContentAreaFilled(false);
         jToggleButton2.setMaximumSize(new java.awt.Dimension(32, 32));
         jToggleButton2.setMinimumSize(new java.awt.Dimension(32, 32));
         jToggleButton2.setPreferredSize(new java.awt.Dimension(32, 32));
         jPanel2.add(jToggleButton2);
 
+        jToggleButton4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jToggleButton4.setText("14");
-        jToggleButton4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jToggleButton4.setBorder(new RoundBorder(Color.BLACK, 18, 1));
         jToggleButton4.setContentAreaFilled(false);
         jToggleButton4.setMaximumSize(new java.awt.Dimension(32, 32));
         jToggleButton4.setMinimumSize(new java.awt.Dimension(32, 32));
         jToggleButton4.setPreferredSize(new java.awt.Dimension(32, 32));
         jPanel2.add(jToggleButton4);
 
+        jToggleButton3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jToggleButton3.setText("15");
-        jToggleButton3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jToggleButton3.setBorder(new RoundBorder(Color.BLACK, 18, 1));
         jToggleButton3.setContentAreaFilled(false);
         jToggleButton3.setMaximumSize(new java.awt.Dimension(32, 32));
         jToggleButton3.setMinimumSize(new java.awt.Dimension(32, 32));
@@ -153,39 +169,60 @@ public class detailProduct extends javax.swing.JPanel {
         jButton1.setBorder(null);
         jButton1.setContentAreaFilled(false);
 
-        jButton2.setBackground(new java.awt.Color(173, 42, 54));
-        jButton2.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("Mua ngay");
-        jButton2.setBorder(null);
+        btnBuyNow.setBackground(new java.awt.Color(173, 42, 54));
+        btnBuyNow.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        btnBuyNow.setForeground(new java.awt.Color(255, 255, 255));
+        btnBuyNow.setText("<html><center>Mua ngay</center><i><p style =\"font-size :8px\">(Giao hàng miến phí tận nhà hoặc tại của hàng)<p></i></html>");
+        btnBuyNow.setToolTipText("");
+        btnBuyNow.setBorder(null);
 
+        jPanel4.setOpaque(false);
         jPanel4.setLayout(new java.awt.GridLayout(1, 0, 3, 0));
 
-        jButton3.setText("jButton3");
-        jPanel4.add(jButton3);
+        btnAddCart.setBackground(new java.awt.Color(0, 52, 104));
+        btnAddCart.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        btnAddCart.setForeground(new java.awt.Color(255, 255, 255));
+        btnAddCart.setText("Thêm vào giỏ hàng");
+        btnAddCart.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAddCartActionPerformed(evt);
+            }
+        });
+        jPanel4.add(btnAddCart);
 
-        jButton4.setText("jButton4");
-        jPanel4.add(jButton4);
+        btnCall.setBackground(new java.awt.Color(0, 52, 104));
+        btnCall.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        btnCall.setForeground(new java.awt.Color(255, 255, 255));
+        btnCall.setText("Gọi ngay (miễn phí)");
+        jPanel4.add(btnCall);
+
+        jScrollPane2.setBorder(javax.swing.BorderFactory.createTitledBorder(new RoundBorder(Color.BLACK, 20, 1), "Ưu đãi:", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.TOP));
+
+        listOffer.setBorder(new RoundBorder(Color.BLACK, 20, 1));
+        listOffer.setEnabled(false);
+        jScrollPane2.setViewportView(listOffer);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(listImgProduct1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap()
+                .addComponent(listImgProduct, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(38, 38, 38)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnBuyNow)
+                    .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jScrollPane2)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel4)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -193,16 +230,16 @@ public class detailProduct extends javax.swing.JPanel {
                                 .addComponent(jLabel6)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel9)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addContainerGap())
-                    .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addComponent(jLabel14, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -211,7 +248,7 @@ public class detailProduct extends javax.swing.JPanel {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(listImgProduct1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(listImgProduct, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 49, Short.MAX_VALUE)
@@ -223,7 +260,7 @@ public class detailProduct extends javax.swing.JPanel {
                             .addComponent(jLabel6)
                             .addComponent(jLabel7))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel8)
+                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel9)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -234,11 +271,13 @@ public class detailProduct extends javax.swing.JPanel {
                         .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(54, 54, 54)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnBuyNow, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(173, Short.MAX_VALUE))
+                .addContainerGap(116, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -253,13 +292,17 @@ public class detailProduct extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnAddCartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddCartActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnAddCartActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAddCart;
+    private javax.swing.JButton btnBuyNow;
+    private javax.swing.JButton btnCall;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel14;
@@ -276,11 +319,13 @@ public class detailProduct extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextPane jTextPane1;
     private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JToggleButton jToggleButton2;
     private javax.swing.JToggleButton jToggleButton3;
     private javax.swing.JToggleButton jToggleButton4;
-    private com.mycompany.component.ListImgProduct listImgProduct1;
+    private com.mycompany.component.ListImgProduct listImgProduct;
+    private javax.swing.JList<String> listOffer;
     // End of variables declaration//GEN-END:variables
 }
