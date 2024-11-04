@@ -1,6 +1,7 @@
 E:\projectJava\sales_system\src\main\java\com\mycompany\swing\MyTextField.java
 E:\projectJava\sales_system\src\main\java\com\mycompany\component\ItemProduct.java
 E:\projectJava\sales_system\src\main\java\com\mycompany\component\test2.java
+E:\projectJava\sales_system\src\main\java\com\mycompany\component\TimKiem.java
 E:\projectJava\sales_system\src\main\java\com\mycompany\utils\PasswordUtil.java
 E:\projectJava\sales_system\src\main\java\com\mycompany\main\Main.java
 E:\projectJava\sales_system\src\main\java\com\mycompany\model\dao\ProductDAO.java
@@ -9,6 +10,7 @@ E:\projectJava\sales_system\src\main\java\com\mycompany\swing\ButtonOutLine.java
 E:\projectJava\sales_system\src\main\java\com\mycompany\component\Login.java
 E:\projectJava\sales_system\src\main\java\com\mycompany\model\entity\Users.java
 E:\projectJava\sales_system\src\main\java\com\mycompany\model\entity\Payments.java
+E:\projectJava\sales_system\src\main\java\com\mycompany\component\Header_main.java
 E:\projectJava\sales_system\src\main\java\com\mycompany\swing\MyPasswordField.java
 E:\projectJava\sales_system\src\main\java\com\mycompany\component\SignUp.java
 E:\projectJava\sales_system\src\main\java\com\mycompany\model\entity\Categories.java
@@ -23,6 +25,7 @@ E:\projectJava\sales_system\src\main\java\com\mycompany\model\entity\ProductsExe
 E:\projectJava\sales_system\src\main\java\com\mycompany\model\entity\Reviews.java
 E:\projectJava\sales_system\src\main\java\com\mycompany\test\test.java
 E:\projectJava\sales_system\src\main\java\com\mycompany\test\testForm.java
+E:\projectJava\sales_system\src\main\java\com\mycompany\component\Menu.java
 E:\projectJava\sales_system\src\main\java\com\mycompany\model\entity\ProductImages.java
 E:\projectJava\sales_system\src\main\java\com\mycompany\component\listProducts.java
 E:\projectJava\sales_system\src\main\java\com\mycompany\model\entity\Favorites.java
