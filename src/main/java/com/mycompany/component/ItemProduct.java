@@ -119,7 +119,7 @@ public class ItemProduct extends javax.swing.JPanel {
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         TraGop.setBackground(new java.awt.Color(255, 255, 255));
-        TraGop.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        TraGop.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/rsz_tragop.png"))); // NOI18N
         TraGop.setRequestFocusEnabled(false);
         TraGop.setVerifyInputWhenFocusTarget(false);
         add(TraGop, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 220, 31, 35));
@@ -154,7 +154,6 @@ public class ItemProduct extends javax.swing.JPanel {
         add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 265, 259, 46));
 
         rating.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
-
         rating.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/rsz_1star.png"))); // NOI18N
         rating.setText("5(10)");
         add(rating, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 374, 45, 13));

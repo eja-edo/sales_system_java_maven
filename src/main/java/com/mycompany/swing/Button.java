@@ -75,7 +75,8 @@ public class Button extends JButton {
         Graphics2D g2 = img.createGraphics();
         g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
         g2.setColor(getBackground());
-        g2.fillRoundRect(0, 0, width, height, height, height);
+        // Sửa đổi từ fillRoundRect thành fillRect để không có bo tròn
+        g2.fillRect(0, 0, width, height);
         if (pressedPoint != null) {
             g2.setColor(effectColor);
             g2.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_ATOP, alpha));

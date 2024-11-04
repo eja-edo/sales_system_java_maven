@@ -1,3 +1,4 @@
+com\mycompany\component\ForgotPW.class
 com\mycompany\component\ItemProduct$1.class
 com\mycompany\component\Login$1.class
 com\mycompany\utils\PasswordUtil.class
@@ -5,11 +6,9 @@ com\mycompany\utils\resizeIcon.class
 com\mycompany\swing\ScrollBarWin11UI$ScrollButton$1.class
 com\mycompany\model\entity\Favorites.class
 com\mycompany\model\entity\ShoppingCart.class
-com\mycompany\component\Login$4.class
 com\mycompany\model\entity\OrderItems.class
 com\mycompany\component\ListImgProduct$ImageListRenderer.class
 com\mycompany\component\SignUp$2.class
-com\mycompany\component\Login$2.class
 com\mycompany\model\entity\Categories.class
 com\mycompany\model\entity\ProductsExemple.class
 com\mycompany\model\dao\ProductDAO.class
@@ -56,7 +55,6 @@ com\mycompany\swing\Button$2.class
 com\mycompany\component\listProducts.class
 com\mycompany\component\SignUp$1.class
 com\mycompany\model\entity\Payments.class
-com\mycompany\component\Login$3.class
 com\mycompany\component\SignUp.class
 com\mycompany\model\entity\ProductImages.class
 com\mycompany\tab\detailProduct.class

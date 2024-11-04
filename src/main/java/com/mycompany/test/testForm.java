@@ -4,6 +4,10 @@
  */
 package com.mycompany.test;
 
+import com.mycompany.swing.ScrollBarWin11UI;
+import javax.swing.UIDefaults;
+import javax.swing.UIManager;
+
 /**
  *
  * @author duyan
@@ -63,6 +67,8 @@ public class testForm extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
+        UIDefaults ui =UIManager.getDefaults();
+        ui.put("ScrollBarUI",ScrollBarWin11UI.class.getCanonicalName());
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new testForm().setVisible(true);
