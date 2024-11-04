@@ -1,10 +1,16 @@
+com\mycompany\component\ForgotPW.class
 com\mycompany\component\ItemProduct$1.class
 com\mycompany\component\Login$1.class
 com\mycompany\component\TimKiem$8.class
 com\mycompany\utils\PasswordUtil.class
 com\mycompany\swing\ScrollBarWin11UI$ScrollButton$1.class
 com\mycompany\model\entity\ShoppingCart.class
+<<<<<<< HEAD
 com\mycompany\component\Login$4.class
+=======
+com\mycompany\model\entity\OrderItems.class
+com\mycompany\component\ListImgProduct$ImageListRenderer.class
+>>>>>>> eee445d145fdd100136658f27a6d8f945c4edbc7
 com\mycompany\component\SignUp$2.class
 com\mycompany\model\entity\Categories.class
 com\mycompany\model\entity\ProductsExemple.class
@@ -82,6 +88,11 @@ com\mycompany\component\listProducts.class
 com\mycompany\component\TimKiem$12.class
 com\mycompany\component\TimKiem$5.class
 com\mycompany\component\SignUp$1.class
+<<<<<<< HEAD
 com\mycompany\component\Login$3.class
+=======
+com\mycompany\model\entity\Payments.class
+com\mycompany\component\SignUp.class
+>>>>>>> eee445d145fdd100136658f27a6d8f945c4edbc7
 com\mycompany\model\entity\ProductImages.class
 com\mycompany\tab\detailProduct.class
