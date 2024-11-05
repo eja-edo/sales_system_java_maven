@@ -4,7 +4,7 @@ package com.mycompany.utils;
 import javax.swing.border.AbstractBorder;
 import java.awt.*;
 
-public class RoundBorder extends AbstractBorder {
+public class RoundBorder extends AbstractBorder{
     private Color color;
     private int radius;
     private int stroke;

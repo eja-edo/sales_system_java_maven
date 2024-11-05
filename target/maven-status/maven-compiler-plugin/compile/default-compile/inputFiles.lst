@@ -7,6 +7,7 @@ E:\projectJava\sales_system\src\main\java\com\mycompany\main\Main.java
 E:\projectJava\sales_system\src\main\java\com\mycompany\model\dao\ProductDAO.java
 E:\projectJava\sales_system\src\main\java\com\mycompany\model\entity\Addresses.java
 E:\projectJava\sales_system\src\main\java\com\mycompany\swing\ButtonOutLine.java
+E:\projectJava\sales_system\src\main\java\com\mycompany\swing\ComboBoxSuggestion.java
 E:\projectJava\sales_system\src\main\java\com\mycompany\component\Login.java
 E:\projectJava\sales_system\src\main\java\com\mycompany\model\entity\Users.java
 E:\projectJava\sales_system\src\main\java\com\mycompany\model\entity\Payments.java
@@ -29,6 +30,7 @@ E:\projectJava\sales_system\src\main\java\com\mycompany\component\Menu.java
 E:\projectJava\sales_system\src\main\java\com\mycompany\model\entity\ProductImages.java
 E:\projectJava\sales_system\src\main\java\com\mycompany\component\listProducts.java
 E:\projectJava\sales_system\src\main\java\com\mycompany\model\entity\Favorites.java
+E:\projectJava\sales_system\src\main\java\com\mycompany\swing\Button2.java
 E:\projectJava\sales_system\src\main\java\com\mycompany\test\ResourceChecker.java
 E:\projectJava\sales_system\src\main\java\com\mycompany\swing\ScrollPaneWin11.java
 E:\projectJava\sales_system\src\main\java\com\mycompany\model\dao\LoginDAO.java
@@ -37,6 +39,7 @@ E:\projectJava\sales_system\src\main\java\com\mycompany\swing\Button.java
 E:\projectJava\sales_system\src\main\java\com\mycompany\utils\resizeIcon.java
 E:\projectJava\sales_system\src\main\java\com\mycompany\component\ForgotPW.java
 E:\projectJava\sales_system\src\main\java\com\mycompany\model\entity\Coupons.java
+E:\projectJava\sales_system\src\main\java\com\mycompany\swing\ComboSuggestionUI.java
 E:\projectJava\sales_system\src\main\java\com\mycompany\model\entity\Notifications.java
 E:\projectJava\sales_system\src\main\java\com\mycompany\model\entity\ShoppingCart.java
 E:\projectJava\sales_system\src\main\java\com\mycompany\utils\RoundBorder.java
