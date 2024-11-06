@@ -4,8 +4,13 @@
  */
 package com.mycompany.component;
 
+import com.mycompany.controller.LoginController;
+import com.mycompany.model.dao.LoginDAO;
+import com.mycompany.swing.MyPasswordField;
+import com.mycompany.swing.MyTextField;
 import com.mycompany.utils.RoundBorder;
 import java.awt.Color;
+import java.awt.event.ActionListener;
 
 /**
  *
@@ -13,13 +18,30 @@ import java.awt.Color;
  */
 public class Login extends javax.swing.JPanel {
 
+    public String getInpEmail() {
+        return inpEmail.getText();
+    }
+
+    public String getInpPass() {
+        return new String(inpPass.getPassword());
+    }
+    
+    public void setMessage(String message){messageLabel.setText(message);}
+    
+
     /**
      * Creates new form Login
      */
     public Login() {
         initComponents();
-        
+                LoginDAO model = new LoginDAO();
+
+        // Tạo bộ điều khiển
+        LoginController controller = new LoginController(model, this);
+        btnLogin.addActionListener(controller.new LoginButtonListener());
     }
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -35,9 +57,10 @@ public class Login extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         inpEmail = new com.mycompany.swing.MyTextField();
         inpPass = new com.mycompany.swing.MyPasswordField();
-        button1 = new com.mycompany.swing.Button();
+        btnLogin = new com.mycompany.swing.Button();
         button2 = new com.mycompany.swing.Button();
         button3 = new com.mycompany.swing.Button();
+        messageLabel = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
 
@@ -66,10 +89,10 @@ public class Login extends javax.swing.JPanel {
         inpPass.setHint("Mật khẩu");
         inpPass.setSelectionColor(new java.awt.Color(0, 0, 255));
 
-        button1.setBackground(new java.awt.Color(0, 0, 0));
-        button1.setForeground(new java.awt.Color(255, 255, 255));
-        button1.setText("Đăng nhập");
-        button1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        btnLogin.setBackground(new java.awt.Color(0, 0, 0));
+        btnLogin.setForeground(new java.awt.Color(255, 255, 255));
+        btnLogin.setText("Đăng nhập");
+        btnLogin.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
 
         button2.setBackground(new java.awt.Color(255, 227, 227));
         button2.setText("Đăng nhập bằng Google");
@@ -79,6 +102,8 @@ public class Login extends javax.swing.JPanel {
         button3.setForeground(new java.awt.Color(255, 255, 255));
         button3.setText("Đăng nhập bằng Google");
         button3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+
+        messageLabel.setForeground(new java.awt.Color(255, 51, 51));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -91,14 +116,20 @@ public class Login extends javax.swing.JPanel {
                 .addComponent(jCheckBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 111, Short.MAX_VALUE)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addComponent(button1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(btnLogin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(button2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(button3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(26, 26, 26)
+                .addComponent(messageLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(69, 69, 69)
+                .addGap(35, 35, 35)
+                .addComponent(messageLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(inpEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(6, 6, 6)
                 .addComponent(inpPass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -107,7 +138,7 @@ public class Login extends javax.swing.JPanel {
                     .addComponent(jCheckBox1)
                     .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(button1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(10, 10, 10)
@@ -124,7 +155,7 @@ public class Login extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private com.mycompany.swing.Button button1;
+    private com.mycompany.swing.Button btnLogin;
     private com.mycompany.swing.Button button2;
     private com.mycompany.swing.Button button3;
     private com.mycompany.swing.MyTextField inpEmail;
@@ -132,5 +163,6 @@ public class Login extends javax.swing.JPanel {
     private javax.swing.JButton jButton1;
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel messageLabel;
     // End of variables declaration//GEN-END:variables
 }

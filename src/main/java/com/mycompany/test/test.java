@@ -21,7 +21,7 @@ public class test {
 
             // Khởi tạo LoginDAO cho từng người dùng
             LoginDAO newUser = new LoginDAO(inplogin, password);
-            System.out.println(newUser.login());
+            
 
         // Đảm bảo đóng kết nối pool khi kết thúc
         Runtime.getRuntime().addShutdownHook(new Thread(() -> {

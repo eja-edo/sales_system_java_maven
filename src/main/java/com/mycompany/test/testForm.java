@@ -6,6 +6,7 @@ package com.mycompany.test;
 
 import com.mycompany.swing.ScrollBarWin11UI;
 import com.mycompany.utils.RoundBorder;
+import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.Component;
 import javax.swing.Icon;
@@ -17,71 +18,22 @@ import javax.swing.UIDefaults;
 import javax.swing.UIManager;
 import javax.swing.plaf.basic.BasicComboBoxRenderer;
 
-class IconText {
-    private String text;
-    private Icon icon;
-
-    public IconText(String text, Icon icon) {
-        this.text = text;
-        this.icon = icon;
-    }
-
-    public String getText() {
-        return text;
-    }
-
-    public Icon getIcon() {
-        return icon;
-    }
-
-    @Override
-    public String toString() {
-        return text; // Để hiển thị text trong JComboBox
-    }
-}
-
-class IconTextRenderer extends BasicComboBoxRenderer {
-    @Override
-    public Component getListCellRendererComponent(JList<?> list, Object value, int index, boolean isSelected, boolean cellHasFocus) {
-        JLabel label = (JLabel) super.getListCellRendererComponent(list, value, index, isSelected, cellHasFocus);
-        if (value instanceof IconText) {
-            IconText iconText = (IconText) value;
-            label.setText(iconText.getText());
-            label.setIcon(iconText.getIcon());
-            
-            label.setHorizontalTextPosition(SwingConstants.LEFT);
-            label.setVerticalTextPosition(SwingConstants.CENTER);
-            label.setIconTextGap(3); // Khoảng cách giữa text và icon
-        }
-        return label;
-    }
-}
-
 
 
 
 public class testForm extends javax.swing.JFrame {
 
+    private CardLayout cardLayout;
     /**
      * Creates new form testForm
      */
     public testForm() {
         initComponents();
         
+//        cardLayout = (CardLayout) this.getContentPane().getLayout();
+
         
-        IconText[] items = {
-        new IconText("5", new ImageIcon(getClass().getResource("/icon/rsz_1star.png"))),
-        new IconText("4", new ImageIcon(getClass().getResource("/icon/rsz_1star.png"))),
-        new IconText("3", new ImageIcon(getClass().getResource("/icon/rsz_1star.png"))),
-        new IconText("2", new ImageIcon(getClass().getResource("/icon/rsz_1star.png"))),
-        new IconText("1", new ImageIcon(getClass().getResource("/icon/rsz_1star.png")))
-        };
-        
-        for (IconText item : items) {
-            comboBoxSuggestion1.addItem(item);
-        }
-        
-        comboBoxSuggestion1.setRenderer(new IconTextRenderer()); // Thiết lập renderer
+
     }
 
     /**
@@ -93,30 +45,12 @@ public class testForm extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        comboBoxSuggestion1 = new com.mycompany.swing.ComboBoxSuggestion();
+        login1 = new com.mycompany.component.Login();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(50, 50));
         setPreferredSize(new java.awt.Dimension(50, 50));
-
-        comboBoxSuggestion1.setEditable(false);
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(145, 145, 145)
-                .addComponent(comboBoxSuggestion1, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(619, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(172, 172, 172)
-                .addComponent(comboBoxSuggestion1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(1416, Short.MAX_VALUE))
-        );
+        getContentPane().add(login1, java.awt.BorderLayout.CENTER);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -159,6 +93,6 @@ public class testForm extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private com.mycompany.swing.ComboBoxSuggestion comboBoxSuggestion1;
+    private com.mycompany.component.Login login1;
     // End of variables declaration//GEN-END:variables
 }

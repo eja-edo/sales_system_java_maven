@@ -6,12 +6,72 @@ package com.mycompany.tab;
 
 import com.mycompany.utils.RoundBorder;
 import java.awt.Color;
+import java.awt.Component;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
+import javax.swing.JList;
+import javax.swing.SwingConstants;
+import javax.swing.plaf.basic.BasicComboBoxRenderer;
 import javax.swing.text.html.HTMLEditorKit;
 
-/**
- *
- * @author duyan
- */
+
+class IconText {
+    private String text;
+    private Icon icon;
+
+    public IconText(String text, Icon icon) {
+        this.text = text;
+        this.icon = icon;
+    }
+
+    public String getText() {
+        return text;
+    }
+
+    public Icon getIcon() {
+        return icon;
+    }
+
+    @Override
+    public String toString() {
+        return text; // Để hiển thị text trong JComboBox
+    }
+}
+
+class IconTextRenderer extends BasicComboBoxRenderer {
+    @Override
+    public Component getListCellRendererComponent(JList<?> list, Object value, int index, boolean isSelected, boolean cellHasFocus) {
+        JLabel label = (JLabel) super.getListCellRendererComponent(list, value, index, isSelected, cellHasFocus);
+        if (value instanceof IconText) {
+            IconText iconText = (IconText) value;
+            label.setText(iconText.getText());
+            label.setIcon(iconText.getIcon());
+            
+            label.setHorizontalTextPosition(SwingConstants.LEFT);
+            label.setVerticalTextPosition(SwingConstants.CENTER);
+            label.setIconTextGap(3); // Khoảng cách giữa text và icon
+        }
+        
+        // Áp dụng màu nền và màu chữ khi được chọn hoặc di chuột vào
+        if (isSelected) {
+            label.setBackground(new java.awt.Color(102, 51, 255));
+            label.setForeground(list.getSelectionForeground());
+        } else {
+            label.setBackground(list.getBackground());
+            label.setForeground(list.getForeground());
+        }
+        
+        // Đảm bảo JLabel hoạt động trong suốt để màu nền hiển thị đúng
+        label.setOpaque(true);
+        
+        
+        return label;
+    }
+}
+
+
+
 public class detailProduct extends javax.swing.JPanel {
 
     /**
@@ -24,6 +84,20 @@ public class detailProduct extends javax.swing.JPanel {
             String imageUrl = "https://placehold.co/76x76/png/"; // Tạo các liên kết
             listImgProduct.addImage(imageUrl);
         }
+        
+        IconText[] items = {
+        new IconText("5", new ImageIcon(getClass().getResource("/icon/rsz_1star.png"))),
+        new IconText("4", new ImageIcon(getClass().getResource("/icon/rsz_1star.png"))),
+        new IconText("3", new ImageIcon(getClass().getResource("/icon/rsz_1star.png"))),
+        new IconText("2", new ImageIcon(getClass().getResource("/icon/rsz_1star.png"))),
+        new IconText("1", new ImageIcon(getClass().getResource("/icon/rsz_1star.png")))
+        };
+        
+        for (IconText item : items) {
+            ComboStart.addItem(item);
+        }
+        
+        ComboStart.setRenderer(new IconTextRenderer()); // Thiết lập renderer
     }
 
     /**
@@ -77,6 +151,8 @@ public class detailProduct extends javax.swing.JPanel {
         jScrollPane3 = new javax.swing.JScrollPane();
         jTextPane2 = new javax.swing.JTextPane();
         button21 = new com.raven.swing.Button2();
+        ComboStart = new com.mycompany.swing.ComboBoxSuggestion();
+        button22 = new com.raven.swing.Button2();
 
         setBackground(new java.awt.Color(255, 255, 255));
 
@@ -90,7 +166,7 @@ public class detailProduct extends javax.swing.JPanel {
         jLabel13.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         jLabel13.setText("Tổng cộng 5 đánh giá từ khách hàng");
 
-        jSplitPane1.setDividerSize(1);
+        jSplitPane1.setDividerSize(0);
         jSplitPane1.setResizeWeight(0.7);
 
         jPanel4.setOpaque(false);
@@ -161,9 +237,11 @@ public class detailProduct extends javax.swing.JPanel {
         jLabel5.setText("GNXMXMW005481");
 
         jScrollPane2.setBorder(javax.swing.BorderFactory.createTitledBorder(new RoundBorder(Color.BLACK, 20, 1), "Ưu đãi:", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.TOP));
+        jScrollPane2.setOpaque(false);
 
         listOffer.setBorder(new RoundBorder(Color.BLACK, 20, 1));
         listOffer.setEnabled(false);
+        listOffer.setOpaque(false);
         jScrollPane2.setViewportView(listOffer);
 
         jScrollPane1.setBorder(null);
@@ -352,7 +430,20 @@ public class detailProduct extends javax.swing.JPanel {
 
         jSplitPane1.setLeftComponent(jPanel7);
 
-        button21.setText("button21");
+        button21.setBackground(new java.awt.Color(204, 204, 204));
+        button21.setBorder(new RoundBorder(new Color(153,153,153),10,1));
+        button21.setText("Có hình ảnh/ video");
+        button21.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
+        button21.setRadium(10);
+
+        ComboStart.setBorder(new RoundBorder(new Color(153,153,153),10,1));
+        ComboStart.setEditable(false);
+
+        button22.setBackground(new java.awt.Color(204, 204, 204));
+        button22.setBorder(new RoundBorder(new Color(153,153,153),10,1));
+        button22.setText("Tất cả đánh giá");
+        button22.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
+        button22.setRadium(10);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -370,34 +461,43 @@ public class detailProduct extends javax.swing.JPanel {
                             .addComponent(jLabel11)
                             .addComponent(jLabel12))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(button21, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(31, 31, 31))))
+                        .addComponent(button22, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(button21, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(ComboStart, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(33, 33, 33))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(907, 907, 907)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(button21, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(button22, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(ComboStart, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(27, 27, 27)
+                        .addComponent(jLabel13))
+                    .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jSplitPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 873, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(907, 907, 907)
-                        .addComponent(button21, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(27, 27, 27)
-                .addComponent(jLabel13)
-                .addGap(0, 137, Short.MAX_VALUE))
+                        .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(200, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private com.mycompany.swing.ComboBoxSuggestion ComboStart;
     private com.mycompany.swing.Button button1;
     private com.mycompany.swing.Button button2;
     private com.raven.swing.Button2 button21;
+    private com.raven.swing.Button2 button22;
     private com.mycompany.swing.Button button3;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JButton jButton1;
