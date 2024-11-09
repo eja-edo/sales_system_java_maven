@@ -22,35 +22,42 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
-              <Component id="jCheckBox1" min="-2" max="-2" attributes="0"/>
+              <Component id="ghiNho" min="-2" max="-2" attributes="0"/>
               <EmptySpace pref="148" max="32767" attributes="0"/>
               <Component id="jButton1" min="-2" max="-2" attributes="0"/>
           </Group>
-          <Component id="myPasswordField1" alignment="0" max="32767" attributes="0"/>
-          <Component id="myPasswordField3" alignment="0" max="32767" attributes="0"/>
-          <Component id="myTextField1" alignment="0" max="32767" attributes="0"/>
+          <Component id="inpPass" alignment="0" max="32767" attributes="0"/>
+          <Component id="inpPassCf" alignment="0" max="32767" attributes="0"/>
+          <Component id="inpEmail" alignment="0" max="32767" attributes="0"/>
           <Component id="jLabel1" alignment="0" max="32767" attributes="0"/>
-          <Component id="button1" alignment="0" max="32767" attributes="0"/>
+          <Component id="btnSignUp" alignment="0" max="32767" attributes="0"/>
           <Component id="button2" alignment="0" max="32767" attributes="0"/>
           <Component id="button3" alignment="0" max="32767" attributes="0"/>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
+              <Component id="messageLabel" min="-2" pref="254" max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
+          </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
-              <EmptySpace min="67" pref="67" max="-2" attributes="0"/>
-              <Component id="myTextField1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+              <Component id="messageLabel" min="-2" pref="22" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Component id="inpEmail" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="myPasswordField1" min="-2" max="-2" attributes="0"/>
+              <Component id="inpPass" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="myPasswordField3" min="-2" max="-2" attributes="0"/>
+              <Component id="inpPassCf" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="jButton1" min="-2" max="-2" attributes="0"/>
-                  <Component id="jCheckBox1" min="-2" pref="20" max="-2" attributes="0"/>
+                  <Component id="ghiNho" min="-2" pref="20" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="button1" min="-2" pref="36" max="-2" attributes="0"/>
+              <Component id="btnSignUp" min="-2" pref="36" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jLabel1" min="-2" pref="13" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -63,7 +70,7 @@
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="com.mycompany.swing.MyTextField" name="myTextField1">
+    <Component class="com.mycompany.swing.MyTextField" name="inpEmail">
       <Properties>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.CompoundBorderInfo">
@@ -85,7 +92,7 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="com.mycompany.swing.MyPasswordField" name="myPasswordField1">
+    <Component class="com.mycompany.swing.MyPasswordField" name="inpPass">
       <Properties>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.CompoundBorderInfo">
@@ -107,7 +114,7 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="com.mycompany.swing.MyPasswordField" name="myPasswordField3">
+    <Component class="com.mycompany.swing.MyPasswordField" name="inpPassCf">
       <Properties>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.CompoundBorderInfo">
@@ -129,12 +136,12 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JCheckBox" name="jCheckBox1">
+    <Component class="javax.swing.JCheckBox" name="ghiNho">
       <Properties>
         <Property name="text" type="java.lang.String" value="ghi nh&#x1edb;"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCheckBox1ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ghiNhoActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="jButton1">
@@ -151,7 +158,7 @@
         <Property name="horizontalAlignment" type="int" value="4"/>
       </Properties>
     </Component>
-    <Component class="com.mycompany.swing.Button" name="button1">
+    <Component class="com.mycompany.swing.Button" name="btnSignUp">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="0" green="0" red="0" type="rgb"/>
@@ -159,7 +166,7 @@
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="&#x110;&#x103;ng nh&#x1ead;p"/>
+        <Property name="text" type="java.lang.String" value="&#x110;&#x103;ng k&#xfd;"/>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Arial" size="12" style="1"/>
         </Property>
@@ -193,6 +200,13 @@
         <Property name="text" type="java.lang.String" value="&#x110;&#x103;ng nh&#x1ead;p b&#x1eb1;ng Google"/>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="12" style="1"/>
+        </Property>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="messageLabel">
+      <Properties>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="33" green="33" red="ff" type="rgb"/>
         </Property>
       </Properties>
     </Component>

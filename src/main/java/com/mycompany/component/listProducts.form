@@ -59,7 +59,7 @@
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
       <SubComponents>
-        <Component class="com.mycompany.main.test2" name="test21">
+        <Component class="com.mycompany.component.test2" name="test21">
         </Component>
       </SubComponents>
     </Container>

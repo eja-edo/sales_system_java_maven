@@ -1,4 +1,4 @@
-package com.mycompany.main;
+package com.mycompany.component;
 
 import com.mycompany.component.ItemProduct;
 import javax.swing.JPanel;

@@ -57,7 +57,7 @@ public String login(String usn , String pass) {
 
 
 
-    private boolean isUsernameExists() {
+    private boolean isUsernameExists(String usn) {
         String query = "EXEC getPassword @login = ?";
         try (Connection conn = DBConnection.getConnection();
              PreparedStatement stmt = conn.prepareStatement(query)) {
@@ -74,20 +74,20 @@ public String login(String usn , String pass) {
     }
 
     // Phương thức đăng ký người dùng mới
-    public boolean signUp() {
+    public boolean signUp(String usn , String pass) {
         
         // Kiểm tra xem tên người dùng đã tồn tại chưa
-        if (isUsernameExists()) {
+        if (isUsernameExists(usn)) {
             return false; // Tên người dùng đã tồn tại
         }
-        String insertQuery = "INSERT INTO Users (username, password) VALUES (?, ?)";
+        String insertQuery = "EXEC signUp @Email = ? , @password = ?";
         
         try (Connection conn = DBConnection.getConnection();
              PreparedStatement stmt = conn.prepareStatement(insertQuery)) {
              
             // Băm mật khẩu trước khi lưu (nếu cần)
-            String hashedPassword = hashPassword(password); // Phương thức băm mật khẩu
-            stmt.setString(1, username);
+            String hashedPassword = hashPassword(pass); // Phương thức băm mật khẩu
+            stmt.setString(1, usn);
             stmt.setString(2, hashedPassword);
             int rowsAffected = stmt.executeUpdate();
             return rowsAffected > 0; // Trả về true nếu có dòng được thêm vào

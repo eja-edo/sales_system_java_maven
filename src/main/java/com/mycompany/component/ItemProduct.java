@@ -4,6 +4,7 @@
  */
 package com.mycompany.component;
 
+import com.mycompany.utils.ScaleImg;
 import com.mycompany.utils.resizeIcon;
 import static com.mycompany.utils.resizeIcon.resizeIcon;
 import java.awt.Graphics;
@@ -14,10 +15,10 @@ import java.awt.event.ComponentAdapter;
 import java.awt.event.ComponentEvent;
 import java.awt.geom.RoundRectangle2D;
 import java.io.IOException;
+import java.net.MalformedURLException;
 import java.net.URL;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
-
 import javax.swing.text.SimpleAttributeSet;
 import javax.swing.text.StyleConstants;
 import javax.swing.text.StyledDocument;
@@ -28,16 +29,35 @@ import javax.swing.text.StyledDocument;
 public class ItemProduct extends javax.swing.JPanel {
     private int radius = 10;  // Đặt bán kính cho bo tròn
 
+    public void setItemProduct(String urlImgProduct, String title, String price, String views, String rating   ) 
+    {
+        try
+        {
+            URL url = new URL( urlImgProduct );  // Đảm bảo URL hợp lệ
+            Image img = ImageIO.read(url);  // Sử dụng ImageIO để 
+            ImageIcon imgIcon = new ImageIcon(img);
+            imgProduct.setIcon(imgIcon);
+            ScaleImg.scaleImg(imgProduct);
+
+            jtitle.setText(title);
+            jprice.setText(price);
+            jrating.setText(rating);
+            jviews.setText(views);  
+        }catch (IOException e) {
+            e.printStackTrace();
+            System.out.println("Lỗi tải hình ảnh từ URL: " + e.getMessage());
+        }
+        
+    }
+    
     public ItemProduct() {
         initComponents();
- 
-        ImageIcon icon = new ImageIcon(getClass().getResource("/icon/traGop.png"));
 
-        TraGop.setIcon(resizeIcon(icon,31,35));
+        TraGop.setIcon(resizeIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/traGop.png")),31,35));
         imgProduct.addComponentListener(new ComponentAdapter() {
             @Override
             public void componentResized(ComponentEvent e) {
-                scaleImg();
+                ScaleImg.scaleImg(imgProduct);
             }
         });
 
@@ -46,8 +66,7 @@ public class ItemProduct extends javax.swing.JPanel {
         SimpleAttributeSet center = new SimpleAttributeSet();
         StyleConstants.setAlignment(center, StyleConstants.ALIGN_CENTER);
         doc.setParagraphAttributes(0, doc.getLength(), center, false);
-        
-        
+   
     }
 
     @Override
@@ -69,31 +88,7 @@ public class ItemProduct extends javax.swing.JPanel {
     
     
     
-     public void scaleImg() {
-        try {
-            // Tải hình ảnh từ URL
-            URL url = new URL("https://placehold.co/259X259/png");  // Đảm bảo URL hợp lệ
-            Image img = ImageIO.read(url);  // Sử dụng ImageIO để tải hình ảnh từ URL
 
-            // Kiểm tra nếu hình ảnh được tải thành công
-            if (img != null) {
-                // Kiểm tra kích thước imgProduct trước khi thay đổi kích thước hình ảnh
-                if (imgProduct.getWidth() > 0 && imgProduct.getHeight() > 0) {
-                    // Thay đổi kích thước hình ảnh theo kích thước hiện tại của imgProduct
-                    Image imgScale = img.getScaledInstance(imgProduct.getWidth(), imgProduct.getHeight(), Image.SCALE_SMOOTH);
-                    ImageIcon imgIcon = new ImageIcon(imgScale);
-
-                    // Đặt hình ảnh đã thay đổi kích thước làm icon cho imgProduct
-                    imgProduct.setIcon(imgIcon);
-                }
-            } else {
-                System.out.println("Error: Image could not be loaded from the URL.");
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-            System.out.println("Error loading image: " + e.getMessage());
-        }
-    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -105,12 +100,12 @@ public class ItemProduct extends javax.swing.JPanel {
 
         TraGop = new javax.swing.JLabel();
         imgProduct = new javax.swing.JLabel();
-        price = new javax.swing.JLabel();
+        jprice = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jtitle = new javax.swing.JTextPane();
-        rating = new javax.swing.JLabel();
-        views = new javax.swing.JLabel();
+        jrating = new javax.swing.JLabel();
+        jviews = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setFocusable(false);
@@ -119,7 +114,7 @@ public class ItemProduct extends javax.swing.JPanel {
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         TraGop.setBackground(new java.awt.Color(255, 255, 255));
-        TraGop.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/rsz_tragop.png"))); // NOI18N
+        TraGop.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/traGop.png"))); // NOI18N
         TraGop.setRequestFocusEnabled(false);
         TraGop.setVerifyInputWhenFocusTarget(false);
         add(TraGop, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 220, 31, 35));
@@ -127,12 +122,12 @@ public class ItemProduct extends javax.swing.JPanel {
         imgProduct.setBackground(new java.awt.Color(102, 102, 102));
         add(imgProduct, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 260, 260));
 
-        price.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        price.setForeground(new java.awt.Color(197, 142, 74));
-        price.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        price.setText("43.000.000đ");
-        price.setToolTipText("");
-        add(price, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 317, 259, 18));
+        jprice.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jprice.setForeground(new java.awt.Color(197, 142, 74));
+        jprice.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jprice.setText("43.000.000đ");
+        jprice.setToolTipText("");
+        add(jprice, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 317, 259, 18));
 
         jLabel3.setForeground(new java.awt.Color(234, 112, 112));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -153,14 +148,14 @@ public class ItemProduct extends javax.swing.JPanel {
 
         add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 265, 259, 46));
 
-        rating.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
-        rating.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/rsz_1star.png"))); // NOI18N
-        rating.setText("5(10)");
-        add(rating, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 374, 45, 13));
+        jrating.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
+        jrating.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/rsz_1star.png"))); // NOI18N
+        jrating.setText("5(10)");
+        add(jrating, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 374, 45, 13));
 
-        views.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
-        views.setText("10k");
-        add(views, new org.netbeans.lib.awtextra.AbsoluteConstraints(227, 373, -1, -1));
+        jviews.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
+        jviews.setText("10k");
+        add(jviews, new org.netbeans.lib.awtextra.AbsoluteConstraints(227, 373, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
 
@@ -169,9 +164,10 @@ public class ItemProduct extends javax.swing.JPanel {
     private javax.swing.JLabel imgProduct;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JLabel jprice;
+    private javax.swing.JLabel jrating;
     private javax.swing.JTextPane jtitle;
-    private javax.swing.JLabel price;
-    private javax.swing.JLabel rating;
-    private javax.swing.JLabel views;
+    private javax.swing.JLabel jviews;
     // End of variables declaration//GEN-END:variables
+
 }

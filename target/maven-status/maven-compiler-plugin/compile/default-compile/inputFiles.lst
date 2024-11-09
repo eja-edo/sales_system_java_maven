@@ -1,5 +1,6 @@
 E:\projectJava\sales_system\src\main\java\com\mycompany\swing\MyTextField.java
 E:\projectJava\sales_system\src\main\java\com\mycompany\component\ItemProduct.java
+E:\projectJava\sales_system\src\main\java\com\mycompany\utils\ScaleImg.java
 E:\projectJava\sales_system\src\main\java\com\mycompany\component\TimKiem.java
 E:\projectJava\sales_system\src\main\java\com\mycompany\utils\PasswordUtil.java
 E:\projectJava\sales_system\src\main\java\com\mycompany\main\Main.java
@@ -14,7 +15,7 @@ E:\projectJava\sales_system\src\main\java\com\mycompany\model\entity\Products.ja
 E:\projectJava\sales_system\src\main\java\com\mycompany\model\entity\TypeExemple.java
 E:\projectJava\sales_system\src\main\java\com\mycompany\tab\LoginTab.java
 E:\projectJava\sales_system\src\main\java\com\mycompany\model\entity\ProductsExemple.java
-E:\projectJava\sales_system\src\main\java\com\mycompany\test\testForm.java
+E:\projectJava\sales_system\src\main\java\com\mycompany\test\TestForm.java
 E:\projectJava\sales_system\src\main\java\com\mycompany\component\Menu.java
 E:\projectJava\sales_system\src\main\java\com\mycompany\model\entity\Favorites.java
 E:\projectJava\sales_system\src\main\java\com\mycompany\test\ResourceChecker.java
@@ -27,6 +28,7 @@ E:\projectJava\sales_system\src\main\java\com\mycompany\model\entity\ShoppingCar
 E:\projectJava\sales_system\src\main\java\com\mycompany\utils\RoundBorder.java
 E:\projectJava\sales_system\src\main\java\com\mycompany\utils\DBConnection.java
 E:\projectJava\sales_system\src\main\java\com\mycompany\component\test2.java
+E:\projectJava\sales_system\src\main\java\com\mycompany\controller\SignUpController.java
 E:\projectJava\sales_system\src\main\java\com\mycompany\swing\ButtonOutLine.java
 E:\projectJava\sales_system\src\main\java\com\mycompany\swing\ComboBoxSuggestion.java
 E:\projectJava\sales_system\src\main\java\com\mycompany\model\entity\Payments.java

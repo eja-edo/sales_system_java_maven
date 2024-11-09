@@ -31,7 +31,7 @@ public class listProducts extends javax.swing.JPanel {
         btnBack = new javax.swing.JButton();
         btnNext = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
-        test21 = new com.mycompany.main.test2();
+        test21 = new com.mycompany.component.test2();
 
         setLayout(new java.awt.BorderLayout());
 
@@ -63,6 +63,6 @@ public class listProducts extends javax.swing.JPanel {
     private javax.swing.JButton btnBack;
     private javax.swing.JButton btnNext;
     private javax.swing.JScrollPane jScrollPane2;
-    private com.mycompany.main.test2 test21;
+    private com.mycompany.component.test2 test21;
     // End of variables declaration//GEN-END:variables
 }
