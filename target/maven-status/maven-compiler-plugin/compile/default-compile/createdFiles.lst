@@ -3,6 +3,7 @@ com\mycompany\component\ForgotPW.class
 com\mycompany\component\ItemProduct$1.class
 com\mycompany\component\Login$1.class
 com\mycompany\utils\PasswordUtil.class
+<<<<<<< HEAD
 com\mycompany\component\header.class
 com\mycompany\component\Menu$5.class
 com\mycompany\swing\RoundPanel.class
@@ -14,12 +15,20 @@ com\mycompany\component\search_form$6.class
 com\mycompany\component\Menu1$14.class
 com\mycompany\component\SignUp$2.class
 com\mycompany\component\search_form$15.class
+=======
+com\mycompany\tab\IconTextRenderer.class
+com\mycompany\controller\LoginController$LoginButtonListener.class
+com\mycompany\swing\ScrollBarWin11UI$ScrollButton$1.class
+com\mycompany\model\entity\ShoppingCart.class
+com\raven\swing\Button2$2.class
+>>>>>>> 18911f018b352afb22355768fcbedd0aad6abebf
 com\mycompany\model\entity\Categories.class
 com\mycompany\model\entity\ProductsExemple.class
 com\mycompany\component\Menu1$6.class
 com\mycompany\model\dao\ProductDAO.class
 com\mycompany\swing\ButtonOutLine.class
 com\mycompany\utils\RoundBorder.class
+<<<<<<< HEAD
 com\mycompany\component\Menu1$9.class
 com\mycompany\swing\PanelGradient.class
 com\mycompany\component\Menu$15.class
@@ -29,6 +38,17 @@ com\mycompany\component\Menu1$3.class
 com\mycompany\swing\MyTextField.class
 com\mycompany\component\search_form$8.class
 com\mycompany\component\SignUp$4.class
+=======
+com\mycompany\component\TimKiem$11.class
+com\mycompany\component\TimKiem.class
+com\mycompany\component\TimKiem$22.class
+com\mycompany\component\TimKiem$14.class
+com\mycompany\component\TimKiem$17.class
+com\mycompany\swing\Button.class
+com\mycompany\model\entity\Shipping.class
+com\mycompany\swing\ComboSuggestionUI$ComboSuggestionPopup.class
+com\mycompany\swing\MyTextField.class
+>>>>>>> 18911f018b352afb22355768fcbedd0aad6abebf
 com\mycompany\swing\ScrollPaneWin11$ScrollLayout.class
 com\mycompany\component\search_form$1.class
 com\mycompany\component\Menu1$5.class
@@ -44,6 +64,7 @@ com\mycompany\component\Menu1$4.class
 com\mycompany\main\Main$1.class
 com\mycompany\component\search_form$9.class
 com\mycompany\swing\PolygonCorner.class
+<<<<<<< HEAD
 com\mycompany\component\search_form$10.class
 com\mycompany\component\Menu1$11.class
 com\mycompany\model\entity\Payments.class
@@ -55,21 +76,45 @@ com\mycompany\component\Menu1$10.class
 com\mycompany\utils\resizeIcon.class
 com\mycompany\component\Menu$9.class
 com\mycompany\component\search_form$14.class
+=======
+com\mycompany\component\TimKiem$21.class
+com\mycompany\model\entity\Payments.class
+com\mycompany\component\Header_main.class
+com\mycompany\swing\ComboSuggestionUI$Border.class
+com\mycompany\component\SignUp.class
+com\mycompany\component\TimKiem$2.class
+com\mycompany\component\Header_main$1.class
+com\mycompany\component\TimKiem$10.class
+com\mycompany\component\TimKiem$20.class
+com\mycompany\swing\ComboBoxSuggestion.class
+com\mycompany\utils\resizeIcon.class
+com\mycompany\swing\ComboSuggestionUI.class
+>>>>>>> 18911f018b352afb22355768fcbedd0aad6abebf
 com\mycompany\model\entity\Favorites.class
 com\mycompany\component\Menu1.class
 com\mycompany\model\entity\OrderItems.class
 com\mycompany\component\ListImgProduct$ImageListRenderer.class
+<<<<<<< HEAD
 com\mycompany\component\search_form$17.class
 com\mycompany\component\Menu1$7.class
 com\mycompany\component\Menu$6.class
 com\mycompany\component\search_form$7.class
+=======
+com\mycompany\component\TimKiem$1.class
+com\mycompany\component\TimKiem$23.class
+com\mycompany\component\TimKiem$13.class
+>>>>>>> 18911f018b352afb22355768fcbedd0aad6abebf
 com\mycompany\test\testForm$1.class
 com\mycompany\model\dao\LoginDAO.class
 com\mycompany\component\Menu$1.class
 com\mycompany\swing\ScrollBarWin11UI$2.class
 com\mycompany\main\Main.class
+<<<<<<< HEAD
 com\mycompany\component\search_form$4.class
 com\mycompany\component\Menu$11.class
+=======
+com\mycompany\swing\ComboSuggestionUI$3.class
+>>>>>>> 18911f018b352afb22355768fcbedd0aad6abebf
 com\mycompany\model\entity\Coupons.class
 com\mycompany\component\Menu1$16.class
 com\mycompany\swing\Button$1.class
@@ -77,20 +122,31 @@ com\mycompany\component\Menu$4.class
 com\mycompany\model\entity\Addresses.class
 com\mycompany\model\entity\Orders.class
 com\mycompany\model\entity\Reviews.class
+<<<<<<< HEAD
 com\mycompany\component\Menu1$13.class
 com\mycompany\component\SignUp$3.class
 com\mycompany\component\search_form$11.class
 com\mycompany\component\Menu$7.class
+=======
+com\raven\swing\Button2$1.class
+com\mycompany\component\TimKiem$7.class
+com\raven\swing\Button2.class
+>>>>>>> 18911f018b352afb22355768fcbedd0aad6abebf
 com\mycompany\component\ItemProduct.class
 com\mycompany\component\Menu1$15.class
 com\mycompany\test\ResourceChecker.class
 com\mycompany\model\entity\Notifications.class
 com\mycompany\swing\ScrollBarWin11UI.class
 com\mycompany\component\Menu.class
+com\mycompany\swing\ComboSuggestionUI$2.class
 com\mycompany\swing\ScrollBarWin11UI$1.class
 com\mycompany\utils\DBConnection.class
 com\mycompany\model\entity\Products.class
+<<<<<<< HEAD
 com\mycompany\component\Menu1$2.class
+=======
+com\mycompany\component\TimKiem$25.class
+>>>>>>> 18911f018b352afb22355768fcbedd0aad6abebf
 com\mycompany\test\testForm.class
 com\mycompany\component\search_form$12.class
 com\mycompany\component\Menu$3.class
@@ -98,19 +154,34 @@ com\mycompany\swing\ScrollBarWin11UI$ScrollButton.class
 com\mycompany\component\search_form.class
 com\mycompany\component\dashboard.class
 com\mycompany\model\entity\TypeExemple.class
+<<<<<<< HEAD
 com\mycompany\tab\detailProduct$1.class
 com\mycompany\swing\PanelGradient$GradientType.class
 com\mycompany\component\gio_hang_1.class
 com\mycompany\component\Menu$8.class
 com\mycompany\component\Menu1$1.class
 com\mycompany\component\search_form$13.class
+=======
+com\mycompany\component\TimKiem$24.class
+com\mycompany\tab\IconText.class
+com\mycompany\swing\ComboSuggestionUI$ArrowButton.class
+>>>>>>> 18911f018b352afb22355768fcbedd0aad6abebf
 com\mycompany\component\ListImgProduct.class
 com\mycompany\component\Menu$16.class
 com\mycompany\tab\LoginTab.class
 com\mycompany\swing\Button$2.class
+<<<<<<< HEAD
 com\mycompany\component\Menu1$8.class
 com\mycompany\component\Menu$10.class
 com\mycompany\component\search_form$5.class
+=======
+com\mycompany\component\TimKiem$19.class
+com\mycompany\swing\ComboSuggestionUI$1.class
+com\mycompany\component\listProducts.class
+com\mycompany\component\TimKiem$12.class
+com\mycompany\component\TimKiem$5.class
+com\mycompany\controller\LoginController.class
+>>>>>>> 18911f018b352afb22355768fcbedd0aad6abebf
 com\mycompany\component\SignUp$1.class
 com\mycompany\model\entity\ProductImages.class
 com\mycompany\tab\detailProduct.class

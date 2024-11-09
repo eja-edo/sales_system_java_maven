@@ -5,20 +5,35 @@
 package com.mycompany.test;
 
 import com.mycompany.swing.ScrollBarWin11UI;
+import com.mycompany.utils.RoundBorder;
+import java.awt.CardLayout;
+import java.awt.Color;
+import java.awt.Component;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
+import javax.swing.JList;
+import javax.swing.SwingConstants;
 import javax.swing.UIDefaults;
 import javax.swing.UIManager;
+import javax.swing.plaf.basic.BasicComboBoxRenderer;
 
-/**
- *
- * @author duyan
- */
+
+
+
 public class testForm extends javax.swing.JFrame {
 
+    private CardLayout cardLayout;
     /**
      * Creates new form testForm
      */
     public testForm() {
         initComponents();
+        
+//        cardLayout = (CardLayout) this.getContentPane().getLayout();
+
+        
+
     }
 
     /**
@@ -30,12 +45,12 @@ public class testForm extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        loginTab1 = new com.mycompany.tab.LoginTab();
+        login1 = new com.mycompany.component.Login();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setResizable(false);
-        getContentPane().setLayout(new java.awt.FlowLayout());
-        getContentPane().add(loginTab1);
+        setMaximumSize(new java.awt.Dimension(50, 50));
+        setPreferredSize(new java.awt.Dimension(50, 50));
+        getContentPane().add(login1, java.awt.BorderLayout.CENTER);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -78,6 +93,6 @@ public class testForm extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private com.mycompany.tab.LoginTab loginTab1;
+    private com.mycompany.component.Login login1;
     // End of variables declaration//GEN-END:variables
 }

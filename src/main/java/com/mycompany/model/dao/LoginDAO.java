@@ -17,6 +17,9 @@ import java.sql.SQLException;
  * @author duyan
  */
 public class LoginDAO {
+
+    public LoginDAO() {
+    }
     private String username;
     private String password;
     
@@ -25,18 +28,18 @@ public class LoginDAO {
         this.password = pass;
     }
     
-public String login() {
+public String login(String usn , String pass) {
     String query = "EXEC getPassword @login = ?";
     try (Connection conn = DBConnection.getConnection(); // Lấy kết nối từ pool
          PreparedStatement stmt = conn.prepareStatement(query)) {
          
-        stmt.setString(1, username);
+        stmt.setString(1, usn);
         try (ResultSet rs = stmt.executeQuery()) {
             // Kiểm tra xem có kết quả hay không
             if (rs.next()) {
                 String retrievedPassword = rs.getString("password");
                 // Kiểm tra mật khẩu
-                if (PasswordUtil.checkPassword(password, retrievedPassword)) {
+                if (PasswordUtil.checkPassword(pass, retrievedPassword)) {
                     return "Đăng nhập thành công!";
                 } else {
                     return "Mật khẩu không chính xác!";
