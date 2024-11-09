@@ -15,7 +15,7 @@ public class TestForm extends javax.swing.JFrame {
      */
     public TestForm() {
         initComponents();
-        itemProduct1.setItemProduct("https://placehold.co/259X259/png", "title", "giá", "views", "rating");
+        itemProduct1.setItemProduct("", "title", "giá", "views", "rating");
     }
 
     /**

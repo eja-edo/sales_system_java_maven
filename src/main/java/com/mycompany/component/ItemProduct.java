@@ -31,22 +31,15 @@ public class ItemProduct extends javax.swing.JPanel {
 
     public void setItemProduct(String urlImgProduct, String title, String price, String views, String rating   ) 
     {
-        try
-        {
-            URL url = new URL( urlImgProduct );  // Đảm bảo URL hợp lệ
-            Image img = ImageIO.read(url);  // Sử dụng ImageIO để 
-            ImageIcon imgIcon = new ImageIcon(img);
-            imgProduct.setIcon(imgIcon);
-            ScaleImg.scaleImg(imgProduct);
-
-            jtitle.setText(title);
-            jprice.setText(price);
-            jrating.setText(rating);
-            jviews.setText(views);  
-        }catch (IOException e) {
-            e.printStackTrace();
-            System.out.println("Lỗi tải hình ảnh từ URL: " + e.getMessage());
-        }
+        //            URL url = new URL( urlImgProduct );  // Đảm bảo URL hợp lệ
+//            Image img = ImageIO.read(url);  // Sử dụng ImageIO để 
+//            ImageIcon imgIcon = new ImageIcon(img);
+        imgProduct.setIcon(new javax.swing.ImageIcon(getClass().getResource(urlImgProduct)));
+        ScaleImg.scaleImg(imgProduct);
+        jtitle.setText(title);
+        jprice.setText(price);
+        jrating.setText(rating);
+        jviews.setText(views);
         
     }
     
