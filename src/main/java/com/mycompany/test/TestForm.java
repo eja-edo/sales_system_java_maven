@@ -4,36 +4,18 @@
  */
 package com.mycompany.test;
 
-import com.mycompany.swing.ScrollBarWin11UI;
-import com.mycompany.utils.RoundBorder;
-import java.awt.CardLayout;
-import java.awt.Color;
-import java.awt.Component;
-import javax.swing.Icon;
-import javax.swing.ImageIcon;
-import javax.swing.JLabel;
-import javax.swing.JList;
-import javax.swing.SwingConstants;
-import javax.swing.UIDefaults;
-import javax.swing.UIManager;
-import javax.swing.plaf.basic.BasicComboBoxRenderer;
+/**
+ *
+ * @author duyan
+ */
+public class TestForm extends javax.swing.JFrame {
 
-
-
-
-public class testForm extends javax.swing.JFrame {
-
-    private CardLayout cardLayout;
     /**
-     * Creates new form testForm
+     * Creates new form TestForm
      */
-    public testForm() {
+    public TestForm() {
         initComponents();
-        
-//        cardLayout = (CardLayout) this.getContentPane().getLayout();
-
-        
-
+        itemProduct1.setItemProduct("", "title", "giá", "views", "rating");
     }
 
     /**
@@ -45,12 +27,26 @@ public class testForm extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        login1 = new com.mycompany.component.Login();
+        itemProduct1 = new com.mycompany.component.ItemProduct();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(50, 50));
-        setPreferredSize(new java.awt.Dimension(50, 50));
-        getContentPane().add(login1, java.awt.BorderLayout.CENTER);
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(113, Short.MAX_VALUE)
+                .addComponent(itemProduct1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(108, 108, 108))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(29, 29, 29)
+                .addComponent(itemProduct1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(166, Short.MAX_VALUE))
+        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -72,27 +68,25 @@ public class testForm extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(testForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TestForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(testForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TestForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(testForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TestForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(testForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TestForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
-        UIDefaults ui =UIManager.getDefaults();
-        ui.put("ScrollBarUI",ScrollBarWin11UI.class.getCanonicalName());
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new testForm().setVisible(true);
+                new TestForm().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private com.mycompany.component.Login login1;
+    private com.mycompany.component.ItemProduct itemProduct1;
     // End of variables declaration//GEN-END:variables
 }

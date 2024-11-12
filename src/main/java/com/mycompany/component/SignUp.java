@@ -4,17 +4,38 @@
  */
 package com.mycompany.component;
 
+import com.mycompany.controller.SignUpController;
+import com.mycompany.model.dao.LoginDAO;
+import com.mycompany.swing.Button;
+import com.mycompany.swing.MyPasswordField;
+import com.mycompany.swing.MyTextField;
+
 /**
  *
  * @author duyan
  */
 public class SignUp extends javax.swing.JPanel {
 
-    /**
-     * Creates new form SignUp
-     */
+    public String getInpPassCf() {
+        return new String(inpPassCf.getPassword());
+    }
+
+
+    public String getInpEmail() {
+        return inpEmail.getText();
+    }
+
+    public String getInpPass() {
+        return new String(inpPass.getPassword());
+    }
+    
+    public void setMessage(String message){messageLabel.setText(message);}
+
     public SignUp() {
         initComponents();
+        LoginDAO model = new LoginDAO();
+        SignUpController controller = new SignUpController(model, this);
+        btnSignUp.addActionListener(controller.new SignUpButtonListener());
     }
 
     /**
@@ -26,34 +47,35 @@ public class SignUp extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        myTextField1 = new com.mycompany.swing.MyTextField();
-        myPasswordField1 = new com.mycompany.swing.MyPasswordField();
-        myPasswordField3 = new com.mycompany.swing.MyPasswordField();
-        jCheckBox1 = new javax.swing.JCheckBox();
+        inpEmail = new com.mycompany.swing.MyTextField();
+        inpPass = new com.mycompany.swing.MyPasswordField();
+        inpPassCf = new com.mycompany.swing.MyPasswordField();
+        ghiNho = new javax.swing.JCheckBox();
         jButton1 = new javax.swing.JButton();
-        button1 = new com.mycompany.swing.Button();
+        btnSignUp = new com.mycompany.swing.Button();
         jLabel1 = new javax.swing.JLabel();
         button2 = new com.mycompany.swing.Button();
         button3 = new com.mycompany.swing.Button();
+        messageLabel = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
 
-        myTextField1.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)), javax.swing.BorderFactory.createEmptyBorder(10, 15, 10, 15)));
-        myTextField1.setHint("Email");
-        myTextField1.setSelectionColor(new java.awt.Color(0, 0, 255));
+        inpEmail.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)), javax.swing.BorderFactory.createEmptyBorder(10, 15, 10, 15)));
+        inpEmail.setHint("Email");
+        inpEmail.setSelectionColor(new java.awt.Color(0, 0, 255));
 
-        myPasswordField1.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)), javax.swing.BorderFactory.createEmptyBorder(10, 15, 10, 15)));
-        myPasswordField1.setHint("Mật khẩu");
-        myPasswordField1.setSelectionColor(new java.awt.Color(0, 0, 255));
+        inpPass.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)), javax.swing.BorderFactory.createEmptyBorder(10, 15, 10, 15)));
+        inpPass.setHint("Mật khẩu");
+        inpPass.setSelectionColor(new java.awt.Color(0, 0, 255));
 
-        myPasswordField3.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)), javax.swing.BorderFactory.createEmptyBorder(10, 15, 10, 15)));
-        myPasswordField3.setHint("Mật khẩu");
-        myPasswordField3.setSelectionColor(new java.awt.Color(0, 0, 255));
+        inpPassCf.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)), javax.swing.BorderFactory.createEmptyBorder(10, 15, 10, 15)));
+        inpPassCf.setHint("Mật khẩu");
+        inpPassCf.setSelectionColor(new java.awt.Color(0, 0, 255));
 
-        jCheckBox1.setText("ghi nhớ");
-        jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
+        ghiNho.setText("ghi nhớ");
+        ghiNho.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox1ActionPerformed(evt);
+                ghiNhoActionPerformed(evt);
             }
         });
 
@@ -64,10 +86,10 @@ public class SignUp extends javax.swing.JPanel {
         jButton1.setContentAreaFilled(false);
         jButton1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
 
-        button1.setBackground(new java.awt.Color(0, 0, 0));
-        button1.setForeground(new java.awt.Color(255, 255, 255));
-        button1.setText("Đăng nhập");
-        button1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        btnSignUp.setBackground(new java.awt.Color(0, 0, 0));
+        btnSignUp.setForeground(new java.awt.Color(255, 255, 255));
+        btnSignUp.setText("Đăng ký");
+        btnSignUp.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Hoặc");
@@ -81,37 +103,45 @@ public class SignUp extends javax.swing.JPanel {
         button3.setText("Đăng nhập bằng Google");
         button3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
 
+        messageLabel.setForeground(new java.awt.Color(255, 51, 51));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jCheckBox1)
+                .addComponent(ghiNho)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 148, Short.MAX_VALUE)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addComponent(myPasswordField1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(myPasswordField3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(myTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(inpPass, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(inpPassCf, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(inpEmail, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(button1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(btnSignUp, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(button2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(button3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(17, 17, 17)
+                .addComponent(messageLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(67, 67, 67)
-                .addComponent(myTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(33, 33, 33)
+                .addComponent(messageLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(inpEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(myPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(inpPass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(myPasswordField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(inpPassCf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jCheckBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(ghiNho, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(button1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnSignUp, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -122,20 +152,21 @@ public class SignUp extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
+    private void ghiNhoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ghiNhoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox1ActionPerformed
+    }//GEN-LAST:event_ghiNhoActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private com.mycompany.swing.Button button1;
+    private com.mycompany.swing.Button btnSignUp;
     private com.mycompany.swing.Button button2;
     private com.mycompany.swing.Button button3;
+    private javax.swing.JCheckBox ghiNho;
+    private com.mycompany.swing.MyTextField inpEmail;
+    private com.mycompany.swing.MyPasswordField inpPass;
+    private com.mycompany.swing.MyPasswordField inpPassCf;
     private javax.swing.JButton jButton1;
-    private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JLabel jLabel1;
-    private com.mycompany.swing.MyPasswordField myPasswordField1;
-    private com.mycompany.swing.MyPasswordField myPasswordField3;
-    private com.mycompany.swing.MyTextField myTextField1;
+    private javax.swing.JLabel messageLabel;
     // End of variables declaration//GEN-END:variables
 }
