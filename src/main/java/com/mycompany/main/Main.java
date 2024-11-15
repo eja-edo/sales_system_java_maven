@@ -32,8 +32,10 @@ public class Main extends javax.swing.JFrame {
     private void initComponents() {
 
         header1 = new com.mycompany.component.header();
+        trang_phu1 = new com.mycompany.component.trang_phu();
         header = new com.mycompany.component.header();
         menu_chinh = new com.mycompany.component.Menu();
+        trang_phu2 = new com.mycompany.component.trang_phu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(1440, 800));
@@ -43,20 +45,24 @@ public class Main extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(header, javax.swing.GroupLayout.DEFAULT_SIZE, 1361, Short.MAX_VALUE)
-                .addGap(1264, 1264, 1264))
+            .addComponent(header, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(menu_chinh, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(0, 0, 0)
+                .addComponent(trang_phu2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(header, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addComponent(menu_chinh, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(412, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(menu_chinh, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(trang_phu2, javax.swing.GroupLayout.DEFAULT_SIZE, 1424, Short.MAX_VALUE)
+                        .addContainerGap())))
         );
 
         pack();
@@ -106,5 +112,7 @@ public class Main extends javax.swing.JFrame {
     private com.mycompany.component.header header;
     private com.mycompany.component.header header1;
     private com.mycompany.component.Menu menu_chinh;
+    private com.mycompany.component.trang_phu trang_phu1;
+    private com.mycompany.component.trang_phu trang_phu2;
     // End of variables declaration//GEN-END:variables
 }

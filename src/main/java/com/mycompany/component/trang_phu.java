@@ -56,7 +56,7 @@ public class trang_phu extends javax.swing.JPanel {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/banner1.png"))); // NOI18N
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, -1, -1));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 40, -1, -1));
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Bán chạy nhất", "Giá cao nhất", "Giá thấp nhất" }));
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
@@ -64,19 +64,19 @@ public class trang_phu extends javax.swing.JPanel {
                 jComboBox1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1012, 400, 140, -1));
+        jPanel1.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 410, 140, -1));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel2.setText("Sắp xếp theo :");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 400, -1, 20));
-        jPanel1.add(itemProduct1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 460, -1, -1));
-        jPanel1.add(itemProduct2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 460, -1, -1));
-        jPanel1.add(itemProduct3, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 460, -1, -1));
-        jPanel1.add(itemProduct4, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 460, -1, -1));
-        jPanel1.add(itemProduct5, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 870, -1, -1));
-        jPanel1.add(itemProduct6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 870, -1, -1));
-        jPanel1.add(itemProduct7, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 870, -1, -1));
-        jPanel1.add(itemProduct8, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 870, -1, -1));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 410, -1, 20));
+        jPanel1.add(itemProduct1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 440, -1, -1));
+        jPanel1.add(itemProduct2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 440, -1, -1));
+        jPanel1.add(itemProduct3, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 440, -1, -1));
+        jPanel1.add(itemProduct4, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 440, -1, -1));
+        jPanel1.add(itemProduct5, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 850, -1, -1));
+        jPanel1.add(itemProduct6, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 850, -1, -1));
+        jPanel1.add(itemProduct7, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 850, -1, -1));
+        jPanel1.add(itemProduct8, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 850, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel3.setText("1");
@@ -191,7 +191,9 @@ public class trang_phu extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1200, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
