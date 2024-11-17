@@ -18,8 +18,7 @@ public class Main extends javax.swing.JFrame {
     public Main() {
         initComponents();
         setTitle("ShopDAL");
-         header.setBorder(null);
-        menu_chinh.setBorder(null);
+
     }
 
     /**
@@ -32,30 +31,10 @@ public class Main extends javax.swing.JFrame {
     private void initComponents() {
 
         header1 = new com.mycompany.component.header();
-        header = new com.mycompany.component.header();
-        menu_chinh = new com.mycompany.component.Menu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(1440, 800));
         setResizable(false);
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(header, javax.swing.GroupLayout.DEFAULT_SIZE, 1567, Short.MAX_VALUE)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(menu_chinh, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(header, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(menu_chinh, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -101,8 +80,6 @@ public class Main extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private com.mycompany.component.header header;
     private com.mycompany.component.header header1;
-    private com.mycompany.component.Menu menu_chinh;
     // End of variables declaration//GEN-END:variables
 }

@@ -43,7 +43,7 @@ public class ItemProduct extends javax.swing.JPanel {
         
     }
     
-    public ItemProduct() {
+    public ItemProduct(int productId, String title, double minPrice, double averageRating, String img, int views) {
         initComponents();
 
         TraGop.setIcon(resizeIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/traGop.png")),31,35));

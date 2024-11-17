@@ -34,7 +34,7 @@ public class Login extends javax.swing.JPanel {
      */
     public Login() {
         initComponents();
-                LoginDAO model = new LoginDAO();
+        LoginDAO model = new LoginDAO();
 
         // Tạo bộ điều khiển
         LoginController controller = new LoginController(model, this);
@@ -104,6 +104,7 @@ public class Login extends javax.swing.JPanel {
         button3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
 
         messageLabel.setForeground(new java.awt.Color(255, 51, 51));
+        messageLabel.setDoubleBuffered(true);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);

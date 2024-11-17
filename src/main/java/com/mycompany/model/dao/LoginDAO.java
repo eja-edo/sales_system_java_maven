@@ -18,15 +18,15 @@ import java.sql.SQLException;
  */
 public class LoginDAO {
 
-    public LoginDAO() {
-    }
-    private String username;
-    private String password;
-    
-    public LoginDAO(String user,String pass){
-        this.username =  user;
-        this.password = pass;
-    }
+//    public LoginDAO() {
+//    }
+//    private String username;
+//    private String password;
+//    
+//    public LoginDAO(String user,String pass){
+//        this.username =  user;
+//        this.password = pass;
+//    }
     
 public String login(String usn , String pass) {
     String query = "EXEC getPassword @login = ?";
@@ -62,7 +62,7 @@ public String login(String usn , String pass) {
         try (Connection conn = DBConnection.getConnection();
              PreparedStatement stmt = conn.prepareStatement(query)) {
              
-            stmt.setString(1, username);
+            stmt.setString(1, usn);
             ResultSet rs = stmt.executeQuery();
             if (rs.next()) {
                 return rs.getInt(1) > 0; // Nếu có người dùng, trả về true
