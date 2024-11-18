@@ -120,7 +120,7 @@ public class ItemProduct extends javax.swing.JPanel {
         jprice.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jprice.setText("43.000.000đ");
         jprice.setToolTipText("");
-        add(jprice, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 317, 259, 18));
+        add(jprice, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 317, 260, 18));
 
         jLabel3.setForeground(new java.awt.Color(234, 112, 112));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -139,7 +139,7 @@ public class ItemProduct extends javax.swing.JPanel {
         jtitle.setFocusable(false);
         jScrollPane2.setViewportView(jtitle);
 
-        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 265, 259, 46));
+        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 265, 260, 46));
 
         jrating.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
         jrating.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/rsz_1star.png"))); // NOI18N
@@ -148,7 +148,7 @@ public class ItemProduct extends javax.swing.JPanel {
 
         jviews.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
         jviews.setText("10k");
-        add(jviews, new org.netbeans.lib.awtextra.AbsoluteConstraints(227, 373, -1, -1));
+        add(jviews, new org.netbeans.lib.awtextra.AbsoluteConstraints(227, 373, 30, -1));
     }// </editor-fold>//GEN-END:initComponents
 
 
