@@ -36,8 +36,9 @@
           <Component id="header" pref="0" max="32767" attributes="0"/>
           <Group type="102" alignment="0" attributes="0">
               <Component id="menu_chinh" min="-2" pref="200" max="-2" attributes="0"/>
-              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-              <Component id="trang_phu2" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="gio_hang_11" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -45,15 +46,15 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
               <Component id="header" min="-2" pref="80" max="-2" attributes="0"/>
-              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <Component id="menu_chinh" min="-2" pref="600" max="-2" attributes="0"/>
-                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="830" max="32767" attributes="0"/>
                   </Group>
-                  <Group type="102" attributes="0">
-                      <Component id="trang_phu2" pref="1424" max="32767" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="gio_hang_11" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
           </Group>
@@ -65,7 +66,7 @@
     </Component>
     <Component class="com.mycompany.component.Menu" name="menu_chinh">
     </Component>
-    <Component class="com.mycompany.component.trang_phu" name="trang_phu2">
+    <Component class="com.mycompany.component.gio_hang_1" name="gio_hang_11">
     </Component>
   </SubComponents>
 </Form>
