@@ -1,24 +1,14 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
- */
+
 package com.mycompany.component;
 
 import com.mycompany.utils.ScaleImg;
-import com.mycompany.utils.resizeIcon;
 import static com.mycompany.utils.resizeIcon.resizeIcon;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
-import java.awt.Image;
 import java.awt.RenderingHints;
 import java.awt.event.ComponentAdapter;
 import java.awt.event.ComponentEvent;
 import java.awt.geom.RoundRectangle2D;
-import java.io.IOException;
-import java.net.MalformedURLException;
-import java.net.URL;
-import javax.imageio.ImageIO;
-import javax.swing.ImageIcon;
 import javax.swing.text.SimpleAttributeSet;
 import javax.swing.text.StyleConstants;
 import javax.swing.text.StyledDocument;
@@ -43,7 +33,7 @@ public class ItemProduct extends javax.swing.JPanel {
         
     }
     
-    public ItemProduct(int productId, String title, double minPrice, double averageRating, String img, int views) {
+    public ItemProduct() {
         initComponents();
 
         TraGop.setIcon(resizeIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/traGop.png")),31,35));
