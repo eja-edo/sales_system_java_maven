@@ -30,18 +30,19 @@ com\mycompany\swing\MyPasswordField.class
 com\mycompany\main\Main$1.class
 com\mycompany\component\search_form$10.class
 com\mycompany\test\TestForm.class
+com\mycompany\utils\Formatter.class
 com\mycompany\component\Menu$13.class
 com\mycompany\component\SignUp.class
 com\mycompany\component\search_form$16.class
 com\mycompany\swing\ComboBoxSuggestion.class
 com\mycompany\utils\resizeIcon.class
+com\mycompany\component\Menu1.class
 com\mycompany\component\search_form$17.class
 com\mycompany\component\gio_hang_2$1.class
 com\mycompany\model\dao\LoginDAO.class
 com\mycompany\component\Menu$1.class
 com\mycompany\swing\ScrollBarWin11UI$2.class
 com\mycompany\component\Menu$4.class
-com\mycompany\utils\PriceFormatter.class
 com\mycompany\controller\SignUpController$SignUpButtonListener.class
 com\mycompany\tab\ttkh$5.class
 com\mycompany\component\ItemProduct.class
@@ -54,6 +55,7 @@ com\mycompany\model\entity\TypeExemple.class
 com\mycompany\swing\PanelGradient$GradientType.class
 com\mycompany\utils\ScaleImg.class
 com\mycompany\tab\ttkh$6.class
+com\mycompany\component\Menu1$1.class
 com\mycompany\component\Menu$16.class
 com\mycompany\tab\LoginTab.class
 com\mycompany\controller\LoginController.class
@@ -79,6 +81,7 @@ com\mycompany\swing\MyTextField.class
 com\mycompany\component\search_form$8.class
 com\mycompany\swing\ScrollPaneWin11$ScrollLayout.class
 com\mycompany\component\gio_hang_2$2.class
+com\mycompany\model\dao\detailProductDAO.class
 com\mycompany\model\entity\Users.class
 com\mycompany\test\TestListItemProductsDAO.class
 com\mycompany\component\Menu$14.class
@@ -114,6 +117,7 @@ com\mycompany\model\entity\Reviews.class
 com\raven\swing\Button2$1.class
 com\mycompany\component\search_form$11.class
 com\raven\swing\Button2.class
+com\mycompany\controller\ProductDetailController.class
 com\mycompany\component\Menu$7.class
 com\mycompany\test\ResourceChecker.class
 com\mycompany\component\Menu.class

@@ -4,6 +4,10 @@
  */
 package com.mycompany.test;
 
+import com.mycompany.swing.ScrollBarWin11UI;
+import javax.swing.UIDefaults;
+import javax.swing.UIManager;
+
 /**
  *
  * @author duyan
@@ -27,10 +31,24 @@ public class TestForm extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jScrollPane1 = new javax.swing.JScrollPane();
+        header1 = new com.mycompany.component.header();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jPanel1 = new javax.swing.JPanel();
+        detailProduct2 = new com.mycompany.tab.detailProduct();
+        menu2 = new com.mycompany.component.Menu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().add(jScrollPane1, java.awt.BorderLayout.CENTER);
+        getContentPane().add(header1, java.awt.BorderLayout.PAGE_START);
+
+        jScrollPane2.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+
+        jPanel1.setLayout(new java.awt.GridBagLayout());
+        jPanel1.add(detailProduct2, new java.awt.GridBagConstraints());
+
+        jScrollPane2.setViewportView(jPanel1);
+
+        getContentPane().add(jScrollPane2, java.awt.BorderLayout.CENTER);
+        getContentPane().add(menu2, java.awt.BorderLayout.LINE_START);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -62,6 +80,8 @@ public class TestForm extends javax.swing.JFrame {
         }
         //</editor-fold>
 
+        UIDefaults ui = UIManager.getDefaults();
+        ui.put("ScrollBarUI", ScrollBarWin11UI.class.getCanonicalName());
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -71,6 +91,10 @@ public class TestForm extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JScrollPane jScrollPane1;
+    private com.mycompany.tab.detailProduct detailProduct2;
+    private com.mycompany.component.header header1;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private com.mycompany.component.Menu menu2;
     // End of variables declaration//GEN-END:variables
 }

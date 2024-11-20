@@ -85,12 +85,11 @@ public class ItemProduct extends javax.swing.JPanel {
         imgProduct = new javax.swing.JLabel();
         jprice = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jScrollPane2 = new javax.swing.JScrollPane();
         jtitle = new javax.swing.JTextPane();
         jrating = new javax.swing.JLabel();
         jviews = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(255, 255, 255));
+        setBackground(new java.awt.Color(248, 248, 248));
         setFocusable(false);
         setOpaque(false);
         setPreferredSize(new java.awt.Dimension(260, 394));
@@ -103,6 +102,7 @@ public class ItemProduct extends javax.swing.JPanel {
         add(TraGop, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 220, 31, 35));
 
         imgProduct.setBackground(new java.awt.Color(102, 102, 102));
+        imgProduct.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/png259X259.png"))); // NOI18N
         add(imgProduct, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 260, 260));
 
         jprice.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -117,19 +117,15 @@ public class ItemProduct extends javax.swing.JPanel {
         jLabel3.setText("Quà tặng trang sức");
         add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 340, 259, -1));
 
-        jScrollPane2.setBackground(new java.awt.Color(255, 255, 255));
-        jScrollPane2.setBorder(null);
-
         jtitle.setEditable(false);
-        jtitle.setBackground(new java.awt.Color(255, 255, 255));
-        jtitle.setBorder(null);
+        jtitle.setBackground(new java.awt.Color(248, 248, 248));
+        jtitle.setBorder(javax.swing.BorderFactory.createEmptyBorder(3, 1, 1, 1));
         jtitle.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jtitle.setText("Bông tai Kim cương Vàng trắng 14K PNJ DDDDW000176");
         jtitle.setAutoscrolls(false);
         jtitle.setFocusable(false);
-        jScrollPane2.setViewportView(jtitle);
-
-        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 265, 260, 46));
+        jtitle.setOpaque(false);
+        add(jtitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 260, 260, 50));
 
         jrating.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
         jrating.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/rsz_1star.png"))); // NOI18N
@@ -146,7 +142,6 @@ public class ItemProduct extends javax.swing.JPanel {
     private javax.swing.JLabel TraGop;
     private javax.swing.JLabel imgProduct;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel jprice;
     private javax.swing.JLabel jrating;
     private javax.swing.JTextPane jtitle;

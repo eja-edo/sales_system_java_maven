@@ -10,6 +10,7 @@ E:\projectJava\sales_system\src\main\java\com\mycompany\component\gio_hang_1.jav
 E:\projectJava\sales_system\src\main\java\com\mycompany\component\Login.java
 E:\projectJava\sales_system\src\main\java\com\mycompany\model\entity\Users.java
 E:\projectJava\sales_system\src\main\java\com\mycompany\component\ItemCart.java
+E:\projectJava\sales_system\src\main\java\com\mycompany\model\dao\detailProductDAO.java
 E:\projectJava\sales_system\src\main\java\com\mycompany\tab\ttkh.java
 E:\projectJava\sales_system\src\main\java\com\mycompany\swing\MyPasswordField.java
 E:\projectJava\sales_system\src\main\java\com\mycompany\component\header.java
@@ -18,6 +19,7 @@ E:\projectJava\sales_system\src\main\java\com\mycompany\model\entity\Products.ja
 E:\projectJava\sales_system\src\main\java\com\mycompany\model\entity\TypeExemple.java
 E:\projectJava\sales_system\src\main\java\com\mycompany\swing\PanelRound.java
 E:\projectJava\sales_system\src\main\java\com\mycompany\tab\LoginTab.java
+E:\projectJava\sales_system\src\main\java\com\mycompany\component\Menu1.java
 E:\projectJava\sales_system\src\main\java\com\mycompany\model\entity\ProductsExemple.java
 E:\projectJava\sales_system\src\main\java\com\mycompany\test\TestForm.java
 E:\projectJava\sales_system\src\main\java\com\mycompany\component\gio_hang_2.java
@@ -29,7 +31,7 @@ E:\projectJava\sales_system\src\main\java\com\mycompany\test\ResourceChecker.jav
 E:\projectJava\sales_system\src\main\java\com\mycompany\component\ListItemCart.java
 E:\projectJava\sales_system\src\main\java\com\mycompany\model\dao\LoginDAO.java
 E:\projectJava\sales_system\src\main\java\com\mycompany\component\search_form.java
-E:\projectJava\sales_system\src\main\java\com\mycompany\utils\PriceFormatter.java
+E:\projectJava\sales_system\src\main\java\com\mycompany\utils\Formatter.java
 E:\projectJava\sales_system\src\main\java\com\mycompany\swing\Button.java
 E:\projectJava\sales_system\src\main\java\com\mycompany\component\ForgotPW.java
 E:\projectJava\sales_system\src\main\java\com\mycompany\swing\ComboSuggestionUI.java
@@ -59,5 +61,6 @@ E:\projectJava\sales_system\src\main\java\com\mycompany\swing\ScrollBarWin11UI.j
 E:\projectJava\sales_system\src\main\java\com\mycompany\utils\resizeIcon.java
 E:\projectJava\sales_system\src\main\java\com\mycompany\model\entity\Coupons.java
 E:\projectJava\sales_system\src\main\java\com\mycompany\tab\Cart.java
+E:\projectJava\sales_system\src\main\java\com\mycompany\controller\ProductDetailController.java
 E:\projectJava\sales_system\src\main\java\com\mycompany\model\entity\Orders.java
 E:\projectJava\sales_system\src\main\java\com\mycompany\tab\detailProduct.java

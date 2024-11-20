@@ -6,7 +6,7 @@ package com.mycompany.model.dao;
 
 import com.mycompany.model.entity.ItemProduct;
 import com.mycompany.utils.DBConnection;
-import static com.mycompany.utils.PriceFormatter.formatPrice;
+import static com.mycompany.utils.Formatter.formatPrice;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

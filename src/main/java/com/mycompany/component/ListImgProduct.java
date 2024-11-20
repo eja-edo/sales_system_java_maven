@@ -5,6 +5,7 @@
 package com.mycompany.component;
 
 import com.mycompany.utils.RoundBorder;
+import static com.mycompany.utils.resizeIcon.resizeIcon;
 import java.awt.AlphaComposite;
 import java.awt.Color;
 import java.awt.Component;
@@ -16,6 +17,7 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
+import java.util.HashMap;
 import java.util.List;
 import javax.imageio.ImageIO;
 import javax.swing.BorderFactory;
@@ -35,7 +37,7 @@ import javax.swing.border.CompoundBorder;
 public class ListImgProduct extends javax.swing.JPanel {
     private DefaultListModel<String> imageListModel;
     private ImageSelectionListener imageSelectionListener; // Thêm biến để lắng nghe sự thay đổi chọn
-
+    private HashMap<String, BufferedImage> imageCache = new HashMap<>(); // Bộ nhớ đệm hình ảnh
     // Constructor
     public ListImgProduct() {
         initComponents();
@@ -80,66 +82,123 @@ public class ListImgProduct extends javax.swing.JPanel {
     }
 
     // Custom ListCellRenderer for the JList to display rounded images
+//    private class ImageListRenderer extends JLabel implements ListCellRenderer<String> {
+//        @Override
+//        public Component getListCellRendererComponent(JList<? extends String> list, String value, int index, boolean isSelected, boolean cellHasFocus) {
+//            BufferedImage image = null;
+//            try {
+//                // Tải hình ảnh từ resources
+//                URL imageUrl = getClass().getResource(value); // Dùng đường dẫn tương đối từ thư mục resources
+//                if (imageUrl != null) {
+//                    image = ImageIO.read(imageUrl);
+//                }
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//            }
+//
+//            if (image != null) {
+//                image = resizeIcon(image, 76, 76);
+//                // Convert the image to a rounded one
+//                BufferedImage roundedImage = getRoundedImage(image, 10); // Radius of 10px
+//                if (isSelected) {
+//                    // Vẽ đường viền bo tròn lên hình ảnh khi được chọn
+//                    roundedImage = drawRoundedBorder(roundedImage, 10, Color.GRAY, 1);
+//                }
+//                setIcon(new ImageIcon(roundedImage));
+//            } else {
+//                setIcon(null); // No image found, set icon to null
+//            }
+//
+//            // Điều chỉnh kích thước của phần tử
+//            setPreferredSize(new Dimension(78, 86)); // Điều chỉnh chiều cao và chiều rộng mỗi phần tử
+//
+//            return this;
+//        }
+
     private class ImageListRenderer extends JLabel implements ListCellRenderer<String> {
         @Override
         public Component getListCellRendererComponent(JList<? extends String> list, String value, int index, boolean isSelected, boolean cellHasFocus) {
-            BufferedImage image = null;
-            try {
-                // Tải hình ảnh từ resources
-                URL imageUrl = getClass().getResource(value); // Dùng đường dẫn tương đối từ thư mục resources
-                if (imageUrl != null) {
-                    image = ImageIO.read(imageUrl);
+            BufferedImage image = getImageFromCache(value);
+            if (image == null) {
+                image = loadImage(value);
+                if (image != null) {
+                    image = resizeIcon(image, 76, 76); // Resize once
+                    image = getRoundedImage(image, 10); // Apply rounded corners
+                    cacheImage(value, image); // Save to cache for reuse
                 }
-            } catch (IOException e) {
-                e.printStackTrace();
             }
-
-            if (image != null) {
-                // Convert the image to a rounded one
-                BufferedImage roundedImage = getRoundedImage(image, 10); // Radius of 10px
-                if (isSelected) {
-                    // Vẽ đường viền bo tròn lên hình ảnh khi được chọn
-                    roundedImage = drawRoundedBorder(roundedImage, 10, Color.GRAY, 1);
-                }
-                setIcon(new ImageIcon(roundedImage));
+        // Tạo bản sao của ảnh đã lưu trong bộ nhớ đệm để vẽ viền lên
+        if (image != null) {
+            BufferedImage imageWithBorder = new BufferedImage(image.getWidth(), image.getHeight(), BufferedImage.TYPE_INT_ARGB);
+            Graphics2D g2 = imageWithBorder.createGraphics();
+            g2.drawImage(image, 0, 0, null); // Vẽ ảnh đã thu nhỏ và bo viền vào bản sao
+            g2.dispose();
+            
+            // Vẽ viền cho bản sao nếu cần
+            if (isSelected) {
+                imageWithBorder = drawRoundedBorder(imageWithBorder, 10, Color.GRAY, 1); // Vẽ viền khi được chọn
             } else {
-                setIcon(null); // No image found, set icon to null
+                imageWithBorder = drawRoundedBorder(imageWithBorder, 10, Color.WHITE, 0); // Không vẽ viền nếu không được chọn
+            }
+            
+            setIcon(new ImageIcon(imageWithBorder)); // Hiển thị ảnh đã vẽ viền
+        } else {
+            setIcon(null); // Nếu không có ảnh, bỏ qua
+        }
+        
+        setPreferredSize(new Dimension(78, 86)); // Điều chỉnh kích thước cho phần tử
+        return this;
+        }
+            
+        private BufferedImage loadImage(String imagePath) {
+                BufferedImage image = null;
+                try {
+                    URL imageUrl = getClass().getResource(imagePath);
+                    if (imageUrl != null) {
+                        image = ImageIO.read(imageUrl);
+                    }
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                return image;
             }
 
-            // Điều chỉnh kích thước của phần tử
-            setPreferredSize(new Dimension(78, 86)); // Điều chỉnh chiều cao và chiều rộng mỗi phần tử
+        private BufferedImage getImageFromCache(String imagePath) {
+                return imageCache.get(imagePath); // Trả về hình ảnh nếu đã có trong bộ nhớ đệm
+            }
 
-            return this;
-        }
+        private void cacheImage(String imagePath, BufferedImage image) {
+                imageCache.put(imagePath, image); // Lưu hình ảnh vào bộ nhớ đệm
+            }        
 
-        // Phương thức để tạo hình ảnh bo tròn
-        private BufferedImage getRoundedImage(BufferedImage image, int radius) {
-            int w = image.getWidth();
-            int h = image.getHeight(); 
-            BufferedImage roundedImage = new BufferedImage(w, h, BufferedImage.TYPE_INT_ARGB);
-            Graphics2D g2 = roundedImage.createGraphics();
-            g2.setComposite(AlphaComposite.Src);
-            g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-            g2.setColor(Color.WHITE); // Màu nền, có thể thay đổi nếu cần
-            g2.fill(new RoundRectangle2D.Float(0, 0, w, h, radius, radius));
-            g2.setComposite(AlphaComposite.SrcAtop);
-            g2.drawImage(image, 0, 0, null);
-            g2.dispose();
-            return roundedImage;
-        }
+            // Phương thức để tạo hình ảnh bo tròn
+            private BufferedImage getRoundedImage(BufferedImage image, int radius) {
+                int w = image.getWidth();
+                int h = image.getHeight(); 
+                BufferedImage roundedImage = new BufferedImage(w, h, BufferedImage.TYPE_INT_ARGB);
+                Graphics2D g2 = roundedImage.createGraphics();
+                g2.setComposite(AlphaComposite.Src);
+                g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+                g2.setColor(Color.WHITE); // Màu nền, có thể thay đổi nếu cần
+                g2.fill(new RoundRectangle2D.Float(0, 0, w, h, radius, radius));
+                g2.setComposite(AlphaComposite.SrcAtop);
+                g2.drawImage(image, 0, 0, null);
+                g2.dispose();
+                return roundedImage;
+            }
 
-        // Phương thức để vẽ đường viền bo tròn lên hình ảnh
-        private BufferedImage drawRoundedBorder(BufferedImage image, int radius, Color color, int thickness) {
-            int w = image.getWidth();
-            int h = image.getHeight(); 
-            Graphics2D g2 = image.createGraphics();
-            g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-            g2.setColor(color);
-            g2.setStroke(new java.awt.BasicStroke(thickness));
-            g2.drawRoundRect(0, 0, w - 1, h - 1, radius, radius);  // Vẽ đường viền bo tròn lên hình ảnh
-            g2.dispose();
-            return image;
-        }
+            // Phương thức để vẽ đường viền bo tròn lên hình ảnh
+            private BufferedImage drawRoundedBorder(BufferedImage image, int radius, Color color, int thickness) {
+                int w = image.getWidth();
+                int h = image.getHeight(); 
+                Graphics2D g2 = image.createGraphics();
+                g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+                g2.setColor(color);
+                g2.setStroke(new java.awt.BasicStroke(thickness));
+                g2.drawRoundRect(0, 0, w - 1, h - 1, radius, radius);  // Vẽ đường viền bo tròn lên hình ảnh
+                g2.dispose();
+                return image;
+            }
     }
 
     // Interface để gửi thông tin hình ảnh được chọn

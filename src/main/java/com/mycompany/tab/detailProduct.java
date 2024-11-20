@@ -4,6 +4,9 @@
  */
 package com.mycompany.tab;
 
+import com.mycompany.component.ListImgProduct;
+import com.mycompany.controller.ProductDetailController;
+import com.mycompany.model.entity.Products;
 import com.mycompany.utils.RoundBorder;
 import static com.mycompany.utils.ScaleImg.scaleImg;
 import static com.mycompany.utils.resizeIcon.resizeIcon;
@@ -11,11 +14,13 @@ import java.awt.Color;
 import java.awt.Component;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
+import java.util.List;
 import javax.imageio.ImageIO;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JList;
+import javax.swing.JTextPane;
 import javax.swing.SwingConstants;
 import javax.swing.plaf.basic.BasicComboBoxRenderer;
 import javax.swing.text.html.HTMLEditorKit;
@@ -79,9 +84,57 @@ class IconTextRenderer extends BasicComboBoxRenderer {
 
 public class detailProduct extends javax.swing.JPanel {
 
-    /**
-     * Creates new form detailProduct
-     */
+    public JLabel getLabID() {
+        return labID;
+    }
+
+    public void setLabID(String labID) {
+        this.labID.setText(labID);
+    }
+
+    public String getLabPrice() {
+        return labPrice.getText();
+    }
+
+    public void setLabPrice(String labPrice) {
+        this.labPrice.setText(labPrice);
+    }
+
+    public JLabel getLabRating() {
+        return labRating;
+    }
+
+    public void setLabRating(String labRating) {
+        this.labRating.setText(labRating);
+    }
+
+    public JTextPane getLabTitle() {
+        return labTitle;
+    }
+
+    public void setLabTitle(String labTitle) {
+        this.labTitle.setText(labTitle);
+    }
+
+    public JLabel getLabViews() {
+        return labViews;
+    }
+
+    public void setLabViews(String labViews) {
+        this.labViews.setText(labViews);
+    }
+
+    public ListImgProduct getListImgProduct() {
+        return listImgProduct;
+    }
+
+    public void setListImgProduct(List<String> listImgProduct) {
+        this.listImgProduct.addImages(listImgProduct);
+    }
+
+
+    
+
     public detailProduct() {
         initComponents();
         
@@ -91,10 +144,10 @@ public class detailProduct extends javax.swing.JPanel {
             // Thực hiện hành động khi chọn hình ảnh (ví dụ: hiển thị hình ảnh)
             showSelectedImage(imagePath);
         });
-        for (int i = 1; i <= 10; i++) {
-            String imageUrl = "/image/png76X76.png"; // Tạo các liên kết
-            listImgProduct.addImage(imageUrl);
-        }
+        Products model = new Products();
+        ProductDetailController controller = new ProductDetailController(model,this); 
+        controller.insertData(1);
+        
         listImgProduct.setSelectedIndex(0);
         
         IconText[] items = {
@@ -111,6 +164,14 @@ public class detailProduct extends javax.swing.JPanel {
         
         ComboStart.setRenderer(new IconTextRenderer()); // Thiết lập renderer
     }
+    
+    public detailProduct(int productID)
+    {
+        
+    }
+    
+    
+    
 
         // Phương thức để hiển thị hình ảnh đã chọn
     private void showSelectedImage(String imagePath) {
@@ -135,14 +196,14 @@ public class detailProduct extends javax.swing.JPanel {
         jPanel4 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
+        labViews = new javax.swing.JLabel();
+        labID = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         listOffer = new javax.swing.JList<>();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextPane1 = new javax.swing.JTextPane();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
+        labTitle = new javax.swing.JTextPane();
+        labRating = new javax.swing.JLabel();
+        labPrice = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         button1 = new com.mycompany.swing.Button();
         jPanel6 = new javax.swing.JPanel();
@@ -180,21 +241,22 @@ public class detailProduct extends javax.swing.JPanel {
         jSplitPane1.setDividerSize(0);
         jSplitPane1.setResizeWeight(0.7);
 
+        jPanel4.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 5, 0, 0));
         jPanel4.setOpaque(false);
 
-        jLabel3.setBackground(new java.awt.Color(0, 52, 104));
+        jLabel3.setBackground(new java.awt.Color(255, 255, 255));
         jLabel3.setForeground(new java.awt.Color(0, 52, 104));
-        jLabel3.setOpaque(true);
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/logo.png"))); // NOI18N
 
         jLabel9.setBackground(new java.awt.Color(255, 255, 255));
         jLabel9.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(102, 102, 102));
         jLabel9.setText("(Giá của sản phẩm thay đổi tùy theo trong lượng vàng và đá)");
 
-        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel7.setText("2000+ đã bán");
+        labViews.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        labViews.setText("2000+ đã bán");
 
-        jLabel5.setText("GNXMXMW005481");
+        labID.setText("GNXMXMW005481");
 
         jScrollPane2.setBorder(javax.swing.BorderFactory.createTitledBorder(new RoundBorder(Color.BLACK, 20, 1), "Ưu đãi:", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.TOP));
         jScrollPane2.setOpaque(false);
@@ -208,20 +270,20 @@ public class detailProduct extends javax.swing.JPanel {
         jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
 
-        jTextPane1.setEditable(false);
-        jTextPane1.setBorder(null);
-        jTextPane1.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
-        jTextPane1.setForeground(new java.awt.Color(0, 52, 104));
-        jTextPane1.setText("Nhẫn Vàng trắng 14K Đính đá ECZ DAL XMXMW005481");
-        jScrollPane1.setViewportView(jTextPane1);
+        labTitle.setEditable(false);
+        labTitle.setBorder(javax.swing.BorderFactory.createEmptyBorder(5, 0, 0, 0));
+        labTitle.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
+        labTitle.setForeground(new java.awt.Color(0, 52, 104));
+        labTitle.setText("Nhẫn Vàng trắng 14K Đính đá ECZ DAL XMXMW005481");
+        jScrollPane1.setViewportView(labTitle);
 
-        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/rsz_1star.png"))); // NOI18N
-        jLabel6.setText("(0)");
+        labRating.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        labRating.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/rsz_1star.png"))); // NOI18N
+        labRating.setText("(0)");
 
-        jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(0, 52, 104));
-        jLabel8.setText("<html>8.203.000 <u>đ</u></html>");
+        labPrice.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
+        labPrice.setForeground(new java.awt.Color(0, 52, 104));
+        labPrice.setText("<html>8.203.000 <u>đ</u></html>");
 
         jLabel4.setText("Mã:");
 
@@ -251,30 +313,29 @@ public class detailProduct extends javax.swing.JPanel {
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
+                .addComponent(jScrollPane2))
+            .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane2)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(jLabel4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(labID, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(90, 90, 90)
+                        .addComponent(labRating)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(labViews, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                    .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(button1)
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addComponent(jLabel4)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(90, 90, 90)
-                                .addComponent(jLabel6)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                            .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(button1)
-                            .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel9))
-                                .addGap(0, 0, Short.MAX_VALUE)))
-                        .addContainerGap())))
+                            .addComponent(labPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel9))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -286,11 +347,11 @@ public class detailProduct extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(jLabel5)
-                    .addComponent(jLabel6)
-                    .addComponent(jLabel7))
+                    .addComponent(labID)
+                    .addComponent(labRating)
+                    .addComponent(labViews))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(labPrice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel9)
                 .addGap(38, 38, 38)
@@ -451,10 +512,6 @@ public class detailProduct extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
@@ -466,8 +523,12 @@ public class detailProduct extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JSplitPane jSplitPane1;
-    private javax.swing.JTextPane jTextPane1;
     private javax.swing.JTextPane jTextPane2;
+    private javax.swing.JLabel labID;
+    private javax.swing.JLabel labPrice;
+    private javax.swing.JLabel labRating;
+    private javax.swing.JTextPane labTitle;
+    private javax.swing.JLabel labViews;
     private com.mycompany.component.ListImgProduct listImgProduct;
     private javax.swing.JList<String> listOffer;
     // End of variables declaration//GEN-END:variables
