@@ -2,7 +2,13 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
+
+
 package com.mycompany.component;
+
+import com.mycompany.tab.LoginTab;
+import javax.swing.*;
+
 
 /**
  *
@@ -68,9 +74,19 @@ public class header extends javax.swing.JPanel {
 
         button21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/user-profile-circle.png"))); // NOI18N
         button21.setBorderPainted(false);
+        button21.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button21ActionPerformed(evt);
+            }
+        });
 
         button22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/bell-02.png"))); // NOI18N
         button22.setBorderPainted(false);
+        button22.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button22ActionPerformed(evt);
+            }
+        });
 
         button23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/cart.png"))); // NOI18N
         button23.setBorderPainted(false);
@@ -101,6 +117,20 @@ public class header extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void button21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button21ActionPerformed
+        LoginTab loginPanel = new LoginTab(); // Tạo JPanel
+    JFrame frame = new JFrame(""); // Tạo JFrame chứa panel
+    frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+    frame.getContentPane().add(loginPanel); // Thêm panel vào frame
+    frame.pack(); // Căn chỉnh kích thước
+    frame.setLocationRelativeTo(null); // Căn gi
+    frame.setVisible(true); // Hiển thị frame
+    }//GEN-LAST:event_button21ActionPerformed
+
+    private void button22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button22ActionPerformed
+     
+    }//GEN-LAST:event_button22ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private com.raven.swing.Button2 button21;
@@ -113,4 +143,6 @@ public class header extends javax.swing.JPanel {
     private com.mycompany.swing.RadiumPanel radiumPanel1;
     private com.mycompany.component.search_form search_form1;
     // End of variables declaration//GEN-END:variables
+
+  
 }
