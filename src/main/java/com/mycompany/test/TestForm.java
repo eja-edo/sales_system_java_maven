@@ -5,6 +5,7 @@
 package com.mycompany.test;
 
 import com.mycompany.swing.ScrollBarWin11UI;
+import com.mycompany.tab.Cart;
 import javax.swing.UIDefaults;
 import javax.swing.UIManager;
 
@@ -33,19 +34,14 @@ public class TestForm extends javax.swing.JFrame {
 
         header1 = new com.mycompany.component.header();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jPanel1 = new javax.swing.JPanel();
-        detailProduct2 = new com.mycompany.tab.detailProduct();
+        home1 = new com.mycompany.tab.Home();
         menu2 = new com.mycompany.component.Menu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().add(header1, java.awt.BorderLayout.PAGE_START);
 
         jScrollPane2.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-
-        jPanel1.setLayout(new java.awt.GridBagLayout());
-        jPanel1.add(detailProduct2, new java.awt.GridBagConstraints());
-
-        jScrollPane2.setViewportView(jPanel1);
+        jScrollPane2.setViewportView(home1);
 
         getContentPane().add(jScrollPane2, java.awt.BorderLayout.CENTER);
         getContentPane().add(menu2, java.awt.BorderLayout.LINE_START);
@@ -88,12 +84,12 @@ public class TestForm extends javax.swing.JFrame {
                 new TestForm().setVisible(true);
             }
         });
+
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private com.mycompany.tab.detailProduct detailProduct2;
     private com.mycompany.component.header header1;
-    private javax.swing.JPanel jPanel1;
+    private com.mycompany.tab.Home home1;
     private javax.swing.JScrollPane jScrollPane2;
     private com.mycompany.component.Menu menu2;
     // End of variables declaration//GEN-END:variables

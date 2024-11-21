@@ -69,7 +69,6 @@ public class Menu extends javax.swing.JPanel {
         lbl_khtt = new javax.swing.JLabel();
 
         Menu.setBackground(new java.awt.Color(255, 255, 255));
-        Menu.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         menu1.setBackground(java.awt.Color.white);
         menu1.setPreferredSize(new java.awt.Dimension(200, 60));
@@ -81,7 +80,8 @@ public class Menu extends javax.swing.JPanel {
 
         lbl_tt.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         lbl_tt.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/menu1.png"))); // NOI18N
-        lbl_tt.setText("       Trang chủ");
+        lbl_tt.setText("Trang chủ");
+        lbl_tt.setIconTextGap(20);
         lbl_tt.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lbl_ttMouseClicked(evt);
@@ -96,9 +96,8 @@ public class Menu extends javax.swing.JPanel {
         menu1Layout.setHorizontalGroup(
             menu1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(menu1Layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(lbl_tt, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(lbl_tt, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         menu1Layout.setVerticalGroup(
             menu1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -106,8 +105,6 @@ public class Menu extends javax.swing.JPanel {
                 .addComponent(lbl_tt, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
-
-        Menu.add(menu1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 200, 60));
 
         menu2.setBackground(java.awt.Color.white);
         menu2.setPreferredSize(new java.awt.Dimension(200, 60));
@@ -119,7 +116,7 @@ public class Menu extends javax.swing.JPanel {
 
         lbl_ttc.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         lbl_ttc.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/menu2.png"))); // NOI18N
-        lbl_ttc.setText("       Trang sức cưới");
+        lbl_ttc.setText("Trang sức cưới");
         lbl_ttc.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lbl_ttcMouseClicked(evt);
@@ -135,7 +132,7 @@ public class Menu extends javax.swing.JPanel {
             menu2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(menu2Layout.createSequentialGroup()
                 .addGap(20, 20, 20)
-                .addComponent(lbl_ttc, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lbl_ttc, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         menu2Layout.setVerticalGroup(
@@ -144,8 +141,6 @@ public class Menu extends javax.swing.JPanel {
                 .addComponent(lbl_ttc, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
-
-        Menu.add(menu2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 65, -1, -1));
 
         menu3.setBackground(java.awt.Color.white);
         menu3.setPreferredSize(new java.awt.Dimension(200, 60));
@@ -157,7 +152,7 @@ public class Menu extends javax.swing.JPanel {
 
         lbl_dh.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         lbl_dh.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/menu3.png"))); // NOI18N
-        lbl_dh.setText("       Đồng hồ");
+        lbl_dh.setText("Đồng hồ");
         lbl_dh.setAutoscrolls(true);
         lbl_dh.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -184,8 +179,6 @@ public class Menu extends javax.swing.JPanel {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        Menu.add(menu3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 130, 200, 60));
-
         menu4.setBackground(java.awt.Color.white);
         menu4.setPreferredSize(new java.awt.Dimension(200, 60));
         menu4.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -196,7 +189,7 @@ public class Menu extends javax.swing.JPanel {
 
         lbl_qt.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         lbl_qt.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/menu4.png"))); // NOI18N
-        lbl_qt.setText("       Quà tặng");
+        lbl_qt.setText("Quà tặng");
         lbl_qt.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lbl_qtMouseClicked(evt);
@@ -222,8 +215,6 @@ public class Menu extends javax.swing.JPanel {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        Menu.add(menu4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 195, 200, 60));
-
         menu5.setBackground(java.awt.Color.white);
         menu5.setPreferredSize(new java.awt.Dimension(200, 60));
         menu5.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -234,7 +225,7 @@ public class Menu extends javax.swing.JPanel {
 
         lbl_th.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         lbl_th.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/menu5.png"))); // NOI18N
-        lbl_th.setText("       Thương hiệu");
+        lbl_th.setText("Thương hiệu");
         lbl_th.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lbl_thMouseClicked(evt);
@@ -260,8 +251,6 @@ public class Menu extends javax.swing.JPanel {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        Menu.add(menu5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 260, 200, 60));
-
         menu6.setBackground(java.awt.Color.white);
         menu6.setPreferredSize(new java.awt.Dimension(200, 60));
         menu6.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -272,7 +261,7 @@ public class Menu extends javax.swing.JPanel {
 
         lbl_bst.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         lbl_bst.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/menu6.png"))); // NOI18N
-        lbl_bst.setText("       Bộ sưu tập");
+        lbl_bst.setText("Bộ sưu tập");
         lbl_bst.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lbl_bstMouseClicked(evt);
@@ -298,8 +287,6 @@ public class Menu extends javax.swing.JPanel {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        Menu.add(menu6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 325, 200, 60));
-
         menu7.setBackground(java.awt.Color.white);
         menu7.setPreferredSize(new java.awt.Dimension(200, 60));
         menu7.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -310,7 +297,7 @@ public class Menu extends javax.swing.JPanel {
 
         lbl_ls.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         lbl_ls.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/menu7.png"))); // NOI18N
-        lbl_ls.setText("       Livestream");
+        lbl_ls.setText("Livestream");
         lbl_ls.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lbl_lsMouseClicked(evt);
@@ -336,8 +323,6 @@ public class Menu extends javax.swing.JPanel {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        Menu.add(menu7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 390, 200, 60));
-
         menu8.setBackground(java.awt.Color.white);
         menu8.setPreferredSize(new java.awt.Dimension(200, 60));
         menu8.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -348,7 +333,7 @@ public class Menu extends javax.swing.JPanel {
 
         lbl_khtt.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         lbl_khtt.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/menu8.png"))); // NOI18N
-        lbl_khtt.setText("       KHTT");
+        lbl_khtt.setText("KHTT ");
         lbl_khtt.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lbl_khttMouseClicked(evt);
@@ -374,17 +359,51 @@ public class Menu extends javax.swing.JPanel {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        Menu.add(menu8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 455, 200, 60));
+        javax.swing.GroupLayout MenuLayout = new javax.swing.GroupLayout(Menu);
+        Menu.setLayout(MenuLayout);
+        MenuLayout.setHorizontalGroup(
+            MenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(MenuLayout.createSequentialGroup()
+                .addGroup(MenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(menu2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(menu3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(menu4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(menu5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(menu6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(menu7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(menu8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(menu1, javax.swing.GroupLayout.DEFAULT_SIZE, 242, Short.MAX_VALUE)
+        );
+        MenuLayout.setVerticalGroup(
+            MenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(MenuLayout.createSequentialGroup()
+                .addComponent(menu1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(5, 5, 5)
+                .addComponent(menu2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(5, 5, 5)
+                .addComponent(menu3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(5, 5, 5)
+                .addComponent(menu4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(5, 5, 5)
+                .addComponent(menu5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(5, 5, 5)
+                .addComponent(menu6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(5, 5, 5)
+                .addComponent(menu7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(5, 5, 5)
+                .addComponent(menu8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Menu, javax.swing.GroupLayout.DEFAULT_SIZE, 206, Short.MAX_VALUE)
+            .addComponent(Menu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Menu, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 600, Short.MAX_VALUE)
+            .addComponent(Menu, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -409,23 +428,6 @@ public class Menu extends javax.swing.JPanel {
     menu1.repaint();
     }//GEN-LAST:event_lbl_ttMousePressed
 
-    private void menu1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menu1MousePressed
-        menu1.setBackground(ClickedColor);
-    
-    // Reset màu các menu khác về mặc định
-    menu2.setBackground(DefaultColor);
-    menu3.setBackground(DefaultColor);
-    menu4.setBackground(DefaultColor);
-    menu5.setBackground(DefaultColor);
-    menu6.setBackground(DefaultColor);
-    menu7.setBackground(DefaultColor);
-    menu8.setBackground(DefaultColor);
-    
-    // Cập nhật giao diện
-    menu1.revalidate();
-    menu1.repaint();
-    }//GEN-LAST:event_menu1MousePressed
-
     private void lbl_ttcMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_ttcMouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_lbl_ttcMouseClicked
@@ -446,23 +448,6 @@ public class Menu extends javax.swing.JPanel {
     menu1.revalidate();
     menu1.repaint();
     }//GEN-LAST:event_lbl_ttcMousePressed
-
-    private void menu2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menu2MousePressed
-         menu1.setBackground(DefaultColor);
-    
-    // Reset màu các menu khác về mặc định
-    menu2.setBackground(ClickedColor);
-    menu3.setBackground(DefaultColor);
-    menu4.setBackground(DefaultColor);
-    menu5.setBackground(DefaultColor);
-    menu6.setBackground(DefaultColor);
-    menu7.setBackground(DefaultColor);
-    menu8.setBackground(DefaultColor);
-    
-    // Cập nhật giao diện
-    menu1.revalidate();
-    menu1.repaint();
-    }//GEN-LAST:event_menu2MousePressed
 
     private void lbl_dhMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_dhMouseClicked
         // TODO add your handling code here:
@@ -485,23 +470,6 @@ public class Menu extends javax.swing.JPanel {
     menu1.repaint();
     }//GEN-LAST:event_lbl_dhMousePressed
 
-    private void menu3MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menu3MousePressed
-        menu1.setBackground(DefaultColor);
-    
-    // Reset màu các menu khác về mặc định
-    menu2.setBackground(DefaultColor);
-    menu3.setBackground(ClickedColor);
-    menu4.setBackground(DefaultColor);
-    menu5.setBackground(DefaultColor);
-    menu6.setBackground(DefaultColor);
-    menu7.setBackground(DefaultColor);
-    menu8.setBackground(DefaultColor);
-    
-    // Cập nhật giao diện
-    menu1.revalidate();
-    menu1.repaint();
-    }//GEN-LAST:event_menu3MousePressed
-
     private void lbl_qtMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_qtMouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_lbl_qtMouseClicked
@@ -522,23 +490,6 @@ public class Menu extends javax.swing.JPanel {
     menu1.revalidate();
     menu1.repaint();
     }//GEN-LAST:event_lbl_qtMousePressed
-
-    private void menu4MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menu4MousePressed
-       menu1.setBackground(DefaultColor);
-    
-    // Reset màu các menu khác về mặc định
-    menu2.setBackground(DefaultColor);
-    menu3.setBackground(DefaultColor);
-    menu4.setBackground(ClickedColor);
-    menu5.setBackground(DefaultColor);
-    menu6.setBackground(DefaultColor);
-    menu7.setBackground(DefaultColor);
-    menu8.setBackground(DefaultColor);
-    
-    // Cập nhật giao diện
-    menu1.revalidate();
-    menu1.repaint();
-    }//GEN-LAST:event_menu4MousePressed
 
     private void lbl_thMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_thMouseClicked
         // TODO add your handling code here:
@@ -561,23 +512,6 @@ public class Menu extends javax.swing.JPanel {
     menu1.repaint();
     }//GEN-LAST:event_lbl_thMousePressed
 
-    private void menu5MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menu5MousePressed
-          menu1.setBackground(DefaultColor);
-    
-    // Reset màu các menu khác về mặc định
-    menu2.setBackground(DefaultColor);
-    menu3.setBackground(DefaultColor);
-    menu4.setBackground(DefaultColor);
-    menu5.setBackground(ClickedColor);
-    menu6.setBackground(DefaultColor);
-    menu7.setBackground(DefaultColor);
-    menu8.setBackground(DefaultColor);
-    
-    // Cập nhật giao diện
-    menu1.revalidate();
-    menu1.repaint();
-    }//GEN-LAST:event_menu5MousePressed
-
     private void lbl_bstMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_bstMouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_lbl_bstMouseClicked
@@ -599,23 +533,6 @@ public class Menu extends javax.swing.JPanel {
     menu1.repaint();
     }//GEN-LAST:event_lbl_bstMousePressed
 
-    private void menu6MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menu6MousePressed
-        menu1.setBackground(DefaultColor);
-    
-    // Reset màu các menu khác về mặc định
-    menu2.setBackground(DefaultColor);
-    menu3.setBackground(DefaultColor);
-    menu4.setBackground(DefaultColor);
-    menu5.setBackground(DefaultColor);
-    menu6.setBackground(ClickedColor);
-    menu7.setBackground(DefaultColor);
-    menu8.setBackground(DefaultColor);
-    
-    // Cập nhật giao diện
-    menu1.revalidate();
-    menu1.repaint();
-    }//GEN-LAST:event_menu6MousePressed
-
     private void lbl_lsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_lsMouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_lbl_lsMouseClicked
@@ -636,23 +553,6 @@ public class Menu extends javax.swing.JPanel {
     menu1.revalidate();
     menu1.repaint();
     }//GEN-LAST:event_lbl_lsMousePressed
-
-    private void menu7MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menu7MousePressed
-        menu1.setBackground(DefaultColor);
-    
-    // Reset màu các menu khác về mặc định
-    menu2.setBackground(DefaultColor);
-    menu3.setBackground(DefaultColor);
-    menu4.setBackground(DefaultColor);
-    menu5.setBackground(DefaultColor);
-    menu6.setBackground(DefaultColor);
-    menu7.setBackground(ClickedColor);
-    menu8.setBackground(DefaultColor);
-    
-    // Cập nhật giao diện
-    menu1.revalidate();
-    menu1.repaint();
-    }//GEN-LAST:event_menu7MousePressed
 
     private void lbl_khttMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_khttMouseClicked
         // TODO add your handling code here:
@@ -677,20 +577,139 @@ public class Menu extends javax.swing.JPanel {
 
     private void menu8MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menu8MousePressed
         menu1.setBackground(DefaultColor);
-    
-    // Reset màu các menu khác về mặc định
-    menu2.setBackground(DefaultColor);
-    menu3.setBackground(DefaultColor);
-    menu4.setBackground(DefaultColor);
-    menu5.setBackground(DefaultColor);
-    menu6.setBackground(DefaultColor);
-    menu7.setBackground(DefaultColor);
-    menu8.setBackground(ClickedColor);
-    
-    // Cập nhật giao diện
-    menu1.revalidate();
-    menu1.repaint();
+
+        // Reset màu các menu khác về mặc định
+        menu2.setBackground(DefaultColor);
+        menu3.setBackground(DefaultColor);
+        menu4.setBackground(DefaultColor);
+        menu5.setBackground(DefaultColor);
+        menu6.setBackground(DefaultColor);
+        menu7.setBackground(DefaultColor);
+        menu8.setBackground(ClickedColor);
+
+        // Cập nhật giao diện
+        menu1.revalidate();
+        menu1.repaint();
     }//GEN-LAST:event_menu8MousePressed
+
+    private void menu7MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menu7MousePressed
+        menu1.setBackground(DefaultColor);
+
+        // Reset màu các menu khác về mặc định
+        menu2.setBackground(DefaultColor);
+        menu3.setBackground(DefaultColor);
+        menu4.setBackground(DefaultColor);
+        menu5.setBackground(DefaultColor);
+        menu6.setBackground(DefaultColor);
+        menu7.setBackground(ClickedColor);
+        menu8.setBackground(DefaultColor);
+
+        // Cập nhật giao diện
+        menu1.revalidate();
+        menu1.repaint();
+    }//GEN-LAST:event_menu7MousePressed
+
+    private void menu5MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menu5MousePressed
+        menu1.setBackground(DefaultColor);
+
+        // Reset màu các menu khác về mặc định
+        menu2.setBackground(DefaultColor);
+        menu3.setBackground(DefaultColor);
+        menu4.setBackground(DefaultColor);
+        menu5.setBackground(ClickedColor);
+        menu6.setBackground(DefaultColor);
+        menu7.setBackground(DefaultColor);
+        menu8.setBackground(DefaultColor);
+
+        // Cập nhật giao diện
+        menu1.revalidate();
+        menu1.repaint();
+    }//GEN-LAST:event_menu5MousePressed
+
+    private void menu6MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menu6MousePressed
+        menu1.setBackground(DefaultColor);
+
+        // Reset màu các menu khác về mặc định
+        menu2.setBackground(DefaultColor);
+        menu3.setBackground(DefaultColor);
+        menu4.setBackground(DefaultColor);
+        menu5.setBackground(DefaultColor);
+        menu6.setBackground(ClickedColor);
+        menu7.setBackground(DefaultColor);
+        menu8.setBackground(DefaultColor);
+
+        // Cập nhật giao diện
+        menu1.revalidate();
+        menu1.repaint();
+    }//GEN-LAST:event_menu6MousePressed
+
+    private void menu4MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menu4MousePressed
+        menu1.setBackground(DefaultColor);
+
+        // Reset màu các menu khác về mặc định
+        menu2.setBackground(DefaultColor);
+        menu3.setBackground(DefaultColor);
+        menu4.setBackground(ClickedColor);
+        menu5.setBackground(DefaultColor);
+        menu6.setBackground(DefaultColor);
+        menu7.setBackground(DefaultColor);
+        menu8.setBackground(DefaultColor);
+
+        // Cập nhật giao diện
+        menu1.revalidate();
+        menu1.repaint();
+    }//GEN-LAST:event_menu4MousePressed
+
+    private void menu1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menu1MousePressed
+        menu1.setBackground(ClickedColor);
+
+        // Reset màu các menu khác về mặc định
+        menu2.setBackground(DefaultColor);
+        menu3.setBackground(DefaultColor);
+        menu4.setBackground(DefaultColor);
+        menu5.setBackground(DefaultColor);
+        menu6.setBackground(DefaultColor);
+        menu7.setBackground(DefaultColor);
+        menu8.setBackground(DefaultColor);
+
+        // Cập nhật giao diện
+        menu1.revalidate();
+        menu1.repaint();
+    }//GEN-LAST:event_menu1MousePressed
+
+    private void menu3MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menu3MousePressed
+        menu1.setBackground(DefaultColor);
+
+        // Reset màu các menu khác về mặc định
+        menu2.setBackground(DefaultColor);
+        menu3.setBackground(ClickedColor);
+        menu4.setBackground(DefaultColor);
+        menu5.setBackground(DefaultColor);
+        menu6.setBackground(DefaultColor);
+        menu7.setBackground(DefaultColor);
+        menu8.setBackground(DefaultColor);
+
+        // Cập nhật giao diện
+        menu1.revalidate();
+        menu1.repaint();
+    }//GEN-LAST:event_menu3MousePressed
+
+    private void menu2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menu2MousePressed
+        menu1.setBackground(DefaultColor);
+
+        // Reset màu các menu khác về mặc định
+        menu2.setBackground(ClickedColor);
+        menu3.setBackground(DefaultColor);
+        menu4.setBackground(DefaultColor);
+        menu5.setBackground(DefaultColor);
+        menu6.setBackground(DefaultColor);
+        menu7.setBackground(DefaultColor);
+        menu8.setBackground(DefaultColor);
+
+        // Cập nhật giao diện
+        menu1.revalidate();
+        menu1.repaint();
+    }//GEN-LAST:event_menu2MousePressed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -703,13 +722,13 @@ public class Menu extends javax.swing.JPanel {
     public static javax.swing.JLabel lbl_th;
     public static javax.swing.JLabel lbl_tt;
     public static javax.swing.JLabel lbl_ttc;
-    public static javax.swing.JPanel menu1;
-    public static javax.swing.JPanel menu2;
-    public static javax.swing.JPanel menu3;
-    public static javax.swing.JPanel menu4;
-    public static javax.swing.JPanel menu5;
-    public static javax.swing.JPanel menu6;
-    public static javax.swing.JPanel menu7;
-    public static javax.swing.JPanel menu8;
+    private javax.swing.JPanel menu1;
+    private javax.swing.JPanel menu2;
+    private javax.swing.JPanel menu3;
+    private javax.swing.JPanel menu4;
+    private javax.swing.JPanel menu5;
+    private javax.swing.JPanel menu6;
+    private javax.swing.JPanel menu7;
+    private javax.swing.JPanel menu8;
     // End of variables declaration//GEN-END:variables
 }
