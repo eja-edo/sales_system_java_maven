@@ -80,6 +80,9 @@ public class search_form extends javax.swing.JPanel {
         jtitle1 = new javax.swing.JTextPane();
         rating1 = new javax.swing.JLabel();
         views1 = new javax.swing.JLabel();
+        radiumPanel1 = new com.mycompany.swing.RadiumPanel();
+        jButton1 = new javax.swing.JButton();
+        myTextField2 = new com.mycompany.swing.MyTextField();
         roundPanel2 = new com.mycompany.swing.RoundPanel();
 
         setPreferredSize(new java.awt.Dimension(1440, 800));
@@ -89,7 +92,7 @@ public class search_form extends javax.swing.JPanel {
 
         jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/tang.png"))); // NOI18N
         jLabel10.setToolTipText("");
-        roundPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, -1, 27));
+        roundPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, -1, 27));
 
         jTextField27.setFont(new java.awt.Font("Arial", 3, 14)); // NOI18N
         jTextField27.setText("Top tìm kiếm");
@@ -100,11 +103,11 @@ public class search_form extends javax.swing.JPanel {
                 jTextField27ActionPerformed(evt);
             }
         });
-        roundPanel1.add(jTextField27, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 100, 512, 27));
+        roundPanel1.add(jTextField27, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 170, 512, 27));
 
         jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/fire.png"))); // NOI18N
         jLabel11.setToolTipText("");
-        roundPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, -1, -1));
+        roundPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 250, -1, -1));
 
         jTextField28.setFont(new java.awt.Font("Arial", 3, 14)); // NOI18N
         jTextField28.setText("Dịch vụ hot");
@@ -114,11 +117,11 @@ public class search_form extends javax.swing.JPanel {
                 jTextField28ActionPerformed(evt);
             }
         });
-        roundPanel1.add(jTextField28, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 180, 512, 27));
+        roundPanel1.add(jTextField28, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 250, 512, 27));
 
         jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/search_red.png"))); // NOI18N
         jLabel12.setToolTipText("");
-        roundPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 270, -1, 27));
+        roundPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 340, -1, 27));
 
         jTextField30.setBackground(new java.awt.Color(255, 204, 0));
         jTextField30.setFont(new java.awt.Font("Arial", 3, 14)); // NOI18N
@@ -130,7 +133,7 @@ public class search_form extends javax.swing.JPanel {
                 jTextField30ActionPerformed(evt);
             }
         });
-        roundPanel1.add(jTextField30, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 60, 174, 25));
+        roundPanel1.add(jTextField30, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 130, 174, 25));
 
         jTextField31.setBackground(new java.awt.Color(255, 204, 0));
         jTextField31.setFont(new java.awt.Font("Arial", 3, 14)); // NOI18N
@@ -142,7 +145,7 @@ public class search_form extends javax.swing.JPanel {
                 jTextField31ActionPerformed(evt);
             }
         });
-        roundPanel1.add(jTextField31, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 60, 202, 25));
+        roundPanel1.add(jTextField31, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 130, 202, 25));
 
         jTextField32.setBackground(new java.awt.Color(255, 204, 0));
         jTextField32.setFont(new java.awt.Font("Arial", 3, 14)); // NOI18N
@@ -154,7 +157,7 @@ public class search_form extends javax.swing.JPanel {
                 jTextField32ActionPerformed(evt);
             }
         });
-        roundPanel1.add(jTextField32, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 60, 213, 25));
+        roundPanel1.add(jTextField32, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 130, 213, 25));
 
         jTextField33.setBackground(new java.awt.Color(255, 204, 0));
         jTextField33.setFont(new java.awt.Font("Arial", 3, 14)); // NOI18N
@@ -166,7 +169,7 @@ public class search_form extends javax.swing.JPanel {
                 jTextField33ActionPerformed(evt);
             }
         });
-        roundPanel1.add(jTextField33, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 60, 259, 25));
+        roundPanel1.add(jTextField33, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 130, 259, 25));
 
         jTextField34.setBackground(new java.awt.Color(255, 204, 0));
         jTextField34.setFont(new java.awt.Font("Arial", 3, 14)); // NOI18N
@@ -178,7 +181,7 @@ public class search_form extends javax.swing.JPanel {
                 jTextField34ActionPerformed(evt);
             }
         });
-        roundPanel1.add(jTextField34, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 60, 132, 25));
+        roundPanel1.add(jTextField34, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 130, 132, 25));
 
         jPanel10.setBackground(new java.awt.Color(255, 255, 255));
         jPanel10.setFocusable(false);
@@ -226,7 +229,7 @@ public class search_form extends javax.swing.JPanel {
         views5.setText("10k");
         jPanel10.add(views5, new org.netbeans.lib.awtextra.AbsoluteConstraints(227, 373, -1, -1));
 
-        roundPanel1.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 310, -1, -1));
+        roundPanel1.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 380, -1, -1));
 
         jPanel7.setBackground(new java.awt.Color(255, 255, 255));
         jPanel7.setFocusable(false);
@@ -274,7 +277,7 @@ public class search_form extends javax.swing.JPanel {
         views2.setText("10k");
         jPanel7.add(views2, new org.netbeans.lib.awtextra.AbsoluteConstraints(227, 373, -1, -1));
 
-        roundPanel1.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 310, -1, -1));
+        roundPanel1.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 380, -1, -1));
 
         jTextField26.setFont(new java.awt.Font("Arial", 3, 14)); // NOI18N
         jTextField26.setText("Ưu đãi online tháng 11");
@@ -284,11 +287,11 @@ public class search_form extends javax.swing.JPanel {
                 jTextField26ActionPerformed(evt);
             }
         });
-        roundPanel1.add(jTextField26, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, 512, 27));
+        roundPanel1.add(jTextField26, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 80, 512, 27));
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/sale.png"))); // NOI18N
         jLabel9.setToolTipText("");
-        roundPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, -1, -1));
+        roundPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, -1, -1));
 
         jTextField35.setBackground(new java.awt.Color(204, 51, 0));
         jTextField35.setFont(new java.awt.Font("Arial", 3, 14)); // NOI18N
@@ -301,7 +304,7 @@ public class search_form extends javax.swing.JPanel {
                 jTextField35ActionPerformed(evt);
             }
         });
-        roundPanel1.add(jTextField35, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 140, 133, 25));
+        roundPanel1.add(jTextField35, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 210, 133, 25));
 
         jTextField48.setFont(new java.awt.Font("Arial", 3, 14)); // NOI18N
         jTextField48.setText("Sản phẩm được tìm kiếm nhiều");
@@ -311,7 +314,7 @@ public class search_form extends javax.swing.JPanel {
                 jTextField48ActionPerformed(evt);
             }
         });
-        roundPanel1.add(jTextField48, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 270, 512, 27));
+        roundPanel1.add(jTextField48, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 340, 512, 27));
 
         jTextField36.setBackground(new java.awt.Color(204, 51, 0));
         jTextField36.setFont(new java.awt.Font("Arial", 3, 14)); // NOI18N
@@ -324,7 +327,7 @@ public class search_form extends javax.swing.JPanel {
                 jTextField36ActionPerformed(evt);
             }
         });
-        roundPanel1.add(jTextField36, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 140, 150, 25));
+        roundPanel1.add(jTextField36, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 210, 150, 25));
 
         jTextField37.setBackground(new java.awt.Color(204, 51, 0));
         jTextField37.setFont(new java.awt.Font("Arial", 3, 14)); // NOI18N
@@ -337,7 +340,7 @@ public class search_form extends javax.swing.JPanel {
                 jTextField37ActionPerformed(evt);
             }
         });
-        roundPanel1.add(jTextField37, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 140, 133, 25));
+        roundPanel1.add(jTextField37, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 210, 133, 25));
 
         jTextField38.setBackground(new java.awt.Color(204, 51, 0));
         jTextField38.setFont(new java.awt.Font("Arial", 3, 14)); // NOI18N
@@ -350,7 +353,7 @@ public class search_form extends javax.swing.JPanel {
                 jTextField38ActionPerformed(evt);
             }
         });
-        roundPanel1.add(jTextField38, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 140, 133, 25));
+        roundPanel1.add(jTextField38, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 210, 133, 25));
 
         jTextField39.setBackground(new java.awt.Color(51, 51, 51));
         jTextField39.setFont(new java.awt.Font("Arial", 3, 14)); // NOI18N
@@ -363,7 +366,7 @@ public class search_form extends javax.swing.JPanel {
                 jTextField39ActionPerformed(evt);
             }
         });
-        roundPanel1.add(jTextField39, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 230, 125, 25));
+        roundPanel1.add(jTextField39, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 300, 125, 25));
 
         jPanel9.setBackground(new java.awt.Color(255, 255, 255));
         jPanel9.setFocusable(false);
@@ -411,7 +414,7 @@ public class search_form extends javax.swing.JPanel {
         views4.setText("10k");
         jPanel9.add(views4, new org.netbeans.lib.awtextra.AbsoluteConstraints(227, 373, -1, -1));
 
-        roundPanel1.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 310, -1, -1));
+        roundPanel1.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 380, -1, -1));
 
         jTextField40.setBackground(new java.awt.Color(51, 51, 51));
         jTextField40.setFont(new java.awt.Font("Arial", 3, 14)); // NOI18N
@@ -424,7 +427,7 @@ public class search_form extends javax.swing.JPanel {
                 jTextField40ActionPerformed(evt);
             }
         });
-        roundPanel1.add(jTextField40, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 230, 138, 25));
+        roundPanel1.add(jTextField40, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 300, 138, 25));
 
         jTextField41.setBackground(new java.awt.Color(51, 51, 51));
         jTextField41.setFont(new java.awt.Font("Arial", 3, 14)); // NOI18N
@@ -437,7 +440,7 @@ public class search_form extends javax.swing.JPanel {
                 jTextField41ActionPerformed(evt);
             }
         });
-        roundPanel1.add(jTextField41, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 230, 233, 25));
+        roundPanel1.add(jTextField41, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 300, 233, 25));
 
         jTextField42.setBackground(new java.awt.Color(51, 51, 51));
         jTextField42.setFont(new java.awt.Font("Arial", 3, 14)); // NOI18N
@@ -450,7 +453,7 @@ public class search_form extends javax.swing.JPanel {
                 jTextField42ActionPerformed(evt);
             }
         });
-        roundPanel1.add(jTextField42, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 230, 192, 25));
+        roundPanel1.add(jTextField42, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 300, 192, 25));
 
         jPanel6.setBackground(new java.awt.Color(255, 255, 255));
         jPanel6.setFocusable(false);
@@ -498,7 +501,29 @@ public class search_form extends javax.swing.JPanel {
         views1.setText("10k");
         jPanel6.add(views1, new org.netbeans.lib.awtextra.AbsoluteConstraints(227, 373, -1, -1));
 
-        roundPanel1.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 310, -1, 392));
+        roundPanel1.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 380, -1, 392));
+
+        radiumPanel1.setBackground(new java.awt.Color(217, 217, 217));
+        radiumPanel1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 10, 1, 10));
+        radiumPanel1.setPreferredSize(new java.awt.Dimension(500, 30));
+        radiumPanel1.setRadium(20);
+        radiumPanel1.setLayout(new java.awt.BorderLayout());
+
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/search.png"))); // NOI18N
+        jButton1.setBorder(null);
+        jButton1.setBorderPainted(false);
+        jButton1.setContentAreaFilled(false);
+        jButton1.setPreferredSize(new java.awt.Dimension(32, 32));
+        radiumPanel1.add(jButton1, java.awt.BorderLayout.LINE_END);
+
+        myTextField2.setBackground(new java.awt.Color(217, 217, 217));
+        myTextField2.setBorder(null);
+        myTextField2.setForeground(new java.awt.Color(0, 0, 0));
+        myTextField2.setFontColorHint(new java.awt.Color(102, 102, 102));
+        myTextField2.setHint("Tìm kiếm nhanh");
+        radiumPanel1.add(myTextField2, java.awt.BorderLayout.CENTER);
+
+        roundPanel1.add(radiumPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 20, 590, 40));
 
         roundPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -507,16 +532,20 @@ public class search_form extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(roundPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(roundPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(roundPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(roundPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(roundPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(roundPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(36, 36, 36)
+                .addComponent(roundPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
+                .addComponent(roundPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 806, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -594,6 +623,7 @@ public class search_form extends javax.swing.JPanel {
     private javax.swing.JLabel TraGop2;
     private javax.swing.JLabel TraGop4;
     private javax.swing.JLabel TraGop5;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
@@ -631,10 +661,12 @@ public class search_form extends javax.swing.JPanel {
     private javax.swing.JTextPane jtitle2;
     private javax.swing.JTextPane jtitle4;
     private javax.swing.JTextPane jtitle5;
+    private com.mycompany.swing.MyTextField myTextField2;
     private javax.swing.JLabel price1;
     private javax.swing.JLabel price2;
     private javax.swing.JLabel price4;
     private javax.swing.JLabel price5;
+    private com.mycompany.swing.RadiumPanel radiumPanel1;
     private javax.swing.JLabel rating1;
     private javax.swing.JLabel rating2;
     private javax.swing.JLabel rating4;

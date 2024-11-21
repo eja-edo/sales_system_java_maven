@@ -95,13 +95,11 @@ public class Menu extends javax.swing.JPanel {
         menu1.setLayout(menu1Layout);
         menu1Layout.setHorizontalGroup(
             menu1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(menu1Layout.createSequentialGroup()
-                .addComponent(lbl_tt, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(lbl_tt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         menu1Layout.setVerticalGroup(
             menu1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(menu1Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menu1Layout.createSequentialGroup()
                 .addComponent(lbl_tt, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
@@ -722,13 +720,13 @@ public class Menu extends javax.swing.JPanel {
     public static javax.swing.JLabel lbl_th;
     public static javax.swing.JLabel lbl_tt;
     public static javax.swing.JLabel lbl_ttc;
-    private javax.swing.JPanel menu1;
-    private javax.swing.JPanel menu2;
-    private javax.swing.JPanel menu3;
-    private javax.swing.JPanel menu4;
-    private javax.swing.JPanel menu5;
-    private javax.swing.JPanel menu6;
-    private javax.swing.JPanel menu7;
-    private javax.swing.JPanel menu8;
+    public static javax.swing.JPanel menu1;
+    public static javax.swing.JPanel menu2;
+    public static javax.swing.JPanel menu3;
+    public static javax.swing.JPanel menu4;
+    public static javax.swing.JPanel menu5;
+    public static javax.swing.JPanel menu6;
+    public static javax.swing.JPanel menu7;
+    public static javax.swing.JPanel menu8;
     // End of variables declaration//GEN-END:variables
 }
