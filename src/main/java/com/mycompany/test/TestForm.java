@@ -33,18 +33,13 @@ public class TestForm extends javax.swing.JFrame {
     private void initComponents() {
 
         header1 = new com.mycompany.component.header();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        home1 = new com.mycompany.tab.Home();
         menu2 = new com.mycompany.component.Menu();
+        ttkh1 = new com.mycompany.tab.ttkh();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().add(header1, java.awt.BorderLayout.PAGE_START);
-
-        jScrollPane2.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-        jScrollPane2.setViewportView(home1);
-
-        getContentPane().add(jScrollPane2, java.awt.BorderLayout.CENTER);
         getContentPane().add(menu2, java.awt.BorderLayout.LINE_START);
+        getContentPane().add(ttkh1, java.awt.BorderLayout.CENTER);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -89,8 +84,7 @@ public class TestForm extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private com.mycompany.component.header header1;
-    private com.mycompany.tab.Home home1;
-    private javax.swing.JScrollPane jScrollPane2;
     private com.mycompany.component.Menu menu2;
+    private com.mycompany.tab.ttkh ttkh1;
     // End of variables declaration//GEN-END:variables
 }
