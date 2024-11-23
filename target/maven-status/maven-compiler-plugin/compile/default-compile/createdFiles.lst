@@ -80,6 +80,7 @@ com\mycompany\tab\Cart1.class
 com\mycompany\component\gio_hang_2$3.class
 com\mycompany\component\search_form$3.class
 com\mycompany\test\TestForm2$1.class
+com\mycompany\test\testlivestream$2.class
 com\mycompany\model\dao\ProductDAO.class
 com\mycompany\swing\PanelGradient.class
 com\mycompany\swing\ResizableImageLabel.class
@@ -92,6 +93,7 @@ com\mycompany\component\header$1.class
 com\mycompany\component\gio_hang_2$2.class
 com\mycompany\component\trang_con.class
 com\mycompany\model\dao\detailProductDAO.class
+com\mycompany\test\testlivestream$1.class
 com\mycompany\tab\Cart1$1.class
 com\mycompany\model\entity\Users.class
 com\mycompany\swing\PanelRound.class
@@ -126,6 +128,7 @@ com\mycompany\model\entity\Reviews.class
 com\raven\swing\Button2$1.class
 com\mycompany\component\search_form$11.class
 com\raven\swing\Button2.class
+com\mycompany\test\testlivestream.class
 com\mycompany\controller\ProductDetailController.class
 com\mycompany\component\Menu$7.class
 com\mycompany\test\ResourceChecker.class
@@ -149,4 +152,5 @@ com\mycompany\component\ListImgProduct.class
 com\mycompany\swing\Button$2.class
 com\mycompany\swing\ComboSuggestionUI$1.class
 com\mycompany\component\search_form$5.class
+com\mycompany\test\TestVLC.class
 com\mycompany\model\entity\ProductImages.class
