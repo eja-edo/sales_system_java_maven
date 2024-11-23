@@ -4,6 +4,11 @@
  */
 package com.mycompany.test;
 
+import com.mycompany.swing.ScrollBarWin11UI;
+import com.mycompany.tab.Cart;
+import javax.swing.UIDefaults;
+import javax.swing.UIManager;
+
 /**
  *
  * @author duyan
@@ -27,26 +32,14 @@ public class TestForm extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        header1 = new com.mycompany.component.header();
+        menu2 = new com.mycompany.component.Menu();
         ttkh1 = new com.mycompany.tab.ttkh();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(ttkh1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(ttkh1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        getContentPane().add(header1, java.awt.BorderLayout.PAGE_START);
+        getContentPane().add(menu2, java.awt.BorderLayout.LINE_START);
+        getContentPane().add(ttkh1, java.awt.BorderLayout.CENTER);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -78,15 +71,20 @@ public class TestForm extends javax.swing.JFrame {
         }
         //</editor-fold>
 
+        UIDefaults ui = UIManager.getDefaults();
+        ui.put("ScrollBarUI", ScrollBarWin11UI.class.getCanonicalName());
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new TestForm().setVisible(true);
             }
         });
+
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private com.mycompany.component.header header1;
+    private com.mycompany.component.Menu menu2;
     private com.mycompany.tab.ttkh ttkh1;
     // End of variables declaration//GEN-END:variables
 }

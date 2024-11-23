@@ -34,7 +34,7 @@ public class Login extends javax.swing.JPanel {
      */
     public Login() {
         initComponents();
-                LoginDAO model = new LoginDAO();
+        LoginDAO model = new LoginDAO();
 
         // Tạo bộ điều khiển
         LoginController controller = new LoginController(model, this);
@@ -100,10 +100,16 @@ public class Login extends javax.swing.JPanel {
 
         button3.setBackground(new java.awt.Color(81, 130, 255));
         button3.setForeground(new java.awt.Color(255, 255, 255));
-        button3.setText("Đăng nhập bằng Google");
+        button3.setText("Đăng nhập bằng Facebook");
         button3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        button3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button3ActionPerformed(evt);
+            }
+        });
 
         messageLabel.setForeground(new java.awt.Color(255, 51, 51));
+        messageLabel.setDoubleBuffered(true);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -153,6 +159,10 @@ public class Login extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_jCheckBox1ActionPerformed
 
+    private void button3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_button3ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private com.mycompany.swing.Button btnLogin;
@@ -165,4 +175,6 @@ public class Login extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel messageLabel;
     // End of variables declaration//GEN-END:variables
+
+ 
 }

@@ -1,24 +1,14 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
- */
+
 package com.mycompany.component;
 
 import com.mycompany.utils.ScaleImg;
-import com.mycompany.utils.resizeIcon;
 import static com.mycompany.utils.resizeIcon.resizeIcon;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
-import java.awt.Image;
 import java.awt.RenderingHints;
 import java.awt.event.ComponentAdapter;
 import java.awt.event.ComponentEvent;
 import java.awt.geom.RoundRectangle2D;
-import java.io.IOException;
-import java.net.MalformedURLException;
-import java.net.URL;
-import javax.imageio.ImageIO;
-import javax.swing.ImageIcon;
 import javax.swing.text.SimpleAttributeSet;
 import javax.swing.text.StyleConstants;
 import javax.swing.text.StyledDocument;
@@ -95,12 +85,11 @@ public class ItemProduct extends javax.swing.JPanel {
         imgProduct = new javax.swing.JLabel();
         jprice = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jScrollPane2 = new javax.swing.JScrollPane();
         jtitle = new javax.swing.JTextPane();
         jrating = new javax.swing.JLabel();
         jviews = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(255, 255, 255));
+        setBackground(new java.awt.Color(248, 248, 248));
         setFocusable(false);
         setOpaque(false);
         setPreferredSize(new java.awt.Dimension(260, 394));
@@ -113,6 +102,7 @@ public class ItemProduct extends javax.swing.JPanel {
         add(TraGop, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 220, 31, 35));
 
         imgProduct.setBackground(new java.awt.Color(102, 102, 102));
+        imgProduct.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/png259X259.png"))); // NOI18N
         add(imgProduct, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 260, 260));
 
         jprice.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -120,26 +110,22 @@ public class ItemProduct extends javax.swing.JPanel {
         jprice.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jprice.setText("43.000.000đ");
         jprice.setToolTipText("");
-        add(jprice, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 317, 259, 18));
+        add(jprice, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 317, 260, 18));
 
         jLabel3.setForeground(new java.awt.Color(234, 112, 112));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("Quà tặng trang sức");
         add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 340, 259, -1));
 
-        jScrollPane2.setBackground(new java.awt.Color(255, 255, 255));
-        jScrollPane2.setBorder(null);
-
         jtitle.setEditable(false);
-        jtitle.setBackground(new java.awt.Color(255, 255, 255));
-        jtitle.setBorder(null);
+        jtitle.setBackground(new java.awt.Color(248, 248, 248));
+        jtitle.setBorder(javax.swing.BorderFactory.createEmptyBorder(3, 1, 1, 1));
         jtitle.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jtitle.setText("Bông tai Kim cương Vàng trắng 14K PNJ DDDDW000176");
         jtitle.setAutoscrolls(false);
         jtitle.setFocusable(false);
-        jScrollPane2.setViewportView(jtitle);
-
-        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 265, 259, 46));
+        jtitle.setOpaque(false);
+        add(jtitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 260, 260, 50));
 
         jrating.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
         jrating.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/rsz_1star.png"))); // NOI18N
@@ -148,7 +134,7 @@ public class ItemProduct extends javax.swing.JPanel {
 
         jviews.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
         jviews.setText("10k");
-        add(jviews, new org.netbeans.lib.awtextra.AbsoluteConstraints(227, 373, -1, -1));
+        add(jviews, new org.netbeans.lib.awtextra.AbsoluteConstraints(227, 373, 30, -1));
     }// </editor-fold>//GEN-END:initComponents
 
 
@@ -156,7 +142,6 @@ public class ItemProduct extends javax.swing.JPanel {
     private javax.swing.JLabel TraGop;
     private javax.swing.JLabel imgProduct;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel jprice;
     private javax.swing.JLabel jrating;
     private javax.swing.JTextPane jtitle;
