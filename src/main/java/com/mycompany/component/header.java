@@ -42,7 +42,7 @@ public class header extends javax.swing.JPanel {
         button22 = new com.raven.swing.Button2();
         button23 = new com.raven.swing.Button2();
 
-        setBackground(new java.awt.Color(255, 255, 255));
+        setBackground(new java.awt.Color(249, 241, 236));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/logo.png"))); // NOI18N
 
@@ -72,6 +72,7 @@ public class header extends javax.swing.JPanel {
 
         jPanel2.add(radiumPanel1, new java.awt.GridBagConstraints());
 
+        button21.setBackground(new java.awt.Color(249, 241, 236));
         button21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/user-profile-circle.png"))); // NOI18N
         button21.setBorderPainted(false);
         button21.addActionListener(new java.awt.event.ActionListener() {
@@ -80,6 +81,7 @@ public class header extends javax.swing.JPanel {
             }
         });
 
+        button22.setBackground(new java.awt.Color(249, 241, 236));
         button22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/bell-02.png"))); // NOI18N
         button22.setBorderPainted(false);
         button22.addActionListener(new java.awt.event.ActionListener() {
@@ -88,6 +90,7 @@ public class header extends javax.swing.JPanel {
             }
         });
 
+        button23.setBackground(new java.awt.Color(249, 241, 236));
         button23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/cart.png"))); // NOI18N
         button23.setBorderPainted(false);
 
@@ -118,13 +121,41 @@ public class header extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void button21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button21ActionPerformed
-        LoginTab loginPanel = new LoginTab(); // Tạo JPanel
-    JFrame frame = new JFrame(""); // Tạo JFrame chứa panel
-    frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-    frame.getContentPane().add(loginPanel); // Thêm panel vào frame
-    frame.pack(); // Căn chỉnh kích thước
-    frame.setLocationRelativeTo(null); // Căn gi
-    frame.setVisible(true); // Hiển thị frame
+
+    JFrame parentFrame = (JFrame) javax.swing.SwingUtilities.getWindowAncestor(this);
+
+    // Tạo một JDialog modal để hiển thị LoginTab
+    JDialog loginDialog = new JDialog(parentFrame, "Đăng nhập", true); // true để modal
+    LoginTab loginPanel = new LoginTab(); // JPanel chứa nội dung đăng nhập
+
+    // Thiết lập thuộc tính cho JDialog
+    loginDialog.setDefaultCloseOperation(JDialog.DO_NOTHING_ON_CLOSE); // Không tự động đóng
+    loginDialog.getContentPane().add(loginPanel); // Thêm LoginTab vào JDialog
+    loginDialog.pack(); // Căn chỉnh kích thước tự động
+
+    // Hiển thị JDialog ở giữa form cha
+    loginDialog.setLocationRelativeTo(parentFrame); // Hiển thị giữa form cũ
+
+    // Xử lý sự kiện khi người dùng cố gắng đóng JDialog
+    loginDialog.addWindowListener(new java.awt.event.WindowAdapter() {
+        @Override
+        public void windowClosing(java.awt.event.WindowEvent e) {
+            // Hiển thị xác nhận
+            int result = JOptionPane.showConfirmDialog(
+                loginDialog,
+                "Bạn có muốn tiếp tục đăng nhập không?",
+                "Xác nhận",
+                JOptionPane.YES_NO_OPTION,
+                JOptionPane.QUESTION_MESSAGE
+            );
+            if (result == JOptionPane.NO_OPTION) {
+                loginDialog.dispose(); // Đóng form nếu chọn "Không"
+            }
+        }
+    });
+
+    // Hiển thị JDialog
+    loginDialog.setVisible(true);
     }//GEN-LAST:event_button21ActionPerformed
 
     private void button22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button22ActionPerformed
