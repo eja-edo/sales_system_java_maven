@@ -7,7 +7,9 @@
   </NonVisualComponents>
   <Properties>
     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-      <Color blue="ff" green="ff" red="ff" type="rgb"/>
+
+      <Color blue="ec" green="f1" red="f9" type="rgb"/>
+
     </Property>
   </Properties>
   <AuxValues>
@@ -61,6 +63,11 @@
   <SubComponents>
     <Component class="com.raven.swing.Button2" name="button21">
       <Properties>
+
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ec" green="f1" red="f9" type="rgb"/>
+        </Property>
+
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.EmptyBorderInfo">
             <EmptyBorder bottom="1" left="10" right="1" top="1"/>
@@ -82,6 +89,11 @@
     </Component>
     <Component class="com.raven.swing.Button2" name="button22">
       <Properties>
+
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ec" green="f1" red="f9" type="rgb"/>
+        </Property>
+
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.EmptyBorderInfo">
             <EmptyBorder bottom="1" left="10" right="1" top="1"/>
@@ -103,6 +115,11 @@
     </Component>
     <Component class="com.raven.swing.Button2" name="button23">
       <Properties>
+
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ec" green="f1" red="f9" type="rgb"/>
+        </Property>
+
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.EmptyBorderInfo">
             <EmptyBorder bottom="1" left="5" right="1" top="1"/>
@@ -124,6 +141,11 @@
     </Component>
     <Component class="com.raven.swing.Button2" name="button24">
       <Properties>
+
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ec" green="f1" red="f9" type="rgb"/>
+        </Property>
+
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.EmptyBorderInfo">
             <EmptyBorder bottom="1" left="10" right="1" top="1"/>
@@ -145,6 +167,11 @@
     </Component>
     <Component class="com.raven.swing.Button2" name="button25">
       <Properties>
+
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ec" green="f1" red="f9" type="rgb"/>
+        </Property>
+
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.EmptyBorderInfo">
             <EmptyBorder bottom="1" left="10" right="1" top="1"/>
@@ -166,6 +193,11 @@
     </Component>
     <Component class="com.raven.swing.Button2" name="button26">
       <Properties>
+
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ec" green="f1" red="f9" type="rgb"/>
+        </Property>
+
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.EmptyBorderInfo">
             <EmptyBorder bottom="1" left="10" right="1" top="1"/>
@@ -187,6 +219,11 @@
     </Component>
     <Component class="com.raven.swing.Button2" name="button27">
       <Properties>
+
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ec" green="f1" red="f9" type="rgb"/>
+        </Property>
+
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.EmptyBorderInfo">
             <EmptyBorder bottom="1" left="7" right="1" top="1"/>
@@ -208,6 +245,11 @@
     </Component>
     <Component class="com.raven.swing.Button2" name="button28">
       <Properties>
+
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ec" green="f1" red="f9" type="rgb"/>
+        </Property>
+
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.EmptyBorderInfo">
             <EmptyBorder bottom="1" left="10" right="1" top="1"/>
