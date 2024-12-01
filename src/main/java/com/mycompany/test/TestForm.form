@@ -37,12 +37,18 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="com.mycompany.tab.ttkh" name="ttkh1">
+    <Container class="javax.swing.JScrollPane" name="jScrollPane1">
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
-          <BorderConstraints direction="Center"/>
+          <BorderConstraints direction="After"/>
         </Constraint>
       </Constraints>
-    </Component>
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+      <SubComponents>
+        <Component class="com.mycompany.tab.Home" name="home1">
+        </Component>
+      </SubComponents>
+    </Container>
   </SubComponents>
 </Form>

@@ -15,7 +15,8 @@ public class DBConnection {
     private static final String URL = dotenv.get("DB_URL");
     private static final String USER = dotenv.get("DB_USER");
     private static final String PASSWORD = dotenv.get("DB_PASSWORD");
-
+    
+    
     private static HikariDataSource dataSource;
 
     static {
@@ -45,4 +46,5 @@ public class DBConnection {
             LOGGER.info("Kết nối pool đã được đóng.");
         }
     }
+    
 }
