@@ -11,11 +11,13 @@ import java.util.List;
 
 
 
+
 /**
  *
  * @author duyan
  */
 public class Home extends javax.swing.JPanel {
+
 
     
    private final LoadProductController loadProductController;
@@ -168,11 +170,13 @@ public class Home extends javax.swing.JPanel {
 
         jPanel6.setLayout(null);
 
+
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/bg.png"))); // NOI18N
         jLabel1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jPanel6.add(jLabel1);
         jLabel1.setBounds(-10, 0, 1480, 450);
+
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -182,7 +186,9 @@ public class Home extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+
                     .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 1474, Short.MAX_VALUE)
+
                     .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)

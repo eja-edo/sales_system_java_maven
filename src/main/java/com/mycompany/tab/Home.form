@@ -25,7 +25,11 @@
           <Group type="102" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
+<<<<<<< HEAD
                   <Component id="jLabel2" alignment="0" pref="1474" max="32767" attributes="0"/>
+=======
+                  <Component id="jLabel2" alignment="0" pref="698" max="32767" attributes="0"/>
+>>>>>>> 54c992a7f41742cea9b67303241fecfbe8444fba
                   <Component id="jPanel3" alignment="0" pref="0" max="32767" attributes="0"/>
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="jLabel3" max="32767" attributes="0"/>
@@ -233,15 +237,24 @@
       <SubComponents>
         <Component class="javax.swing.JLabel" name="jLabel1">
           <Properties>
+<<<<<<< HEAD
             <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/image/bg.png"/>
+=======
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/img/z6056783267859_fa8269f989fded0dfb04358efd3ba6eb.jpg"/>
+>>>>>>> 54c992a7f41742cea9b67303241fecfbe8444fba
             </Property>
             <Property name="horizontalTextPosition" type="int" value="0"/>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+<<<<<<< HEAD
               <AbsoluteConstraints x="-10" y="0" width="1480" height="450"/>
+=======
+              <AbsoluteConstraints x="-10" y="0" width="1600" height="-1"/>
+>>>>>>> 54c992a7f41742cea9b67303241fecfbe8444fba
             </Constraint>
           </Constraints>
         </Component>
