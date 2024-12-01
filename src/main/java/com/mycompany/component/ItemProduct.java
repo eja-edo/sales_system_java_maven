@@ -1,9 +1,7 @@
 
 package com.mycompany.component;
 
-<<<<<<< HEAD
 import com.mycompany.model.entity.ItemProductEntity;
-
 import com.mycompany.utils.ScaleImg;
 import static com.mycompany.utils.resizeIcon.resizeIcon;
 import java.awt.Graphics;
@@ -12,10 +10,13 @@ import java.awt.RenderingHints;
 import java.awt.event.ComponentAdapter;
 import java.awt.event.ComponentEvent;
 import java.awt.geom.RoundRectangle2D;
-
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 import javax.swing.text.SimpleAttributeSet;
 import javax.swing.text.StyleConstants;
 import javax.swing.text.StyledDocument;
+import java.net.URL;
+import java.awt.Image;
 
 /**
  *
@@ -24,20 +25,7 @@ import javax.swing.text.StyledDocument;
 public class ItemProduct extends javax.swing.JPanel {
     private int radius = 10;  // Đặt bán kính cho bo tròn
 
-    public void setItemProduct(String urlImgProduct, String title, String price, String views, String rating   ) 
-    {
-        //            URL url = new URL( urlImgProduct );  // Đảm bảo URL hợp lệ
-//            Image img = ImageIO.read(url);  // Sử dụng ImageIO để 
-//            ImageIcon imgIcon = new ImageIcon(img);
-        imgProduct.setIcon(new javax.swing.ImageIcon(getClass().getResource(urlImgProduct)));
-        ScaleImg.scaleImg(imgProduct);
-        jtitle.setText(title);
-        jprice.setText(price);
-        jrating.setText(rating);
-        jviews.setText(views);
-        
-    }
-
+   
     
     public ItemProduct() {
         initComponents();
@@ -49,15 +37,42 @@ public class ItemProduct extends javax.swing.JPanel {
                 ScaleImg.scaleImg(imgProduct);
             }
         });
-
-
-        // Thêm văn bản vào JTextPane
-        StyledDocument doc = jtitle.getStyledDocument();
+         StyledDocument doc = jtitle.getStyledDocument();
         SimpleAttributeSet center = new SimpleAttributeSet();
         StyleConstants.setAlignment(center, StyleConstants.ALIGN_CENTER);
         doc.setParagraphAttributes(0, doc.getLength(), center, false);
-   
     }
+         public void setItemProduct(ItemProductEntity itemProduct) {
+        try {
+        // Chuyển đổi đường dẫn URL thành định dạng hợp lệ
+        String imgPath = itemProduct.getUrlImg().replace("\\", "/");
+        URL url = getClass().getResource(imgPath);
+
+        if (url != null) {
+            Image img = ImageIO.read(url);
+            ImageIcon imgIcon = new ImageIcon(img);
+            imgProduct.setIcon(imgIcon);
+        } else {
+            System.out.println("Không thể tìm thấy ảnh từ URL: " + imgPath);
+            // Đặt ảnh mặc định nếu không thể tìm thấy ảnh từ URL
+            ImageIcon defaultImgIcon = new ImageIcon(getClass().getResource("/image/png259X259.png"));
+            imgProduct.setIcon(defaultImgIcon);
+        }
+    } catch (Exception e) {
+        e.printStackTrace();
+        // Đặt ảnh mặc định nếu có lỗi khi tải ảnh
+        ImageIcon defaultImgIcon = new ImageIcon(getClass().getResource("/image/png259X259.png"));
+        imgProduct.setIcon(defaultImgIcon);
+    }
+
+    ScaleImg.scaleImg(imgProduct);
+    jtitle.setText(itemProduct.getTitle());
+    jprice.setText(itemProduct.getMinPrice());
+    jrating.setText(String.valueOf(itemProduct.getRating()));
+    jviews.setText(String.valueOf(itemProduct.getViews()));
+}
+
+
 
 
     @Override
