@@ -45,4 +45,3 @@ public class DBConnection {
             LOGGER.info("Kết nối pool đã được đóng.");
         }
     }
-}

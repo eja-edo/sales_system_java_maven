@@ -1,6 +1,9 @@
 
 package com.mycompany.component;
 
+<<<<<<< HEAD
+import com.mycompany.model.entity.ItemProductEntity;
+
 import com.mycompany.utils.ScaleImg;
 import static com.mycompany.utils.resizeIcon.resizeIcon;
 import java.awt.Graphics;
@@ -9,9 +12,11 @@ import java.awt.RenderingHints;
 import java.awt.event.ComponentAdapter;
 import java.awt.event.ComponentEvent;
 import java.awt.geom.RoundRectangle2D;
+
 import javax.swing.text.SimpleAttributeSet;
 import javax.swing.text.StyleConstants;
 import javax.swing.text.StyledDocument;
+
 /**
  *
  * @author duyan
@@ -32,6 +37,7 @@ public class ItemProduct extends javax.swing.JPanel {
         jviews.setText(views);
         
     }
+
     
     public ItemProduct() {
         initComponents();
@@ -44,6 +50,7 @@ public class ItemProduct extends javax.swing.JPanel {
             }
         });
 
+
         // Thêm văn bản vào JTextPane
         StyledDocument doc = jtitle.getStyledDocument();
         SimpleAttributeSet center = new SimpleAttributeSet();
@@ -51,6 +58,7 @@ public class ItemProduct extends javax.swing.JPanel {
         doc.setParagraphAttributes(0, doc.getLength(), center, false);
    
     }
+
 
     @Override
     protected void paintComponent(Graphics g) {

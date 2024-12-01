@@ -4,18 +4,57 @@
  */
 package com.mycompany.tab;
 
+import com.mycompany.component.ItemProduct;
+import com.mycompany.controller.LoadProductController;
+import com.mycompany.model.entity.ItemProductEntity;
+import java.util.List;
+
+
+
+
 /**
  *
  * @author duyan
  */
 public class Home extends javax.swing.JPanel {
 
-    /**
-     * Creates new form Home
-     */
+
+    
+   private final LoadProductController loadProductController;
+
     public Home() {
         initComponents();
+        loadProductController  = new LoadProductController();
+        setupProductComponents();
     }
+
+    private void setupProductComponents() {
+        List<ItemProductEntity> productEntities = loadProductController.loadNewProducts(5);
+
+        ItemProduct[] componentsArray = {
+            itemProduct1, itemProduct2, itemProduct3,
+            itemProduct4, itemProduct5
+        };
+
+        for (int i = 0; i < productEntities.size() && i < componentsArray.length; i++) {
+            componentsArray[i].setItemProduct(productEntities.get(i));
+        }
+
+        List<ItemProductEntity> bestSellers = loadProductController.loadBestSellers(10);
+
+        ItemProduct[] bestSellersArray = {
+            itemProduct6, itemProduct7, itemProduct8,
+            itemProduct9, itemProduct10,
+            itemProduct11, itemProduct12, itemProduct13,
+            itemProduct14, itemProduct15
+        };
+
+        for (int i = 0; i < bestSellers.size() && i < bestSellersArray.length; i++) {
+            bestSellersArray[i].setItemProduct(bestSellers.get(i));
+        }
+    }
+
+   
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -131,10 +170,13 @@ public class Home extends javax.swing.JPanel {
 
         jPanel6.setLayout(null);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/z6056783267859_fa8269f989fded0dfb04358efd3ba6eb.jpg"))); // NOI18N
+
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/bg.png"))); // NOI18N
         jLabel1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jPanel6.add(jLabel1);
-        jLabel1.setBounds(-10, 0, 1600, 450);
+        jLabel1.setBounds(-10, 0, 1480, 450);
+
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -144,7 +186,9 @@ public class Home extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 698, Short.MAX_VALUE)
+
+                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 1474, Short.MAX_VALUE)
+
                     .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
