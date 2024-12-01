@@ -21,7 +21,8 @@ public class Menu extends javax.swing.JPanel {
     public Menu() {
         initComponents();
          // Khởi tạo màu mặc định
-    DefaultColor = new Color(255,255,255);
+
+    DefaultColor = new Color(249,241,236);
     ClickedColor = new Color(190,162,136);
     }
     
@@ -77,7 +78,10 @@ public class Menu extends javax.swing.JPanel {
         button27 = new com.raven.swing.Button2();
         button28 = new com.raven.swing.Button2();
 
-        setBackground(new java.awt.Color(255, 255, 255));
+
+        setBackground(new java.awt.Color(249, 241, 236));
+
+        button21.setBackground(new java.awt.Color(249, 241, 236));
 
         button21.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 10, 1, 1));
         button21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/menu1.png"))); // NOI18N
@@ -91,6 +95,9 @@ public class Menu extends javax.swing.JPanel {
             }
         });
 
+
+        button22.setBackground(new java.awt.Color(249, 241, 236));
+
         button22.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 10, 1, 1));
         button22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/menu2.png"))); // NOI18N
         button22.setText("Trang sức cưới");
@@ -102,6 +109,9 @@ public class Menu extends javax.swing.JPanel {
                 button22ActionPerformed(evt);
             }
         });
+
+
+        button23.setBackground(new java.awt.Color(249, 241, 236));
 
         button23.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 5, 1, 1));
         button23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/menu3.png"))); // NOI18N
@@ -115,6 +125,9 @@ public class Menu extends javax.swing.JPanel {
             }
         });
 
+
+        button24.setBackground(new java.awt.Color(249, 241, 236));
+
         button24.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 10, 1, 1));
         button24.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/menu4.png"))); // NOI18N
         button24.setText("Quà tặng");
@@ -126,6 +139,9 @@ public class Menu extends javax.swing.JPanel {
                 button24ActionPerformed(evt);
             }
         });
+
+
+        button25.setBackground(new java.awt.Color(249, 241, 236));
 
         button25.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 10, 1, 1));
         button25.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/menu5.png"))); // NOI18N
@@ -139,6 +155,9 @@ public class Menu extends javax.swing.JPanel {
             }
         });
 
+
+        button26.setBackground(new java.awt.Color(249, 241, 236));
+
         button26.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 10, 1, 1));
         button26.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/menu6.png"))); // NOI18N
         button26.setText("Bộ sưu tập");
@@ -151,6 +170,9 @@ public class Menu extends javax.swing.JPanel {
             }
         });
 
+
+        button27.setBackground(new java.awt.Color(249, 241, 236));
+
         button27.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 7, 1, 1));
         button27.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/menu7.png"))); // NOI18N
         button27.setText("Livestream");
@@ -162,6 +184,9 @@ public class Menu extends javax.swing.JPanel {
                 button27ActionPerformed(evt);
             }
         });
+
+
+        button28.setBackground(new java.awt.Color(249, 241, 236));
 
         button28.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 10, 1, 1));
         button28.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/menu8.png"))); // NOI18N

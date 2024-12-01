@@ -42,7 +42,9 @@ public class header extends javax.swing.JPanel {
         button22 = new com.raven.swing.Button2();
         button23 = new com.raven.swing.Button2();
 
-        setBackground(new java.awt.Color(255, 255, 255));
+
+        setBackground(new java.awt.Color(249, 241, 236));
+
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/logo.png"))); // NOI18N
 
@@ -72,6 +74,9 @@ public class header extends javax.swing.JPanel {
 
         jPanel2.add(radiumPanel1, new java.awt.GridBagConstraints());
 
+
+        button21.setBackground(new java.awt.Color(249, 241, 236));
+
         button21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/user-profile-circle.png"))); // NOI18N
         button21.setBorderPainted(false);
         button21.addActionListener(new java.awt.event.ActionListener() {
@@ -80,6 +85,9 @@ public class header extends javax.swing.JPanel {
             }
         });
 
+
+        button22.setBackground(new java.awt.Color(249, 241, 236));
+
         button22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/bell-02.png"))); // NOI18N
         button22.setBorderPainted(false);
         button22.addActionListener(new java.awt.event.ActionListener() {
@@ -87,6 +95,9 @@ public class header extends javax.swing.JPanel {
                 button22ActionPerformed(evt);
             }
         });
+
+
+        button23.setBackground(new java.awt.Color(249, 241, 236));
 
         button23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/cart.png"))); // NOI18N
         button23.setBorderPainted(false);
@@ -118,13 +129,15 @@ public class header extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void button21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button21ActionPerformed
-        LoginTab loginPanel = new LoginTab(); // Tạo JPanel
+
+       LoginTab loginPanel = new LoginTab(); // Tạo JPanel
     JFrame frame = new JFrame(""); // Tạo JFrame chứa panel
     frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
     frame.getContentPane().add(loginPanel); // Thêm panel vào frame
     frame.pack(); // Căn chỉnh kích thước
     frame.setLocationRelativeTo(null); // Căn gi
     frame.setVisible(true); // Hiển thị frame
+
     }//GEN-LAST:event_button21ActionPerformed
 
     private void button22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button22ActionPerformed
