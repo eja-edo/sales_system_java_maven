@@ -98,6 +98,12 @@ public class Home extends javax.swing.JPanel {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setOpaque(false);
         jPanel1.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 10, 5));
+
+        itemProduct1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                itemProduct1MouseClicked(evt);
+            }
+        });
         jPanel1.add(itemProduct1);
         jPanel1.add(itemProduct2);
         jPanel1.add(itemProduct4);
@@ -182,7 +188,7 @@ public class Home extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 1474, Short.MAX_VALUE)
+
                     .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -218,6 +224,10 @@ public class Home extends javax.swing.JPanel {
                 .addContainerGap(144, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void itemProduct1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_itemProduct1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_itemProduct1MouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

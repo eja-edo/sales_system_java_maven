@@ -170,5 +170,5 @@ public class ItemProduct extends javax.swing.JPanel {
     private javax.swing.JTextPane jtitle;
     private javax.swing.JLabel jviews;
     // End of variables declaration//GEN-END:variables
-
+    private int id;
 }
