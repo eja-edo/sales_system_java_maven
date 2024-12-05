@@ -91,7 +91,10 @@ public class ItemProduct extends javax.swing.JPanel {
         g2d.dispose();
     }
     
-    
+    public int getId()
+    {
+        return id;
+    }
     
     
 

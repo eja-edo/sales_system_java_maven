@@ -21,9 +21,7 @@ public class TestForm extends javax.swing.JFrame {
 
     private void loadHomePanel() {
         Home homePanel = new Home();
-        jScrollPane1.setViewportView(homePanel);
-        jScrollPane1.revalidate();
-        jScrollPane1.repaint();
+
     }
 
     /**
