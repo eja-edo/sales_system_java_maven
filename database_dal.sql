@@ -884,7 +884,7 @@ VALUES
 ((SELECT user_id FROM Users WHERE username = 'duongbill'), N'Bạn có một đơn hàng mới.', 0),
 ((SELECT user_id FROM Users WHERE username = 'duongbill'), N'Đơn hàng của bạn đã được giao.', 1);
 
-
+go
 CREATE TRIGGER UpdateAverageRating
 ON Reviews
 AFTER INSERT, UPDATE, DELETE
@@ -1076,8 +1076,8 @@ ORDER BY
 
 
 go
- exec getTopbestSellers @SL = 10
-
+-- exec getTopbestSellers @SL = 10
+go
 Create PROCEDURE getItemsNew
 @SL int
 as
@@ -1276,8 +1276,8 @@ BEGIN
         p.created_at DESC;
 END;
 
-EXEC getProductsByCategory @SL = 20,  @CategoryId = 1;
-
+--EXEC getProductsByCategory @SL = 20,  @CategoryId = 1;
+go
 
 
 --ham nay de lay min max luot ban
