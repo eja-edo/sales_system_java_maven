@@ -4,23 +4,17 @@
  */
 package com.mycompany.test;
 
-import com.mycompany.swing.ScrollBarWin11UI;
-import com.mycompany.tab.Cart;
-import javax.swing.UIDefaults;
-import javax.swing.UIManager;
-
 /**
  *
  * @author duyan
  */
-public class TestForm extends javax.swing.JFrame {
+public class check extends javax.swing.JFrame {
 
     /**
-     * Creates new form TestForm
+     * Creates new form check
      */
-    public TestForm() {
+    public check() {
         initComponents();
-        
     }
 
     /**
@@ -32,14 +26,18 @@ public class TestForm extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        header1 = new com.mycompany.component.header();
-        menu2 = new com.mycompany.component.Menu();
-        detailProduct1 = new com.mycompany.tab.detailProduct();
-
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().add(header1, java.awt.BorderLayout.PAGE_START);
-        getContentPane().add(menu2, java.awt.BorderLayout.LINE_START);
-        getContentPane().add(detailProduct1, java.awt.BorderLayout.CENTER);
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 795, Short.MAX_VALUE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 532, Short.MAX_VALUE)
+        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -61,30 +59,24 @@ public class TestForm extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(TestForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(check.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(TestForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(check.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(TestForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(check.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(TestForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(check.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
-        UIDefaults ui = UIManager.getDefaults();
-        ui.put("ScrollBarUI", ScrollBarWin11UI.class.getCanonicalName());
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new TestForm().setVisible(true);
+                new check().setVisible(true);
             }
         });
-
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private com.mycompany.tab.detailProduct detailProduct1;
-    private com.mycompany.component.header header1;
-    private com.mycompany.component.Menu menu2;
     // End of variables declaration//GEN-END:variables
 }

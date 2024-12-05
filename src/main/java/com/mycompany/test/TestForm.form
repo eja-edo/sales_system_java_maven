@@ -37,7 +37,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="com.mycompany.tab.Home" name="home1">
+    <Component class="com.mycompany.tab.detailProduct" name="detailProduct1">
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
           <BorderConstraints direction="Center"/>
