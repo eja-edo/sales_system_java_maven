@@ -7,7 +7,9 @@ package com.mycompany.tab;
 import com.mycompany.component.ItemProduct;
 import com.mycompany.controller.LoadProductController;
 import com.mycompany.model.entity.ItemProductEntity;
+import java.awt.Component;
 import java.util.List;
+import javax.swing.JFrame;
 
 
 
@@ -51,7 +53,18 @@ public class Home extends javax.swing.JPanel {
             bestSellersArray[i].setItemProduct(bestSellers.get(i));
         }
     }
-
+     
+     public void openDetail(ItemProduct item)
+     {
+        int id = item.getId();
+        detailProduct detal = new detailProduct(id);
+        JFrame frame = new JFrame(""); // Tạo JFrame chứa panel
+        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        frame.getContentPane().add(detal); // Thêm panel vào frame
+        frame.pack(); // Căn chỉnh kích thước
+        frame.setLocationRelativeTo(null); // Căn gi
+        frame.setVisible(true); // Hiển thị frame
+     }
    
 
     /**
@@ -97,6 +110,12 @@ public class Home extends javax.swing.JPanel {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setOpaque(false);
         jPanel1.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 10, 5));
+
+        itemProduct1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                itemProduct1MouseClicked(evt);
+            }
+        });
         jPanel1.add(itemProduct1);
         jPanel1.add(itemProduct2);
         jPanel1.add(itemProduct4);
@@ -207,13 +226,8 @@ public class Home extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-<<<<<<< HEAD
-                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 368, Short.MAX_VALUE)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-=======
                     .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 497, Short.MAX_VALUE)
                     .addComponent(jPanel6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
->>>>>>> f5e02d4f7564c8e713c311c4bf9df93bb0de7d67
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addContainerGap())
@@ -265,6 +279,19 @@ public class Home extends javax.swing.JPanel {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void itemProduct1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_itemProduct1MouseClicked
+    // Lấy Component đã được click
+    Component clickedComponent = (Component) evt.getSource();
+    
+    // Kiểm tra nếu clickedComponent là kiểu ItemProduct (nếu đúng kiểu)
+    if (clickedComponent instanceof ItemProduct) {
+        ItemProduct item = (ItemProduct) clickedComponent;
+        
+        // Gọi phương thức openDetail với item đã được click
+        openDetail(item);
+    }
+    }//GEN-LAST:event_itemProduct1MouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

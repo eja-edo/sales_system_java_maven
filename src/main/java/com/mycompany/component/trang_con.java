@@ -6,9 +6,12 @@ package com.mycompany.component;
 
 import com.mycompany.controller.LoadProductController;
 import com.mycompany.model.entity.ItemProductEntity;
+import com.mycompany.tab.LoginTab;
+import com.mycompany.tab.detailProduct;
 import com.mycompany.utils.RoundBorder;
 import java.awt.Color;
 import java.util.List;
+import javax.swing.JFrame;
 
 /**
  *
@@ -21,7 +24,6 @@ public class trang_con extends javax.swing.JPanel {
      public trang_con() {
         initComponents();
         loadProductController = new LoadProductController();
-        
     }
 
 //     public trang_con()
@@ -29,6 +31,21 @@ public class trang_con extends javax.swing.JPanel {
 //         this();
 //         
 //     }
+     
+     public void openDetail(ItemProduct item)
+     {
+        int id = item.getId();
+        detailProduct detal = new detailProduct(id);
+        JFrame frame = new JFrame(""); // Tạo JFrame chứa panel
+        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        frame.getContentPane().add(detal); // Thêm panel vào frame
+        frame.pack(); // Căn chỉnh kích thước
+        frame.setLocationRelativeTo(null); // Căn gi
+        frame.setVisible(true); // Hiển thị frame
+     }
+             
+             
+             
      public void setTrangCon(int i)
      {
          this.currentCategoryId = i; // Lưu trữ giá trị ID
@@ -136,23 +153,13 @@ public class trang_con extends javax.swing.JPanel {
         itemProduct5 = new com.mycompany.component.ItemProduct();
         itemProduct6 = new com.mycompany.component.ItemProduct();
         itemProduct7 = new com.mycompany.component.ItemProduct();
-<<<<<<< HEAD
-        itemProduct4 = new com.mycompany.component.ItemProduct();
-        itemProduct3 = new com.mycompany.component.ItemProduct();
-        itemProduct2 = new com.mycompany.component.ItemProduct();
-        itemProduct1 = new com.mycompany.component.ItemProduct();
-        jPanel2 = new javax.swing.JPanel();
-        itemProduct9 = new com.mycompany.component.ItemProduct();
-        itemProduct14 = new com.mycompany.component.ItemProduct();
-        itemProduct15 = new com.mycompany.component.ItemProduct();
-        itemProduct16 = new com.mycompany.component.ItemProduct();
-=======
+
         itemProduct8 = new com.mycompany.component.ItemProduct();
         itemProduct10 = new com.mycompany.component.ItemProduct();
         itemProduct11 = new com.mycompany.component.ItemProduct();
         itemProduct12 = new com.mycompany.component.ItemProduct();
         itemProduct13 = new com.mycompany.component.ItemProduct();
->>>>>>> f5e02d4f7564c8e713c311c4bf9df93bb0de7d67
+
         itemProduct17 = new com.mycompany.component.ItemProduct();
         itemProduct18 = new com.mycompany.component.ItemProduct();
         itemProduct19 = new com.mycompany.component.ItemProduct();
@@ -178,34 +185,13 @@ public class trang_con extends javax.swing.JPanel {
         jPanel1.add(itemProduct5);
         jPanel1.add(itemProduct6);
         jPanel1.add(itemProduct7);
-<<<<<<< HEAD
 
-        itemProduct4.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                itemProduct4MouseClicked(evt);
-            }
-        });
-        jPanel1.add(itemProduct4);
-        jPanel1.add(itemProduct3);
-        jPanel1.add(itemProduct2);
-        jPanel1.add(itemProduct1);
-
-        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel2.setAutoscrolls(true);
-        jPanel2.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 20, 20));
-        jPanel2.add(itemProduct9);
-        jPanel2.add(itemProduct14);
-        jPanel2.add(itemProduct15);
-        jPanel2.add(itemProduct16);
-
-        jPanel1.add(jPanel2);
-=======
         jPanel1.add(itemProduct8);
         jPanel1.add(itemProduct10);
         jPanel1.add(itemProduct11);
         jPanel1.add(itemProduct12);
         jPanel1.add(itemProduct13);
->>>>>>> f5e02d4f7564c8e713c311c4bf9df93bb0de7d67
+
         jPanel1.add(itemProduct17);
         jPanel1.add(itemProduct18);
         jPanel1.add(itemProduct19);
@@ -266,7 +252,7 @@ public class trang_con extends javax.swing.JPanel {
     }//GEN-LAST:event_itemProduct4MouseClicked
 
 
-    // Variables declaration - do not modify//GEN-BEGIN:variables
+    // Variables declaration - do not modify                     
     private com.mycompany.swing.ComboBoxSuggestion comboBoxSuggestion1;
     private com.mycompany.component.ItemProduct itemProduct1;
     private com.mycompany.component.ItemProduct itemProduct10;
@@ -291,9 +277,5 @@ public class trang_con extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
-<<<<<<< HEAD
-    private javax.swing.JPanel jPanel2;
-=======
->>>>>>> f5e02d4f7564c8e713c311c4bf9df93bb0de7d67
-    // End of variables declaration//GEN-END:variables
+
 }
