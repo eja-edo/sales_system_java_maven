@@ -590,36 +590,36 @@ VALUES
 ((SELECT TOP 1 product_id FROM Products WHERE title = N'Nhẫn cưới Kim cương Vàng 18K DAL DD00Y000326'), '/image/product/trangsuccuoi/sp-gndd00y000326-1.png'),
 ((SELECT TOP 1 product_id FROM Products WHERE title = N'Nhẫn cưới Kim cương Vàng 18K DAL DD00Y000326'), '/image/product/trangsuccuoi/sp-gndd00y000326-2.png'),
 ((SELECT TOP 1 product_id FROM Products WHERE title = N'Nhẫn cưới Kim cương Vàng 18K DAL DD00Y000326'), '/image/product/trangsuccuoi/sp-gndd00y000326-3.png'),
-((SELECT TOP 1 product_id FROM Products WHERE title = N'Nhẫn cưới Vàng 24K DAL Trầu Cau 0000Y003194'), '/image/product/sp-gn0000y003194-1.png'),
-((SELECT TOP 1 product_id FROM Products WHERE title = N'Nhẫn cưới Vàng 24K DAL Trầu Cau 0000Y003194'), '/image/product/sp-gn0000y003194-2.png'),
-((SELECT TOP 1 product_id FROM Products WHERE title = N'Nhẫn cưới Vàng 24K DAL Trầu Cau 0000Y003194'), '/image/product/sp-gn0000y003194-3.png'),
-((SELECT TOP 1 product_id FROM Products WHERE title = N'Bông tai Kim cương Vàng trắng 14K DAL DDDDW000182'), '/image/product/sp-gbddddw000182-1.png'),
-((SELECT TOP 1 product_id FROM Products WHERE title = N'Bông tai Kim cương Vàng trắng 14K DAL DDDDW000182'), '/image/product/sp-gbddddw000182-2.png'),
-((SELECT TOP 1 product_id FROM Products WHERE title = N'Bông tai Kim cương Vàng trắng 14K DAL DDDDW000182'), '/image/product/sp-gbddddw000182-3.png'),
-((SELECT TOP 1 product_id FROM Products WHERE title = N'Bông tai cưới Vàng 24K DAL 0000Y000113'), '/image/product/gb0000y000113-1.png'),
-((SELECT TOP 1 product_id FROM Products WHERE title = N'Bông tai cưới Vàng 24K DAL 0000Y000113'), '/image/product/gb0000y000113-2.png'),
-((SELECT TOP 1 product_id FROM Products WHERE title = N'Bông tai cưới Vàng 24K DAL 0000Y000113'), '/image/product/gb0000y000113-3.png'),
-((SELECT TOP 1 product_id FROM Products WHERE title = N'Bông tai cưới Vàng 24K DAL Lan Mùa Hạ 0000Y000071'), '/image/product/sp-gb0000y000071-1.png'),
-((SELECT TOP 1 product_id FROM Products WHERE title = N'Bông tai cưới Vàng 24K DAL Lan Mùa Hạ 0000Y000071'), '/image/product/sp-gb0000y000071-2.png'),
-((SELECT TOP 1 product_id FROM Products WHERE title = N'Bông tai cưới Vàng 24K DAL Lan Mùa Hạ 0000Y000071'), '/image/product/sp-gb0000y000071-3.png'),
-((SELECT TOP 1 product_id FROM Products WHERE title = N'Bông tai cưới Vàng 24K DAL Duyên Phượng Tình Hồng 0000Y000102'), '/image/product/sp-gb0000y000102-1.png'),
-((SELECT TOP 1 product_id FROM Products WHERE title = N'Bông tai cưới Vàng 24K DAL Duyên Phượng Tình Hồng 0000Y000102'), '/image/product/sp-gb0000y000102-2.png'),
-((SELECT TOP 1 product_id FROM Products WHERE title = N'Bông tai cưới Vàng 24K DAL Duyên Phượng Tình Hồng 0000Y000102'), '/image/product/sp-gb0000y000102-3.png'),
-((SELECT TOP 1 product_id FROM Products WHERE title = N'Bông tai cưới Vàng 24K DAL 0000Y003038'), '/image/product/sp-gb0000y003038-1.png'),
-((SELECT TOP 1 product_id FROM Products WHERE title = N'Bông tai cưới Vàng 24K DAL 0000Y003038'), '/image/product/sp-gb0000y003038-2.png'),
-((SELECT TOP 1 product_id FROM Products WHERE title = N'Bông tai cưới Vàng 24K DAL 0000Y003038'), '/image/product/sp-gb0000y003038-3.png'),
-((SELECT TOP 1 product_id FROM Products WHERE title = N'Bông tai cưới Vàng 24K DAL Hạnh Phúc 0000Y000083'), '/image/product/sp-gb0000y000083-1.png'),
-((SELECT TOP 1 product_id FROM Products WHERE title = N'Bông tai cưới Vàng 24K DAL Hạnh Phúc 0000Y000083'), '/image/product/sp-gb0000y000083-2.png'),
-((SELECT TOP 1 product_id FROM Products WHERE title = N'Bông tai cưới Vàng 24K DAL Hạnh Phúc 0000Y000083'), '/image/product/sp-gb0000y000083-3.png'),
-((SELECT TOP 1 product_id FROM Products WHERE title = N'Bông tai cưới Vàng 18K đính đá ECZ DAL Trầu Cau XMXMY006013'), '/image/product/sp-GBXMXMY006013-1.png'),
-((SELECT TOP 1 product_id FROM Products WHERE title = N'Bông tai cưới Vàng 18K đính đá ECZ DAL Trầu Cau XMXMY006013'), '/image/product/sp-GBXMXMY006013-2.png'),
-((SELECT TOP 1 product_id FROM Products WHERE title = N'Bông tai cưới Vàng 18K đính đá ECZ DAL Trầu Cau XMXMY006013'), '/image/product/sp-GBXMXMY006013-3.png'),
-((SELECT TOP 1 product_id FROM Products WHERE title = N'Bông tai cưới Vàng 24K DAL Trầu cau 0000Y002680'), '/image/product/sp-GB0000Y002680-1.png'),
-((SELECT TOP 1 product_id FROM Products WHERE title = N'Bông tai cưới Vàng 24K DAL Trầu cau 0000Y002680'), '/image/product/sp-GB0000Y002680-2.png'),
-((SELECT TOP 1 product_id FROM Products WHERE title = N'Bông tai cưới Vàng 24K DAL Trầu cau 0000Y002680'), '/image/product/sp-GB0000Y002680-3.png'),
-((SELECT TOP 1 product_id FROM Products WHERE title = N'Bông tai cưới Vàng trắng 10K đính đá ECZ DAL Bạch Khổng Tước XMXMW001971'), '/image/product/gbxmxmw001971-1.png'),
-((SELECT TOP 1 product_id FROM Products WHERE title = N'Bông tai cưới Vàng trắng 10K đính đá ECZ DAL Bạch Khổng Tước XMXMW001971'), '/image/product/gbxmxmw001971-2.png'),
-((SELECT TOP 1 product_id FROM Products WHERE title = N'Bông tai cưới Vàng trắng 10K đính đá ECZ DAL Bạch Khổng Tước XMXMW001971'), '/image/product/gbxmxmw001971-3.png'),
+((SELECT TOP 1 product_id FROM Products WHERE title = N'Nhẫn cưới Vàng 24K DAL Trầu Cau 0000Y003194'), '/image/product/trangsuccuoi/sp-gn0000y003194-1.png'),
+((SELECT TOP 1 product_id FROM Products WHERE title = N'Nhẫn cưới Vàng 24K DAL Trầu Cau 0000Y003194'), '/image/product/trangsuccuoi/sp-gn0000y003194-2.png'),
+((SELECT TOP 1 product_id FROM Products WHERE title = N'Nhẫn cưới Vàng 24K DAL Trầu Cau 0000Y003194'), '/image/product/trangsuccuoi/sp-gn0000y003194-3.png'),
+((SELECT TOP 1 product_id FROM Products WHERE title = N'Bông tai Kim cương Vàng trắng 14K DAL DDDDW000182'), '/image/product/trangsuccuoi/sp-gbddddw000182-1.png'),
+((SELECT TOP 1 product_id FROM Products WHERE title = N'Bông tai Kim cương Vàng trắng 14K DAL DDDDW000182'), '/image/product/trangsuccuoi/sp-gbddddw000182-2.png'),
+((SELECT TOP 1 product_id FROM Products WHERE title = N'Bông tai Kim cương Vàng trắng 14K DAL DDDDW000182'), '/image/product/trangsuccuoi/sp-gbddddw000182-3.png'),
+((SELECT TOP 1 product_id FROM Products WHERE title = N'Bông tai cưới Vàng 24K DAL 0000Y000113'), '/image/product/trangsuccuoi/gb0000y000113-1.png'),
+((SELECT TOP 1 product_id FROM Products WHERE title = N'Bông tai cưới Vàng 24K DAL 0000Y000113'), '/image/product/trangsuccuoi/gb0000y000113-2.png'),
+((SELECT TOP 1 product_id FROM Products WHERE title = N'Bông tai cưới Vàng 24K DAL 0000Y000113'), '/image/product/trangsuccuoi/gb0000y000113-3.png'),
+((SELECT TOP 1 product_id FROM Products WHERE title = N'Bông tai cưới Vàng 24K DAL Lan Mùa Hạ 0000Y000071'), '/image/product/trangsuccuoi/sp-gb0000y000071-1.png'),
+((SELECT TOP 1 product_id FROM Products WHERE title = N'Bông tai cưới Vàng 24K DAL Lan Mùa Hạ 0000Y000071'), '/image/product/trangsuccuoi/sp-gb0000y000071-2.png'),
+((SELECT TOP 1 product_id FROM Products WHERE title = N'Bông tai cưới Vàng 24K DAL Lan Mùa Hạ 0000Y000071'), '/image/product/trangsuccuoi/sp-gb0000y000071-3.png'),
+((SELECT TOP 1 product_id FROM Products WHERE title = N'Bông tai cưới Vàng 24K DAL Duyên Phượng Tình Hồng 0000Y000102'), '/image/product/trangsuccuoi/sp-gb0000y000102-1.png'),
+((SELECT TOP 1 product_id FROM Products WHERE title = N'Bông tai cưới Vàng 24K DAL Duyên Phượng Tình Hồng 0000Y000102'), '/image/product/trangsuccuoi/sp-gb0000y000102-2.png'),
+((SELECT TOP 1 product_id FROM Products WHERE title = N'Bông tai cưới Vàng 24K DAL Duyên Phượng Tình Hồng 0000Y000102'), '/image/product/trangsuccuoi/sp-gb0000y000102-3.png'),
+((SELECT TOP 1 product_id FROM Products WHERE title = N'Bông tai cưới Vàng 24K DAL 0000Y003038'), '/image/product/trangsuccuoi/sp-gb0000y003038-1.png'),
+((SELECT TOP 1 product_id FROM Products WHERE title = N'Bông tai cưới Vàng 24K DAL 0000Y003038'), '/image/product/trangsuccuoi/sp-gb0000y003038-2.png'),
+((SELECT TOP 1 product_id FROM Products WHERE title = N'Bông tai cưới Vàng 24K DAL 0000Y003038'), '/image/product/trangsuccuoi/sp-gb0000y003038-3.png'),
+((SELECT TOP 1 product_id FROM Products WHERE title = N'Bông tai cưới Vàng 24K DAL Hạnh Phúc 0000Y000083'), '/image/product/trangsuccuoi/sp-gb0000y000083-1.png'),
+((SELECT TOP 1 product_id FROM Products WHERE title = N'Bông tai cưới Vàng 24K DAL Hạnh Phúc 0000Y000083'), '/image/product/trangsuccuoi/sp-gb0000y000083-2.png'),
+((SELECT TOP 1 product_id FROM Products WHERE title = N'Bông tai cưới Vàng 24K DAL Hạnh Phúc 0000Y000083'), '/image/product/trangsuccuoi/sp-gb0000y000083-3.png'),
+((SELECT TOP 1 product_id FROM Products WHERE title = N'Bông tai cưới Vàng 18K đính đá ECZ DAL Trầu Cau XMXMY006013'), '/image/product/trangsuccuoi/sp-GBXMXMY006013-1.png'),
+((SELECT TOP 1 product_id FROM Products WHERE title = N'Bông tai cưới Vàng 18K đính đá ECZ DAL Trầu Cau XMXMY006013'), '/image/product/trangsuccuoi/sp-GBXMXMY006013-2.png'),
+((SELECT TOP 1 product_id FROM Products WHERE title = N'Bông tai cưới Vàng 18K đính đá ECZ DAL Trầu Cau XMXMY006013'), '/image/product/trangsuccuoi/sp-GBXMXMY006013-3.png'),
+((SELECT TOP 1 product_id FROM Products WHERE title = N'Bông tai cưới Vàng 24K DAL Trầu cau 0000Y002680'), '/image/product/trangsuccuoi/sp-GB0000Y002680-1.png'),
+((SELECT TOP 1 product_id FROM Products WHERE title = N'Bông tai cưới Vàng 24K DAL Trầu cau 0000Y002680'), '/image/product/trangsuccuoi/sp-GB0000Y002680-2.png'),
+((SELECT TOP 1 product_id FROM Products WHERE title = N'Bông tai cưới Vàng 24K DAL Trầu cau 0000Y002680'), '/image/product/trangsuccuoi/sp-GB0000Y002680-3.png'),
+((SELECT TOP 1 product_id FROM Products WHERE title = N'Bông tai cưới Vàng trắng 10K đính đá ECZ DAL Bạch Khổng Tước XMXMW001971'), '/image/product/trangsuccuoi/gbxmxmw001971-1.png'),
+((SELECT TOP 1 product_id FROM Products WHERE title = N'Bông tai cưới Vàng trắng 10K đính đá ECZ DAL Bạch Khổng Tước XMXMW001971'), '/image/product/trangsuccuoi/gbxmxmw001971-2.png'),
+((SELECT TOP 1 product_id FROM Products WHERE title = N'Bông tai cưới Vàng trắng 10K đính đá ECZ DAL Bạch Khổng Tước XMXMW001971'), '/image/product/trangsuccuoi/gbxmxmw001971-3.png'),
 
 
 
@@ -814,6 +814,7 @@ VALUES
 ((SELECT TOP 1 product_id FROM Products WHERE title = N'Mặt dây chuyền Kim cương Vàng trắng 14K DAL DDDDW002605'), '/image/product/thuonghieu/sp-gmddddw002605-1.png'),
 ((SELECT TOP 1 product_id FROM Products WHERE title = N'Mặt dây chuyền Kim cương Vàng trắng 14K DAL DDDDW002605'), '/image/product/thuonghieu/sp-gmddddw002605-2.png'),
 ((SELECT TOP 1 product_id FROM Products WHERE title = N'Mặt dây chuyền Kim cương Vàng trắng 14K DAL DDDDW002605'), '/image/product/thuonghieu/sp-gmddddw002605-3.png');
+;
 
 --scart6
 INSERT INTO ShoppingCart (user_id,exemple_id, quantity)
@@ -911,6 +912,7 @@ BEGIN
     WHERE product_id = @ProductID;
 END;
 go
+
 CREATE TRIGGER trg_Users_Email_Unique
 ON Users
 AFTER INSERT, UPDATE
@@ -930,6 +932,7 @@ BEGIN
     END
 END;
 go
+
 CREATE TRIGGER trg_Users_phone_Unique
 ON Users
 AFTER INSERT, UPDATE
@@ -1244,3 +1247,146 @@ go
 select * from Products
 
 go
+
+
+CREATE PROCEDURE getProductsByCategory
+@categoryId INT,
+@SL INT
+AS
+BEGIN
+    SELECT TOP (@SL)
+        p.product_id,
+        p.title,
+        p.minPrice,
+        p.AverageRating,
+        pi.ImageURL AS img,
+        p.views
+    FROM 
+        Products p
+    LEFT JOIN 
+        ProductImages pi ON p.product_id = pi.ProductID 
+                         AND pi.ID = (
+                            SELECT MIN(ID) 
+                            FROM ProductImages 
+                            WHERE ProductID = p.product_id
+                         )
+    WHERE 
+        p.category_id = @categoryId
+    ORDER BY 
+        p.created_at DESC;
+END;
+
+EXEC getProductsByCategory @SL = 20,  @CategoryId = 1;
+
+
+
+--ham nay de lay min max luot ban
+
+CREATE PROCEDURE getMinMaxSell
+@categoryId INT,
+@SL INT,
+@sortBy NVARCHAR(50) -- Thêm tham số sortBy để xác định cách sắp xếp
+AS
+BEGIN
+    IF @sortBy = 'price_asc'
+    BEGIN
+        SELECT TOP (@SL)
+            p.product_id,
+            p.title,
+            p.minPrice,
+            p.AverageRating,
+            pi.ImageURL AS img,
+            p.views
+        FROM 
+            Products p
+        LEFT JOIN 
+            ProductImages pi ON p.product_id = pi.ProductID 
+                             AND pi.ID = (
+                                SELECT MIN(ID) 
+                                FROM ProductImages 
+                                WHERE ProductID = p.product_id
+                             )
+        WHERE 
+            p.category_id = @categoryId
+        ORDER BY 
+            p.minPrice ASC;
+    END
+    ELSE IF @sortBy = 'price_desc'
+    BEGIN
+        SELECT TOP (@SL)
+            p.product_id,
+            p.title,
+            p.minPrice,
+            p.AverageRating,
+            pi.ImageURL AS img,
+            p.views
+        FROM 
+            Products p
+        LEFT JOIN 
+            ProductImages pi ON p.product_id = pi.ProductID 
+                             AND pi.ID = (
+                                SELECT MIN(ID) 
+                                FROM ProductImages 
+                                WHERE ProductID = p.product_id
+                             )
+        WHERE 
+            p.category_id = @categoryId
+        ORDER BY 
+            p.minPrice DESC;
+    END
+    ELSE IF @sortBy = 'sales'
+    BEGIN
+        SELECT TOP (@SL)
+            p.product_id,
+            p.title,
+            p.minPrice,
+            p.AverageRating,
+            pi.ImageURL AS img,
+            p.views
+        FROM 
+            Products p
+        LEFT JOIN 
+            ProductImages pi ON p.product_id = pi.ProductID 
+                             AND pi.ID = (
+                                SELECT MIN(ID) 
+                                FROM ProductImages 
+                                WHERE ProductID = p.product_id
+                             )
+        WHERE 
+            p.category_id = @categoryId
+        ORDER BY 
+            p.views DESC; -- Giả định số lượt bán được lưu trong cột views
+    END
+    ELSE
+    BEGIN
+        SELECT TOP (@SL)
+            p.product_id,
+            p.title,
+            p.minPrice,
+            p.AverageRating,
+            pi.ImageURL AS img,
+            p.views
+        FROM 
+            Products p
+        LEFT JOIN 
+            ProductImages pi ON p.product_id = pi.ProductID 
+                             AND pi.ID = (
+                                SELECT MIN(ID) 
+                                FROM ProductImages 
+                                WHERE ProductID = p.product_id
+                             )
+        WHERE 
+            p.category_id = @categoryId
+        ORDER BY 
+            p.created_at DESC;
+    END
+END;
+
+-- Sắp xếp giá từ thấp lên cao
+EXEC getMinMaxSell @categoryId = 1, @SL = 20, @sortBy = 'price_asc';
+
+-- Sắp xếp giá từ cao xuống thấp
+EXEC getMinMaxSell @categoryId = 1, @SL = 20, @sortBy = 'price_desc';
+
+-- Sắp xếp theo lượt bán
+EXEC getMinMaxSell @categoryId = 1, @SL = 20, @sortBy = 'sales';

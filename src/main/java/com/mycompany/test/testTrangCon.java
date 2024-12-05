@@ -1,29 +1,21 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
+ */
 package com.mycompany.test;
-
-import com.mycompany.swing.ScrollBarWin11UI;
-import com.mycompany.tab.Home;
-import javax.swing.UIDefaults;
-import javax.swing.UIManager;
 
 /**
  *
- * @author duyan
+ * @author haidu
  */
-public class TestForm extends javax.swing.JFrame {
+public class testTrangCon extends javax.swing.JFrame {
 
     /**
-     * Creates new form TestForm
+     * Creates new form testTrangCon
      */
-    public TestForm() {
+    public testTrangCon() {
         initComponents();
-        loadHomePanel(); // Load home panel initially
-    }
-
-    private void loadHomePanel() {
-        Home homePanel = new Home();
-        jScrollPane1.setViewportView(homePanel);
-        jScrollPane1.revalidate();
-        jScrollPane1.repaint();
+        trang_con1.setTrangCon(2);
     }
 
     /**
@@ -35,20 +27,23 @@ public class TestForm extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        header1 = new com.mycompany.component.header();
-        menu2 = new com.mycompany.component.Menu();
-
         jScrollPane1 = new javax.swing.JScrollPane();
-        home1 = new com.mycompany.tab.Home();
+        trang_con1 = new com.mycompany.component.trang_con();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().add(header1, java.awt.BorderLayout.PAGE_START);
-        getContentPane().add(menu2, java.awt.BorderLayout.LINE_START);
 
+        jScrollPane1.setViewportView(trang_con1);
 
-        jScrollPane1.setViewportView(home1);
-
-        getContentPane().add(jScrollPane1, java.awt.BorderLayout.LINE_END);
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1278, Short.MAX_VALUE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane1)
+        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -70,33 +65,26 @@ public class TestForm extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(TestForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(testTrangCon.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(TestForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(testTrangCon.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(TestForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(testTrangCon.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(TestForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(testTrangCon.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
-        UIDefaults ui = UIManager.getDefaults();
-        ui.put("ScrollBarUI", ScrollBarWin11UI.class.getCanonicalName());
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new TestForm().setVisible(true);
+                new testTrangCon().setVisible(true);
             }
         });
-
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private com.mycompany.component.header header1;
-
-    private com.mycompany.tab.Home home1;
     private javax.swing.JScrollPane jScrollPane1;
-    private com.mycompany.component.Menu menu2;
-
+    private com.mycompany.component.trang_con trang_con1;
     // End of variables declaration//GEN-END:variables
 }

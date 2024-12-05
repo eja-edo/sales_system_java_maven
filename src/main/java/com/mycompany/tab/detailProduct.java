@@ -146,7 +146,7 @@ public class detailProduct extends javax.swing.JPanel {
         });
         Products model = new Products();
         ProductDetailController controller = new ProductDetailController(model,this); 
-        controller.insertData(1);
+        //controller.insertData(1);
         
         listImgProduct.setSelectedIndex(0);
         
