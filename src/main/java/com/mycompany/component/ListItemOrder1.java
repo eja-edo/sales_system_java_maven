@@ -13,43 +13,43 @@ import java.util.List;
  *
  * @author duyan
  */
-public class ListItemCart extends javax.swing.JPanel {
-    private List<ItemCart> selectedItems = new ArrayList<>();
+public class ListItemOrder1 extends javax.swing.JPanel {
+//    private List<ItemCart> selectedItems = new ArrayList<>();
+//    
     
     
-    
-    public ListItemCart() {
+    public ListItemOrder1() {
         List<Integer> sizes = Arrays.asList(23, 34, 30, 32);
         initComponents();
-        addItemCart(new com.mycompany.component.ItemCart());
-        addItemCart(new com.mycompany.component.ItemCart());
-        addItemCart(new com.mycompany.component.ItemCart());
-        addItemCart(new com.mycompany.component.ItemCart());
-        addItemCart(new com.mycompany.component.ItemCart());
-        addItemCart(new com.mycompany.component.ItemCart());
-        addItemCart(new com.mycompany.component.ItemCart());
-        addItemCart(new com.mycompany.component.ItemCart());
-        addItemCart(new com.mycompany.component.ItemCart());
-        addItemCart(new com.mycompany.component.ItemCart("Nhẫn cưới Kim cương Vàng Trắng", null, "9.698.000 đ", sizes, "DD00W005844"));  
+        addItemOrder(new com.mycompany.component.ItemOrder());
+        addItemOrder(new com.mycompany.component.ItemOrder());
+        addItemOrder(new com.mycompany.component.ItemOrder());
+        addItemOrder(new com.mycompany.component.ItemOrder());
+        addItemOrder(new com.mycompany.component.ItemOrder());
+        addItemOrder(new com.mycompany.component.ItemOrder());
+        addItemOrder(new com.mycompany.component.ItemOrder());
+        addItemOrder(new com.mycompany.component.ItemOrder());
+        addItemOrder(new com.mycompany.component.ItemOrder());
+        addItemOrder(new com.mycompany.component.ItemOrder("Nhẫn cưới Kim cương Vàng Trắng", null, 9698000, sizes, "DD00W005844"));  
     }
     
     
-    public void setupItemCart(ItemCart itemCart) {
-        itemCart.setSelectAction(e -> {
-            if (itemCart.isSelected()) {
-                selectedItems.add(itemCart);
-            } else {
-                selectedItems.remove(itemCart);
-            }
-        });
-    }
+//    public void setupItemCart(ItemCart itemCart) {
+//        itemCart.setSelectAction(e -> {
+//            if (itemCart.isSelected()) {
+//                selectedItems.add(itemCart);
+//            } else {
+//                selectedItems.remove(itemCart);
+//            }
+//        });
+//    }
 
     
         // Hàm để xóa một ItemCart khỏi JPanel
-    public void removeItemCart(ItemCart itemCart) {
-        this.remove(itemCart); // Xóa ItemCart khỏi JPanel
-        updateLayout();        // Cập nhật lại layout
-    }
+//    public void removeItemCart(ItemCart itemCart) {
+//        this.remove(itemCart); // Xóa ItemCart khỏi JPanel
+//        updateLayout();        // Cập nhật lại layout
+//    }
 
     // Cập nhật lại layout sau khi xóa
     private void updateLayout() {
@@ -76,14 +76,14 @@ public class ListItemCart extends javax.swing.JPanel {
     }
 
     // Thêm ItemCart mới với nút xóa đã được thiết lập
-public void addItemCart(ItemCart itemCart) {
+public void addItemOrder(ItemOrder ItemOrder) {
     // Thêm ItemCart vào vị trí đầu tiên
-    this.add(itemCart, 0);
-    setupItemCart(itemCart);
-    // Gắn sự kiện cho nút xóa
-    itemCart.setDeleteAction(e -> removeItemCart(itemCart));
-    
-    // Cập nhật lại layout
+    this.add(ItemOrder, 0);
+//    setupItemCart(itemCart);
+//    // Gắn sự kiện cho nút xóa
+//    itemCart.setDeleteAction(e -> removeItemCart(itemCart));
+//    
+//    // Cập nhật lại layout
     updateLayout();
 }
     

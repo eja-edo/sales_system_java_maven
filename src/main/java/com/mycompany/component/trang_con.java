@@ -136,11 +136,23 @@ public class trang_con extends javax.swing.JPanel {
         itemProduct5 = new com.mycompany.component.ItemProduct();
         itemProduct6 = new com.mycompany.component.ItemProduct();
         itemProduct7 = new com.mycompany.component.ItemProduct();
+<<<<<<< HEAD
+        itemProduct4 = new com.mycompany.component.ItemProduct();
+        itemProduct3 = new com.mycompany.component.ItemProduct();
+        itemProduct2 = new com.mycompany.component.ItemProduct();
+        itemProduct1 = new com.mycompany.component.ItemProduct();
+        jPanel2 = new javax.swing.JPanel();
+        itemProduct9 = new com.mycompany.component.ItemProduct();
+        itemProduct14 = new com.mycompany.component.ItemProduct();
+        itemProduct15 = new com.mycompany.component.ItemProduct();
+        itemProduct16 = new com.mycompany.component.ItemProduct();
+=======
         itemProduct8 = new com.mycompany.component.ItemProduct();
         itemProduct10 = new com.mycompany.component.ItemProduct();
         itemProduct11 = new com.mycompany.component.ItemProduct();
         itemProduct12 = new com.mycompany.component.ItemProduct();
         itemProduct13 = new com.mycompany.component.ItemProduct();
+>>>>>>> f5e02d4f7564c8e713c311c4bf9df93bb0de7d67
         itemProduct17 = new com.mycompany.component.ItemProduct();
         itemProduct18 = new com.mycompany.component.ItemProduct();
         itemProduct19 = new com.mycompany.component.ItemProduct();
@@ -166,11 +178,34 @@ public class trang_con extends javax.swing.JPanel {
         jPanel1.add(itemProduct5);
         jPanel1.add(itemProduct6);
         jPanel1.add(itemProduct7);
+<<<<<<< HEAD
+
+        itemProduct4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                itemProduct4MouseClicked(evt);
+            }
+        });
+        jPanel1.add(itemProduct4);
+        jPanel1.add(itemProduct3);
+        jPanel1.add(itemProduct2);
+        jPanel1.add(itemProduct1);
+
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setAutoscrolls(true);
+        jPanel2.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 20, 20));
+        jPanel2.add(itemProduct9);
+        jPanel2.add(itemProduct14);
+        jPanel2.add(itemProduct15);
+        jPanel2.add(itemProduct16);
+
+        jPanel1.add(jPanel2);
+=======
         jPanel1.add(itemProduct8);
         jPanel1.add(itemProduct10);
         jPanel1.add(itemProduct11);
         jPanel1.add(itemProduct12);
         jPanel1.add(itemProduct13);
+>>>>>>> f5e02d4f7564c8e713c311c4bf9df93bb0de7d67
         jPanel1.add(itemProduct17);
         jPanel1.add(itemProduct18);
         jPanel1.add(itemProduct19);
@@ -218,13 +253,17 @@ public class trang_con extends javax.swing.JPanel {
                     .addComponent(comboBoxSuggestion1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 59, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 2139, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(156, 156, 156))
+                .addGap(153, 153, 153))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void comboBoxSuggestion1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboBoxSuggestion1ActionPerformed
          comboBoxActionPerformed();
     }//GEN-LAST:event_comboBoxSuggestion1ActionPerformed
+
+    private void itemProduct4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_itemProduct4MouseClicked
+
+    }//GEN-LAST:event_itemProduct4MouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -252,5 +291,9 @@ public class trang_con extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
+<<<<<<< HEAD
+    private javax.swing.JPanel jPanel2;
+=======
+>>>>>>> f5e02d4f7564c8e713c311c4bf9df93bb0de7d67
     // End of variables declaration//GEN-END:variables
 }

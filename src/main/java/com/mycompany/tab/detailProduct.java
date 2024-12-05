@@ -133,8 +133,8 @@ public class detailProduct extends javax.swing.JPanel {
     }
 
 
-    
-
+    private Products model;
+    private ProductDetailController controller; 
     public detailProduct() {
         initComponents();
         
@@ -144,9 +144,10 @@ public class detailProduct extends javax.swing.JPanel {
             // Thực hiện hành động khi chọn hình ảnh (ví dụ: hiển thị hình ảnh)
             showSelectedImage(imagePath);
         });
-        Products model = new Products();
-        ProductDetailController controller = new ProductDetailController(model,this); 
-        //controller.insertData(1);
+        
+        model = new Products();
+        controller = new ProductDetailController(model,this);
+        controller.insertData(1);
         
         listImgProduct.setSelectedIndex(0);
         
@@ -167,7 +168,8 @@ public class detailProduct extends javax.swing.JPanel {
     
     public detailProduct(int productID)
     {
-        
+        this();
+        controller.insertData(productID);
     }
     
     

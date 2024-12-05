@@ -50,7 +50,7 @@
               </Group>
               <EmptySpace pref="59" max="32767" attributes="0"/>
               <Component id="jPanel1" min="-2" pref="2139" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="156" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="153" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -89,7 +89,14 @@
         </Component>
         <Component class="com.mycompany.component.ItemProduct" name="itemProduct7">
         </Component>
+<<<<<<< HEAD
+        <Component class="com.mycompany.component.ItemProduct" name="itemProduct4">
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="itemProduct4MouseClicked"/>
+          </Events>
+=======
         <Component class="com.mycompany.component.ItemProduct" name="itemProduct8">
+>>>>>>> f5e02d4f7564c8e713c311c4bf9df93bb0de7d67
         </Component>
         <Component class="com.mycompany.component.ItemProduct" name="itemProduct10">
         </Component>
@@ -99,6 +106,32 @@
         </Component>
         <Component class="com.mycompany.component.ItemProduct" name="itemProduct13">
         </Component>
+<<<<<<< HEAD
+        <Container class="javax.swing.JPanel" name="jPanel2">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+            </Property>
+            <Property name="autoscrolls" type="boolean" value="true"/>
+          </Properties>
+
+          <Layout class="org.netbeans.modules.form.compat2.layouts.DesignFlowLayout">
+            <Property name="horizontalGap" type="int" value="20"/>
+            <Property name="verticalGap" type="int" value="20"/>
+          </Layout>
+          <SubComponents>
+            <Component class="com.mycompany.component.ItemProduct" name="itemProduct9">
+            </Component>
+            <Component class="com.mycompany.component.ItemProduct" name="itemProduct14">
+            </Component>
+            <Component class="com.mycompany.component.ItemProduct" name="itemProduct15">
+            </Component>
+            <Component class="com.mycompany.component.ItemProduct" name="itemProduct16">
+            </Component>
+          </SubComponents>
+        </Container>
+=======
+>>>>>>> f5e02d4f7564c8e713c311c4bf9df93bb0de7d67
         <Component class="com.mycompany.component.ItemProduct" name="itemProduct17">
         </Component>
         <Component class="com.mycompany.component.ItemProduct" name="itemProduct18">

@@ -5,6 +5,7 @@
 package com.mycompany.utils;
 
 import java.text.NumberFormat;
+import java.text.ParseException;
 import java.util.Locale;
 
 public class Formatter {
@@ -15,6 +16,17 @@ public class Formatter {
         
         // Thêm ký tự "đ" vào cuối giá trị
         return formattedPrice + "đ";
+    }
+     public static double parsePrice(String formattedPrice) throws ParseException  {
+        // Loại bỏ ký tự "đ" nếu có
+        formattedPrice = formattedPrice.replace("đ", "").trim();
+
+        // Sử dụng NumberFormat để phân tích chuỗi và chuyển đổi lại thành double
+        NumberFormat formatter = NumberFormat.getInstance(Locale.forLanguageTag("vi-VN"));
+        Number number = formatter.parse(formattedPrice);
+
+        // Trả về giá trị double
+        return number.doubleValue();
     }
     public static String formatViews(int view){
         if (view >= 1_000_000) {
