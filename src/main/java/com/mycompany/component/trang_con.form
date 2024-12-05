@@ -89,14 +89,12 @@
         </Component>
         <Component class="com.mycompany.component.ItemProduct" name="itemProduct7">
         </Component>
-<<<<<<< HEAD
+
         <Component class="com.mycompany.component.ItemProduct" name="itemProduct4">
           <Events>
             <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="itemProduct4MouseClicked"/>
           </Events>
-=======
-        <Component class="com.mycompany.component.ItemProduct" name="itemProduct8">
->>>>>>> f5e02d4f7564c8e713c311c4bf9df93bb0de7d67
+
         </Component>
         <Component class="com.mycompany.component.ItemProduct" name="itemProduct10">
         </Component>
@@ -106,7 +104,7 @@
         </Component>
         <Component class="com.mycompany.component.ItemProduct" name="itemProduct13">
         </Component>
-<<<<<<< HEAD
+
         <Container class="javax.swing.JPanel" name="jPanel2">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -130,8 +128,7 @@
             </Component>
           </SubComponents>
         </Container>
-=======
->>>>>>> f5e02d4f7564c8e713c311c4bf9df93bb0de7d67
+
         <Component class="com.mycompany.component.ItemProduct" name="itemProduct17">
         </Component>
         <Component class="com.mycompany.component.ItemProduct" name="itemProduct18">

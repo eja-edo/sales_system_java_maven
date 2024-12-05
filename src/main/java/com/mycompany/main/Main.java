@@ -27,7 +27,6 @@ public class Main extends javax.swing.JFrame implements CardSelectionListener {
     trang_con2.setTrangCon(2);
     trang_con3.setTrangCon(3);
     trang_con4.setTrangCon(4);
-    trang_con5.setTrangCon(5);
     }   
    
     

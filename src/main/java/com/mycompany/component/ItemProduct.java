@@ -42,7 +42,8 @@ public class ItemProduct extends javax.swing.JPanel {
         StyleConstants.setAlignment(center, StyleConstants.ALIGN_CENTER);
         doc.setParagraphAttributes(0, doc.getLength(), center, false);
     }
-         public void setItemProduct(ItemProductEntity itemProduct) {
+        public void setItemProduct(ItemProductEntity itemProduct) {
+            
         try {
         // Chuyển đổi đường dẫn URL thành định dạng hợp lệ
         String imgPath = itemProduct.getUrlImg().replace("\\", "/");
@@ -65,6 +66,7 @@ public class ItemProduct extends javax.swing.JPanel {
         imgProduct.setIcon(defaultImgIcon);
     }
 
+    id = itemProduct.getProductId();
     ScaleImg.scaleImg(imgProduct);
     jtitle.setText(itemProduct.getTitle());
     jprice.setText(itemProduct.getMinPrice());
