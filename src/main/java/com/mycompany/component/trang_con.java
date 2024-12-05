@@ -142,7 +142,9 @@ public class trang_con extends javax.swing.JPanel {
         itemProduct14 = new com.mycompany.component.ItemProduct();
         itemProduct15 = new com.mycompany.component.ItemProduct();
         itemProduct16 = new com.mycompany.component.ItemProduct();
+
         jPanel3 = new javax.swing.JPanel();
+
         itemProduct17 = new com.mycompany.component.ItemProduct();
         itemProduct18 = new com.mycompany.component.ItemProduct();
         itemProduct19 = new com.mycompany.component.ItemProduct();
@@ -172,12 +174,15 @@ public class trang_con extends javax.swing.JPanel {
         jPanel1.add(itemProduct1);
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+
         jPanel2.setAutoscrolls(true);
+
         jPanel2.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 20, 20));
         jPanel2.add(itemProduct9);
         jPanel2.add(itemProduct14);
         jPanel2.add(itemProduct15);
         jPanel2.add(itemProduct16);
+
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -191,6 +196,7 @@ public class trang_con extends javax.swing.JPanel {
         );
 
         jPanel2.add(jPanel3);
+
 
         jPanel1.add(jPanel2);
         jPanel1.add(itemProduct17);
@@ -224,6 +230,7 @@ public class trang_con extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
+
                 .addGap(49, 49, 49)
                 .addComponent(button21, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(769, 769, 769)
@@ -235,6 +242,7 @@ public class trang_con extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1199, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
+
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -245,9 +253,11 @@ public class trang_con extends javax.swing.JPanel {
                     .addComponent(button21, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2)
                     .addComponent(comboBoxSuggestion1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 2139, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(156, 156, 156))
+
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -283,6 +293,8 @@ public class trang_con extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+
     private javax.swing.JPanel jPanel3;
+
     // End of variables declaration//GEN-END:variables
 }
