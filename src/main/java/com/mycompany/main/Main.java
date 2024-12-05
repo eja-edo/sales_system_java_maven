@@ -23,6 +23,11 @@ public class Main extends javax.swing.JFrame implements CardSelectionListener {
 //        CurrentCard = 0;
     cardLayout = (CardLayout) jPanel1.getLayout();
     menu1.setParent(this);
+    trang_con1.setTrangCon(1);
+    trang_con2.setTrangCon(2);
+    trang_con3.setTrangCon(3);
+    trang_con4.setTrangCon(4);
+    trang_con5.setTrangCon(5);
     }   
    
     
