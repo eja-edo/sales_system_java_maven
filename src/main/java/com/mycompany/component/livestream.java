@@ -6,30 +6,30 @@ import javax.swing.SwingUtilities;
 
 public class livestream extends javax.swing.JPanel {
 
-    private final EmbeddedMediaPlayerComponent mediaPlayerComponent;
+ //   private final EmbeddedMediaPlayerComponent mediaPlayerComponent;
 
     public livestream() {
         initComponents();
-        mediaPlayerComponent = new EmbeddedMediaPlayerComponent();
-        this.setLayout(new BorderLayout());
-        this.add(mediaPlayerComponent, BorderLayout.CENTER);
-
-        // Bật debug để kiểm tra
-        System.setProperty("vlcj.log", "DEBUG");
-
-        SwingUtilities.invokeLater(() -> {
-            if (this.isDisplayable()) {
-               String videoPath = "D:/study/monky4/java/BTLON/sales_system_java_maven/vid/5s.mp4";
-                mediaPlayerComponent.mediaPlayer().media().play(videoPath);
-
-                boolean success = mediaPlayerComponent.mediaPlayer().media().start(videoPath);
-                if (!success) {
-                    System.err.println("Failed to play video: " + videoPath);
-                }
-            } else {
-                System.err.println("Component chưa hiển thị, không thể phát video!");
-            }
-        });
+//       mediaPlayerComponent = new EmbeddedMediaPlayerComponent();
+//        this.setLayout(new BorderLayout());
+//        this.add(mediaPlayerComponent, BorderLayout.CENTER);
+//
+//        // Bật debug để kiểm tra
+//        System.setProperty("vlcj.log", "DEBUG");
+//
+//        SwingUtilities.invokeLater(() -> {
+//            if (this.isDisplayable()) {
+//               String videoPath = "D:/study/monky4/java/BTLON/sales_system_java_maven/vid/5s.mp4";
+//                mediaPlayerComponent.mediaPlayer().media().play(videoPath);
+//
+//                boolean success = mediaPlayerComponent.mediaPlayer().media().start(videoPath);
+//                if (!success) {
+//                    System.err.println("Failed to play video: " + videoPath);
+//                }
+//            } else {
+//                System.err.println("Component chưa hiển thị, không thể phát video!");
+//            }
+//        });
     }
     
     @SuppressWarnings("unchecked")

@@ -4,6 +4,7 @@
  */
 package com.mycompany.component;
 
+import com.mycompany.utils.CardSelectionListener;
 import java.awt.Color;
 
 /**
@@ -13,20 +14,22 @@ import java.awt.Color;
 public class Menu extends javax.swing.JPanel {
 
     private com.raven.swing.Button2 isSelect ;
-     
-    
+    private CardSelectionListener cardSelectionListener;
     private final Color DefaultColor;
     private final Color ClickedColor;
     
     public Menu() {
         initComponents();
          // Khởi tạo màu mặc định
-
     DefaultColor = new Color(249,241,236);
     ClickedColor = new Color(190,162,136);
     }
+    public void setParent(CardSelectionListener listener)
+    {
+        this.cardSelectionListener = listener;
+    }
     
-    private void changeButtonState(com.raven.swing.Button2 selectedButton) {
+    private void changeButtonState(com.raven.swing.Button2 selectedButton ) {
     // Đặt màu cho các nút
     button21.setBackground(DefaultColor);
     button22.setBackground(DefaultColor);
@@ -78,11 +81,9 @@ public class Menu extends javax.swing.JPanel {
         button27 = new com.raven.swing.Button2();
         button28 = new com.raven.swing.Button2();
 
-
         setBackground(new java.awt.Color(249, 241, 236));
 
         button21.setBackground(new java.awt.Color(249, 241, 236));
-
         button21.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 10, 1, 1));
         button21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/menu1.png"))); // NOI18N
         button21.setText("Trang chủ");
@@ -95,9 +96,7 @@ public class Menu extends javax.swing.JPanel {
             }
         });
 
-
         button22.setBackground(new java.awt.Color(249, 241, 236));
-
         button22.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 10, 1, 1));
         button22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/menu2.png"))); // NOI18N
         button22.setText("Trang sức cưới");
@@ -110,9 +109,7 @@ public class Menu extends javax.swing.JPanel {
             }
         });
 
-
         button23.setBackground(new java.awt.Color(249, 241, 236));
-
         button23.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 5, 1, 1));
         button23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/menu3.png"))); // NOI18N
         button23.setText("Đồng hồ");
@@ -125,9 +122,7 @@ public class Menu extends javax.swing.JPanel {
             }
         });
 
-
         button24.setBackground(new java.awt.Color(249, 241, 236));
-
         button24.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 10, 1, 1));
         button24.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/menu4.png"))); // NOI18N
         button24.setText("Quà tặng");
@@ -140,9 +135,7 @@ public class Menu extends javax.swing.JPanel {
             }
         });
 
-
         button25.setBackground(new java.awt.Color(249, 241, 236));
-
         button25.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 10, 1, 1));
         button25.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/menu5.png"))); // NOI18N
         button25.setText("Thương hiệu");
@@ -155,9 +148,7 @@ public class Menu extends javax.swing.JPanel {
             }
         });
 
-
         button26.setBackground(new java.awt.Color(249, 241, 236));
-
         button26.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 10, 1, 1));
         button26.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/menu6.png"))); // NOI18N
         button26.setText("Bộ sưu tập");
@@ -170,9 +161,7 @@ public class Menu extends javax.swing.JPanel {
             }
         });
 
-
         button27.setBackground(new java.awt.Color(249, 241, 236));
-
         button27.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 7, 1, 1));
         button27.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/menu7.png"))); // NOI18N
         button27.setText("Livestream");
@@ -185,9 +174,7 @@ public class Menu extends javax.swing.JPanel {
             }
         });
 
-
         button28.setBackground(new java.awt.Color(249, 241, 236));
-
         button28.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 10, 1, 1));
         button28.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/menu8.png"))); // NOI18N
         button28.setText("KHTT");
@@ -236,35 +223,43 @@ public class Menu extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void button21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button21ActionPerformed
-        changeButtonState(button21);
+        changeButtonState(button21 );
+        cardSelectionListener.setShowPanel("jScrollPane1");
     }//GEN-LAST:event_button21ActionPerformed
 
     private void button22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button22ActionPerformed
         changeButtonState(button22);
+        cardSelectionListener.setShowPanel("jScrollPane2");
     }//GEN-LAST:event_button22ActionPerformed
 
     private void button23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button23ActionPerformed
         changeButtonState(button23);
+        cardSelectionListener.setShowPanel("jScrollPane3");
     }//GEN-LAST:event_button23ActionPerformed
 
     private void button24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button24ActionPerformed
         changeButtonState(button24); 
+        cardSelectionListener.setShowPanel("jScrollPane4");
     }//GEN-LAST:event_button24ActionPerformed
 
     private void button25ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button25ActionPerformed
         changeButtonState(button25);
+        cardSelectionListener.setShowPanel("jScrollPane5");
     }//GEN-LAST:event_button25ActionPerformed
 
     private void button26ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button26ActionPerformed
         changeButtonState(button26);
+        cardSelectionListener.setShowPanel("jScrollPane6");
     }//GEN-LAST:event_button26ActionPerformed
 
     private void button27ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button27ActionPerformed
         changeButtonState(button27);
+        cardSelectionListener.setShowPanel("jScrollPane7");
     }//GEN-LAST:event_button27ActionPerformed
 
     private void button28ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button28ActionPerformed
         changeButtonState(button28);
+        cardSelectionListener.setShowPanel("jScrollPane8");
     }//GEN-LAST:event_button28ActionPerformed
 
 

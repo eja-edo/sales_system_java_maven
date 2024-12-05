@@ -25,7 +25,7 @@
           <Group type="102" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-
+                  <Component id="jLabel2" alignment="0" pref="1022" max="32767" attributes="0"/>
                   <Component id="jPanel3" alignment="0" pref="0" max="32767" attributes="0"/>
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="jLabel3" max="32767" attributes="0"/>
@@ -94,9 +94,6 @@
       </Layout>
       <SubComponents>
         <Component class="com.mycompany.component.ItemProduct" name="itemProduct1">
-          <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="itemProduct1MouseClicked"/>
-          </Events>
         </Component>
         <Component class="com.mycompany.component.ItemProduct" name="itemProduct2">
         </Component>
