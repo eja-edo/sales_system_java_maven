@@ -1,29 +1,20 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
+ */
 package com.mycompany.test;
-
-import com.mycompany.swing.ScrollBarWin11UI;
-import com.mycompany.tab.Home;
-import javax.swing.UIDefaults;
-import javax.swing.UIManager;
 
 /**
  *
- * @author duyan
+ * @author haidu
  */
-public class TestForm extends javax.swing.JFrame {
+public class testDetail extends javax.swing.JFrame {
 
     /**
-     * Creates new form TestForm
+     * Creates new form testDetail
      */
-    public TestForm() {
+    public testDetail() {
         initComponents();
-        loadHomePanel(); // Load home panel initially
-    }
-
-    private void loadHomePanel() {
-        Home homePanel = new Home();
-        jScrollPane1.setViewportView(homePanel);
-        jScrollPane1.revalidate();
-        jScrollPane1.repaint();
     }
 
     /**
@@ -35,24 +26,26 @@ public class TestForm extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        header1 = new com.mycompany.component.header();
-        menu2 = new com.mycompany.component.Menu();
-
-
-        jScrollPane1 = new javax.swing.JScrollPane();
-        home1 = new com.mycompany.tab.Home();
-
+        detailProduct1 = new com.mycompany.tab.detailProduct();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().add(header1, java.awt.BorderLayout.PAGE_START);
-        getContentPane().add(menu2, java.awt.BorderLayout.LINE_START);
 
-
-
-        jScrollPane1.setViewportView(home1);
-
-        getContentPane().add(jScrollPane1, java.awt.BorderLayout.LINE_END);
-
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(detailProduct1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(318, Short.MAX_VALUE))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(detailProduct1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -74,34 +67,25 @@ public class TestForm extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(TestForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(testDetail.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(TestForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(testDetail.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(TestForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(testDetail.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(TestForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(testDetail.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
-        UIDefaults ui = UIManager.getDefaults();
-        ui.put("ScrollBarUI", ScrollBarWin11UI.class.getCanonicalName());
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new TestForm().setVisible(true);
+                new testDetail().setVisible(true);
             }
         });
-
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private com.mycompany.tab.detailProduct detailProduct1;
-    private com.mycompany.component.header header1;
-
-    private com.mycompany.tab.Home home1;
-    private javax.swing.JScrollPane jScrollPane1;
-    private com.mycompany.component.Menu menu2;
-
     // End of variables declaration//GEN-END:variables
 }
