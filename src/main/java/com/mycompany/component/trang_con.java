@@ -43,9 +43,9 @@ public class trang_con extends javax.swing.JPanel {
         ItemProduct[] componentsArray = {
             itemProduct1, itemProduct2, itemProduct3,
             itemProduct4, itemProduct5,itemProduct6, itemProduct7, itemProduct8,
-            itemProduct9, itemProduct10,itemProduct11, itemProduct14, itemProduct15,
-            itemProduct16, itemProduct17,itemProduct18, itemProduct19, itemProduct20,
-            itemProduct21, itemProduct22
+            itemProduct10, itemProduct11,itemProduct12, itemProduct13, itemProduct17,
+            itemProduct18, itemProduct19,itemProduct20, itemProduct21, itemProduct22,
+            itemProduct23, itemProduct24
         };
 
         for (int i = 0; i < productEntities.size() && i < componentsArray.length; i++) {
@@ -56,11 +56,11 @@ public class trang_con extends javax.swing.JPanel {
         List<ItemProductEntity> productEntities = loadProductController.getProductsSorted(loaiID,20,"price_asc");
 
         ItemProduct[] componentsArray = {
-            itemProduct1, itemProduct2, itemProduct3,
+           itemProduct1, itemProduct2, itemProduct3,
             itemProduct4, itemProduct5,itemProduct6, itemProduct7, itemProduct8,
-            itemProduct9, itemProduct10,itemProduct11, itemProduct14, itemProduct15,
-            itemProduct16, itemProduct17,itemProduct18, itemProduct19, itemProduct20,
-            itemProduct21, itemProduct22
+            itemProduct10, itemProduct11,itemProduct12, itemProduct13, itemProduct17,
+            itemProduct18, itemProduct19,itemProduct20, itemProduct21, itemProduct22,
+            itemProduct23, itemProduct24
         };
 
         for (int i = 0; i < productEntities.size() && i < componentsArray.length; i++) {
@@ -71,11 +71,11 @@ public class trang_con extends javax.swing.JPanel {
         List<ItemProductEntity> productEntities = loadProductController.getProductsSorted(LoaiID, 20, "price_desc");
 
         ItemProduct[] componentsArray = {
-            itemProduct1, itemProduct2, itemProduct3,
-            itemProduct4, itemProduct5, itemProduct6, itemProduct7, itemProduct8,
-            itemProduct9, itemProduct10, itemProduct11, itemProduct14, itemProduct15,
-            itemProduct16, itemProduct17, itemProduct18, itemProduct19, itemProduct20,
-            itemProduct21, itemProduct22
+           itemProduct1, itemProduct2, itemProduct3,
+            itemProduct4, itemProduct5,itemProduct6, itemProduct7, itemProduct8,
+            itemProduct10, itemProduct11,itemProduct12, itemProduct13, itemProduct17,
+            itemProduct18, itemProduct19,itemProduct20, itemProduct21, itemProduct22,
+            itemProduct23, itemProduct24
         };
 
          for (int i = 0; i < productEntities.size() && i < componentsArray.length; i++) {
@@ -88,10 +88,10 @@ public class trang_con extends javax.swing.JPanel {
 
         ItemProduct[] componentsArray = {
             itemProduct1, itemProduct2, itemProduct3,
-            itemProduct4, itemProduct5, itemProduct6, itemProduct7, itemProduct8,
-            itemProduct9, itemProduct10, itemProduct11, itemProduct14, itemProduct15,
-            itemProduct16, itemProduct17, itemProduct18, itemProduct19, itemProduct20,
-            itemProduct21, itemProduct22
+            itemProduct4, itemProduct5,itemProduct6, itemProduct7, itemProduct8,
+            itemProduct10, itemProduct11,itemProduct12, itemProduct13, itemProduct17,
+            itemProduct18, itemProduct19,itemProduct20, itemProduct21, itemProduct22,
+            itemProduct23, itemProduct24
         };
 
          for (int i = 0; i < productEntities.size() && i < componentsArray.length; i++) {
@@ -129,10 +129,14 @@ public class trang_con extends javax.swing.JPanel {
 
         jLabel1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
+        itemProduct1 = new com.mycompany.component.ItemProduct();
+        itemProduct2 = new com.mycompany.component.ItemProduct();
+        itemProduct3 = new com.mycompany.component.ItemProduct();
+        itemProduct4 = new com.mycompany.component.ItemProduct();
         itemProduct5 = new com.mycompany.component.ItemProduct();
         itemProduct6 = new com.mycompany.component.ItemProduct();
-        itemProduct8 = new com.mycompany.component.ItemProduct();
         itemProduct7 = new com.mycompany.component.ItemProduct();
+<<<<<<< HEAD
         itemProduct4 = new com.mycompany.component.ItemProduct();
         itemProduct3 = new com.mycompany.component.ItemProduct();
         itemProduct2 = new com.mycompany.component.ItemProduct();
@@ -142,15 +146,21 @@ public class trang_con extends javax.swing.JPanel {
         itemProduct14 = new com.mycompany.component.ItemProduct();
         itemProduct15 = new com.mycompany.component.ItemProduct();
         itemProduct16 = new com.mycompany.component.ItemProduct();
+=======
+        itemProduct8 = new com.mycompany.component.ItemProduct();
+        itemProduct10 = new com.mycompany.component.ItemProduct();
+        itemProduct11 = new com.mycompany.component.ItemProduct();
+        itemProduct12 = new com.mycompany.component.ItemProduct();
+        itemProduct13 = new com.mycompany.component.ItemProduct();
+>>>>>>> f5e02d4f7564c8e713c311c4bf9df93bb0de7d67
         itemProduct17 = new com.mycompany.component.ItemProduct();
         itemProduct18 = new com.mycompany.component.ItemProduct();
         itemProduct19 = new com.mycompany.component.ItemProduct();
-        itemProduct10 = new com.mycompany.component.ItemProduct();
-        itemProduct11 = new com.mycompany.component.ItemProduct();
         itemProduct20 = new com.mycompany.component.ItemProduct();
         itemProduct21 = new com.mycompany.component.ItemProduct();
         itemProduct22 = new com.mycompany.component.ItemProduct();
-        button21 = new com.raven.swing.Button2();
+        itemProduct23 = new com.mycompany.component.ItemProduct();
+        itemProduct24 = new com.mycompany.component.ItemProduct();
         jLabel2 = new javax.swing.JLabel();
         comboBoxSuggestion1 = new com.mycompany.swing.ComboBoxSuggestion();
 
@@ -161,10 +171,14 @@ public class trang_con extends javax.swing.JPanel {
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 20, 20));
+        jPanel1.add(itemProduct1);
+        jPanel1.add(itemProduct2);
+        jPanel1.add(itemProduct3);
+        jPanel1.add(itemProduct4);
         jPanel1.add(itemProduct5);
         jPanel1.add(itemProduct6);
-        jPanel1.add(itemProduct8);
         jPanel1.add(itemProduct7);
+<<<<<<< HEAD
 
         itemProduct4.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -185,18 +199,21 @@ public class trang_con extends javax.swing.JPanel {
         jPanel2.add(itemProduct16);
 
         jPanel1.add(jPanel2);
+=======
+        jPanel1.add(itemProduct8);
+        jPanel1.add(itemProduct10);
+        jPanel1.add(itemProduct11);
+        jPanel1.add(itemProduct12);
+        jPanel1.add(itemProduct13);
+>>>>>>> f5e02d4f7564c8e713c311c4bf9df93bb0de7d67
         jPanel1.add(itemProduct17);
         jPanel1.add(itemProduct18);
         jPanel1.add(itemProduct19);
-        jPanel1.add(itemProduct10);
-        jPanel1.add(itemProduct11);
         jPanel1.add(itemProduct20);
         jPanel1.add(itemProduct21);
         jPanel1.add(itemProduct22);
-
-        button21.setBorder(new RoundBorder(Color.GRAY,10,1));
-        button21.setText("Bộ lọc");
-        button21.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jPanel1.add(itemProduct23);
+        jPanel1.add(itemProduct24);
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel2.setText("Sắp xếp theo: ");
@@ -216,13 +233,11 @@ public class trang_con extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
-                .addGap(49, 49, 49)
-                .addComponent(button21, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(769, 769, 769)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
                 .addComponent(comboBoxSuggestion1, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(123, 123, 123))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1199, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -231,13 +246,12 @@ public class trang_con extends javax.swing.JPanel {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jLabel1)
-                .addGap(26, 26, 26)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 470, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(button21, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2)
                     .addComponent(comboBoxSuggestion1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 59, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 2139, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(153, 153, 153))
         );
@@ -253,14 +267,12 @@ public class trang_con extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private com.raven.swing.Button2 button21;
     private com.mycompany.swing.ComboBoxSuggestion comboBoxSuggestion1;
     private com.mycompany.component.ItemProduct itemProduct1;
     private com.mycompany.component.ItemProduct itemProduct10;
     private com.mycompany.component.ItemProduct itemProduct11;
-    private com.mycompany.component.ItemProduct itemProduct14;
-    private com.mycompany.component.ItemProduct itemProduct15;
-    private com.mycompany.component.ItemProduct itemProduct16;
+    private com.mycompany.component.ItemProduct itemProduct12;
+    private com.mycompany.component.ItemProduct itemProduct13;
     private com.mycompany.component.ItemProduct itemProduct17;
     private com.mycompany.component.ItemProduct itemProduct18;
     private com.mycompany.component.ItemProduct itemProduct19;
@@ -268,16 +280,20 @@ public class trang_con extends javax.swing.JPanel {
     private com.mycompany.component.ItemProduct itemProduct20;
     private com.mycompany.component.ItemProduct itemProduct21;
     private com.mycompany.component.ItemProduct itemProduct22;
+    private com.mycompany.component.ItemProduct itemProduct23;
+    private com.mycompany.component.ItemProduct itemProduct24;
     private com.mycompany.component.ItemProduct itemProduct3;
     private com.mycompany.component.ItemProduct itemProduct4;
     private com.mycompany.component.ItemProduct itemProduct5;
     private com.mycompany.component.ItemProduct itemProduct6;
     private com.mycompany.component.ItemProduct itemProduct7;
     private com.mycompany.component.ItemProduct itemProduct8;
-    private com.mycompany.component.ItemProduct itemProduct9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
+<<<<<<< HEAD
     private javax.swing.JPanel jPanel2;
+=======
+>>>>>>> f5e02d4f7564c8e713c311c4bf9df93bb0de7d67
     // End of variables declaration//GEN-END:variables
 }

@@ -23,28 +23,28 @@ public class Home extends javax.swing.JPanel {
     public Home() {
         initComponents();
         loadProductController  = new LoadProductController();
-        //setupProductComponents();
+        setupProductComponents();
     }
 
     private void setupProductComponents() {
-        List<ItemProductEntity> productEntities = loadProductController.loadNewProducts(5);
+        List<ItemProductEntity> productEntities = loadProductController.loadNewProducts(4);
 
         ItemProduct[] componentsArray = {
             itemProduct1, itemProduct2, itemProduct3,
-            itemProduct4, itemProduct5
+            itemProduct4
         };
 
         for (int i = 0; i < productEntities.size() && i < componentsArray.length; i++) {
             componentsArray[i].setItemProduct(productEntities.get(i));
         }
 
-        List<ItemProductEntity> bestSellers = loadProductController.loadBestSellers(10);
+        List<ItemProductEntity> bestSellers = loadProductController.loadBestSellers(8);
 
         ItemProduct[] bestSellersArray = {
             itemProduct6, itemProduct7, itemProduct8,
-            itemProduct9, itemProduct10,
-            itemProduct11, itemProduct12, itemProduct13,
-            itemProduct14, itemProduct15
+            itemProduct9, itemProduct16,
+            itemProduct17, itemProduct18, itemProduct19,
+            
         };
 
         for (int i = 0; i < bestSellers.size() && i < bestSellersArray.length; i++) {
@@ -69,7 +69,6 @@ public class Home extends javax.swing.JPanel {
         itemProduct2 = new com.mycompany.component.ItemProduct();
         itemProduct4 = new com.mycompany.component.ItemProduct();
         itemProduct3 = new com.mycompany.component.ItemProduct();
-        itemProduct5 = new com.mycompany.component.ItemProduct();
         jPanel2 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
@@ -78,16 +77,16 @@ public class Home extends javax.swing.JPanel {
         itemProduct7 = new com.mycompany.component.ItemProduct();
         itemProduct8 = new com.mycompany.component.ItemProduct();
         itemProduct9 = new com.mycompany.component.ItemProduct();
-        itemProduct15 = new com.mycompany.component.ItemProduct();
-        itemProduct14 = new com.mycompany.component.ItemProduct();
-        itemProduct13 = new com.mycompany.component.ItemProduct();
-        itemProduct12 = new com.mycompany.component.ItemProduct();
-        itemProduct11 = new com.mycompany.component.ItemProduct();
-        itemProduct10 = new com.mycompany.component.ItemProduct();
         jPanel4 = new javax.swing.JPanel();
         jButton2 = new javax.swing.JButton();
         jPanel6 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        jPanel5 = new javax.swing.JPanel();
+        itemProduct16 = new com.mycompany.component.ItemProduct();
+        itemProduct17 = new com.mycompany.component.ItemProduct();
+        itemProduct18 = new com.mycompany.component.ItemProduct();
+        itemProduct19 = new com.mycompany.component.ItemProduct();
+        jPanel7 = new javax.swing.JPanel();
 
         setBackground(new java.awt.Color(255, 255, 255));
 
@@ -102,7 +101,6 @@ public class Home extends javax.swing.JPanel {
         jPanel1.add(itemProduct2);
         jPanel1.add(itemProduct4);
         jPanel1.add(itemProduct3);
-        jPanel1.add(itemProduct5);
 
         jPanel2.setPreferredSize(new java.awt.Dimension(1000, 1));
 
@@ -125,6 +123,11 @@ public class Home extends javax.swing.JPanel {
         jButton1.setBorder(javax.swing.BorderFactory.createEmptyBorder(5, 1, 1, 1));
         jButton1.setBorderPainted(false);
         jButton1.setContentAreaFilled(false);
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -137,12 +140,6 @@ public class Home extends javax.swing.JPanel {
         jPanel3.add(itemProduct7);
         jPanel3.add(itemProduct8);
         jPanel3.add(itemProduct9);
-        jPanel3.add(itemProduct15);
-        jPanel3.add(itemProduct14);
-        jPanel3.add(itemProduct13);
-        jPanel3.add(itemProduct12);
-        jPanel3.add(itemProduct11);
-        jPanel3.add(itemProduct10);
 
         jPanel4.setPreferredSize(new java.awt.Dimension(1000, 1));
 
@@ -165,6 +162,11 @@ public class Home extends javax.swing.JPanel {
         jButton2.setBorder(javax.swing.BorderFactory.createEmptyBorder(5, 1, 1, 1));
         jButton2.setBorderPainted(false);
         jButton2.setContentAreaFilled(false);
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jPanel6.setLayout(null);
 
@@ -174,6 +176,29 @@ public class Home extends javax.swing.JPanel {
         jPanel6.add(jLabel1);
         jLabel1.setBounds(-10, 0, 1480, 450);
 
+        jPanel5.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel5.setOpaque(false);
+        jPanel5.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 10, 10));
+        jPanel5.add(itemProduct16);
+        jPanel5.add(itemProduct17);
+        jPanel5.add(itemProduct18);
+        jPanel5.add(itemProduct19);
+
+        jPanel7.setPreferredSize(new java.awt.Dimension(1000, 1));
+
+        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
+        jPanel7.setLayout(jPanel7Layout);
+        jPanel7Layout.setHorizontalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1000, Short.MAX_VALUE)
+        );
+        jPanel7Layout.setVerticalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1, Short.MAX_VALUE)
+        );
+
+        jPanel5.add(jPanel7);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -182,21 +207,30 @@ public class Home extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+<<<<<<< HEAD
                     .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 368, Short.MAX_VALUE)
                     .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+=======
+                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 497, Short.MAX_VALUE)
+                    .addComponent(jPanel6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+>>>>>>> f5e02d4f7564c8e713c311c4bf9df93bb0de7d67
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addContainerGap())
+                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(46, 46, 46))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(33, 33, 33))))
-                    .addComponent(jPanel6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(124, 124, 124))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(119, 119, 119))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, 491, Short.MAX_VALUE)
+                    .addContainerGap()))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -207,31 +241,41 @@ public class Home extends javax.swing.JPanel {
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(12, 12, 12)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 814, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(456, 456, 456)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(144, Short.MAX_VALUE))
+                .addContainerGap(100, Short.MAX_VALUE))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addContainerGap(1186, Short.MAX_VALUE)
+                    .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(561, 561, 561)))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private com.mycompany.component.ItemProduct itemProduct1;
-    private com.mycompany.component.ItemProduct itemProduct10;
-    private com.mycompany.component.ItemProduct itemProduct11;
-    private com.mycompany.component.ItemProduct itemProduct12;
-    private com.mycompany.component.ItemProduct itemProduct13;
-    private com.mycompany.component.ItemProduct itemProduct14;
-    private com.mycompany.component.ItemProduct itemProduct15;
+    private com.mycompany.component.ItemProduct itemProduct16;
+    private com.mycompany.component.ItemProduct itemProduct17;
+    private com.mycompany.component.ItemProduct itemProduct18;
+    private com.mycompany.component.ItemProduct itemProduct19;
     private com.mycompany.component.ItemProduct itemProduct2;
     private com.mycompany.component.ItemProduct itemProduct3;
     private com.mycompany.component.ItemProduct itemProduct4;
-    private com.mycompany.component.ItemProduct itemProduct5;
     private com.mycompany.component.ItemProduct itemProduct6;
     private com.mycompany.component.ItemProduct itemProduct7;
     private com.mycompany.component.ItemProduct itemProduct8;
@@ -245,6 +289,8 @@ public class Home extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
     // End of variables declaration//GEN-END:variables
 }
