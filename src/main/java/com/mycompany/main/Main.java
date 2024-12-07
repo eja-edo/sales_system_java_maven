@@ -31,10 +31,10 @@ public class Main extends javax.swing.JFrame implements CardSelectionListener, U
     CurrentUser.addListener(this);
     cardLayout = (CardLayout) jPanel1.getLayout();
     menu1.setParent(this);
-    trang_con1.setTrangCon(1);
-    trang_con2.setTrangCon(2);
-    trang_con3.setTrangCon(3);
-    trang_con4.setTrangCon(4);
+    trangcon1.setTrangCon(1);
+    trangcon2.setTrangCon(2);
+    trangcon3.setTrangCon(3);
+    trangcon4.setTrangCon(4);
 
     }   
    
@@ -56,15 +56,15 @@ public class Main extends javax.swing.JFrame implements CardSelectionListener, U
         jScrollPane1 = new javax.swing.JScrollPane();
         home1 = new com.mycompany.tab.Home();
         jScrollPane2 = new javax.swing.JScrollPane();
-        trang_con1 = new com.mycompany.component.trang_con();
+        trangcon1 = new com.mycompany.component.trang_con();
         jScrollPane4 = new javax.swing.JScrollPane();
-        trang_con2 = new com.mycompany.component.trang_con();
+        trangcon2 = new com.mycompany.component.trang_con();
         jScrollPane5 = new javax.swing.JScrollPane();
-        trang_con3 = new com.mycompany.component.trang_con();
+        trangcon3 = new com.mycompany.component.trang_con();
         jScrollPane6 = new javax.swing.JScrollPane();
-        trang_con4 = new com.mycompany.component.trang_con();
+        trangcon4 = new com.mycompany.component.trang_con();
         jScrollPane7 = new javax.swing.JScrollPane();
-        trang_con5 = new com.mycompany.component.trang_con();
+        trangcon5 = new com.mycompany.component.trang_con();
         jScrollPane3 = new javax.swing.JScrollPane();
         livestream1 = new com.mycompany.component.livestream();
         jScrollPane8 = new javax.swing.JScrollPane();
@@ -80,23 +80,23 @@ public class Main extends javax.swing.JFrame implements CardSelectionListener, U
 
         jPanel1.add(jScrollPane1, "jScrollPane1");
 
-        jScrollPane2.setViewportView(trang_con1);
+        jScrollPane2.setViewportView(trangcon1);
 
         jPanel1.add(jScrollPane2, "jScrollPane2");
 
-        jScrollPane4.setViewportView(trang_con2);
+        jScrollPane4.setViewportView(trangcon2);
 
         jPanel1.add(jScrollPane4, "jScrollPane3");
 
-        jScrollPane5.setViewportView(trang_con3);
+        jScrollPane5.setViewportView(trangcon3);
 
         jPanel1.add(jScrollPane5, "jScrollPane4");
 
-        jScrollPane6.setViewportView(trang_con4);
+        jScrollPane6.setViewportView(trangcon4);
 
         jPanel1.add(jScrollPane6, "jScrollPane5");
 
-        jScrollPane7.setViewportView(trang_con5);
+        jScrollPane7.setViewportView(trangcon5);
 
         jPanel1.add(jScrollPane7, "jScrollPane6");
 
@@ -164,11 +164,11 @@ public class Main extends javax.swing.JFrame implements CardSelectionListener, U
     private javax.swing.JScrollPane jScrollPane8;
     private com.mycompany.component.livestream livestream1;
     private com.mycompany.component.Menu menu1;
-    private com.mycompany.component.trang_con trang_con1;
-    private com.mycompany.component.trang_con trang_con2;
-    private com.mycompany.component.trang_con trang_con3;
-    private com.mycompany.component.trang_con trang_con4;
-    private com.mycompany.component.trang_con trang_con5;
+    private com.mycompany.component.trang_con trangcon1;
+    private com.mycompany.component.trang_con trangcon2;
+    private com.mycompany.component.trang_con trangcon3;
+    private com.mycompany.component.trang_con trangcon4;
+    private com.mycompany.component.trang_con trangcon5;
     private com.mycompany.tab.ttkh ttkh1;
     // End of variables declaration//GEN-END:variables
 

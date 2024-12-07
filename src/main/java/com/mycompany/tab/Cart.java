@@ -4,6 +4,12 @@
  */
 package com.mycompany.tab;
 
+import com.mycompany.component.ItemCart;
+import com.mycompany.controller.ProductDetailController;
+import com.mycompany.model.entity.ProductDetail;
+import java.util.List;
+
+
 /**
  *
  * @author duyan
@@ -13,11 +19,28 @@ public class Cart extends javax.swing.JDialog {
     /**
      * Creates new form Cart
      */
+    private ProductDetailController controller;
+    
     public Cart(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
     }
-
+// // Phương thức để tải dữ liệu giỏ hàng
+//    public void loadData(int userId) {
+//        // Giả sử userId là ID người dùng hiện tại
+//        List<ProductDetail> cartDetails = controller.getCartProductDetails(userId);
+//
+//        // Xóa các mục hiện tại trong giỏ hàng
+//        listItemCart1.removeAll();
+//
+//        // Thêm các mục mới vào giỏ hàng
+//        for (ProductDetail detail : cartDetails) {
+//            listItemCart1.add(new ItemCart(detail));
+//        }
+//
+//        // Tính toán và hiển thị tổng giá
+//        updateTotalPrice(cartDetails);
+//    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always

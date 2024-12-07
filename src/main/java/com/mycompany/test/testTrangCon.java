@@ -15,7 +15,7 @@ public class testTrangCon extends javax.swing.JFrame {
      */
     public testTrangCon() {
         initComponents();
-
+        trangcon1.setTrangCon(2);
     }
 
     /**
@@ -28,8 +28,11 @@ public class testTrangCon extends javax.swing.JFrame {
     private void initComponents() {
 
         jScrollPane2 = new javax.swing.JScrollPane();
+        trangcon1 = new com.mycompany.component.trangcon();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jScrollPane2.setViewportView(trangcon1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -82,5 +85,6 @@ public class testTrangCon extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JScrollPane jScrollPane2;
+    private com.mycompany.component.trangcon trangcon1;
     // End of variables declaration//GEN-END:variables
 }

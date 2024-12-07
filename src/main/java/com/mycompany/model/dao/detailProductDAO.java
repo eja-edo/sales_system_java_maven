@@ -1,9 +1,6 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Other/File.java to edit this template
- */
 package com.mycompany.model.dao;
 
+import com.mycompany.model.entity.ProductDetail;
 import com.mycompany.model.entity.ProductSize;
 import com.mycompany.model.entity.Products;
 import com.mycompany.utils.DBConnection;
@@ -80,5 +77,31 @@ public class detailProductDAO {
         }
         return product; // Trả về đối tượng sản phẩm
     }
+    
+    // Phương thức để gọi thủ tục GetCartProductDetails
+    public static List<ProductDetail> getCartProductDetails(int userId) {
+        List<ProductDetail> productDetails = new ArrayList<>();
+        String query = "EXEC GetCartProductDetails @UserId = ?";
 
+        try (Connection conn = DBConnection.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(query)) {
+
+            stmt.setInt(1, userId);
+            try (ResultSet rs = stmt.executeQuery()) {
+                while (rs.next()) {
+                    ProductDetail productDetail = new ProductDetail();
+                    productDetail.setUserId(rs.getInt("user_id"));
+                    productDetail.setProductId(rs.getInt("product_id"));
+                    productDetail.setTitle(rs.getString("title"));
+                    productDetail.setSize(rs.getInt("size"));
+                    productDetail.setPrice(rs.getDouble("price"));
+                    productDetail.setImageUrl(rs.getString("ImageURL"));
+                    productDetails.add(productDetail);
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return productDetails;
+    }
 }

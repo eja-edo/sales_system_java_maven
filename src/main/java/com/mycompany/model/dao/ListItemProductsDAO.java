@@ -133,6 +133,35 @@ public class ListItemProductsDAO {
         return sortedProducts;
     }
 
+        public List<ItemProductEntity> searchProductsByTitle(String keyword) {
+    String query = "EXEC TimKiemSanPham @TuKhoa = ?";
+    List<ItemProductEntity> searchResults = new ArrayList<>();
+
+    try (Connection conn = DBConnection.getConnection();
+         PreparedStatement stmt = conn.prepareStatement(query)) {
+        stmt.setString(1, keyword);  // Gán giá trị cho tham số @TuKhoa
+        ResultSet rs = stmt.executeQuery();
+
+        // Duyệt qua các bản ghi trong ResultSet và thêm chúng vào danh sách
+        while (rs.next()) {
+            int productId = rs.getInt("product_id");
+            String title = rs.getString("title");
+            double minPrice = rs.getDouble("minPrice");
+            float averageRating = rs.getFloat("AverageRating");
+            String img = rs.getString("img");
+            int views = rs.getInt("views");
+
+            // Tạo đối tượng ItemProduct và thêm vào danh sách
+            ItemProductEntity item = new ItemProductEntity(productId, title, averageRating, formatPrice(minPrice), img, views);
+            searchResults.add(item);
+        }
+    } catch (SQLException e) {
+        e.printStackTrace(); 
+    }
+
+    return searchResults;
+}
+
      
       
      

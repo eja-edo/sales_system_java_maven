@@ -36,6 +36,10 @@
     <Container class="javax.swing.JScrollPane" name="jScrollPane2">
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+      <SubComponents>
+        <Component class="com.mycompany.component.trangcon" name="trangcon1">
+        </Component>
+      </SubComponents>
     </Container>
   </SubComponents>
 </Form>

@@ -1604,9 +1604,10 @@ BEGIN
 END;
 
 
+alter PROCEDURE GetCartProductDetails
 
-CREATE PROCEDURE GetCartProductDetails
-    @UserId INT
+    @UserId INT,
+    @ProductId INT
 AS
 BEGIN
     ;WITH FirstImage AS (
@@ -1623,6 +1624,7 @@ BEGIN
     SELECT 
         sc.user_id,
         p.product_id,
+        p.title,
         ps.size,
         p.minPrice AS price,
         fi.ImageURL
@@ -1635,7 +1637,20 @@ BEGIN
     LEFT JOIN 
         FirstImage fi ON p.product_id = fi.product_id
     WHERE 
-        sc.user_id = @UserId;
+        sc.user_id = @UserId AND
+        p.product_id = @ProductId;
 END;
 
-EXEC GetCartProductDetails @UserId = 1;
+
+EXEC GetCartProductDetails @UserId = 1, @ProductId = 1;
+
+CREATE PROCEDURE TimKiemSanPham
+    @TuKhoa NVARCHAR(100)
+AS
+BEGIN
+    SELECT * 
+    FROM Products
+    WHERE title LIKE '%' + @TuKhoa + '%'
+END
+
+EXEC TimKiemSanPham @TuKhoa = N'đồng hồ';
