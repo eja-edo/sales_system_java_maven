@@ -345,6 +345,10 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="&lt;html&gt;&lt;u&gt;Xem &#x1b0;u &#x111;&#xe3;i m&#x1ed7;i th&#x1ee9; h&#x1ea1;ng&lt;/u&gt;&lt;/html&gt;"/>
               </Properties>
+              <Events>
+                <EventHandler event="ancestorAdded" listener="javax.swing.event.AncestorListener" parameters="javax.swing.event.AncestorEvent" handler="jLabel14AncestorAdded"/>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel14MouseClicked"/>
+              </Events>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                   <AbsoluteConstraints x="190" y="200" width="-1" height="20"/>

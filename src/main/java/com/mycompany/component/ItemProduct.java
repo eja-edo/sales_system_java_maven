@@ -1,4 +1,3 @@
-
 package com.mycompany.component;
 
 import com.mycompany.model.entity.ItemProductEntity;
@@ -25,8 +24,6 @@ import java.awt.Image;
 public class ItemProduct extends javax.swing.JPanel {
     private int radius = 10;  // Đặt bán kính cho bo tròn
 
-   
-    
     public ItemProduct() {
         initComponents();
 
@@ -37,45 +34,50 @@ public class ItemProduct extends javax.swing.JPanel {
                 ScaleImg.scaleImg(imgProduct);
             }
         });
-         StyledDocument doc = jtitle.getStyledDocument();
+        StyledDocument doc = jtitle.getStyledDocument();
         SimpleAttributeSet center = new SimpleAttributeSet();
         StyleConstants.setAlignment(center, StyleConstants.ALIGN_CENTER);
         doc.setParagraphAttributes(0, doc.getLength(), center, false);
     }
-        public void setItemProduct(ItemProductEntity itemProduct) {
-            
-        try {
-        // Chuyển đổi đường dẫn URL thành định dạng hợp lệ
-        String imgPath = itemProduct.getUrlImg().replace("\\", "/");
-        URL url = getClass().getResource(imgPath);
 
-        if (url != null) {
-            Image img = ImageIO.read(url);
-            ImageIcon imgIcon = new ImageIcon(img);
-            imgProduct.setIcon(imgIcon);
-        } else {
-            System.out.println("Không thể tìm thấy ảnh từ URL: " + imgPath);
-            // Đặt ảnh mặc định nếu không thể tìm thấy ảnh từ URL
+    public void setItemProduct(ItemProductEntity itemProduct) {
+        try {
+            // Chuyển đổi đường dẫn URL thành định dạng hợp lệ
+            String imgPath = itemProduct.getUrlImg();
+            if (imgPath != null) {
+                imgPath = imgPath.replace("\\", "/");
+                URL url = getClass().getResource(imgPath);
+
+                if (url != null) {
+                    Image img = ImageIO.read(url);
+                    ImageIcon imgIcon = new ImageIcon(img);
+                    imgProduct.setIcon(imgIcon);
+                } else {
+                    System.out.println("Không thể tìm thấy ảnh từ URL: " + imgPath);
+                    // Đặt ảnh mặc định nếu không thể tìm thấy ảnh từ URL
+                    ImageIcon defaultImgIcon = new ImageIcon(getClass().getResource("/image/png259X259.png"));
+                    imgProduct.setIcon(defaultImgIcon);
+                }
+            } else {
+                System.out.println("URL Image is null");
+                // Đặt ảnh mặc định nếu không có URL ảnh
+                ImageIcon defaultImgIcon = new ImageIcon(getClass().getResource("/image/png259X259.png"));
+                imgProduct.setIcon(defaultImgIcon);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            // Đặt ảnh mặc định nếu có lỗi khi tải ảnh
             ImageIcon defaultImgIcon = new ImageIcon(getClass().getResource("/image/png259X259.png"));
             imgProduct.setIcon(defaultImgIcon);
         }
-    } catch (Exception e) {
-        e.printStackTrace();
-        // Đặt ảnh mặc định nếu có lỗi khi tải ảnh
-        ImageIcon defaultImgIcon = new ImageIcon(getClass().getResource("/image/png259X259.png"));
-        imgProduct.setIcon(defaultImgIcon);
+
+        id = itemProduct.getProductId();
+        ScaleImg.scaleImg(imgProduct);
+        jtitle.setText(itemProduct.getTitle());
+        jprice.setText(itemProduct.getMinPrice());
+        jrating.setText(String.valueOf(itemProduct.getRating()));
+        jviews.setText(String.valueOf(itemProduct.getViews()));
     }
-
-    id = itemProduct.getProductId();
-    ScaleImg.scaleImg(imgProduct);
-    jtitle.setText(itemProduct.getTitle());
-    jprice.setText(itemProduct.getMinPrice());
-    jrating.setText(String.valueOf(itemProduct.getRating()));
-    jviews.setText(String.valueOf(itemProduct.getViews()));
-}
-
-
-
 
     @Override
     protected void paintComponent(Graphics g) {
@@ -93,12 +95,11 @@ public class ItemProduct extends javax.swing.JPanel {
         g2d.dispose();
     }
     
-    public int getId()
-    {
+    public int getId() {
         return id;
     }
-    
-    
+
+    // Các phương thức và thuộc tính khác của ItemProduct
 
     /**
      * This method is called from within the constructor to initialize the form.
