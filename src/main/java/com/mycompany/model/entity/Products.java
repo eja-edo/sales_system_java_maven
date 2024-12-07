@@ -82,6 +82,14 @@ public class Products {
     private List<String> ListImg;
     private double minPrice;
     private int views;
+    private List<ProductSize> sizes;
+    public List<ProductSize> getSize() {
+        return sizes;
+    }
+
+    public void setSizes(List<ProductSize> sizes) {
+        this.sizes = sizes;
+    }
     
     
     

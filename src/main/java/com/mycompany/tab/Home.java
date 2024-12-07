@@ -68,7 +68,7 @@ public class Home extends javax.swing.JPanel {
 
             // Tạo JScrollPane bao bọc panel detailProduct
             JScrollPane scrollPane = new JScrollPane(detal);
-            scrollPane.setPreferredSize(new Dimension(600, 400)); // Đặt kích thước mong muốn (tùy chỉnh theo nội dung)
+            scrollPane.setPreferredSize(new Dimension(945, 800)); // Đặt kích thước mong muốn (tùy chỉnh theo nội dung)
 
             // Tạo JDialog chứa JScrollPane
             JDialog dialog = new JDialog((Frame) null, "Chi tiết sản phẩm", true);

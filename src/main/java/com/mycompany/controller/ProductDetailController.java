@@ -4,7 +4,7 @@
  */
 package com.mycompany.controller;
 
-import static com.mycompany.model.dao.detailProductDAO.getdDetailProduct;
+import static com.mycompany.model.dao.detailProductDAO.getDetailProduct;
 import com.mycompany.model.entity.Products;
 import com.mycompany.tab.detailProduct;
 import static com.mycompany.utils.Formatter.formatPrice;
@@ -26,13 +26,14 @@ public class ProductDetailController {
     
     public void insertData(int id)
     {
-        model = getdDetailProduct(id);
+        model = getDetailProduct(id);
         view.setLabID(String.valueOf(model.getProductId()));
         view.setLabPrice(formatPrice(model.getMinPrice()));
         view.setListImgProduct(model.getListImg());
         view.setLabViews(formatViews(model.getViews()));
         view.setLabTitle(model.getTitle());
         view.setLabRating(String.valueOf(model.getAverageRating()));
+        view.setProductSizesToComboBox(model.getSize());
     }
     
 }

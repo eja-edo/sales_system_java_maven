@@ -998,7 +998,7 @@ go
 
 
 GO
-CREATE PROCEDURE signUp
+alter PROCEDURE signUp
     @Email VARCHAR(100),
     @password VARCHAR(255)
 AS
@@ -1450,3 +1450,49 @@ BEGIN
         WHERE username = @Username;
     END
 END
+
+
+CREATE PROCEDURE GetProductSizeByProductId
+    @ProductId INT
+AS
+BEGIN
+    SELECT exemple_id, size , stock_quantity
+    FROM ProductSize
+    WHERE product_id = @ProductId;
+END;
+
+
+
+alter PROCEDURE getUserInfo
+    @login NVARCHAR(50),
+    @password NVARCHAR(255)
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    -- Kiểm tra xem tài khoản có tồn tại và mật khẩu có đúng không
+    IF EXISTS (SELECT 1 FROM Users WHERE (username = @login OR email = @login OR phone = @login) AND password = @password)
+    BEGIN
+        -- Trả về thông tin người dùng khi cả login và password đều khớp
+        SELECT 
+            user_id, 
+            username, 
+            email, 
+            phone, 
+            first_name, 
+            last_name,
+			address_line,
+			city,
+			province
+        FROM Users 
+        WHERE (username = @login OR email = @login OR phone = @login) AND password = @password;
+    END
+    ELSE
+    BEGIN
+        -- Nếu không tìm thấy, trả về thông báo lỗi hoặc giá trị NULL
+        SELECT NULL AS ErrorMessage;
+    END
+END;
+
+
+

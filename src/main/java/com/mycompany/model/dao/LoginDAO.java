@@ -29,35 +29,70 @@ public class LoginDAO {
 //        this.username =  user;
 //        this.password = pass;
 //    }
-    
-public String login(String usn , String pass) {
-    String query = "EXEC getPassword @login = ?";
-    try (Connection conn = DBConnection.getConnection(); // Lấy kết nối từ pool
-         PreparedStatement stmt = conn.prepareStatement(query)) {
-         
-        stmt.setString(1, usn);
-        try (ResultSet rs = stmt.executeQuery()) {
-            // Kiểm tra xem có kết quả hay không
-            if (rs.next()) {
-                String retrievedPassword = rs.getString("password");
-                // Kiểm tra mật khẩu
-                if (PasswordUtil.checkPassword(pass, retrievedPassword)) {
-                    return "Đăng nhập thành công!";
-                    
-                } else {
-                    return "Mật khẩu không chính xác!";
-                }
-            } else {
-                return "Tài khoản không tồn tại!";
-            }
-        }
-    } catch (SQLException e) {
-        // Ghi log lỗi và trả về thông điệp lỗi
-        e.printStackTrace(); // Bạn có thể ghi log thay vì in ra
-        return "Đã xảy ra lỗi khi kết nối đến cơ sở dữ liệu: " + e.getMessage();
-    }
-}
 
+    public String login(String usn, String pass) {
+        // Truy vấn lấy mật khẩu từ cơ sở dữ liệu
+        String query = "EXEC getPassword @login = ?";
+
+        try (Connection conn = DBConnection.getConnection(); // Lấy kết nối từ pool
+             PreparedStatement stmt = conn.prepareStatement(query)) {
+
+            stmt.setString(1, usn); // Gán tham số @login
+            try (ResultSet rs = stmt.executeQuery()) {
+                // Kiểm tra xem có kết quả hay không
+                if (rs.next()) {
+                    String retrievedPassword = rs.getString("password");
+
+                    // Kiểm tra mật khẩu
+                    if (PasswordUtil.checkPassword(pass, retrievedPassword)) {
+
+                        // Sau khi xác thực mật khẩu, truy vấn lấy thông tin người dùng
+                        String query2 = "EXEC getUserInfo @login = ?, @password = ?";
+                        try (PreparedStatement stmt2 = conn.prepareStatement(query2)) {
+                            stmt2.setString(1, usn); // Gán giá trị cho tham số @login
+                            stmt2.setString(2, pass); // Gán giá trị cho tham số @password
+                            try (ResultSet rs2 = stmt2.executeQuery()) {
+                                // Kiểm tra xem có kết quả hay không
+                                if (rs2.next()) {
+                                    // Lấy thông tin người dùng từ ResultSet
+                                    Users user = new Users();
+                                    user.setUserId(rs2.getInt("user_id"));
+                                    user.setUsername(rs2.getString("username"));
+                                    user.setEmail(rs2.getString("email"));
+                                    user.setPhone(rs2.getString("phone"));
+                                    user.setFirstName(rs2.getString("first_name"));
+                                    user.setLastName(rs2.getString("last_name"));
+                                    user.setAddressLine(rs2.getString("address_line"));
+                                    user.setCity(rs2.getString("city"));
+                                    user.setProvince(rs2.getString("province"));
+
+                                    // Thiết lập thông tin người dùng vào CurrentUser
+                                    CurrentUser.setUser(user);
+
+                                    // Đăng nhập thành công
+                                    return "Đăng nhập thành công!";
+                                } else {
+                                    return "Tài khoản không tồn tại!";
+                                }
+                            }
+                        } catch (SQLException e) {
+                            // Ghi log lỗi và trả về thông điệp lỗi
+                            e.printStackTrace();
+                            return "Đã xảy ra lỗi khi lấy thông tin người dùng: " + e.getMessage();
+                        }
+                    } else {
+                        return "Mật khẩu không chính xác!";
+                    }
+                } else {
+                    return "Tài khoản không tồn tại!";
+                }
+            }
+        } catch (SQLException e) {
+            // Ghi log lỗi và trả về thông điệp lỗi
+            e.printStackTrace();
+            return "Đã xảy ra lỗi khi kết nối đến cơ sở dữ liệu: " + e.getMessage();
+        }
+    }
 
 
     private boolean isUsernameExists(String usn) {
