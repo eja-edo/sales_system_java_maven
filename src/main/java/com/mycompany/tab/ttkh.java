@@ -4,11 +4,13 @@
  */
 package com.mycompany.tab;
 
+import com.mycompany.component.khttinfo;
 import com.mycompany.utils.RoundBorder;
 import java.awt.Color;
 import java.awt.Image;
 import java.awt.Toolkit;
 import javax.swing.ImageIcon;
+import javax.swing.JFrame;
 
 
 /**
@@ -235,6 +237,20 @@ public class ttkh extends javax.swing.JPanel {
         jLabel14.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(255, 255, 255));
         jLabel14.setText("<html><u>Xem ưu đãi mỗi thứ hạng</u></html>");
+        jLabel14.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
+                jLabel14AncestorAdded(evt);
+            }
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
+        });
+        jLabel14.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel14MouseClicked(evt);
+            }
+        });
         jPanel5.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 200, -1, 20));
 
         jLabel13.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
@@ -323,6 +339,16 @@ public class ttkh extends javax.swing.JPanel {
     private void jTextField8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField8ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField8ActionPerformed
+
+    private void jLabel14AncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jLabel14AncestorAdded
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel14AncestorAdded
+
+    private void jLabel14MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel14MouseClicked
+     khttinfo infoFrame = new khttinfo(); // Khởi tạo đối tượng
+    infoFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); // Đóng frame này khi tắt
+    infoFrame.setVisible(true); // Hiển thị JFrame
+    }//GEN-LAST:event_jLabel14MouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

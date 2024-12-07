@@ -818,7 +818,7 @@ VALUES
 ((SELECT TOP 1 product_id FROM Products WHERE title = N'Mặt dây chuyền Kim cương Vàng trắng 14K DAL DDDDW002605'), '/image/product/thuonghieu/sp-gmddddw002605-3.png');
 ;
 
---scart6
+--scart6 //chuan chua
 INSERT INTO ShoppingCart (user_id,exemple_id, quantity)
 VALUES 
 (1, 2, 1),
@@ -868,7 +868,7 @@ VALUES
  (SELECT shu_id FROM ShippingUnits WHERE shu_name = N'Giao hàng tiết kiệm'), 'ORD002', (SELECT coupon_id FROM Coupons WHERE code = 'SAVE20'), N'Tiền mặt');
 
 
- --orderitems13
+ --orderitems13 // mua ngay
 INSERT INTO OrderItems (order_id, exemple_id, quantity, price)
 VALUES 
 (
@@ -1401,52 +1401,110 @@ EXEC getMinMaxSell @categoryId = 1, @SL = 20, @sortBy = 'price_asc';
 EXEC getMinMaxSell @categoryId = 1, @SL = 20, @sortBy = 'price_desc';
 
 -- Sắp xếp theo lượt bán
-EXEC getMinMaxSell @categoryId = 1, @SL = 20, @sortBy = 'sales';
+
+EXEC getMinMaxSell @categoryId = 4, @SL = 20, @sortBy = 'sales';
 
 
-CREATE PROCEDURE GetUserDetails
-    @UserId INT = NULL, -- Lấy thông tin theo ID (tùy chọn)
-    @Username NVARCHAR(50) = NULL -- Lấy thông tin theo Username (tùy chọn)
+
+
+
+-- thu tuc lay ds order theo id - mua ngay
+ALTER PROCEDURE GetUserOrderProducts
+    @UserId INT
 AS
 BEGIN
-    SET NOCOUNT ON;
-
-    -- Lấy thông tin theo UserId
-    IF @UserId IS NOT NULL
-    BEGIN
+    ;WITH FirstImage AS (
         SELECT 
-            user_id,
-            username,
-            first_name,
-            last_name,
-            email,
-            phone,
-            address_line,
-            city,
-            province,
-            created_at,
-            updated_at
-        FROM Users
-        WHERE user_id = @UserId;
-        RETURN;
-    END
-
-    -- Lấy thông tin theo Username
-    IF @Username IS NOT NULL
-    BEGIN
+            p.product_id,
+            MIN(pi.ImageURL) AS ImageURL
+        FROM 
+            Products p
+        LEFT JOIN 
+            ProductImages pi ON p.product_id = pi.ProductID
+        GROUP BY 
+            p.product_id
+    ), DefaultSizeQuantity AS (
         SELECT 
-            user_id,
-            username,
-            first_name,
-            last_name,
-            email,
-            phone,
-            address_line,
-            city,
-            province,
-            created_at,
-            updated_at
-        FROM Users
-        WHERE username = @Username;
-    END
-END
+            ps.product_id,
+            MIN(ps.size) AS size,
+            1 AS default_quantity -- Mặc định số lượng là 1
+        FROM 
+            ProductSize ps
+        GROUP BY 
+            ps.product_id
+    )
+    SELECT 
+        p.title,
+        COALESCE(ps.size, dsq.size) AS size, -- Lấy kích thước từ ProductSize nếu có, nếu không thì lấy kích thước mặc định
+        COALESCE(oi.quantity, dsq.default_quantity) AS order_quantity, -- Lấy số lượng từ OrderItems nếu có, nếu không thì lấy số lượng mặc định là 1
+        p.minPrice AS price, -- Lấy giá từ bảng Products
+        fi.ImageURL
+    FROM 
+        Orders o
+    LEFT JOIN 
+        OrderItems oi ON o.order_id = oi.order_id
+    LEFT JOIN 
+        ProductSize ps ON oi.exemple_id = ps.exemple_id
+    LEFT JOIN 
+        Products p ON ps.product_id = p.product_id
+    LEFT JOIN 
+        FirstImage fi ON p.product_id = fi.product_id
+    LEFT JOIN 
+        DefaultSizeQuantity dsq ON p.product_id = dsq.product_id
+    WHERE 
+        o.user_id = @UserId;
+END;
+
+
+
+EXEC GetUserOrderProducts @UserId = 1;
+
+
+-- lấy vào giỏ hàng
+ALTER PROCEDURE GetUserCartProducts
+    @UserId INT
+AS
+BEGIN
+    ;WITH FirstImage AS (
+        SELECT 
+            p.product_id,
+            MIN(pi.ImageURL) AS ImageURL
+        FROM 
+            Products p
+        LEFT JOIN 
+            ProductImages pi ON p.product_id = pi.ProductID
+        GROUP BY 
+            p.product_id
+    ), DefaultSizeQuantity AS (
+        SELECT 
+            ps.product_id,
+            MIN(ps.size) AS size,
+            1 AS default_quantity -- Mặc định số lượng là 1
+        FROM 
+            ProductSize ps
+        GROUP BY 
+            ps.product_id
+    )
+    SELECT 
+        p.title,
+        COALESCE(ps.size, dsq.size) AS size, -- Lấy kích thước từ ProductSize nếu có, nếu không thì lấy kích thước mặc định
+        COALESCE(sc.quantity, dsq.default_quantity) AS cart_quantity, -- Lấy số lượng từ ShoppingCart nếu có, nếu không thì lấy số lượng mặc định là 1
+        p.minPrice AS price, -- Lấy giá từ bảng Products
+        fi.ImageURL
+    FROM 
+        ShoppingCart sc
+    LEFT JOIN 
+        ProductSize ps ON sc.exemple_id = ps.exemple_id
+    LEFT JOIN 
+        Products p ON ps.product_id = p.product_id
+    LEFT JOIN 
+        FirstImage fi ON p.product_id = fi.product_id
+    LEFT JOIN 
+        DefaultSizeQuantity dsq ON p.product_id = dsq.product_id
+    WHERE 
+        sc.user_id = @UserId;
+END;
+
+
+EXEC GetUserCartProducts @UserId = 1;
+
