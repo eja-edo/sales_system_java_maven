@@ -4,14 +4,21 @@
  */
 package com.mycompany.main;
 
+import com.mycompany.component.header;
+import com.mycompany.model.entity.Users;
+import com.mycompany.swing.ScrollBarWin11UI;
 import com.mycompany.utils.CardSelectionListener;
+import com.mycompany.utils.CurrentUser;
+import com.mycompany.utils.UserChangeListener;
 import java.awt.CardLayout;
+import javax.swing.UIDefaults;
+import javax.swing.UIManager;
 
 /**
  *
  * @author duyan
  */
-public class Main extends javax.swing.JFrame implements CardSelectionListener {
+public class Main extends javax.swing.JFrame implements CardSelectionListener, UserChangeListener{
 
 
 //    private final String[] cardName;
@@ -21,6 +28,7 @@ public class Main extends javax.swing.JFrame implements CardSelectionListener {
         initComponents();
 //        cardName = new String[]{"jScrollPane1","jScrollPane2","jScrollPane3","jScrollPane4","jScrollPane5","jScrollPane6","jScrollPane7","jScrollPane18"};
 //        CurrentCard = 0;
+    CurrentUser.addListener(this);
     cardLayout = (CardLayout) jPanel1.getLayout();
     menu1.setParent(this);
     trang_con1.setTrangCon(1);
@@ -29,8 +37,9 @@ public class Main extends javax.swing.JFrame implements CardSelectionListener {
     trang_con4.setTrangCon(4);
     }   
    
-    
+    private Users user; 
 
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -129,6 +138,8 @@ public class Main extends javax.swing.JFrame implements CardSelectionListener {
             java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+                UIDefaults ui = UIManager.getDefaults();
+        ui.put("ScrollBarUI", ScrollBarWin11UI.class.getCanonicalName());
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -165,6 +176,14 @@ public class Main extends javax.swing.JFrame implements CardSelectionListener {
         
         System.out.println("Card selected: " + card);
         cardLayout.show(jPanel1,card);
-//        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
+
+    @Override
+    public void onUserChanged(Users newUser) {
+        if (newUser != null) {
+            header.cloceLoginDialog();
+        } else {
+            System.out.println("User has been cleared.");
+        }
+    } 
 }

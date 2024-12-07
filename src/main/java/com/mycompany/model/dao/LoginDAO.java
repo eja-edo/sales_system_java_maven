@@ -4,6 +4,8 @@
  */
 package com.mycompany.model.dao;
 
+import com.mycompany.model.entity.Users;
+import com.mycompany.utils.CurrentUser;
 import com.mycompany.utils.DBConnection;
 import com.mycompany.utils.PasswordUtil;
 import static com.mycompany.utils.PasswordUtil.hashPassword;
@@ -41,6 +43,7 @@ public String login(String usn , String pass) {
                 // Kiểm tra mật khẩu
                 if (PasswordUtil.checkPassword(pass, retrievedPassword)) {
                     return "Đăng nhập thành công!";
+                    
                 } else {
                     return "Mật khẩu không chính xác!";
                 }
@@ -74,26 +77,41 @@ public String login(String usn , String pass) {
     }
 
     // Phương thức đăng ký người dùng mới
-    public boolean signUp(String usn , String pass) {
-        
+    public Boolean signUp(String usn, String pass) {
         // Kiểm tra xem tên người dùng đã tồn tại chưa
         if (isUsernameExists(usn)) {
-            return false; // Tên người dùng đã tồn tại
+            return null; // Tên người dùng đã tồn tại
         }
-        String insertQuery = "EXEC signUp @Email = ? , @password = ?";
-        
+
+        String insertQuery = "EXEC signUp @Email = ?, @password = ?";
+
         try (Connection conn = DBConnection.getConnection();
              PreparedStatement stmt = conn.prepareStatement(insertQuery)) {
-             
-            // Băm mật khẩu trước khi lưu (nếu cần)
+
+            // Băm mật khẩu trước khi lưu
             String hashedPassword = hashPassword(pass); // Phương thức băm mật khẩu
             stmt.setString(1, usn);
             stmt.setString(2, hashedPassword);
-            int rowsAffected = stmt.executeUpdate();
-            return rowsAffected > 0; // Trả về true nếu có dòng được thêm vào
+
+            // Thực thi thủ tục và lấy kết quả trả về (user_id và username)
+            try (ResultSet rs = stmt.executeQuery()) {
+                if (rs.next()) {
+                    // Lấy thông tin user_id và username từ kết quả
+                    int userId = rs.getInt("user_id");
+                    String username = rs.getString("username");
+                    Users user = new Users();
+                    user.setUsername(username);
+                    user.setUserId(userId);
+                    
+                    CurrentUser.setUser(user);
+                    // Tạo và trả về đối tượng User
+                    return true;
+                }
+            }
         } catch (SQLException e) {
             e.printStackTrace();
         }
+
         return false; // Đăng ký không thành công
-    }   
+    }
 }
