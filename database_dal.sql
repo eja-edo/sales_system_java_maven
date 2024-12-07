@@ -997,8 +997,9 @@ go
 --END;
 
 
+
 GO
-CREATE PROCEDURE signUp
+alter PROCEDURE signUp
     @Email VARCHAR(100),
     @password VARCHAR(255)
 AS
@@ -1014,6 +1015,7 @@ BEGIN
     FROM Users
     WHERE user_id = SCOPE_IDENTITY();
 END
+
 GO
 
 
@@ -1460,51 +1462,96 @@ END;
 EXEC GetUserOrderProducts @UserId = 1;
 
 
--- lấy vào giỏ hàng
-ALTER PROCEDURE GetUserCartProducts
-    @UserId INT
+
+CREATE PROCEDURE GetUserDetails
+    @UserId INT = NULL, -- Lấy thông tin theo ID (tùy chọn)
+    @Username NVARCHAR(50) = NULL -- Lấy thông tin theo Username (tùy chọn)
 AS
 BEGIN
-    ;WITH FirstImage AS (
+    SET NOCOUNT ON;
+
+    -- Lấy thông tin theo UserId
+    IF @UserId IS NOT NULL
+    BEGIN
         SELECT 
-            p.product_id,
-            MIN(pi.ImageURL) AS ImageURL
-        FROM 
-            Products p
-        LEFT JOIN 
-            ProductImages pi ON p.product_id = pi.ProductID
-        GROUP BY 
-            p.product_id
-    ), DefaultSizeQuantity AS (
+            user_id,
+            username,
+            first_name,
+            last_name,
+            email,
+            phone,
+            address_line,
+            city,
+            province,
+            created_at,
+            updated_at
+        FROM Users
+        WHERE user_id = @UserId;
+        RETURN;
+    END
+
+    -- Lấy thông tin theo Username
+    IF @Username IS NOT NULL
+    BEGIN
         SELECT 
-            ps.product_id,
-            MIN(ps.size) AS size,
-            1 AS default_quantity -- Mặc định số lượng là 1
-        FROM 
-            ProductSize ps
-        GROUP BY 
-            ps.product_id
-    )
-    SELECT 
-        p.title,
-        COALESCE(ps.size, dsq.size) AS size, -- Lấy kích thước từ ProductSize nếu có, nếu không thì lấy kích thước mặc định
-        COALESCE(sc.quantity, dsq.default_quantity) AS cart_quantity, -- Lấy số lượng từ ShoppingCart nếu có, nếu không thì lấy số lượng mặc định là 1
-        p.minPrice AS price, -- Lấy giá từ bảng Products
-        fi.ImageURL
-    FROM 
-        ShoppingCart sc
-    LEFT JOIN 
-        ProductSize ps ON sc.exemple_id = ps.exemple_id
-    LEFT JOIN 
-        Products p ON ps.product_id = p.product_id
-    LEFT JOIN 
-        FirstImage fi ON p.product_id = fi.product_id
-    LEFT JOIN 
-        DefaultSizeQuantity dsq ON p.product_id = dsq.product_id
-    WHERE 
-        sc.user_id = @UserId;
+            user_id,
+            username,
+            first_name,
+            last_name,
+            email,
+            phone,
+            address_line,
+            city,
+            province,
+            created_at,
+            updated_at
+        FROM Users
+        WHERE username = @Username;
+    END
+END
+
+
+CREATE PROCEDURE GetProductSizeByProductId
+    @ProductId INT
+AS
+BEGIN
+    SELECT exemple_id, size , stock_quantity
+    FROM ProductSize
+    WHERE product_id = @ProductId;
 END;
 
 
-EXEC GetUserCartProducts @UserId = 1;
+
+alter PROCEDURE getUserInfo
+    @login NVARCHAR(50),
+    @password NVARCHAR(255)
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    -- Kiểm tra xem tài khoản có tồn tại và mật khẩu có đúng không
+    IF EXISTS (SELECT 1 FROM Users WHERE (username = @login OR email = @login OR phone = @login) AND password = @password)
+    BEGIN
+        -- Trả về thông tin người dùng khi cả login và password đều khớp
+        SELECT 
+            user_id, 
+            username, 
+            email, 
+            phone, 
+            first_name, 
+            last_name,
+			address_line,
+			city,
+			province
+        FROM Users 
+        WHERE (username = @login OR email = @login OR phone = @login) AND password = @password;
+    END
+    ELSE
+    BEGIN
+        -- Nếu không tìm thấy, trả về thông báo lỗi hoặc giá trị NULL
+        SELECT NULL AS ErrorMessage;
+    END
+END;
+
+
 

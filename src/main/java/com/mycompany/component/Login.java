@@ -82,6 +82,7 @@ public class Login extends javax.swing.JPanel {
         jLabel1.setText("Hoặc");
 
         inpEmail.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)), javax.swing.BorderFactory.createEmptyBorder(10, 15, 10, 15)));
+        inpEmail.setFontColorHint(new java.awt.Color(204, 204, 204));
         inpEmail.setHint("Username, phone number or email");
         inpEmail.setSelectionColor(new java.awt.Color(0, 0, 255));
 

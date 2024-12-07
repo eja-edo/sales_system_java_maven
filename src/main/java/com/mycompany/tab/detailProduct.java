@@ -6,6 +6,7 @@ package com.mycompany.tab;
 
 import com.mycompany.component.ListImgProduct;
 import com.mycompany.controller.ProductDetailController;
+import com.mycompany.model.entity.ProductSize;
 import com.mycompany.model.entity.Products;
 import com.mycompany.utils.RoundBorder;
 import static com.mycompany.utils.ScaleImg.scaleImg;
@@ -173,7 +174,17 @@ public class detailProduct extends javax.swing.JPanel {
     }
     
     
-    
+    public void setProductSizesToComboBox(List<ProductSize> productSizes) {
+    // Xóa các mục cũ trong comboBox trước khi thêm mới
+    comboBoxSuggestion1.removeAllItems();
+
+    // Duyệt qua danh sách ProductSize và thêm vào ComboBox
+    for (ProductSize productSize : productSizes) {
+        // Thêm kích thước và số lượng vào comboBox
+        comboBoxSuggestion1.addItem(productSize.toString());  // Sử dụng phương thức toString() của ProductSize
+    }
+}
+
 
         // Phương thức để hiển thị hình ảnh đã chọn
     private void showSelectedImage(String imagePath) {
@@ -211,6 +222,7 @@ public class detailProduct extends javax.swing.JPanel {
         jPanel6 = new javax.swing.JPanel();
         button2 = new com.mycompany.swing.Button();
         button3 = new com.mycompany.swing.Button();
+        comboBoxSuggestion1 = new com.mycompany.swing.ComboBoxSuggestion();
         jPanel7 = new javax.swing.JPanel();
         jPanel8 = new javax.swing.JPanel();
         listImgProduct = new com.mycompany.component.ListImgProduct();
@@ -309,13 +321,12 @@ public class detailProduct extends javax.swing.JPanel {
         button3.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jPanel6.add(button3);
 
+        comboBoxSuggestion1.setEditable(false);
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane2))
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel4Layout.createSequentialGroup()
@@ -338,6 +349,13 @@ public class detailProduct extends javax.swing.JPanel {
                             .addComponent(jLabel9))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane2)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(comboBoxSuggestion1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -356,13 +374,15 @@ public class detailProduct extends javax.swing.JPanel {
                 .addComponent(labPrice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel9)
-                .addGap(38, 38, 38)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(comboBoxSuggestion1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(button1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(415, Short.MAX_VALUE))
+                .addContainerGap(406, Short.MAX_VALUE))
         );
 
         jSplitPane1.setRightComponent(jPanel4);
@@ -453,7 +473,7 @@ public class detailProduct extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jSplitPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 900, Short.MAX_VALUE)
+            .addComponent(jSplitPane1)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -504,6 +524,7 @@ public class detailProduct extends javax.swing.JPanel {
     private com.raven.swing.Button2 button22;
     private com.mycompany.swing.Button button3;
     private javax.swing.ButtonGroup buttonGroup1;
+    private com.mycompany.swing.ComboBoxSuggestion comboBoxSuggestion1;
     private javax.swing.JLabel imgMain;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
