@@ -9,17 +9,12 @@ public class Users {
     private String username;      
     private String firstName;    
     private String lastName;      
-    private String email;         
-    private String password;      
+    private String email;            
     private String phone;         
     private String addressLine;   
     private String city;          
-    private String province;      
-    private String role;          
-    private String userStatus;    
-    private Date lastActive;      
-    private Date createdAt;      
-    private Date updatedAt;     
+    private String province;               
+ 
 
  
     public Users(int userId, String username, String firstName, String lastName, String email, String password,
@@ -30,22 +25,16 @@ public class Users {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
-        this.password = password;
         this.phone = phone;
         this.addressLine = addressLine;
         this.city = city;
         this.province = province;
-        this.role = role;
-        this.userStatus = userStatus;
-        this.lastActive = lastActive;
-        this.createdAt = createdAt;
-        this.updatedAt = updatedAt;
+
     }
 
 
     public Users() {
-        this.createdAt = new Date(); 
-        this.updatedAt = new Date(); 
+
     }
 
   
@@ -89,13 +78,6 @@ public class Users {
         this.email = email;
     }
 
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
 
     public String getPhone() {
         return phone;
@@ -128,46 +110,5 @@ public class Users {
     public void setProvince(String province) {
         this.province = province;
     }
-
-    public String getRole() {
-        return role;
-    }
-
-    public void setRole(String role) {
-        this.role = role;
-    }
-
-    public String getUserStatus() {
-        return userStatus;
-    }
-
-    public void setUserStatus(String userStatus) {
-        this.userStatus = userStatus;
-    }
-
-    public Date getLastActive() {
-        return lastActive;
-    }
-
-    public void setLastActive(Date lastActive) {
-        this.lastActive = lastActive;
-    }
-
-    public Date getCreatedAt() {
-        return createdAt;
-    }
-
-    public void setCreatedAt(Date createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    public Date getUpdatedAt() {
-        return updatedAt;
-    }
-
-    public void setUpdatedAt(Date updatedAt) {
-        this.updatedAt = updatedAt;
-    }
-
  
-    }
+}

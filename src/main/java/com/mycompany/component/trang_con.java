@@ -6,9 +6,12 @@ package com.mycompany.component;
 
 import com.mycompany.controller.LoadProductController;
 import com.mycompany.model.entity.ItemProductEntity;
+import com.mycompany.tab.LoginTab;
+import com.mycompany.tab.detailProduct;
 import com.mycompany.utils.RoundBorder;
 import java.awt.Color;
 import java.util.List;
+import javax.swing.JFrame;
 
 /**
  *
@@ -21,7 +24,6 @@ public class trang_con extends javax.swing.JPanel {
      public trang_con() {
         initComponents();
         loadProductController = new LoadProductController();
-        
     }
 
 //     public trang_con()
@@ -29,6 +31,21 @@ public class trang_con extends javax.swing.JPanel {
 //         this();
 //         
 //     }
+     
+     public void openDetail(ItemProduct item)
+     {
+        int id = item.getId();
+        detailProduct detal = new detailProduct(id);
+        JFrame frame = new JFrame(""); // Tạo JFrame chứa panel
+        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        frame.getContentPane().add(detal); // Thêm panel vào frame
+        frame.pack(); // Căn chỉnh kích thước
+        frame.setLocationRelativeTo(null); // Căn gi
+        frame.setVisible(true); // Hiển thị frame
+     }
+             
+             
+             
      public void setTrangCon(int i)
      {
          this.currentCategoryId = i; // Lưu trữ giá trị ID
@@ -136,11 +153,13 @@ public class trang_con extends javax.swing.JPanel {
         itemProduct5 = new com.mycompany.component.ItemProduct();
         itemProduct6 = new com.mycompany.component.ItemProduct();
         itemProduct7 = new com.mycompany.component.ItemProduct();
+
         itemProduct8 = new com.mycompany.component.ItemProduct();
         itemProduct10 = new com.mycompany.component.ItemProduct();
         itemProduct11 = new com.mycompany.component.ItemProduct();
         itemProduct12 = new com.mycompany.component.ItemProduct();
         itemProduct13 = new com.mycompany.component.ItemProduct();
+
         itemProduct17 = new com.mycompany.component.ItemProduct();
         itemProduct18 = new com.mycompany.component.ItemProduct();
         itemProduct19 = new com.mycompany.component.ItemProduct();
@@ -166,11 +185,13 @@ public class trang_con extends javax.swing.JPanel {
         jPanel1.add(itemProduct5);
         jPanel1.add(itemProduct6);
         jPanel1.add(itemProduct7);
+
         jPanel1.add(itemProduct8);
         jPanel1.add(itemProduct10);
         jPanel1.add(itemProduct11);
         jPanel1.add(itemProduct12);
         jPanel1.add(itemProduct13);
+
         jPanel1.add(itemProduct17);
         jPanel1.add(itemProduct18);
         jPanel1.add(itemProduct19);
@@ -218,7 +239,7 @@ public class trang_con extends javax.swing.JPanel {
                     .addComponent(comboBoxSuggestion1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 59, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 2139, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(156, 156, 156))
+                .addGap(153, 153, 153))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -226,8 +247,12 @@ public class trang_con extends javax.swing.JPanel {
          comboBoxActionPerformed();
     }//GEN-LAST:event_comboBoxSuggestion1ActionPerformed
 
+    private void itemProduct4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_itemProduct4MouseClicked
 
-    // Variables declaration - do not modify//GEN-BEGIN:variables
+    }//GEN-LAST:event_itemProduct4MouseClicked
+
+
+    // Variables declaration - do not modify                     
     private com.mycompany.swing.ComboBoxSuggestion comboBoxSuggestion1;
     private com.mycompany.component.ItemProduct itemProduct1;
     private com.mycompany.component.ItemProduct itemProduct10;
@@ -252,5 +277,5 @@ public class trang_con extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
-    // End of variables declaration//GEN-END:variables
+
 }
