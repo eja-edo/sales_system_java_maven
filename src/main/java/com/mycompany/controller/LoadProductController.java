@@ -30,9 +30,15 @@ public class LoadProductController {
     public List<ItemProductEntity> loadProductsByCategory(int categoryId, int limit) {
         return listItemProductsDAO.getProductsByCategory(categoryId, limit);
     }
- // Phương thức mới để gọi getProductsSorted
+    
+    // Phương thức mới để gọi getProductsSorted
     public List<ItemProductEntity> loadProductsSorted(int categoryId, int limit, String sortBy) {
         return listItemProductsDAO.getProductsSorted(categoryId, limit, sortBy);
+    }
+
+    // Phương thức để tìm kiếm sản phẩm theo tiêu đề
+    public List<ItemProductEntity> searchProductsByTitle(String keyword) {
+        return listItemProductsDAO.searchProductsByTitle(keyword);
     }
     
     // Phương thức để đặt ảnh cho sản phẩm
@@ -89,7 +95,5 @@ public class LoadProductController {
     public List<ItemProductEntity> getProductsSorted(int categoryId, int limit, String sortBy) {
         return listItemProductsDAO.getProductsSorted(categoryId, limit, sortBy);
     }
-
-    
     
 }

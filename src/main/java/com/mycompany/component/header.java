@@ -55,9 +55,7 @@ public class header extends javax.swing.JPanel {
         button22 = new com.raven.swing.Button2();
         button23 = new com.raven.swing.Button2();
 
-
         setBackground(new java.awt.Color(249, 241, 236));
-
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/logo.png"))); // NOI18N
 
@@ -87,9 +85,7 @@ public class header extends javax.swing.JPanel {
 
         jPanel2.add(radiumPanel1, new java.awt.GridBagConstraints());
 
-
         button21.setBackground(new java.awt.Color(249, 241, 236));
-
         button21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/user-profile-circle.png"))); // NOI18N
         button21.setBorderPainted(false);
         button21.addActionListener(new java.awt.event.ActionListener() {
@@ -98,9 +94,7 @@ public class header extends javax.swing.JPanel {
             }
         });
 
-
         button22.setBackground(new java.awt.Color(249, 241, 236));
-
         button22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/bell-02.png"))); // NOI18N
         button22.setBorderPainted(false);
         button22.addActionListener(new java.awt.event.ActionListener() {
@@ -109,11 +103,14 @@ public class header extends javax.swing.JPanel {
             }
         });
 
-
         button23.setBackground(new java.awt.Color(249, 241, 236));
-
         button23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/cart.png"))); // NOI18N
         button23.setBorderPainted(false);
+        button23.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button23ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -180,6 +177,10 @@ public class header extends javax.swing.JPanel {
     private void button22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button22ActionPerformed
      
     }//GEN-LAST:event_button22ActionPerformed
+
+    private void button23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button23ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_button23ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

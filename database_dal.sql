@@ -1462,6 +1462,56 @@ END;
 EXEC GetUserOrderProducts @UserId = 1;
 
 
+ALTER PROCEDURE GetUserCartProducts
+    @UserId INT
+AS
+BEGIN
+    ;WITH FirstImage AS (
+        SELECT 
+            p.product_id,
+            MIN(pi.ImageURL) AS ImageURL
+        FROM 
+            Products p
+        LEFT JOIN 
+            ProductImages pi ON p.product_id = pi.ProductID
+        GROUP BY 
+            p.product_id
+    ), DefaultSizeQuantity AS (
+        SELECT 
+            ps.product_id,
+            MIN(ps.size) AS size,
+            1 AS default_quantity -- Mặc định số lượng là 1
+        FROM 
+            ProductSize ps
+        GROUP BY 
+            ps.product_id
+    )
+    SELECT 
+        p.title,
+        COALESCE(ps.size, dsq.size) AS size, -- Lấy kích thước từ ProductSize nếu có, nếu không thì lấy kích thước mặc định
+        COALESCE(sc.quantity, dsq.default_quantity) AS cart_quantity, -- Lấy số lượng từ ShoppingCart nếu có, nếu không thì lấy số lượng mặc định là 1
+        p.minPrice AS price, -- Lấy giá từ bảng Products
+        fi.ImageURL
+    FROM 
+        ShoppingCart sc
+    LEFT JOIN 
+        ProductSize ps ON sc.exemple_id = ps.exemple_id
+    LEFT JOIN 
+        Products p ON ps.product_id = p.product_id
+    LEFT JOIN 
+        FirstImage fi ON p.product_id = fi.product_id
+    LEFT JOIN 
+        DefaultSizeQuantity dsq ON p.product_id = dsq.product_id
+    WHERE 
+        sc.user_id = @UserId;
+END;
+
+
+EXEC GetUserCartProducts @UserId = 2;
+
+
+
+
 
 CREATE PROCEDURE GetUserDetails
     @UserId INT = NULL, -- Lấy thông tin theo ID (tùy chọn)
@@ -1554,4 +1604,53 @@ BEGIN
 END;
 
 
+alter PROCEDURE GetCartProductDetails
 
+    @UserId INT,
+    @ProductId INT
+AS
+BEGIN
+    ;WITH FirstImage AS (
+        SELECT 
+            p.product_id,
+            MIN(pi.ImageURL) AS ImageURL
+        FROM 
+            Products p
+        LEFT JOIN 
+            ProductImages pi ON p.product_id = pi.ProductID
+        GROUP BY 
+            p.product_id
+    )
+    SELECT 
+        sc.user_id,
+        p.product_id,
+        p.title,
+        ps.size,
+        p.minPrice AS price,
+        fi.ImageURL
+    FROM 
+        ShoppingCart sc
+    LEFT JOIN 
+        ProductSize ps ON sc.exemple_id = ps.exemple_id
+    LEFT JOIN 
+        Products p ON ps.product_id = p.product_id
+    LEFT JOIN 
+        FirstImage fi ON p.product_id = fi.product_id
+    WHERE 
+        sc.user_id = @UserId AND
+        p.product_id = @ProductId;
+END;
+
+
+EXEC GetCartProductDetails @UserId = 1, @ProductId = 1;
+
+CREATE PROCEDURE TimKiemSanPham
+    @TuKhoa NVARCHAR(100)
+AS
+BEGIN
+    SELECT * 
+    FROM Products
+    WHERE title LIKE '%' + @TuKhoa + '%'
+END
+
+EXEC TimKiemSanPham @TuKhoa = N'đồng hồ';

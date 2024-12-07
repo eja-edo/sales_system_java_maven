@@ -37,7 +37,7 @@
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
       <SubComponents>
-        <Component class="com.mycompany.component.trang_con" name="trang_con1">
+        <Component class="com.mycompany.component.trangcon" name="trangcon1">
         </Component>
       </SubComponents>
     </Container>
