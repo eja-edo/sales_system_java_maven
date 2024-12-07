@@ -116,17 +116,19 @@ CREATE TABLE Orders (
 -- Tạo bảng danh sách sản phẩm trong đơn hàng 
 CREATE TABLE OrderItems ( 
 order_id INT,exemple_id INT, 
-quantity INT NOT NULL, price DECIMAL(10,2) NOT NULL, 
+quantity INT NOT NULL, 
+price DECIMAL(10,2) NOT NULL, 
 PRIMARY KEY(order_id,  exemple_id), 
 FOREIGN KEY (order_id) REFERENCES Orders(order_id) ON DELETE CASCADE, 
 FOREIGN KEY (exemple_id) REFERENCES ProductSize(exemple_id)
 );
+
 --shoppingcart
 CREATE TABLE ShoppingCart (
     cart_id INT IDENTITY(1,1) PRIMARY KEY,
     user_id INT,
     exemple_id INT, 
-    quantity INT NOT NULL,
+    quantity INT NOT NULL default 1,
     FOREIGN KEY (user_id) REFERENCES Users(user_id) ON DELETE CASCADE,
     FOREIGN KEY (exemple_id) REFERENCES ProductSize(exemple_id)
 );
@@ -994,16 +996,26 @@ go
 --    VALUES (@ImageURL,@ProductID,@id);
 --END;
 
-go
-create PROCEDURE signUp
-	@Email VARCHAR(100),
-    @password VARCHAR(255)
-	as
-	begin
-		INSERT INTO Users (username, password) VALUES (@Email, @password)
-	end
 
-go
+GO
+CREATE PROCEDURE signUp
+    @Email VARCHAR(100),
+    @password VARCHAR(255)
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    -- Thêm người dùng mới vào bảng Users
+    INSERT INTO Users (username, password)
+    VALUES (@Email, @password);
+
+    -- Trả về thông tin user_id vừa được tạo
+    SELECT user_id, username
+    FROM Users
+    WHERE user_id = SCOPE_IDENTITY();
+END
+GO
+
 
 create PROCEDURE getPassword
     @login NVARCHAR(50)
@@ -1390,3 +1402,51 @@ EXEC getMinMaxSell @categoryId = 1, @SL = 20, @sortBy = 'price_desc';
 
 -- Sắp xếp theo lượt bán
 EXEC getMinMaxSell @categoryId = 1, @SL = 20, @sortBy = 'sales';
+
+
+CREATE PROCEDURE GetUserDetails
+    @UserId INT = NULL, -- Lấy thông tin theo ID (tùy chọn)
+    @Username NVARCHAR(50) = NULL -- Lấy thông tin theo Username (tùy chọn)
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    -- Lấy thông tin theo UserId
+    IF @UserId IS NOT NULL
+    BEGIN
+        SELECT 
+            user_id,
+            username,
+            first_name,
+            last_name,
+            email,
+            phone,
+            address_line,
+            city,
+            province,
+            created_at,
+            updated_at
+        FROM Users
+        WHERE user_id = @UserId;
+        RETURN;
+    END
+
+    -- Lấy thông tin theo Username
+    IF @Username IS NOT NULL
+    BEGIN
+        SELECT 
+            user_id,
+            username,
+            first_name,
+            last_name,
+            email,
+            phone,
+            address_line,
+            city,
+            province,
+            created_at,
+            updated_at
+        FROM Users
+        WHERE username = @Username;
+    END
+END

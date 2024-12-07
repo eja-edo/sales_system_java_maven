@@ -5,11 +5,18 @@
 package com.mycompany.tab;
 
 import com.mycompany.component.ItemProduct;
+import com.mycompany.component.header;
 import com.mycompany.controller.LoadProductController;
 import com.mycompany.model.entity.ItemProductEntity;
+import com.mycompany.model.entity.Users;
+import com.mycompany.utils.CurrentUser;
 import java.awt.Component;
+import java.awt.Dimension;
+import java.awt.Frame;
 import java.util.List;
+import javax.swing.JDialog;
 import javax.swing.JFrame;
+import javax.swing.JScrollPane;
 
 
 
@@ -46,26 +53,33 @@ public class Home extends javax.swing.JPanel {
             itemProduct6, itemProduct7, itemProduct8,
             itemProduct9, itemProduct16,
             itemProduct17, itemProduct18, itemProduct19,
-            
         };
+        
+        
 
         for (int i = 0; i < bestSellers.size() && i < bestSellersArray.length; i++) {
             bestSellersArray[i].setItemProduct(bestSellers.get(i));
         }
     }
      
-     public void openDetail(ItemProduct item)
-     {
-        int id = item.getId();
-        detailProduct detal = new detailProduct(id);
-        JFrame frame = new JFrame(""); // Tạo JFrame chứa panel
-        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        frame.getContentPane().add(detal); // Thêm panel vào frame
-        frame.pack(); // Căn chỉnh kích thước
-        frame.setLocationRelativeTo(null); // Căn gi
-        frame.setVisible(true); // Hiển thị frame
-     }
-   
+    public void openDetail(ItemProduct item) {
+            int id = item.getId();
+            detailProduct detal = new detailProduct(id); // Tạo panel detailProduct
+
+            // Tạo JScrollPane bao bọc panel detailProduct
+            JScrollPane scrollPane = new JScrollPane(detal);
+            scrollPane.setPreferredSize(new Dimension(600, 400)); // Đặt kích thước mong muốn (tùy chỉnh theo nội dung)
+
+            // Tạo JDialog chứa JScrollPane
+            JDialog dialog = new JDialog((Frame) null, "Chi tiết sản phẩm", true);
+            dialog.getContentPane().add(scrollPane); // Thêm JScrollPane vào dialog
+            dialog.pack(); // Căn chỉnh kích thước
+            dialog.setLocationRelativeTo(null); // Căn giữa màn hình
+            dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE); // Đóng dialog
+            dialog.setVisible(true); // Hiển thị dialog  
+
+    }
+
 
     /**
      * This method is called from within the constructor to initialize the form.

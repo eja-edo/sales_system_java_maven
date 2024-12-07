@@ -24,7 +24,7 @@ public class SignUpController {
             
             // Kiểm tra tính hợp lệ của username và password
             if (email == null || email.trim().isEmpty()) {
-                view.setMessage("Vui lòng nhập Email.");
+                view.setMessage("Vui lòng nhập tên đăng nhập.");
                 return;
             }
 
@@ -34,11 +34,6 @@ public class SignUpController {
             }
             if (cfpass == null || cfpass.trim().isEmpty()) {
                 view.setMessage("Vui lòng xác nhận mật khẩu.");
-                return;
-            }
-            
-            if (!isValidEmail(email)) {
-                view.setMessage("Email không hợp lệ");
                 return;
             }
             
@@ -66,7 +61,7 @@ public class SignUpController {
             if (model.signUp(email, pass)) {
                 view.setMessage("Đăng kí thành công");
             } else {
-                view.setMessage("Đăng kí thất bại");
+                view.setMessage("Đăng kí đã tồn tại tên người dùng");
             }
         }
         
