@@ -5,9 +5,18 @@
 package com.mycompany.tab;
 
 import com.mycompany.component.ItemProduct;
+import com.mycompany.component.header;
 import com.mycompany.controller.LoadProductController;
 import com.mycompany.model.entity.ItemProductEntity;
+import com.mycompany.model.entity.Users;
+import com.mycompany.utils.CurrentUser;
+import java.awt.Component;
+import java.awt.Dimension;
+import java.awt.Frame;
 import java.util.List;
+import javax.swing.JDialog;
+import javax.swing.JFrame;
+import javax.swing.JScrollPane;
 
 
 
@@ -44,15 +53,33 @@ public class Home extends javax.swing.JPanel {
             itemProduct6, itemProduct7, itemProduct8,
             itemProduct9, itemProduct16,
             itemProduct17, itemProduct18, itemProduct19,
-            
         };
+        
+        
 
         for (int i = 0; i < bestSellers.size() && i < bestSellersArray.length; i++) {
             bestSellersArray[i].setItemProduct(bestSellers.get(i));
         }
     }
+     
+    public void openDetail(ItemProduct item) {
+            int id = item.getId();
+            detailProduct detal = new detailProduct(id); // Tạo panel detailProduct
 
-   
+            // Tạo JScrollPane bao bọc panel detailProduct
+            JScrollPane scrollPane = new JScrollPane(detal);
+            scrollPane.setPreferredSize(new Dimension(600, 400)); // Đặt kích thước mong muốn (tùy chỉnh theo nội dung)
+
+            // Tạo JDialog chứa JScrollPane
+            JDialog dialog = new JDialog((Frame) null, "Chi tiết sản phẩm", true);
+            dialog.getContentPane().add(scrollPane); // Thêm JScrollPane vào dialog
+            dialog.pack(); // Căn chỉnh kích thước
+            dialog.setLocationRelativeTo(null); // Căn giữa màn hình
+            dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE); // Đóng dialog
+            dialog.setVisible(true); // Hiển thị dialog  
+
+    }
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -97,6 +124,12 @@ public class Home extends javax.swing.JPanel {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setOpaque(false);
         jPanel1.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 10, 5));
+
+        itemProduct1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                itemProduct1MouseClicked(evt);
+            }
+        });
         jPanel1.add(itemProduct1);
         jPanel1.add(itemProduct2);
         jPanel1.add(itemProduct4);
@@ -260,6 +293,19 @@ public class Home extends javax.swing.JPanel {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void itemProduct1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_itemProduct1MouseClicked
+    // Lấy Component đã được click
+    Component clickedComponent = (Component) evt.getSource();
+    
+    // Kiểm tra nếu clickedComponent là kiểu ItemProduct (nếu đúng kiểu)
+    if (clickedComponent instanceof ItemProduct) {
+        ItemProduct item = (ItemProduct) clickedComponent;
+        
+        // Gọi phương thức openDetail với item đã được click
+        openDetail(item);
+    }
+    }//GEN-LAST:event_itemProduct1MouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

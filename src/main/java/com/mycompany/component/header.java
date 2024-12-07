@@ -6,7 +6,9 @@
 
 package com.mycompany.component;
 
+import com.mycompany.main.Main;
 import com.mycompany.tab.LoginTab;
+import java.awt.Frame;
 import javax.swing.*;
 
 
@@ -22,7 +24,18 @@ public class header extends javax.swing.JPanel {
     public header() {
         initComponents();
     }
+    
+    public Main Parent;
 
+    public header(Main parent) {
+        Parent = parent;
+        initComponents();
+    }
+    
+    public void addParent(Main parent)
+    {
+        Parent = parent;
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -127,19 +140,43 @@ public class header extends javax.swing.JPanel {
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
-
+    private static JDialog loginDialog;
+    
     private void button21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button21ActionPerformed
-
-       LoginTab loginPanel = new LoginTab(); // Tạo JPanel
-    JFrame frame = new JFrame(""); // Tạo JFrame chứa panel
-    frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-    frame.getContentPane().add(loginPanel); // Thêm panel vào frame
-    frame.pack(); // Căn chỉnh kích thước
-    frame.setLocationRelativeTo(null); // Căn gi
-    frame.setVisible(true); // Hiển thị frame
-
+        // Tạo JPanel LoginTab
+       ShowLoginDialog();
     }//GEN-LAST:event_button21ActionPerformed
+    
+    public static void ShowLoginDialog()
+    {
+       // Tạo JPanel LoginTab
+       LoginTab loginPanel = new LoginTab(); 
 
+       // Tạo JDialog (thay vì JFrame)
+       loginDialog = new JDialog((Frame) null, "Đăng nhập", true);
+       loginDialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE); // Đảm bảo loginDialog đóng khi nhấn X
+
+       // Thêm panel vào loginDialog
+       loginDialog.getContentPane().add(loginPanel); 
+
+       // Căn chỉnh kích thước và vị trí của loginDialog
+       loginDialog.pack();
+       loginDialog.setLocationRelativeTo(null); // Đặt loginDialog vào giữa màn hình
+
+       // Đảm bảo loginDialog không thể resize
+       loginDialog.setResizable(false);
+
+       // Hiển thị loginDialog
+       loginDialog.setVisible(true); 
+    }
+    
+    public static void cloceLoginDialog()
+    {
+        if (loginDialog != null && loginDialog.isVisible()) {
+            loginDialog.dispose();  // Đóng dialog
+        }
+    }
+    
     private void button22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button22ActionPerformed
      
     }//GEN-LAST:event_button22ActionPerformed

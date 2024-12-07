@@ -116,17 +116,19 @@ CREATE TABLE Orders (
 -- Tạo bảng danh sách sản phẩm trong đơn hàng 
 CREATE TABLE OrderItems ( 
 order_id INT,exemple_id INT, 
-quantity INT NOT NULL, price DECIMAL(10,2) NOT NULL, 
+quantity INT NOT NULL, 
+price DECIMAL(10,2) NOT NULL, 
 PRIMARY KEY(order_id,  exemple_id), 
 FOREIGN KEY (order_id) REFERENCES Orders(order_id) ON DELETE CASCADE, 
 FOREIGN KEY (exemple_id) REFERENCES ProductSize(exemple_id)
 );
+
 --shoppingcart
 CREATE TABLE ShoppingCart (
     cart_id INT IDENTITY(1,1) PRIMARY KEY,
     user_id INT,
     exemple_id INT, 
-    quantity INT NOT NULL,
+    quantity INT NOT NULL default 1,
     FOREIGN KEY (user_id) REFERENCES Users(user_id) ON DELETE CASCADE,
     FOREIGN KEY (exemple_id) REFERENCES ProductSize(exemple_id)
 );
@@ -884,7 +886,7 @@ VALUES
 ((SELECT user_id FROM Users WHERE username = 'duongbill'), N'Bạn có một đơn hàng mới.', 0),
 ((SELECT user_id FROM Users WHERE username = 'duongbill'), N'Đơn hàng của bạn đã được giao.', 1);
 
-
+go
 CREATE TRIGGER UpdateAverageRating
 ON Reviews
 AFTER INSERT, UPDATE, DELETE
@@ -994,16 +996,26 @@ go
 --    VALUES (@ImageURL,@ProductID,@id);
 --END;
 
-go
-create PROCEDURE signUp
-	@Email VARCHAR(100),
-    @password VARCHAR(255)
-	as
-	begin
-		INSERT INTO Users (username, password) VALUES (@Email, @password)
-	end
 
-go
+GO
+CREATE PROCEDURE signUp
+    @Email VARCHAR(100),
+    @password VARCHAR(255)
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    -- Thêm người dùng mới vào bảng Users
+    INSERT INTO Users (username, password)
+    VALUES (@Email, @password);
+
+    -- Trả về thông tin user_id vừa được tạo
+    SELECT user_id, username
+    FROM Users
+    WHERE user_id = SCOPE_IDENTITY();
+END
+GO
+
 
 create PROCEDURE getPassword
     @login NVARCHAR(50)
@@ -1076,8 +1088,8 @@ ORDER BY
 
 
 go
- exec getTopbestSellers @SL = 10
-
+-- exec getTopbestSellers @SL = 10
+go
 Create PROCEDURE getItemsNew
 @SL int
 as
@@ -1276,8 +1288,8 @@ BEGIN
         p.created_at DESC;
 END;
 
-EXEC getProductsByCategory @SL = 20,  @CategoryId = 1;
-
+--EXEC getProductsByCategory @SL = 20,  @CategoryId = 1;
+go
 
 
 --ham nay de lay min max luot ban
@@ -1389,6 +1401,7 @@ EXEC getMinMaxSell @categoryId = 1, @SL = 20, @sortBy = 'price_asc';
 EXEC getMinMaxSell @categoryId = 1, @SL = 20, @sortBy = 'price_desc';
 
 -- Sắp xếp theo lượt bán
+
 EXEC getMinMaxSell @categoryId = 4, @SL = 20, @sortBy = 'sales';
 
 
@@ -1494,3 +1507,4 @@ END;
 
 
 EXEC GetUserCartProducts @UserId = 1;
+

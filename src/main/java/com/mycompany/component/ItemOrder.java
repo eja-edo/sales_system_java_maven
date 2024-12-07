@@ -4,10 +4,12 @@
  */
 package com.mycompany.component;
 
-/**
- *
- * @author duyan
- */
+import static com.mycompany.utils.Formatter.formatPrice;
+import static com.mycompany.utils.Formatter.parsePrice;
+import java.text.ParseException;
+import java.util.List;
+
+
 public class ItemOrder extends javax.swing.JPanel {
 
     /**
@@ -16,6 +18,51 @@ public class ItemOrder extends javax.swing.JPanel {
     public ItemOrder() {
         initComponents();
     }
+    
+    public ItemOrder(String title, String urlImg, double price, List<Integer> size, String ID) {
+    // Gọi hàm khởi tạo mặc định để khởi tạo giao diện
+        this();
+
+        // Gán giá trị cho các thành phần giao diện
+        labTitle.setText(title); // Gán tiêu đề sản phẩm
+        labIdProduct.setText("Mã: " + ID); // Gán mã sản phẩm
+        labPrice.setText(formatPrice(price)); // Gán giá sản phẩm
+
+        // Đặt hình ảnh sản phẩm
+        if (urlImg != null && !urlImg.isEmpty()) {
+            imgProduct.setIcon(new javax.swing.ImageIcon(getClass().getResource(urlImg)));
+        } else {
+            imgProduct.setText("Không có ảnh"); // Nếu không có URL, hiển thị thông báo
+        }
+
+        // Gán các kích thước vào ComboBox
+        combSize.removeAllItems(); // Xóa các mục hiện có
+        for (Integer s : size) {
+            combSize.addItem(s.toString()); // Thêm từng kích thước vào ComboBox
+        }
+    }
+
+public double getTotal() {
+    try {
+        // Chuyển đổi giá trị từ labPrice (string) thành double
+        double price = parsePrice(labPrice.getText());
+
+        // Chuyển đổi số lượng từ string thành int (hoặc double nếu cần)
+        int quantity = Integer.parseInt(Soluong.getText());
+
+        // Tính tổng và trả về kết quả
+        return price * quantity;
+
+    } catch (ParseException e) {
+        // Xử lý trường hợp không thể phân tích giá trị
+        e.printStackTrace();
+        return 0;  // Hoặc trả về giá trị mặc định khác
+    } catch (NumberFormatException e) {
+        // Xử lý trường hợp không thể chuyển đổi số lượng sang int
+        e.printStackTrace();
+        return 0;  // Hoặc giá trị mặc định khác
+    }
+}
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -36,7 +83,9 @@ public class ItemOrder extends javax.swing.JPanel {
         radiumPanel1 = new com.mycompany.swing.RadiumPanel();
         jLabel5 = new javax.swing.JLabel();
         combSize = new com.mycompany.swing.ComboBoxSuggestion();
+
         jSpinner1 = new javax.swing.JSpinner();
+
 
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new java.awt.BorderLayout());
@@ -107,6 +156,10 @@ public class ItemOrder extends javax.swing.JPanel {
                 .addComponent(combSize, javax.swing.GroupLayout.PREFERRED_SIZE, 18, Short.MAX_VALUE))
         );
 
+        Soluong.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(153, 153, 153), 1, true));
+        Soluong.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        Soluong.setText("1");
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -119,10 +172,12 @@ public class ItemOrder extends javax.swing.JPanel {
                     .addComponent(labIdProduct)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(radiumPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(200, Short.MAX_VALUE))
             .addComponent(labTitle, javax.swing.GroupLayout.DEFAULT_SIZE, 403, Short.MAX_VALUE)
+
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -133,7 +188,9 @@ public class ItemOrder extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(radiumPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+
                     .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(labPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -144,6 +201,7 @@ public class ItemOrder extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private com.mycompany.swing.MyTextField Soluong;
     private com.mycompany.swing.ComboBoxSuggestion combSize;
     private javax.swing.JLabel imgProduct;
     private javax.swing.JLabel jLabel5;
