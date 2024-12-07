@@ -313,6 +313,11 @@ public class detailProduct extends javax.swing.JPanel {
         button2.setText("Thêm vào giỏ hàng");
         button2.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         button2.setPreferredSize(new java.awt.Dimension(42, 21));
+        button2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button2ActionPerformed(evt);
+            }
+        });
         jPanel6.add(button2);
 
         button3.setBackground(new java.awt.Color(0, 52, 104));
@@ -514,6 +519,10 @@ public class detailProduct extends javax.swing.JPanel {
                 .addContainerGap(606, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void button2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_button2ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
