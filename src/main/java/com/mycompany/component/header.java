@@ -7,6 +7,7 @@
 package com.mycompany.component;
 
 import com.mycompany.main.Main;
+import com.mycompany.tab.Cart;
 import com.mycompany.tab.LoginTab;
 import java.awt.Frame;
 import javax.swing.*;
@@ -179,7 +180,16 @@ public class header extends javax.swing.JPanel {
     }//GEN-LAST:event_button22ActionPerformed
 
     private void button23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button23ActionPerformed
-        // TODO add your handling code here:
+        Cart cart = new Cart((Frame) null,true);
+        cart.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+               // Căn chỉnh kích thước và vị trí của loginDialog
+       cart.pack();
+       cart.setLocationRelativeTo(null); // Đặt loginDialog vào giữa màn hình
+
+       // Đảm bảo loginDialog không thể resize
+       cart.setResizable(true);
+        // Hiển thị loginDialog
+       cart.setVisible(true); 
     }//GEN-LAST:event_button23ActionPerformed
 
 

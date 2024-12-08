@@ -7,7 +7,12 @@ package com.mycompany.tab;
 import com.mycompany.component.ItemCart;
 import com.mycompany.controller.ProductDetailController;
 import com.mycompany.model.entity.ProductDetail;
+import com.mycompany.utils.Formatter;
+import java.awt.Dimension;
+import java.awt.Frame;
 import java.util.List;
+import javax.swing.JDialog;
+import javax.swing.JScrollPane;
 
 
 /**
@@ -23,7 +28,15 @@ public class Cart extends javax.swing.JDialog {
     public Cart(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();loadData(1);
+        listItemCart1.setParent(this);
     }
+    
+    
+    public void setTotalTemp(double total)
+    {
+        jLabel4.setText(Formatter.formatPrice(total));
+    }
+    
  // Phương thức để tải dữ liệu giỏ hàng
     public void loadData(int userId) {
         // Giả sử userId là ID người dùng hiện tại
@@ -126,6 +139,11 @@ public class Cart extends javax.swing.JDialog {
         button21.setMinimumSize(new java.awt.Dimension(120, 25));
         button21.setPreferredSize(new java.awt.Dimension(120, 25));
         button21.setRadium(10);
+        button21.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button21ActionPerformed(evt);
+            }
+        });
         jPanel2.add(button21);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -190,6 +208,27 @@ public class Cart extends javax.swing.JDialog {
     private void btnDeleteMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDeleteMouseExited
         btnDelete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/delete.png")));
     }//GEN-LAST:event_btnDeleteMouseExited
+
+    private void button21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button21ActionPerformed
+
+            List<ProductDetail> list = listItemCart1.getListProuctItem();
+            if(list.size()> 0)
+            {
+               
+               
+               JDialog dialog = new JDialog((Frame) null, "thanh toán", true);
+               order Order = new order(list,dialog); 
+               JScrollPane scrollPane = new JScrollPane(Order);
+               scrollPane.setPreferredSize(new Dimension(945, 800));
+                dialog.getContentPane().add(scrollPane); // Thêm JScrollPane vào dialog
+                dialog.pack(); // Căn chỉnh kích thước
+                dialog.setLocationRelativeTo(null); // Căn giữa màn hình
+                dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE); // Đóng dialog
+                dialog.setVisible(true); // Hiển thị dialog  
+            }
+            
+            this.dispose();
+    }//GEN-LAST:event_button21ActionPerformed
 
     /**
      * @param args the command line arguments

@@ -4,22 +4,36 @@
  */
 package com.mycompany.tab;
 
+import com.mycompany.model.entity.ProductDetail;
+import com.mycompany.utils.Formatter;
 import com.mycompany.utils.RoundBorder;
 import java.awt.Color;
+import java.util.List;
+import javax.swing.JDialog;
 
 /**
  *
  * @author duyan
  */
 public class order extends javax.swing.JPanel {
-
+    private JDialog dialog;
     /**
      * Creates new form order
      */
     public order() {
         initComponents();
     }
+    private List<ProductDetail> Items;
 
+    public order(List<ProductDetail> items , JDialog parent)
+    {
+        this();
+        Items = items;
+        dialog = parent;
+        listItemOrder11.addListItem(Items);
+        labTotal.setText(Formatter.formatPrice(listItemOrder11.getTotal()+43000)); 
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -45,7 +59,6 @@ public class order extends javax.swing.JPanel {
         jLabel19 = new javax.swing.JLabel();
         jButton10 = new javax.swing.JButton();
         jLabel20 = new javax.swing.JLabel();
-        jButton11 = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
         roundPanel4 = new com.mycompany.swing.RoundPanel();
         jLabel21 = new javax.swing.JLabel();
@@ -55,7 +68,7 @@ public class order extends javax.swing.JPanel {
         listItemOrder11 = new com.mycompany.component.ListItemOrder1();
         jPanel1 = new javax.swing.JPanel();
         button21 = new com.raven.swing.Button2();
-        jLabel1 = new javax.swing.JLabel();
+        labTotal = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -110,7 +123,7 @@ public class order extends javax.swing.JPanel {
                     .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(0, 185, Short.MAX_VALUE))
+                .addGap(0, 434, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -171,16 +184,6 @@ public class order extends javax.swing.JPanel {
         jLabel20.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel20.setText("Phương thức vận chuyển");
 
-        jButton11.setForeground(new java.awt.Color(102, 102, 102));
-        jButton11.setText("Xem tất cả");
-        jButton11.setBorderPainted(false);
-        jButton11.setContentAreaFilled(false);
-        jButton11.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton11ActionPerformed(evt);
-            }
-        });
-
         jPanel5.setBackground(new java.awt.Color(153, 153, 153));
         jPanel5.setPreferredSize(new java.awt.Dimension(0, 1));
 
@@ -216,7 +219,7 @@ public class order extends javax.swing.JPanel {
                 .addComponent(jLabel21)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel22))
-            .addComponent(jTextPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+            .addComponent(jTextPane2)
         );
         roundPanel4Layout.setVerticalGroup(
             roundPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -238,6 +241,8 @@ public class order extends javax.swing.JPanel {
         jButton12.setHorizontalAlignment(javax.swing.SwingConstants.LEADING);
         jButton12.setHorizontalTextPosition(javax.swing.SwingConstants.LEADING);
 
+        listItemOrder11.setAutoscrolls(true);
+
         javax.swing.GroupLayout radiumPanel2Layout = new javax.swing.GroupLayout(radiumPanel2);
         radiumPanel2.setLayout(radiumPanel2Layout);
         radiumPanel2Layout.setHorizontalGroup(
@@ -254,25 +259,23 @@ public class order extends javax.swing.JPanel {
                 .addComponent(jLabel19)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton10))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, radiumPanel2Layout.createSequentialGroup()
-                .addComponent(jLabel20)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton11))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, radiumPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, 415, Short.MAX_VALUE)
-                .addContainerGap())
             .addComponent(roundPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(radiumPanel2Layout.createSequentialGroup()
-                .addComponent(jButton12, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap()
+                .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, 672, Short.MAX_VALUE)
+                .addContainerGap())
+            .addComponent(listItemOrder11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(radiumPanel2Layout.createSequentialGroup()
+                .addGroup(radiumPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel20)
+                    .addComponent(jButton12, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 0, Short.MAX_VALUE))
-            .addComponent(listItemOrder11, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
         );
         radiumPanel2Layout.setVerticalGroup(
             radiumPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(radiumPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(listItemOrder11, javax.swing.GroupLayout.PREFERRED_SIZE, 974, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(listItemOrder11, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(radiumPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel17)
@@ -288,9 +291,7 @@ public class order extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(radiumPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton11)
-                    .addComponent(jLabel20))
+                .addComponent(jLabel20)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(roundPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -306,11 +307,16 @@ public class order extends javax.swing.JPanel {
         button21.setText("Đặt hàng");
         button21.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         button21.setRadium(10);
+        button21.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button21ActionPerformed(evt);
+            }
+        });
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(204, 102, 0));
-        jLabel1.setText("1.200.300 đ");
-        jLabel1.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        labTotal.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        labTotal.setForeground(new java.awt.Color(204, 102, 0));
+        labTotal.setText("1.200.300 đ");
+        labTotal.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
         jLabel2.setText("Tổng thanh toán");
@@ -330,7 +336,7 @@ public class order extends javax.swing.JPanel {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel1))
+                        .addComponent(labTotal))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -342,12 +348,12 @@ public class order extends javax.swing.JPanel {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(57, Short.MAX_VALUE)
+                .addContainerGap(36, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(button21, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel1)
+                            .addComponent(labTotal)
                             .addComponent(jLabel2))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -362,10 +368,8 @@ public class order extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(roundPanel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addComponent(radiumPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -378,7 +382,7 @@ public class order extends javax.swing.JPanel {
                 .addComponent(radiumPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(149, Short.MAX_VALUE))
+                .addContainerGap(101, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -394,24 +398,22 @@ public class order extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton10ActionPerformed
 
-    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton11ActionPerformed
-
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void button21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button21ActionPerformed
+        dialog.dispose();
+    }//GEN-LAST:event_button21ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private com.raven.swing.Button2 button21;
     private javax.swing.JButton jButton10;
-    private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton12;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
@@ -430,6 +432,7 @@ public class order extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JTextPane jTextPane2;
+    private javax.swing.JLabel labTotal;
     private com.mycompany.component.ListItemOrder1 listItemOrder11;
     private com.mycompany.swing.RadiumPanel radiumPanel2;
     private com.mycompany.swing.RoundPanel roundPanel3;

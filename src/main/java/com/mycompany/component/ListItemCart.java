@@ -5,6 +5,8 @@
 package com.mycompany.component;
 
 import com.mycompany.component.ItemCart;
+import com.mycompany.model.entity.ProductDetail;
+import com.mycompany.tab.Cart;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -15,24 +17,54 @@ import java.util.List;
  */
 public class ListItemCart extends javax.swing.JPanel {
     private List<ItemCart> selectedItems = new ArrayList<>();
-    
+    private Cart parent;
     
     
     public ListItemCart() {
         initComponents(); 
     }
     
+    public void setParent(Cart pa)
+    {
+        this.parent = pa;
+    }
+    
+    private double total = 0;
+    
+    public List<ProductDetail> getListProuctItem()
+    {
+        List<ProductDetail> items = new ArrayList<ProductDetail>();
+        
+        for(ItemCart ItemCart : selectedItems)
+        {
+            items.add(ItemCart.getItem());
+        }
+        return items;
+    }
+    
+    
     
     public void setupItemCart(ItemCart itemCart) {
         itemCart.setSelectAction(e -> {
             if (itemCart.isSelected()) {
+                System.out.println("đã thêm vào");
                 selectedItems.add(itemCart);
+                total += itemCart.getTotalItem();
+                   parent.setTotalTemp(total);
             } else {
+                System.out.println("đã xoa khoi");
                 selectedItems.remove(itemCart);
+                total -= itemCart.getTotalItem();
+                parent.setTotalTemp(total);
             }
         });
+        itemCart.setOnQuantityChangeListener(change -> updateTotal(change)); // Đăng ký callback
     }
-
+    // Cập nhật tổng giá trị
+    private void updateTotal(double change) {
+        total += change; // Cộng dồn thay đổi
+        parent.setTotalTemp(total);
+    }
     
         // Hàm để xóa một ItemCart khỏi JPanel
     public void removeItemCart(ItemCart itemCart) {

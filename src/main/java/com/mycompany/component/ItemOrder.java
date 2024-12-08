@@ -4,13 +4,27 @@
  */
 package com.mycompany.component;
 
+import com.mycompany.model.entity.ProductDetail;
+import com.mycompany.utils.Formatter;
 import static com.mycompany.utils.Formatter.formatPrice;
 import static com.mycompany.utils.Formatter.parsePrice;
+import static com.mycompany.utils.resizeIcon.resizeIcon;
 import java.text.ParseException;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.ImageIcon;
 
 
 public class ItemOrder extends javax.swing.JPanel {
+
+    public ProductDetail getItem() {
+        return Item;
+    }
+
+    public void setItem(ProductDetail Item) {
+        this.Item = Item;
+    }
 
     /**
      * Creates new form ItemOrder
@@ -18,6 +32,42 @@ public class ItemOrder extends javax.swing.JPanel {
     public ItemOrder() {
         initComponents();
     }
+    
+        public double getTotalItem() {
+        try {
+            double price = Formatter.parsePrice(labPrice.getText()); // Chuyển đổi giá từ chuỗi
+            int quantity = (int) jSpinner1.getValue(); // Lấy số lượng từ JSpinner
+            return price * quantity; // Tính tổng giá trị
+        } catch (ParseException ex) {
+            Logger.getLogger(ItemCart.class.getName()).log(Level.SEVERE, null, ex);
+            return 0.0; // Giá trị mặc định nếu xảy ra lỗi
+        }
+    }
+    
+    
+    private ProductDetail Item;
+    
+    public ItemOrder(ProductDetail item) {
+    // Gọi hàm khởi tạo mặc định để khởi tạo giao diện
+        this();
+        Item = item;
+        
+        // Gán giá trị cho các thành phần giao diện
+        labTitle.setText(Item.getTitle()); // Gán tiêu đề sản phẩm
+        labIdProduct.setText("Mã: " + Item.getProductId()); // Gán mã sản phẩm
+        labPrice.setText(formatPrice(Item.getPrice())); // Gán giá sản phẩm
+
+        // Đặt hình ảnh sản phẩm
+        ImageIcon icon = new ImageIcon(getClass().getResource(item.getImageUrl()));
+        imgProduct.setIcon(resizeIcon(icon,90,90));
+
+        // Gán các kích thước vào ComboBox
+        combSize.removeAllItems(); // Xóa các mục hiện có
+        combSize.removeAllItems(); // Xóa các mục hiện có
+        combSize.addItem(item.getSize().toString()); // Thêm từng kích thước vào ComboBox
+        jSpinner1.setValue(Item.getSoLuong());
+    }
+    
     
     public ItemOrder(String title, String urlImg, double price, List<Integer> size, String ID) {
     // Gọi hàm khởi tạo mặc định để khởi tạo giao diện
@@ -42,27 +92,27 @@ public class ItemOrder extends javax.swing.JPanel {
         }
     }
 
-public double getTotal() {
-    try {
-        // Chuyển đổi giá trị từ labPrice (string) thành double
-        double price = parsePrice(labPrice.getText());
-
-        // Chuyển đổi số lượng từ string thành int (hoặc double nếu cần)
-        int quantity = Integer.parseInt(Soluong.getText());
-
-        // Tính tổng và trả về kết quả
-        return price * quantity;
-
-    } catch (ParseException e) {
-        // Xử lý trường hợp không thể phân tích giá trị
-        e.printStackTrace();
-        return 0;  // Hoặc trả về giá trị mặc định khác
-    } catch (NumberFormatException e) {
-        // Xử lý trường hợp không thể chuyển đổi số lượng sang int
-        e.printStackTrace();
-        return 0;  // Hoặc giá trị mặc định khác
-    }
-}
+//public double getTotal() {
+//    try {
+//        // Chuyển đổi giá trị từ labPrice (string) thành double
+//        double price = parsePrice(labPrice.getText());
+//
+//        // Chuyển đổi số lượng từ string thành int (hoặc double nếu cần)
+//        int quantity = Integer.parseInt();
+//
+//        // Tính tổng và trả về kết quả
+//        return price * quantity;
+//
+//    } catch (ParseException e) {
+//        // Xử lý trường hợp không thể phân tích giá trị
+//        e.printStackTrace();
+//        return 0;  // Hoặc trả về giá trị mặc định khác
+//    } catch (NumberFormatException e) {
+//        // Xử lý trường hợp không thể chuyển đổi số lượng sang int
+//        e.printStackTrace();
+//        return 0;  // Hoặc giá trị mặc định khác
+//    }
+//}
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -83,7 +133,7 @@ public double getTotal() {
         radiumPanel1 = new com.mycompany.swing.RadiumPanel();
         jLabel5 = new javax.swing.JLabel();
         combSize = new com.mycompany.swing.ComboBoxSuggestion();
-        Soluong = new com.mycompany.swing.MyTextField();
+        jSpinner1 = new javax.swing.JSpinner();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new java.awt.BorderLayout());
@@ -154,26 +204,27 @@ public double getTotal() {
                 .addComponent(combSize, javax.swing.GroupLayout.PREFERRED_SIZE, 18, Short.MAX_VALUE))
         );
 
-        Soluong.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(153, 153, 153), 1, true));
-        Soluong.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
-        Soluong.setText("1");
+        jSpinner1.setModel(new javax.swing.SpinnerNumberModel(1, 1, 20, 1));
+        jSpinner1.setEditor(new javax.swing.JSpinner.NumberEditor(jSpinner1, ""));
+        jSpinner1.setName(""); // NOI18N
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addComponent(labPrice, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(178, 178, 178))
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(labIdProduct)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
+                .addComponent(labIdProduct)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(labTitle)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel3Layout.createSequentialGroup()
                         .addComponent(radiumPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(37, 37, 37)
-                        .addComponent(Soluong, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(188, Short.MAX_VALUE))
-            .addComponent(labTitle, javax.swing.GroupLayout.DEFAULT_SIZE, 439, Short.MAX_VALUE)
+                        .addGap(35, 35, 35)
+                        .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(labPrice, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(178, 178, 178))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -184,7 +235,7 @@ public double getTotal() {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(radiumPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Soluong, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(labPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -195,12 +246,12 @@ public double getTotal() {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private com.mycompany.swing.MyTextField Soluong;
     private com.mycompany.swing.ComboBoxSuggestion combSize;
     private javax.swing.JLabel imgProduct;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JSpinner jSpinner1;
     private javax.swing.JLabel labIdProduct;
     private javax.swing.JLabel labPrice;
     private javax.swing.JTextPane labTitle;
