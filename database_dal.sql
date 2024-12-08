@@ -1915,6 +1915,7 @@ END;
 
 --EXEC GetCart @UserId = 1;
 go
+
 CREATE PROCEDURE TimKiemSanPham
     @TuKhoa NVARCHAR(100)
 AS
@@ -1924,7 +1925,12 @@ BEGIN
     WHERE title LIKE '%' + @TuKhoa + '%'
 END
 
---EXEC TimKiemSanPham @TuKhoa = N'00';
+--EXEC TimKiemSanPham @TuKhoa = N'cưới';
+
+
+
+
+
 
 go
 create PROCEDURE AddToCart

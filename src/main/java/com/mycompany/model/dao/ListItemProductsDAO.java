@@ -133,37 +133,40 @@ public class ListItemProductsDAO {
         return sortedProducts;
     }
 
-        public List<ItemProductEntity> searchProductsByTitle(String keyword) {
-    String query = "EXEC TimKiemSanPham @TuKhoa = ?";
-    List<ItemProductEntity> searchResults = new ArrayList<>();
+    // Phương thức tìm kiếm sản phẩm
+     public List<ItemProductEntity> searchProductsByTitle(String keyword, Integer categoryId) {
+        List<ItemProductEntity> searchResults = new ArrayList<>();
+        String query = "EXEC TimKiemSanPham @TuKhoa = ?, @CategoryID = ?";
 
-    try (Connection conn = DBConnection.getConnection();
-         PreparedStatement stmt = conn.prepareStatement(query)) {
-        stmt.setString(1, keyword);  // Gán giá trị cho tham số @TuKhoa
-        ResultSet rs = stmt.executeQuery();
+        try (Connection conn = DBConnection.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(query)) {
+            stmt.setString(1, keyword);
+            if (categoryId != null) {
+                stmt.setInt(2, categoryId);
+            } 
+            
 
-        // Duyệt qua các bản ghi trong ResultSet và thêm chúng vào danh sách
-        while (rs.next()) {
-            int productId = rs.getInt("product_id");
-            String title = rs.getString("title");
-            double minPrice = rs.getDouble("minPrice");
-            float averageRating = rs.getFloat("AverageRating");
-            String img = rs.getString("img");
-            int views = rs.getInt("views");
+            ResultSet rs = stmt.executeQuery();
 
-            // Tạo đối tượng ItemProduct và thêm vào danh sách
-            ItemProductEntity item = new ItemProductEntity(productId, title, averageRating, formatPrice(minPrice), img, views);
-            searchResults.add(item);
+            while (rs.next()) {
+                int productId = rs.getInt("product_id");
+                String title = rs.getString("title");
+                double minPrice = rs.getDouble("minPrice");
+                float averageRating = rs.getFloat("AverageRating");
+                String img = rs.getString("img"); 
+                int views = rs.getInt("views");
+                String categoryName = rs.getString("category_name");
+
+                ItemProductEntity item = new ItemProductEntity(productId, title, averageRating, formatPrice(minPrice), img, views);
+                searchResults.add(item);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
-    } catch (SQLException e) {
-        e.printStackTrace(); 
+
+        return searchResults;
     }
-
-    return searchResults;
-}
-
      
       
-     
-      
+
 }

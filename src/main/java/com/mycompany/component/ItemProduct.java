@@ -78,6 +78,7 @@ public class ItemProduct extends javax.swing.JPanel {
         jrating.setText(String.valueOf(itemProduct.getRating()));
         jviews.setText(String.valueOf(itemProduct.getViews()));
     }
+     
 
     @Override
     protected void paintComponent(Graphics g) {

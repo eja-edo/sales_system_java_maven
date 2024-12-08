@@ -55,7 +55,7 @@ public class trangcon extends javax.swing.JPanel {
          setupSoluotban(i);
      }
      public List<ItemProductEntity> searchProductsByTitle(String keyword) {
-    return loadProductController.searchProductsByTitle(keyword);
+    return loadProductController.searchProductsByTitle(keyword,currentCategoryId);
 }
 
     private void setupProductComponents(int loaiID) {
@@ -140,9 +140,9 @@ public class trangcon extends javax.swing.JPanel {
         }
     }
     
-      private void searchAndDisplayProducts(String keyword) {
-    // Tìm kiếm danh sách sản phẩm phù hợp với từ khóa
-    List<ItemProductEntity> productEntities = loadProductController.searchProductsByTitle(keyword);
+     
+private void searchAndDisplayProducts(String keyword, Integer categoryId) {
+    List<ItemProductEntity> productEntities = loadProductController.searchProductsByTitle(keyword, categoryId);
 
     // Danh sách các ItemProduct trên giao diện
     ItemProduct[] componentsArray = {
@@ -153,10 +153,16 @@ public class trangcon extends javax.swing.JPanel {
         itemProduct23, itemProduct24
     };
 
-    for (int i = 0; i < productEntities.size() && i < componentsArray.length; i++) {
-        componentsArray[i].setItemProduct(productEntities.get(i));
+    for (int i = 0; i < componentsArray.length; i++) {
+        if (i < productEntities.size()) {
+            componentsArray[i].setItemProduct(productEntities.get(i));
+            componentsArray[i].setVisible(true); // Hiển thị thành phần
+        } else {
+            componentsArray[i].setVisible(false); // Ẩn thành phần
+        }
     }
 }
+
 
     
     @SuppressWarnings("unchecked")
@@ -187,33 +193,9 @@ public class trangcon extends javax.swing.JPanel {
         itemProduct23 = new com.mycompany.component.ItemProduct();
         itemProduct24 = new com.mycompany.component.ItemProduct();
         jLabel3 = new javax.swing.JLabel();
+        panelRound1 = new com.mycompany.swing.PanelRound();
+        jLabel5 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
-        jPanel2 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        comboBoxSuggestion2 = new com.mycompany.swing.ComboBoxSuggestion();
-        jPanel3 = new javax.swing.JPanel();
-        itemProduct9 = new com.mycompany.component.ItemProduct();
-        itemProduct14 = new com.mycompany.component.ItemProduct();
-        itemProduct15 = new com.mycompany.component.ItemProduct();
-        itemProduct16 = new com.mycompany.component.ItemProduct();
-        itemProduct25 = new com.mycompany.component.ItemProduct();
-        itemProduct26 = new com.mycompany.component.ItemProduct();
-        itemProduct27 = new com.mycompany.component.ItemProduct();
-        itemProduct28 = new com.mycompany.component.ItemProduct();
-        itemProduct29 = new com.mycompany.component.ItemProduct();
-        itemProduct30 = new com.mycompany.component.ItemProduct();
-        itemProduct31 = new com.mycompany.component.ItemProduct();
-        itemProduct32 = new com.mycompany.component.ItemProduct();
-        itemProduct33 = new com.mycompany.component.ItemProduct();
-        itemProduct34 = new com.mycompany.component.ItemProduct();
-        itemProduct35 = new com.mycompany.component.ItemProduct();
-        itemProduct36 = new com.mycompany.component.ItemProduct();
-        itemProduct37 = new com.mycompany.component.ItemProduct();
-        itemProduct38 = new com.mycompany.component.ItemProduct();
-        itemProduct39 = new com.mycompany.component.ItemProduct();
-        itemProduct40 = new com.mycompany.component.ItemProduct();
-        jLabel4 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
 
         setBackground(new java.awt.Color(255, 255, 255));
 
@@ -260,99 +242,45 @@ public class trangcon extends javax.swing.JPanel {
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel3.setText("Sắp xếp theo: ");
 
-        jTextField1.setText("Tìm kiếm nhanh....");
+        panelRound1.setBackground(new java.awt.Color(255, 255, 255));
+        panelRound1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        panelRound1.setRoundBottomLeft(20);
+        panelRound1.setRoundBottomRight(20);
+        panelRound1.setRoundTopLeft(20);
+        panelRound1.setRoundTopRight(20);
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/search.png"))); // NOI18N
+
+        jTextField1.setFont(new java.awt.Font("Segoe UI", 2, 13)); // NOI18N
+        jTextField1.setBorder(null);
+        jTextField1.setDisabledTextColor(new java.awt.Color(255, 255, 255));
+        jTextField1.setSelectedTextColor(new java.awt.Color(242, 242, 242));
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1ActionPerformed(evt);
             }
         });
 
-        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
-
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/z6056783267859_fa8269f989fded0dfb04358efd3ba6eb.jpg"))); // NOI18N
-
-        comboBoxSuggestion2.setBorder(new RoundBorder(Color.GRAY,10,1));
-        comboBoxSuggestion2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Giá thấp đến cao", "Giá cao xuống thấp", "Số lượt bán" }));
-        comboBoxSuggestion2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        comboBoxSuggestion2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                comboBoxSuggestion2ActionPerformed(evt);
-            }
-        });
-
-        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel3.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 20, 20));
-        jPanel3.add(itemProduct9);
-        jPanel3.add(itemProduct14);
-        jPanel3.add(itemProduct15);
-        jPanel3.add(itemProduct16);
-        jPanel3.add(itemProduct25);
-        jPanel3.add(itemProduct26);
-        jPanel3.add(itemProduct27);
-
-        itemProduct28.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                itemProduct28itemProduct4MouseClicked(evt);
-            }
-        });
-        jPanel3.add(itemProduct28);
-        jPanel3.add(itemProduct29);
-        jPanel3.add(itemProduct30);
-        jPanel3.add(itemProduct31);
-        jPanel3.add(itemProduct32);
-        jPanel3.add(itemProduct33);
-        jPanel3.add(itemProduct34);
-        jPanel3.add(itemProduct35);
-        jPanel3.add(itemProduct36);
-        jPanel3.add(itemProduct37);
-        jPanel3.add(itemProduct38);
-        jPanel3.add(itemProduct39);
-        jPanel3.add(itemProduct40);
-
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel4.setText("Sắp xếp theo: ");
-
-        jTextField2.setText("Tìm kiếm nhanh....");
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 1199, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+        javax.swing.GroupLayout panelRound1Layout = new javax.swing.GroupLayout(panelRound1);
+        panelRound1.setLayout(panelRound1Layout);
+        panelRound1Layout.setHorizontalGroup(
+            panelRound1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelRound1Layout.createSequentialGroup()
+                .addGap(8, 8, 8)
+                .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 223, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(71, 71, 71)
-                .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(comboBoxSuggestion2, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(87, 87, 87))
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 470, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(comboBoxSuggestion2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel4))
-                    .addComponent(jTextField2, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 2121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0))
+        panelRound1Layout.setVerticalGroup(
+            panelRound1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelRound1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel5)
+                .addContainerGap())
+            .addGroup(panelRound1Layout.createSequentialGroup()
+                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -362,43 +290,33 @@ public class trangcon extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1199, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                        .addGap(41, 41, 41)
+                        .addComponent(jLabel3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(comboBoxSuggestion1, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(panelRound1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(38, 38, 38))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1199, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addGap(71, 71, 71)
-                .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(comboBoxSuggestion1, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(87, 87, 87))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 470, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(comboBoxSuggestion1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel3))
-                    .addComponent(jTextField1, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel3)
+                        .addComponent(comboBoxSuggestion1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(panelRound1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 2121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap(41, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -411,40 +329,22 @@ public class trangcon extends javax.swing.JPanel {
     }//GEN-LAST:event_itemProduct8itemProduct4MouseClicked
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-           String keyword = jTextField1.getText();
-    if (keyword.isEmpty()) {
-        // Nếu text field rỗng, hiển thị tất cả sản phẩm
-        setupProductComponents(currentCategoryId);
-    } else {
-        // Tìm kiếm và hiển thị các sản phẩm phù hợp với từ khóa
-        searchAndDisplayProducts(keyword);
-    }
+       
+    String keyword = jTextField1.getText();
+
+    // Gọi phương thức searchAndDisplayProducts với từ khóa
+    searchAndDisplayProducts(keyword,currentCategoryId);
+
     }//GEN-LAST:event_jTextField1ActionPerformed
-
-    private void comboBoxSuggestion2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboBoxSuggestion2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_comboBoxSuggestion2ActionPerformed
-
-    private void itemProduct28itemProduct4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_itemProduct28itemProduct4MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_itemProduct28itemProduct4MouseClicked
-
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private com.mycompany.swing.ComboBoxSuggestion comboBoxSuggestion1;
-    private com.mycompany.swing.ComboBoxSuggestion comboBoxSuggestion2;
     private com.mycompany.component.ItemProduct itemProduct1;
     private com.mycompany.component.ItemProduct itemProduct10;
     private com.mycompany.component.ItemProduct itemProduct11;
     private com.mycompany.component.ItemProduct itemProduct12;
     private com.mycompany.component.ItemProduct itemProduct13;
-    private com.mycompany.component.ItemProduct itemProduct14;
-    private com.mycompany.component.ItemProduct itemProduct15;
-    private com.mycompany.component.ItemProduct itemProduct16;
     private com.mycompany.component.ItemProduct itemProduct17;
     private com.mycompany.component.ItemProduct itemProduct18;
     private com.mycompany.component.ItemProduct itemProduct19;
@@ -454,37 +354,17 @@ public class trangcon extends javax.swing.JPanel {
     private com.mycompany.component.ItemProduct itemProduct22;
     private com.mycompany.component.ItemProduct itemProduct23;
     private com.mycompany.component.ItemProduct itemProduct24;
-    private com.mycompany.component.ItemProduct itemProduct25;
-    private com.mycompany.component.ItemProduct itemProduct26;
-    private com.mycompany.component.ItemProduct itemProduct27;
-    private com.mycompany.component.ItemProduct itemProduct28;
-    private com.mycompany.component.ItemProduct itemProduct29;
     private com.mycompany.component.ItemProduct itemProduct3;
-    private com.mycompany.component.ItemProduct itemProduct30;
-    private com.mycompany.component.ItemProduct itemProduct31;
-    private com.mycompany.component.ItemProduct itemProduct32;
-    private com.mycompany.component.ItemProduct itemProduct33;
-    private com.mycompany.component.ItemProduct itemProduct34;
-    private com.mycompany.component.ItemProduct itemProduct35;
-    private com.mycompany.component.ItemProduct itemProduct36;
-    private com.mycompany.component.ItemProduct itemProduct37;
-    private com.mycompany.component.ItemProduct itemProduct38;
-    private com.mycompany.component.ItemProduct itemProduct39;
     private com.mycompany.component.ItemProduct itemProduct4;
-    private com.mycompany.component.ItemProduct itemProduct40;
     private com.mycompany.component.ItemProduct itemProduct5;
     private com.mycompany.component.ItemProduct itemProduct6;
     private com.mycompany.component.ItemProduct itemProduct7;
     private com.mycompany.component.ItemProduct itemProduct8;
-    private com.mycompany.component.ItemProduct itemProduct9;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
+    private com.mycompany.swing.PanelRound panelRound1;
     // End of variables declaration//GEN-END:variables
 }
