@@ -19,18 +19,7 @@ public class ListItemCart extends javax.swing.JPanel {
     
     
     public ListItemCart() {
-        List<Integer> sizes = Arrays.asList(23, 34, 30, 32);
-        initComponents();
-        addItemCart(new com.mycompany.component.ItemCart());
-        addItemCart(new com.mycompany.component.ItemCart());
-        addItemCart(new com.mycompany.component.ItemCart());
-        addItemCart(new com.mycompany.component.ItemCart());
-        addItemCart(new com.mycompany.component.ItemCart());
-        addItemCart(new com.mycompany.component.ItemCart());
-        addItemCart(new com.mycompany.component.ItemCart());
-        addItemCart(new com.mycompany.component.ItemCart());
-        addItemCart(new com.mycompany.component.ItemCart());
-        addItemCart(new com.mycompany.component.ItemCart("Nhẫn cưới Kim cương Vàng Trắng", null, "9.698.000 đ", sizes, "DD00W005844"));  
+        initComponents(); 
     }
     
     

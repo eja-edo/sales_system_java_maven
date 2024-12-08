@@ -9,7 +9,6 @@ public class ScaleImg {
     public static void scaleImg(JLabel lb) {
         // Get the current icon from the label
         ImageIcon icon = (ImageIcon) lb.getIcon();
-        
         // Check if the icon exists
         if (icon != null) {
             Image img = icon.getImage(); // Get the image from the icon

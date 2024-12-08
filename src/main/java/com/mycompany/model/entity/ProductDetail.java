@@ -5,21 +5,20 @@ package com.mycompany.model.entity;
  * @author duyan
  */
 public class ProductDetail {
-    private int userId;
     private int productId;
     private String title;
-    private int size;
+    private ProductSize size;
     private double price;
     private String imageUrl;
 
-    // Getters và setters
-    public int getUserId() {
-        return userId;
+    public ProductSize getSize() {
+        return size;
     }
 
-    public void setUserId(int userId) {
-        this.userId = userId;
+    public void setSize(ProductSize size) {
+        this.size = size;
     }
+
 
     public int getProductId() {
         return productId;
@@ -35,14 +34,6 @@ public class ProductDetail {
 
     public void setTitle(String title) {
         this.title = title;
-    }
-
-    public int getSize() {
-        return size;
-    }
-
-    public void setSize(int size) {
-        this.size = size;
     }
 
     public double getPrice() {

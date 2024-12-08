@@ -34,7 +34,7 @@ public class ProductDetailController {
     }
         
     // Phương thức để gọi thủ tục GetCartProductDetails và cập nhật view
-    public List<ProductDetail> getCartProductDetails(int userId) {
+    public static List<ProductDetail> getCartProductDetails(int userId) {
         return detailProductDAO.getCartProductDetails(userId); // Gọi phương thức tĩnh từ DAO và trả về danh sách
     }
 }

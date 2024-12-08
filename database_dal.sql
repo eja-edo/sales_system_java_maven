@@ -1507,58 +1507,11 @@ BEGIN
 END;
 
 
-EXEC GetUserCartProducts @UserId = 2;
+--EXEC GetUserCartProducts @UserId = 2;
 
 
+go
 
-
-
-CREATE PROCEDURE GetUserDetails
-    @UserId INT = NULL, -- Lấy thông tin theo ID (tùy chọn)
-    @Username NVARCHAR(50) = NULL -- Lấy thông tin theo Username (tùy chọn)
-AS
-BEGIN
-    SET NOCOUNT ON;
-
-    -- Lấy thông tin theo UserId
-    IF @UserId IS NOT NULL
-    BEGIN
-        SELECT 
-            user_id,
-            username,
-            first_name,
-            last_name,
-            email,
-            phone,
-            address_line,
-            city,
-            province,
-            created_at,
-            updated_at
-        FROM Users
-        WHERE user_id = @UserId;
-        RETURN;
-    END
-
-    -- Lấy thông tin theo Username
-    IF @Username IS NOT NULL
-    BEGIN
-        SELECT 
-            user_id,
-            username,
-            first_name,
-            last_name,
-            email,
-            phone,
-            address_line,
-            city,
-            province,
-            created_at,
-            updated_at
-        FROM Users
-        WHERE username = @Username;
-    END
-END
 
 
 CREATE PROCEDURE GetProductSizeByProductId
@@ -1571,8 +1524,8 @@ BEGIN
 END;
 
 
-
-alter PROCEDURE getUserInfo
+go
+create PROCEDURE getUserInfo
     @login NVARCHAR(50),
     @password NVARCHAR(255)
 AS
@@ -1603,11 +1556,11 @@ BEGIN
     END
 END;
 
+go
 
-alter PROCEDURE GetCartProductDetails
+create PROCEDURE GetCart
 
-    @UserId INT,
-    @ProductId INT
+    @UserId INT
 AS
 BEGIN
     ;WITH FirstImage AS (
@@ -1622,10 +1575,11 @@ BEGIN
             p.product_id
     )
     SELECT 
-        sc.user_id,
-        p.product_id,
+		p.product_id,
+        ps.exemple_id,
         p.title,
         ps.size,
+		ps.stock_quantity,
         p.minPrice AS price,
         fi.ImageURL
     FROM 
@@ -1637,12 +1591,11 @@ BEGIN
     LEFT JOIN 
         FirstImage fi ON p.product_id = fi.product_id
     WHERE 
-        sc.user_id = @UserId AND
-        p.product_id = @ProductId;
+        sc.user_id = @UserId
 END;
 
 
-EXEC GetCartProductDetails @UserId = 1, @ProductId = 1;
+EXEC GetCart @UserId = 1;
 
 CREATE PROCEDURE TimKiemSanPham
     @TuKhoa NVARCHAR(100)
