@@ -11,6 +11,7 @@ import com.mycompany.utils.CardSelectionListener;
 import com.mycompany.utils.CurrentUser;
 import com.mycompany.utils.UserChangeListener;
 import java.awt.CardLayout;
+import javax.swing.JPanel;
 import javax.swing.UIDefaults;
 import javax.swing.UIManager;
 
@@ -24,6 +25,8 @@ public class Main extends javax.swing.JFrame implements CardSelectionListener, U
 //    private final String[] cardName;
 //    private int CurrentCard;
     private CardLayout cardLayout;
+    
+    private JPanel comingsoon;
     public Main() {
         initComponents();
 //        cardName = new String[]{"jScrollPane1","jScrollPane2","jScrollPane3","jScrollPane4","jScrollPane5","jScrollPane6","jScrollPane7","jScrollPane18"};
@@ -35,12 +38,10 @@ public class Main extends javax.swing.JFrame implements CardSelectionListener, U
     trangcon2.setTrangCon(2);
     trangcon3.setTrangCon(3);
     trangcon4.setTrangCon(4);
-
     }   
    
     private Users user; 
-
-    
+  
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
