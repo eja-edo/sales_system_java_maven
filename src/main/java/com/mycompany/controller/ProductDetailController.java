@@ -1,6 +1,7 @@
 package com.mycompany.controller;
 
 import com.mycompany.model.dao.detailProductDAO;
+import com.mycompany.model.entity.CartProductEntity;
 import com.mycompany.model.entity.ProductDetail;
 import com.mycompany.model.entity.Products;
 import com.mycompany.tab.detailProduct;
@@ -23,7 +24,7 @@ public class ProductDetailController {
     }
     
     public void insertData(int id) {
-        model = detailProductDAO.getDetailProduct(id); // Gọi phương thức tĩnh từ DAO
+        model = detailProductDAO.getDetailProduct(id); // Gọi phương thức từ DAO
         view.setLabID(String.valueOf(model.getProductId()));
         view.setLabPrice(formatPrice(model.getMinPrice()));
         view.setListImgProduct(model.getListImg());
@@ -31,10 +32,16 @@ public class ProductDetailController {
         view.setLabTitle(model.getTitle());
         view.setLabRating(String.valueOf(model.getAverageRating()));
         view.setProductSizesToComboBox(model.getSize());
+        view.setLabDescription(model.getDescription()); // Hiển thị mô tả
     }
-        
+
     // Phương thức để gọi thủ tục GetCartProductDetails và cập nhật view
     public static List<ProductDetail> getCartProductDetails(int userId) {
         return detailProductDAO.getCartProductDetails(userId); // Gọi phương thức tĩnh từ DAO và trả về danh sách
+    }
+    
+    // Phương thức để thêm sản phẩm vào giỏ hàng
+    public CartProductEntity addToCart(int sizeId) {
+        return detailProductDAO.addToCart(sizeId); // Gọi phương thức từ DAO
     }
 }

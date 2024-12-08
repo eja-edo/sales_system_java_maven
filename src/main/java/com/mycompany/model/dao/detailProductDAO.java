@@ -1,15 +1,19 @@
 package com.mycompany.model.dao;
 
+import com.mycompany.model.entity.CartProductEntity;
 import com.mycompany.model.entity.ProductDetail;
 import com.mycompany.model.entity.ProductSize;
 import com.mycompany.model.entity.Products;
+import com.mycompany.model.entity.Users;
 import com.mycompany.utils.DBConnection;
+import com.mycompany.utils.CurrentUser;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+
 
 /**
  *
@@ -78,7 +82,7 @@ public class detailProductDAO {
         return product; // Trả về đối tượng sản phẩm
     }
     
-    // Phương thức để gọi thủ tục GetCartProductDetails
+    // Phương thức để gọi thủ tục GetCartProductDetails lay toan bo gio hang
     public static List<ProductDetail> getCartProductDetails(int userId) {
         List<ProductDetail> productDetails = new ArrayList<>();
         String query = "EXEC GetCart @UserId = ?";
@@ -110,4 +114,49 @@ public class detailProductDAO {
         }
         return productDetails;
     }
+    
+      // Phương thức để thêm sản phẩm vào giỏ hàng và nhận thông tin sản phẩm
+    /// dua 1 san pham vao gio hang
+     public static CartProductEntity addToCart(int sizeId) {
+        Users currentUser = CurrentUser.getUser();
+        if (currentUser == null) {
+            System.out.println("No user is currently logged in.");
+            return null;
+        }
+
+        int userId = currentUser.getUserId();
+
+        String query = "EXEC AddToCart @UserID = ?, @SizeID = ?";
+        CartProductEntity cartProduct = null;
+
+        try (Connection conn = DBConnection.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(query)) {
+            stmt.setInt(1, userId);
+            stmt.setInt(2, sizeId);
+            ResultSet rs = stmt.executeQuery();
+
+            if (rs.next()) {
+                int productId = rs.getInt("ProductID");
+                String title = rs.getString("Title");
+                double price = rs.getDouble("Price");
+                String imageUrl = rs.getString("ImageURL");
+                int size = rs.getInt("Size");
+
+                cartProduct = new CartProductEntity(productId, title, price, imageUrl, size);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return cartProduct;
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
 }

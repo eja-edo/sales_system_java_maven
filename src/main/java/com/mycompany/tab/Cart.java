@@ -27,7 +27,7 @@ public class Cart extends javax.swing.JDialog {
  // Phương thức để tải dữ liệu giỏ hàng
     public void loadData(int userId) {
         // Giả sử userId là ID người dùng hiện tại
-        List<ProductDetail> cartDetails = ProductDetailController.getCartProductDetails(userId);
+        List<ProductDetail> cartDetails = ProductDetailController.getCartProductDetails(1);
 
         // Xóa các mục hiện tại trong giỏ hàng
         listItemCart1.removeAll();

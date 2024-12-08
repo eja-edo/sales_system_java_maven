@@ -132,6 +132,12 @@ public class detailProduct extends javax.swing.JPanel {
     public void setListImgProduct(List<String> listImgProduct) {
         this.listImgProduct.addImages(listImgProduct);
     }
+    
+   public void setLabDescription(String description) {
+    jTextPane5.setText(description);
+}
+
+
 
 
     private Products model;
@@ -230,14 +236,14 @@ public class detailProduct extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
         imgMain = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
-        jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        jTextPane2 = new javax.swing.JTextPane();
+        jButton2 = new javax.swing.JButton();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        jTextPane3 = new javax.swing.JTextPane();
         button21 = new com.raven.swing.Button2();
         ComboStart = new com.mycompany.swing.ComboBoxSuggestion();
         button22 = new com.raven.swing.Button2();
+        jTextPane5 = new javax.swing.JTextPane();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 20, 0, 20));
@@ -276,8 +282,15 @@ public class detailProduct extends javax.swing.JPanel {
         jScrollPane2.setOpaque(false);
 
         listOffer.setBorder(new RoundBorder(Color.BLACK, 20, 1));
+        listOffer.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
+        listOffer.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Giảm đến 300K khi thanh toán bằng VNPAY-QR", "Ưu đãi thêm lên đến 1.5tr khi thanh toán bằng thẻ ", "TECHCOMBANK ", "Cơ hội nhận combo quà tặng đến 6 triệu & đồng hồ ", "Rado. ", "Cơ hội sở hữu Bộ sưu tập Jasmine cùng quà tặng trang ", "sức & iPhone 16 Pro Max 256GB. " };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
         listOffer.setEnabled(false);
         listOffer.setOpaque(false);
+        listOffer.setSelectionBackground(new java.awt.Color(255, 255, 255));
         jScrollPane2.setViewportView(listOffer);
 
         jScrollPane1.setBorder(null);
@@ -333,6 +346,13 @@ public class detailProduct extends javax.swing.JPanel {
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane2)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(comboBoxSuggestion1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))))
+            .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addComponent(jLabel4)
@@ -354,13 +374,6 @@ public class detailProduct extends javax.swing.JPanel {
                             .addComponent(jLabel9))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane2)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(comboBoxSuggestion1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -403,10 +416,10 @@ public class detailProduct extends javax.swing.JPanel {
         jPanel3.setPreferredSize(new java.awt.Dimension(450, 450));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel2.setBackground(new java.awt.Color(0, 52, 104));
-        jLabel2.setText("icon");
+        jLabel2.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/dl58.png"))); // NOI18N
         jLabel2.setOpaque(true);
-        jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 20, 40, 40));
+        jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 20, 60, 30));
 
         imgMain.setText("      hình ảnh sản phẩm");
         jPanel3.add(imgMain, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 470, 460));
@@ -416,45 +429,58 @@ public class detailProduct extends javax.swing.JPanel {
         jPanel5.setOpaque(false);
         jPanel5.setLayout(new java.awt.GridLayout(1, 0));
 
-        jButton2.setText("<html>chính sách hậu mãi</html>");
-        jButton2.setBorder(null);
-        jButton2.setContentAreaFilled(false);
-        jPanel5.add(jButton2);
-
         jButton3.setText("<html>Mô tả sản phẩm</html>");
         jButton3.setBorder(null);
         jButton3.setContentAreaFilled(false);
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
         jPanel5.add(jButton3);
 
-        jButton4.setText("<html>Câu hỏi thường gặp</html>");
-        jButton4.setBorder(null);
-        jButton4.setContentAreaFilled(false);
-        jPanel5.add(jButton4);
+        jButton2.setText("<html>Chính sách hậu mãi</html>");
+        jButton2.setBorder(null);
+        jButton2.setContentAreaFilled(false);
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
-        jScrollPane3.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        jScrollPane4.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 
-        jTextPane2.setBorder(javax.swing.BorderFactory.createEmptyBorder(5, 0, 5, 5));
-        jTextPane2.setEditorKit(new HTMLEditorKit());
-        jTextPane2.setText("<b>Miễn phí bảo hành 6 tháng</b><br>\n     • Bảo hành 6 tháng lỗi kỹ thuật, nước xi.<br>\n<b>Miễn phí siêu âm và đánh bóng bằng máy chuyên dụng trọn đời</b><br>\n     • Đối với sản phẩm bị oxy hóa, xuống màu, sẽ được siêu âm làm sạch bằng máy chuyên dụng (siêu âm, không xi) miễn phí trọn đời tại cửa hàng.<br>\n     • Miễn phí đánh bóng, siêu âm trọn đời.<br>\n     • Đối với nhẫn cưới được làm mới, đánh bóng, xi miễn phí trọn đời.<br>\n<b>Miễn phí thay đá ECZ, CZ và đá tổng hợp</b><br>\n     • Miễn phí thay đá tổng hợp, ECZ và CZ trong suốt thời gian bảo hành.<br>\n<b>Không áp dụng bảo hành cho các trường hợp sau:</b><br>\n     • Dây chuyển, lắc chế tác bị đứt gãy.<br>\n     • Sản phẩm bị lỗi do tác động bên ngoài, do quá trình sử dụng hoặc sử dụng không đúng cách dẫn đến sản phẩm bị biến dạng hoặc hư hỏng.<br>\n     • Không bảo hành kiếng, vòng, nữ trang 22K, 24K, dây chuyển, dây cổ chế tác, lắc chế tác bị đứt, gãy và sản phẩm bị lỗi do tác động bên ngoài.<br>\n     • Khách hàng cung cấp thông tin truy lục hóa đơn không chính xác.<br>\n<b>Lưu ý về chính sách bảo hành:</b><br>\n     • PNJ bảo hành các sản phẩm thuộc hệ thống cửa hàng kênh lẻ và online của PNJ.<br>\n     • Chế độ bảo hành sản phẩm có thể thay đổi theo chính sách của PNJ đối với các dòng hàng và chương trình khuyến mãi vào từng thời điểm.<br>\n     • Xem thông tin chi tiết về chính sách bảo hành vui lòng truy cập tại đây.<br>");
-        jScrollPane3.setViewportView(jTextPane2);
+        jTextPane3.setBorder(javax.swing.BorderFactory.createEmptyBorder(5, 0, 5, 5));
+        jTextPane3.setEditorKit(new HTMLEditorKit());
+        jTextPane3.setText("<b>Miễn phí bảo hành 6 tháng</b><br>\n     • Bảo hành 6 tháng lỗi kỹ thuật, nước xi.<br>\n<b>Miễn phí siêu âm và đánh bóng bằng máy chuyên dụng trọn đời</b><br>\n     • Đối với sản phẩm bị oxy hóa, xuống màu, sẽ được siêu âm làm sạch bằng máy chuyên dụng (siêu âm, không xi) miễn phí trọn đời tại cửa hàng.<br>\n     • Miễn phí đánh bóng, siêu âm trọn đời.<br>\n     • Đối với nhẫn cưới được làm mới, đánh bóng, xi miễn phí trọn đời.<br>\n<b>Miễn phí thay đá ECZ, CZ và đá tổng hợp</b><br>\n     • Miễn phí thay đá tổng hợp, ECZ và CZ trong suốt thời gian bảo hành.<br>\n<b>Không áp dụng bảo hành cho các trường hợp sau:</b><br>\n     • Dây chuyển, lắc chế tác bị đứt gãy.<br>\n     • Sản phẩm bị lỗi do tác động bên ngoài, do quá trình sử dụng hoặc sử dụng không đúng cách dẫn đến sản phẩm bị biến dạng hoặc hư hỏng.<br>\n     • Không bảo hành kiếng, vòng, nữ trang 22K, 24K, dây chuyển, dây cổ chế tác, lắc chế tác bị đứt, gãy và sản phẩm bị lỗi do tác động bên ngoài.<br>\n     • Khách hàng cung cấp thông tin truy lục hóa đơn không chính xác.<br>\n<b>Lưu ý về chính sách bảo hành:</b><br>\n     • PNJ bảo hành các sản phẩm thuộc hệ thống cửa hàng kênh lẻ và online của PNJ.<br>\n     • Chế độ bảo hành sản phẩm có thể thay đổi theo chính sách của PNJ đối với các dòng hàng và chương trình khuyến mãi vào từng thời điểm.<br>\n     • Xem thông tin chi tiết về chính sách bảo hành vui lòng truy cập tại đây.<br>");
+        jScrollPane4.setViewportView(jTextPane3);
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
         jPanel7Layout.setHorizontalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, 548, Short.MAX_VALUE)
-            .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+            .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, 560, Short.MAX_VALUE)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addGap(68, 68, 68)
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(83, 83, 83)
+                .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                .addContainerGap())
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel7Layout.createSequentialGroup()
                 .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, 463, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(31, 31, 31)
-                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 292, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 38, Short.MAX_VALUE))
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 312, Short.MAX_VALUE)
+                .addGap(18, 18, 18))
         );
 
         jSplitPane1.setLeftComponent(jPanel7);
@@ -474,6 +500,10 @@ public class detailProduct extends javax.swing.JPanel {
         button22.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
         button22.setRadium(10);
 
+        jTextPane5.setBorder(javax.swing.BorderFactory.createEmptyBorder(5, 0, 5, 5));
+        jTextPane5.setEditorKit(new HTMLEditorKit());
+        jTextPane5.setText("<b>Miễn phí bảo hành 6 tháng</b><br>\n     • Bảo hành 6 tháng lỗi kỹ thuật, nước xi.<br>\n<b>Miễn phí siêu âm và đánh bóng bằng máy chuyên dụng trọn đời</b><br>\n     • Đối với sản phẩm bị oxy hóa, xuống màu, sẽ được siêu âm làm sạch bằng máy chuyên dụng (siêu âm, không xi) miễn phí trọn đời tại cửa hàng.<br>\n     • Miễn phí đánh bóng, siêu âm trọn đời.<br>\n     • Đối với nhẫn cưới được làm mới, đánh bóng, xi miễn phí trọn đời.<br>\n<b>Miễn phí thay đá ECZ, CZ và đá tổng hợp</b><br>\n     • Miễn phí thay đá tổng hợp, ECZ và CZ trong suốt thời gian bảo hành.<br>\n<b>Không áp dụng bảo hành cho các trường hợp sau:</b><br>\n     • Dây chuyển, lắc chế tác bị đứt gãy.<br>\n     • Sản phẩm bị lỗi do tác động bên ngoài, do quá trình sử dụng hoặc sử dụng không đúng cách dẫn đến sản phẩm bị biến dạng hoặc hư hỏng.<br>\n     • Không bảo hành kiếng, vòng, nữ trang 22K, 24K, dây chuyển, dây cổ chế tác, lắc chế tác bị đứt, gãy và sản phẩm bị lỗi do tác động bên ngoài.<br>\n     • Khách hàng cung cấp thông tin truy lục hóa đơn không chính xác.<br>\n<b>Lưu ý về chính sách bảo hành:</b><br>\n     • PNJ bảo hành các sản phẩm thuộc hệ thống cửa hàng kênh lẻ và online của PNJ.<br>\n     • Chế độ bảo hành sản phẩm có thể thay đổi theo chính sách của PNJ đối với các dòng hàng và chương trình khuyến mãi vào từng thời điểm.<br>\n     • Xem thông tin chi tiết về chính sách bảo hành vui lòng truy cập tại đây.<br>");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -482,9 +512,6 @@ public class detailProduct extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel13)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel11)
@@ -495,7 +522,13 @@ public class detailProduct extends javax.swing.JPanel {
                         .addComponent(button21, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(ComboStart, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(33, 33, 33))))
+                        .addGap(33, 33, 33))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel13)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jTextPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 655, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -516,9 +549,32 @@ public class detailProduct extends javax.swing.JPanel {
                         .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(606, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jTextPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(287, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+         jTextPane3.setVisible(true); // Hiển thị jTextPane3 
+         jTextPane5.setVisible(false);
+          // Đặt font in đậm cho jButton3
+       // Đặt font in đậm cho jButton2
+        jButton2.setFont(jButton2.getFont().deriveFont(java.awt.Font.BOLD));
+        // Đặt font bình thường cho jButton3 và jButton4
+        jButton3.setFont(jButton3.getFont().deriveFont(java.awt.Font.PLAIN));
+      
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+          jTextPane3.setVisible(false); // Hiển thị jTextPane3 
+         jTextPane5.setVisible(true);
+        // Đặt font in đậm cho jButton3
+        jButton3.setFont(jButton3.getFont().deriveFont(java.awt.Font.BOLD));
+        // Đặt font bình thường cho jButton2 và jButton4
+        jButton2.setFont(jButton2.getFont().deriveFont(java.awt.Font.PLAIN));
+       
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     private void button2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button2ActionPerformed
         // TODO add your handling code here:
@@ -537,7 +593,6 @@ public class detailProduct extends javax.swing.JPanel {
     private javax.swing.JLabel imgMain;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
@@ -553,9 +608,10 @@ public class detailProduct extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel8;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JSplitPane jSplitPane1;
-    private javax.swing.JTextPane jTextPane2;
+    private javax.swing.JTextPane jTextPane3;
+    private javax.swing.JTextPane jTextPane5;
     private javax.swing.JLabel labID;
     private javax.swing.JLabel labPrice;
     private javax.swing.JLabel labRating;
