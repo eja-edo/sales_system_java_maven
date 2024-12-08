@@ -32,7 +32,7 @@ public class ProductSize {
     }
 
 
-    public double getSize() {
+    public int getSize() {
         return size;
     }
 

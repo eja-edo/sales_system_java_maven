@@ -83,6 +83,7 @@ public class Products {
     private double minPrice;
     private int views;
     private List<ProductSize> sizes;
+    
     public List<ProductSize> getSize() {
         return sizes;
     }

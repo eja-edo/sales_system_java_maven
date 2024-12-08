@@ -692,128 +692,188 @@ biệt giúp nàng trở nên nổi bần bật và lan tỏa sức hút từ th
 (SELECT category_id FROM Categories WHERE category_name = N'Thương hiệu'), 4.8, N'Nữ', 7900000.00, 520);
 
 
-
 --psize4
 INSERT INTO ProductSize (product_id, size, stock_quantity)
 VALUES 
-((SELECT product_id FROM Products WHERE title = N'Nhẫn cưới nam Kim cương Vàng 18K DAL DD00Y003449'), 9, 20),
-((SELECT product_id FROM Products WHERE title = N'Nhẫn cưới nam Kim cương Vàng 18K DAL DD00Y003449'), 10, 30),
-((SELECT product_id FROM Products WHERE title = N'Nhẫn cưới nam Kim cương Vàng 18K DAL DD00Y003449'), 11, 50),
-((SELECT product_id FROM Products WHERE title = N'Cặp nhẫn cưới Vàng trắng 14K PNJ Trầu cau 02804-11767'), 9, 30),
-((SELECT product_id FROM Products WHERE title = N'Cặp nhẫn cưới Vàng trắng 14K PNJ Trầu cau 02804-11767'), 10, 30),
-((SELECT product_id FROM Products WHERE title = N'Cặp nhẫn cưới Vàng trắng 14K PNJ Trầu cau 02804-11767'), 11, 30),
-((SELECT product_id FROM Products WHERE title = N'Dây cổ cưới Vàng 24K DAL 0000Y000423'), 29, 30),
-((SELECT product_id FROM Products WHERE title = N'Dây cổ cưới Vàng 24K DAL 0000Y000423'), 30, 30),
-((SELECT product_id FROM Products WHERE title = N'Dây cổ cưới Vàng 24K DAL 0000Y000423'), 31, 30),
-((SELECT product_id FROM Products WHERE title = N'Bông tai Kim cương Vàng Trắng 14K DAL Trầu Cau DDDDW0043203'), 0, 130),
-((SELECT product_id FROM Products WHERE title = N'Nhẫn cưới Kim cương Vàng Trắng 14K DAL DDDDW009976'), 8, 30),
-((SELECT product_id FROM Products WHERE title = N'Nhẫn cưới Kim cương Vàng Trắng 14K DAL DDDDW009976'), 13, 30),
-((SELECT product_id FROM Products WHERE title = N'Nhẫn cưới Kim cương Vàng Trắng 14K DAL DDDDW011925'), 13, 30),
-((SELECT product_id FROM Products WHERE title = N'Nhẫn cưới Kim cương Vàng Trắng 14K DALTrầu Cau DDDDW011762'), 13, 30),
-((SELECT product_id FROM Products WHERE title = N'Nhẫn Kim cương Vàng 18K DAL DDDDY000790'), 11, 30),
-((SELECT product_id FROM Products WHERE title = N'Nhẫn Kim cương Vàng 18K DAL DDDDY000790'), 12, 100),
-((SELECT product_id FROM Products WHERE title = N'Nhẫn Kim cương Vàng 18K DAL DDDDY000790'), 13, 300),
-((SELECT product_id FROM Products WHERE title = N'Nhẫn cưới nam Kim cương Vàng Trắng 14K DAL DD00W004085'), 17, 1000),
-((SELECT product_id FROM Products WHERE title = N'Nhẫn cưới nam Kim cương Vàng Trắng 14K DAL DD00W004085'), 18, 100),
-((SELECT product_id FROM Products WHERE title = N'Nhẫn cưới nam Kim cương Vàng Trắng 14K DAL DD00W004085'), 19, 100),
-((SELECT product_id FROM Products WHERE title = N'Nhẫn cưới Kim cương Vàng 18K DAL DD00Y000326'), 10, 100),
-((SELECT product_id FROM Products WHERE title = N'Nhẫn cưới Kim cương Vàng 18K DAL DD00Y000326'), 11, 100),
-((SELECT product_id FROM Products WHERE title = N'Nhẫn cưới Kim cương Vàng 18K DAL DD00Y000326'), 12, 100),
-((SELECT product_id FROM Products WHERE title = N'Nhẫn cưới Vàng 24K DAL Trầu Cau 0000Y003194'), 11, 100),
-((SELECT product_id FROM Products WHERE title = N'Nhẫn cưới Vàng 24K DAL Trầu Cau 0000Y003194'), 12,100),
-((SELECT product_id FROM Products WHERE title = N'Nhẫn cưới Vàng 24K DAL Trầu Cau 0000Y003194'), 13, 100),
-((SELECT product_id FROM Products WHERE title = N'Bông tai Kim cương Vàng trắng 14K DAL DDDDW000182'), 0, 100),
-((SELECT product_id FROM Products WHERE title = N'Bông tai cưới Vàng 24K DAL 0000Y000113'), 0, 100),
-((SELECT product_id FROM Products WHERE title = N'Bông tai cưới Vàng 24K DAL Lan Mùa Hạ 0000Y000071'), 0, 100),
-((SELECT product_id FROM Products WHERE title = N'Bông tai cưới Vàng 24K DAL Duyên Phượng Tình Hồng 0000Y000102'), 0, 100),
-((SELECT product_id FROM Products WHERE title = N'Bông tai cưới Vàng 24K DAL 0000Y003038'), 0, 100),
-((SELECT product_id FROM Products WHERE title = N'Bông tai cưới Vàng 24K DAL Hạnh Phúc 0000Y000083'), 0, 100),
-((SELECT product_id FROM Products WHERE title = N'Bông tai cưới Vàng 18K đính đá ECZ DAL Trầu Cau XMXMY006013'), 0, 100),
-((SELECT product_id FROM Products WHERE title = N'Bông tai cưới Vàng 24K DAL Trầu cau 0000Y002680'), 0, 100),
-((SELECT product_id FROM Products WHERE title = N'Bông tai cưới Vàng trắng 10K đính đá ECZ DAL Bạch Khổng Tước XMXMW001971'), 0, 100),
+((SELECT product_id FROM Products WHERE title = N'Nhẫn cưới nam Kim cương Vàng 18K DAL DD00Y003449'), 9, 20);
 
---watch
-((SELECT product_id FROM Products WHERE title = N'Đồng hồ Disney & Marvel Nam M-6069R Dây Cao Su 50 mm'), 0, 100),
-((SELECT product_id FROM Products WHERE title = N'Đồng hồ Disney & Marvel Nam M-6072B Dây Cao Su 50 mm'), 0, 100),
-((SELECT product_id FROM Products WHERE title = N'Đồng Hồ Michael Kors Nữ MK7197 Dây Thép Không Gỉ 33 mm'), 0, 100),
-((SELECT product_id FROM Products WHERE title = N'Đồng Hồ Citizen Nữ EM0860-51D Dây Thép Không Gỉ 25 mm'), 0, 100),
-((SELECT product_id FROM Products WHERE title = N'Đồng Hồ Citizen Nam NH8390-71L Dây Thép Không Gỉ 40 mm'), 0, 100),
+INSERT INTO ProductSize (product_id, size, stock_quantity)
+VALUES 
+((SELECT product_id FROM Products WHERE title = N'Nhẫn cưới nam Kim cương Vàng 18K DAL DD00Y003449'), 10, 30);
 
-((SELECT product_id FROM Products WHERE title = N'Đồng Hồ Fossil Nam ME3061 Dây Da 44mm'), 0, 100),
-((SELECT product_id FROM Products WHERE title = N'Đồng Hồ Citizen Nữ EM0502-86P Dây Thép Không Gỉ 32mm'), 0, 100),
-((SELECT product_id FROM Products WHERE title = N'Đồng Hồ Michael Kors Nữ MK3640 Dây Thép Không Gỉ 36mm'), 0, 100),
-((SELECT product_id FROM Products WHERE title = N'Đồng Hồ Fossil Nữ ES5192 Dây Thép Không Gỉ 37 mm'), 0, 100),
-((SELECT product_id FROM Products WHERE title = N'Đồng Hồ Nam Citizen NJ0150-81X Dây Thép Không Gỉ 40 mm'), 0, 100),
+INSERT INTO ProductSize (product_id, size, stock_quantity)
+VALUES 
+((SELECT product_id FROM Products WHERE title = N'Nhẫn cưới nam Kim cương Vàng 18K DAL DD00Y003449'), 11, 50);
 
-((SELECT product_id FROM Products WHERE title = N'Đồng hồ Rado True Square Unisex R27073712 Dây Ceramic 38 mm'), 0, 100),
-((SELECT product_id FROM Products WHERE title = N'Đồng hồ Tissot Nam PRX T137.410.17.051.00 Dây Cao Su 40 mm'), 0, 100),
-((SELECT product_id FROM Products WHERE title = N'Đồng hồ Tissot Nam PRX Powermatic 80 T137.407.11.351.00 Dây Kim Loại 40 mm'), 0, 100),
-((SELECT product_id FROM Products WHERE title = N'Đồng hồ Longines La Grande Nữ L4.209.4.81.6 Dây Kim Loại 24 mm'), 0, 100),
-((SELECT product_id FROM Products WHERE title = N'Đồng hồ Longines Master Nam L2.919.4.92.6 Dây Kim Loại 42 mm'), 0, 100),
+INSERT INTO ProductSize (product_id, size, stock_quantity)
+VALUES 
+((SELECT product_id FROM Products WHERE title = N'Cặp nhẫn cưới Vàng trắng 14K DAL Trầu cau 02804-11767'), 9, 30);
 
-((SELECT product_id FROM Products WHERE title = N'Đồng hồ Longines Master Nam L2.893.4.77.3 Dây Da 42 mm'), 0, 100),
-((SELECT product_id FROM Products WHERE title = N'Đồng hồ Calvin Klein Nam 25200293 Dây Kim Loại 44 mm'), 0, 100),
-((SELECT product_id FROM Products WHERE title = N'Đồng hồ Calvin Klein Nam 25200303 Dây Kim Loại 44.3 mm'), 0, 100),
-((SELECT product_id FROM Products WHERE title = N'Đồng hồ Rado Centrix Nữ R30029902 Dây Kim Loại 35 mm'), 0, 100),
-((SELECT product_id FROM Products WHERE title = N'Đồng hồ Rado Centrix Nữ R30248902 Dây Kim Loại 33 mm'), 0, 100),
-((SELECT product_id FROM Products WHERE title = N'Đồng hồ Rado Centrix Nữ R30037742 Dây Kim Loại 35 mm'), 0, 100),
+INSERT INTO ProductSize (product_id, size, stock_quantity)
+VALUES 
+((SELECT product_id FROM Products WHERE title = N'Cặp nhẫn cưới Vàng trắng 14K DAL Trầu cau 02804-11767'), 10, 30);
 
---gift
-((SELECT product_id FROM Products WHERE title = N'Lắc tay Vàng 14K đính đá CZ Disney|DAL Mickey XMXMY061792'), 0, 100),
-((SELECT product_id FROM Products WHERE title = N'Bông tai Bạc đính ngọc trai DALSilver PF00W000024'), 0, 100),
-((SELECT product_id FROM Products WHERE title = N'Bông tai Vàng trắng 10K đính đá ECZ DAL XMXMW002314'), 0, 100),
-((SELECT product_id FROM Products WHERE title = N'Mặt dây chuyền Vàng Trắng 10K đính đá ECZ STYLE by DAL Sunlover XMXMW002476'), 0, 100),
-((SELECT product_id FROM Products WHERE title = N'Bông tai Vàng Trắng 10K đính đá ECZ STYLE by DAL Sunlover XM00W001263'), 0, 100),
+INSERT INTO ProductSize (product_id, size, stock_quantity)
+VALUES 
+((SELECT product_id FROM Products WHERE title = N'Cặp nhẫn cưới Vàng trắng 14K DAL Trầu cau 02804-11767'), 11, 30);
 
-((SELECT product_id FROM Products WHERE title = N'Bông tai Vàng trắng 14K đính đá synthetic Disney|DAL Cinderella ZT00W000014'), 0, 100),
-((SELECT product_id FROM Products WHERE title = N'Bông tai trẻ em Bạc DALSilver 0000W060048'), 0, 100),
-((SELECT product_id FROM Products WHERE title = N'Bông tai trẻ em Bạc đính đá DALSilver XMXMW060171'), 0, 100),
-((SELECT product_id FROM Products WHERE title = N'Bông tai trẻ em Bạc DALSilver 0000W060046'), 0, 100),
-((SELECT product_id FROM Products WHERE title = N'Nhẫn trẻ em Bạc DALSilver 0000W060019'), 0, 100),
+INSERT INTO ProductSize (product_id, size, stock_quantity)
+VALUES 
+((SELECT product_id FROM Products WHERE title = N'Dây cổ cưới Vàng 24K DAL 0000Y000423'), 29, 30);
 
+INSERT INTO ProductSize (product_id, size, stock_quantity)
+VALUES 
+((SELECT product_id FROM Products WHERE title = N'Dây cổ cưới Vàng 24K DAL 0000Y000423'), 30, 30);
 
-((SELECT product_id FROM Products WHERE title = N'Bông tai Kim cương Vàng trắng 14K DAL DDDDW060268'), 0, 100),
-((SELECT product_id FROM Products WHERE title = N'Bông tai Kim cương Vàng trắng 14K DAL DDDDW060268'), 0, 100),
-((SELECT product_id FROM Products WHERE title = N'Bông tai Vàng 18K đính đá Ruby DAL Family Infinity RBXMC000008'), 0, 100),
-((SELECT product_id FROM Products WHERE title = N'Bông tai Vàng 10K STYLE by DAL 0000Y002594'), 0, 100),
-((SELECT product_id FROM Products WHERE title = N'Hạt charm xỏ trẻ em DIY DALSilver chữ sweet baby 0000H060002'), 0, 100),
+INSERT INTO ProductSize (product_id, size, stock_quantity)
+VALUES 
+((SELECT product_id FROM Products WHERE title = N'Dây cổ cưới Vàng 24K DAL 0000Y000423'), 31, 30);
 
+INSERT INTO ProductSize (product_id, size, stock_quantity)
+VALUES 
+((SELECT product_id FROM Products WHERE title = N'Bông tai Kim cương Vàng Trắng 14K DAL Trầu Cau DDDDW004320'), 0, 130);
 
-((SELECT product_id FROM Products WHERE title = N'Hạt charm xỏ trẻ em DIY DALSilver chữ baby xanh 00XMW060025'), 0, 100),
-((SELECT product_id FROM Products WHERE title = N'Mặt dây chuyền Kim cương Vàng trắng 14K DAL DDDDW000924'), 0, 100),
-((SELECT product_id FROM Products WHERE title = N'Mặt dây chuyền Vàng 14K đính đá CZ DAL ❤️ HELLO KITTY XM00C060002'), 0, 100),
-((SELECT product_id FROM Products WHERE title = N'Mặt dây chuyền Kim cương Vàng trắng 14K DAL DDDDW000923'), 0, 100),
-((SELECT product_id FROM Products WHERE title = N'Bông tai Kim Tiền Vàng trắng Ý 18K DAL 0000W002163'), 0, 100),
+INSERT INTO ProductSize (product_id, size, stock_quantity)
+VALUES 
+((SELECT product_id FROM Products WHERE title = N'Nhẫn cưới Kim cương Vàng Trắng 14K DAL DDDDW009976'), 8, 30);
 
+INSERT INTO ProductSize (product_id, size, stock_quantity)
+VALUES 
+((SELECT product_id FROM Products WHERE title = N'Nhẫn cưới Kim cương Vàng Trắng 14K DAL DDDDW009976'), 13, 30);
 
---thuong hieu
+INSERT INTO ProductSize (product_id, size, stock_quantity)
+VALUES 
+((SELECT product_id FROM Products WHERE title = N'Nhẫn cưới Kim cương Vàng Trắng 14K DAL DDDDW011925'), 13, 30);
 
-((SELECT product_id FROM Products WHERE title = N'Mặt dây chuyền Vàng Ý 10K DAL ❤️ HELLO KITTY 0000Y001639'), 0, 100),
-((SELECT product_id FROM Products WHERE title = N'Mặt dây chuyền Vàng Ý 10K DAL ❤️ HELLO KITTY 0000Y001637'), 0, 100),
-((SELECT product_id FROM Products WHERE title = N'Thẻ May mắn Vàng 10K DAL ❤️ HELLO KITTY Như Ý 0000Y000962'), 0, 100),
-((SELECT product_id FROM Products WHERE title = N'Bông tai trẻ em Bạc DAL ❤️ HELLO KITTY 0000W000123'), 0, 100),
-((SELECT product_id FROM Products WHERE title = N'Bông tai Vàng trắng Ý 10K DAL ❤️ HELLO KITTY 0000W002716'), 0, 100),
+INSERT INTO ProductSize (product_id, size, stock_quantity)
+VALUES 
+((SELECT product_id FROM Products WHERE title = N'Nhẫn cưới Kim cương Vàng Trắng 14K DAL Trầu Cau DDDDW011762'),13, 30);
 
+INSERT INTO ProductSize (product_id, size, stock_quantity)
+VALUES 
+((SELECT product_id FROM Products WHERE title = N'Nhẫn Kim cương Vàng 18K DAL DDDDY000790'), 11, 30);
 
-((SELECT product_id FROM Products WHERE title = N'Bông tai Bạc đính đá DAL ❤️ HELLO KITTY ZT00H000005'), 0, 100),
-((SELECT product_id FROM Products WHERE title = N'Bông tai Bạc đính đá DAL ❤️ HELLO KITTY XMXMW000085'), 0, 100),
-((SELECT product_id FROM Products WHERE title = N'Lắc tay trẻ em Bạc DAL ❤️ HELLO KITTY 0000W000103'), 0, 100),
-((SELECT product_id FROM Products WHERE title = N'Hạt charm Bạc đính đá DAL ❤️ HELLO KITTY XMXMW000039'), 0, 100),
-((SELECT product_id FROM Products WHERE title = N'Bông tai Bạc đính đá DAL ❤️ HELLO KITTY XMXMW000084'), 0, 100),
+INSERT INTO ProductSize (product_id, size, stock_quantity)
+VALUES 
+((SELECT product_id FROM Products WHERE title = N'Nhẫn Kim cương Vàng 18K DAL DDDDY000790'), 12, 100);
 
+INSERT INTO ProductSize (product_id, size, stock_quantity)
+VALUES 
+((SELECT product_id FROM Products WHERE title = N'Nhẫn Kim cương Vàng 18K DAL DDDDY000790'), 13, 300);
 
-((SELECT product_id FROM Products WHERE title = N'Hạt Charm Bạc đính đá DALSilver hình chiếc thuyền ZTZTW060029'), 0, 100),
-((SELECT product_id FROM Products WHERE title = N'Hạt Charm Bạc đính đá DALSilver XMXMW060430'), 0, 100),
-((SELECT product_id FROM Products WHERE title = N'Hạt Charm Bạc đính đá DALSilver hình gấu hồng ZTXMW060008'), 0, 100),
-((SELECT product_id FROM Products WHERE title = N'Mặt dây chuyền Vàng 14K đính đá CZ DAL ❤️ HELLO KITTY XMXMY063473'), 0, 100),
-((SELECT product_id FROM Products WHERE title = N'Bông tai Vàng 10K đính Ngọc trai Freshwater DAL ❤️ HELLO KITTY PF00Y000156'), 0, 100),
+INSERT INTO ProductSize (product_id, size, stock_quantity)
+VALUES 
+((SELECT product_id FROM Products WHERE title = N'Nhẫn cưới nam Kim cương Vàng Trắng 14K DAL DD00W004085'), 17, 1000);
 
+INSERT INTO ProductSize (product_id, size, stock_quantity)
+VALUES 
+((SELECT product_id FROM Products WHERE title = N'Nhẫn cưới nam Kim cương Vàng Trắng 14K DAL DD00W004085'), 18, 100);
 
-((SELECT product_id FROM Products WHERE title = N'Bông tai Vàng 10K đính Ngọc trai Freshwater DAL ❤️ HELLO KITTY PFXMY000642'), 0, 100),
-((SELECT product_id FROM Products WHERE title = N'Mặt dây chuyền Vàng trắng 14K Disney|DAL Minnie alone 0000W001137'), 0, 100),
-((SELECT product_id FROM Products WHERE title = N'Mặt dây chuyền Vàng 18K DAL Kim Bảo Như Ý 0000Y001485'), 0, 100),
-((SELECT product_id FROM Products WHERE title = N'Mặt dây chuyền Kim cương Vàng trắng 14K DAL DDDDW000957'), 0, 100),
-((SELECT product_id FROM Products WHERE title = N'Mặt dây chuyền Kim cương Vàng trắng 14K DAL DDDDW002605'), 0, 100),
+INSERT INTO ProductSize (product_id, size, stock_quantity)
+VALUES 
+((SELECT product_id FROM Products WHERE title = N'Nhẫn cưới nam Kim cương Vàng Trắng 14K DAL DD00W004085'), 19, 100);
+
+INSERT INTO ProductSize (product_id, size, stock_quantity)
+VALUES 
+((SELECT product_id FROM Products WHERE title = N'Nhẫn cưới Kim cương Vàng 18K DAL DD00Y000326'), 10, 100);
+
+INSERT INTO ProductSize (product_id, size, stock_quantity)
+VALUES 
+((SELECT product_id FROM Products WHERE title = N'Nhẫn cưới Kim cương Vàng 18K DAL DD00Y000326'), 11, 100);
+
+INSERT INTO ProductSize (product_id, size, stock_quantity)
+VALUES 
+((SELECT product_id FROM Products WHERE title = N'Nhẫn cưới Kim cương Vàng 18K DAL DD00Y000326'), 12, 100);
+
+INSERT INTO ProductSize (product_id, size, stock_quantity)
+VALUES 
+((SELECT product_id FROM Products WHERE title = N'Nhẫn cưới Vàng 24K DAL Trầu Cau 0000Y003194'), 11, 100);
+
+INSERT INTO ProductSize (product_id, size, stock_quantity)
+VALUES 
+((SELECT product_id FROM Products WHERE title = N'Nhẫn cưới Vàng 24K DAL Trầu Cau 0000Y003194'), 12, 100);
+
+INSERT INTO ProductSize (product_id, size, stock_quantity)
+VALUES 
+((SELECT product_id FROM Products WHERE title = N'Nhẫn cưới Vàng 24K DAL Trầu Cau 0000Y003194'), 13, 100);
+
+INSERT INTO ProductSize (product_id, size, stock_quantity)
+SELECT p.product_id, 0, 100
+FROM Products p
+WHERE p.title IN (
+    N'Bông tai Kim cương Vàng trắng 14K DAL DDDDW000182',
+    N'Bông tai cưới Vàng 24K DAL 0000Y000113',
+    N'Bông tai cưới Vàng 24K DAL Lan Mùa Hạ 0000Y000071',
+    N'Bông tai cưới Vàng 24K DAL Duyên Phượng Tình Hồng 0000Y000102',
+    N'Bông tai cưới Vàng 24K DAL 0000Y003038',
+    N'Bông tai cưới Vàng 24K DAL Hạnh Phúc 0000Y000083',
+    N'Bông tai cưới Vàng 18K đính đá ECZ DAL Trầu Cau XMXMY006013',
+    N'Bông tai cưới Vàng 24K DAL Trầu cau 0000Y002680',
+    N'Bông tai cưới Vàng trắng 10K đính đá ECZ DAL Bạch Khổng Tước XMXMW001971',
+
+    N'Đồng hồ Disney & Marvel Nam M-6069R Dây Cao Su 50 mm',
+    N'Đồng hồ Disney & Marvel Nam M-6072B Dây Cao Su 50 mm',
+    N'Đồng Hồ Michael Kors Nữ MK7197 Dây Thép Không Gỉ 33 mm',
+    N'Đồng Hồ Citizen Nữ EM0860-51D Dây Thép Không Gỉ 25 mm',
+    N'Đồng Hồ Citizen Nam NH8390-71L Dây Thép Không Gỉ 40 mm',
+    N'Đồng Hồ Fossil Nam ME3061 Dây Da 44mm',
+    N'Đồng Hồ Citizen Nữ EM0502-86P Dây Thép Không Gỉ 32mm',
+    N'Đồng Hồ Michael Kors Nữ MK3640 Dây Thép Không Gỉ 36mm',
+    N'Đồng Hồ Fossil Nữ ES5192 Dây Thép Không Gỉ 37 mm',
+    N'Đồng Hồ Nam Citizen NJ0150-81X Dây Thép Không Gỉ 40 mm',
+    N'Đồng hồ Rado True Square Unisex R27073712 Dây Ceramic 38 mm',
+    N'Đồng hồ Tissot Nam PRX T137.410.17.051.00 Dây Cao Su 40 mm',
+    N'Đồng hồ Tissot Nam PRX Powermatic 80 T137.407.11.351.00 Dây Kim Loại 40 mm',
+    N'Đồng hồ Longines La Grande Nữ L4.209.4.81.6 Dây Kim Loại 24 mm',
+    N'Đồng hồ Longines Master Nam L2.919.4.92.6 Dây Kim Loại 42 mm',
+    N'Đồng hồ Longines Master Nam L2.893.4.77.3 Dây Da 42 mm',
+    N'Đồng hồ Calvin Klein Nam 25200293 Dây Kim Loại 44 mm',
+    N'Đồng hồ Calvin Klein Nam 25200303 Dây Kim Loại 44.3 mm',
+    N'Đồng hồ Rado Centrix Nữ R30029902 Dây Kim Loại 35 mm',
+    N'Đồng hồ Rado Centrix Nữ R30248902 Dây Kim Loại 33 mm',
+    N'Đồng hồ Rado Centrix Nữ R30037742 Dây Kim Loại 35 mm',
+
+    N'Lắc tay Vàng 14K đính đá CZ Disney|DAL Mickey XMXMY061792',
+    N'Bông tai Bạc đính ngọc trai DALSilver PF00W000024',
+    N'Bông tai Vàng trắng 10K đính đá ECZ DAL XMXMW002314',
+    N'Mặt dây chuyền Vàng Trắng 10K đính đá ECZ STYLE by DAL Sunlover XMXMW002476',
+    N'Bông tai Vàng Trắng 10K đính đá ECZ STYLE by DAL Sunlover XM00W001263',
+	N'Bông tai Vàng trắng 14K đính đá synthetic Disney|DAL Cinderella ZT00W000014',
+	N'Bông tai trẻ em Bạc DALSilver 0000W060048',
+	N'Bông tai trẻ em Bạc đính đá DALSilver XMXMW060171',
+	N'Bông tai trẻ em Bạc DALSilver 0000W060046',
+	N'Nhẫn trẻ em Bạc DALSilver 0000W060019',
+	N'Bông tai Kim cương Vàng trắng 14K DAL DDDDW060268',
+	N'Bông tai Kim cương Vàng trắng 14K DAL DDDDW060268',
+	N'Bông tai Vàng 18K đính đá Ruby DAL Family Infinity RBXMC000008',
+	N'Bông tai Vàng 10K STYLE by DAL 0000Y002594',
+	N'Hạt charm xỏ trẻ em DIY DALSilver chữ sweet baby 0000H060002',
+	N'Hạt charm xỏ trẻ em DIY DALSilver chữ baby xanh 00XMW060025',
+	N'Mặt dây chuyền Kim cương Vàng trắng 14K DAL DDDDW000924',
+	N'Mặt dây chuyền Vàng 14K đính đá CZ DAL ❤️ HELLO KITTY XM00C060002',
+	N'Mặt dây chuyền Kim cương Vàng trắng 14K DAL DDDDW000923',
+	N'Bông tai Kim Tiền Vàng trắng Ý 18K DAL 0000W002163',
+	N'Mặt dây chuyền Vàng Ý 10K DAL ❤️ HELLO KITTY 0000Y001639',
+	N'Mặt dây chuyền Vàng Ý 10K DAL ❤️ HELLO KITTY 0000Y001637',
+	N'Thẻ May mắn Vàng 10K DAL ❤️ HELLO KITTY Như Ý 0000Y000962',
+	N'Bông tai trẻ em Bạc DAL ❤️ HELLO KITTY 0000W000123',
+	N'Bông tai Vàng trắng Ý 10K DAL ❤️ HELLO KITTY 0000W002716',
+	N'Bông tai Bạc đính đá DAL ❤️ HELLO KITTY ZT00H000005',
+	N'Bông tai Bạc đính đá DAL ❤️ HELLO KITTY XMXMW000085',
+	N'Lắc tay trẻ em Bạc DAL ❤️ HELLO KITTY 0000W000103',
+	N'Hạt charm Bạc đính đá DAL ❤️ HELLO KITTY XMXMW000039',
+	N'Bông tai Bạc đính đá DAL ❤️ HELLO KITTY XMXMW000084',
+	N'Hạt Charm Bạc đính đá DALSilver hình chiếc thuyền ZTZTW060029',
+	N'Hạt Charm Bạc đính đá DALSilver XMXMW060430',
+	N'Hạt Charm Bạc đính đá DALSilver hình gấu hồng ZTXMW060008',
+	N'Mặt dây chuyền Vàng 14K đính đá CZ DAL ❤️ HELLO KITTY XMXMY063473',
+	N'Bông tai Vàng 10K đính Ngọc trai Freshwater DAL ❤️ HELLO KITTY PF00Y000156',
+	N'Bông tai Vàng 10K đính Ngọc trai Freshwater DAL ❤️ HELLO KITTY PFXMY000642',
+	N'Mặt dây chuyền Vàng trắng 14K Disney|DAL Minnie alone 0000W001137',
+	N'Mặt dây chuyền Vàng 18K DAL Kim Bảo Như Ý 0000Y001485',
+	N'Mặt dây chuyền Kim cương Vàng trắng 14K DAL DDDDW000957'
+    -- Thêm các sản phẩm khác tại đây
+);
 
 
 
@@ -1257,7 +1317,7 @@ go
 
 
 GO
-alter PROCEDURE signUp
+create PROCEDURE signUp
     @Email VARCHAR(100),
     @password VARCHAR(255)
 AS
@@ -1374,7 +1434,7 @@ ORDER BY
 
 
 
-exec getItemsNew @SL = 80
+--exec getItemsNew @SL = 80
 
 go
 --lấy top10 dòng sản phẩm bất kì
@@ -1440,7 +1500,7 @@ BEGIN
         o.user_id = @UserID;
 END;
 go
-EXEC getProductsByCustomer @UserID = 1;
+--EXEC getProductsByCustomer @UserID = 1;
 
 --DROP PROCEDURE IF EXISTS getProductsByCustomer;
 -- view lay thong bao
@@ -1655,21 +1715,21 @@ BEGIN
 END;
 
 -- Sắp xếp giá từ thấp lên cao
-EXEC getMinMaxSell @categoryId = 1, @SL = 20, @sortBy = 'price_asc';
+--EXEC getMinMaxSell @categoryId = 1, @SL = 20, @sortBy = 'price_asc';
 
 -- Sắp xếp giá từ cao xuống thấp
-EXEC getMinMaxSell @categoryId = 1, @SL = 20, @sortBy = 'price_desc';
+--EXEC getMinMaxSell @categoryId = 1, @SL = 20, @sortBy = 'price_desc';
 
 -- Sắp xếp theo lượt bán
 
-EXEC getMinMaxSell @categoryId = 4, @SL = 20, @sortBy = 'sales';
+--EXEC getMinMaxSell @categoryId = 4, @SL = 20, @sortBy = 'sales';
 
 
 
-
+go
 
 -- thu tuc lay ds order theo id - mua ngay
-ALTER PROCEDURE GetUserOrderProducts
+create PROCEDURE GetUserOrderProducts
     @UserId INT
 AS
 BEGIN
@@ -1715,12 +1775,12 @@ BEGIN
         o.user_id = @UserId;
 END;
 
+go 
 
+--EXEC GetUserOrderProducts @UserId = 1;
+go
 
-EXEC GetUserOrderProducts @UserId = 1;
-
-
-ALTER PROCEDURE GetUserCartProducts
+create PROCEDURE GetUserCartProducts
     @UserId INT
 AS
 BEGIN
@@ -1853,8 +1913,8 @@ BEGIN
 END;
 
 
-EXEC GetCart @UserId = 1;
-
+--EXEC GetCart @UserId = 1;
+go
 CREATE PROCEDURE TimKiemSanPham
     @TuKhoa NVARCHAR(100)
 AS
@@ -1864,10 +1924,10 @@ BEGIN
     WHERE title LIKE '%' + @TuKhoa + '%'
 END
 
-EXEC TimKiemSanPham @TuKhoa = N'00';
+--EXEC TimKiemSanPham @TuKhoa = N'00';
 
-
-alter PROCEDURE AddToCart
+go
+create PROCEDURE AddToCart
     @UserID INT,
     @SizeID INT
 AS
@@ -1916,4 +1976,4 @@ END
 
 
 -- Giả sử bạn có người dùng với UserID là 1 và SizeID là 2
-EXEC AddToCart @UserID = 1, @SizeID = 10;
+--EXEC AddToCart @UserID = 1, @SizeID = 2;
