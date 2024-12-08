@@ -110,10 +110,19 @@
           </Events>
         </Component>
         <Component class="com.mycompany.component.ItemProduct" name="itemProduct2">
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="itemProduct2MouseClicked"/>
+          </Events>
         </Component>
         <Component class="com.mycompany.component.ItemProduct" name="itemProduct4">
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="itemProduct4MouseClicked"/>
+          </Events>
         </Component>
         <Component class="com.mycompany.component.ItemProduct" name="itemProduct3">
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="itemProduct3MouseClicked"/>
+          </Events>
         </Component>
         <Container class="javax.swing.JPanel" name="jPanel2">
           <Properties>
@@ -181,12 +190,24 @@
       </Layout>
       <SubComponents>
         <Component class="com.mycompany.component.ItemProduct" name="itemProduct6">
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="itemProduct6MouseClicked"/>
+          </Events>
         </Component>
         <Component class="com.mycompany.component.ItemProduct" name="itemProduct7">
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="itemProduct7MouseClicked"/>
+          </Events>
         </Component>
         <Component class="com.mycompany.component.ItemProduct" name="itemProduct8">
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="itemProduct8MouseClicked"/>
+          </Events>
         </Component>
         <Component class="com.mycompany.component.ItemProduct" name="itemProduct9">
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="itemProduct9MouseClicked"/>
+          </Events>
         </Component>
         <Container class="javax.swing.JPanel" name="jPanel4">
           <Properties>
@@ -267,12 +288,24 @@
       </Layout>
       <SubComponents>
         <Component class="com.mycompany.component.ItemProduct" name="itemProduct16">
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="itemProduct16MouseClicked"/>
+          </Events>
         </Component>
         <Component class="com.mycompany.component.ItemProduct" name="itemProduct17">
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="itemProduct17MouseClicked"/>
+          </Events>
         </Component>
         <Component class="com.mycompany.component.ItemProduct" name="itemProduct18">
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="itemProduct18MouseClicked"/>
+          </Events>
         </Component>
         <Component class="com.mycompany.component.ItemProduct" name="itemProduct19">
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="itemProduct19MouseClicked"/>
+          </Events>
         </Component>
         <Container class="javax.swing.JPanel" name="jPanel7">
           <Properties>
