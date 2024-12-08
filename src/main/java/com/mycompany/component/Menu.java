@@ -4,8 +4,10 @@
  */
 package com.mycompany.component;
 
+import com.mycompany.tab.comingsoon;
 import com.mycompany.utils.CardSelectionListener;
 import java.awt.Color;
+import javax.swing.JFrame;
 
 /**
  *
@@ -248,6 +250,9 @@ public class Menu extends javax.swing.JPanel {
     }//GEN-LAST:event_button25ActionPerformed
 
     private void button26ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button26ActionPerformed
+         comingsoon infoFrame = new comingsoon(); // Khởi tạo đối tượng
+        infoFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); // Đóng frame này khi tắt
+        infoFrame.setVisible(true); // Hiển thị JFrame
         changeButtonState(button26);
         cardSelectionListener.setShowPanel("jScrollPane6");
     }//GEN-LAST:event_button26ActionPerformed
