@@ -37,8 +37,8 @@ public class LoadProductController {
     }
 
     // Phương thức để tìm kiếm sản phẩm theo tiêu đề
-    public List<ItemProductEntity> searchProductsByTitle(String keyword) {
-        return listItemProductsDAO.searchProductsByTitle(keyword);
+    public List<ItemProductEntity> searchProductsByTitle(String keyword, Integer categoryId) {
+        return listItemProductsDAO.searchProductsByTitle(keyword,categoryId);
     }
     
     // Phương thức để đặt ảnh cho sản phẩm
