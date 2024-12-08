@@ -5,6 +5,7 @@
 package com.mycompany.component;
 
 import com.mycompany.component.ItemCart;
+import com.mycompany.model.entity.ProductDetail;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -14,23 +15,12 @@ import java.util.List;
  * @author duyan
  */
 public class ListItemOrder1 extends javax.swing.JPanel {
-//    private List<ItemCart> selectedItems = new ArrayList<>();
-//    
+    private List<ItemCart> selectedItems = new ArrayList<>();
+    
     
     
     public ListItemOrder1() {
-        List<Integer> sizes = Arrays.asList(23, 34, 30, 32);
-        initComponents();
-        addItemOrder(new com.mycompany.component.ItemOrder());
-        addItemOrder(new com.mycompany.component.ItemOrder());
-        addItemOrder(new com.mycompany.component.ItemOrder());
-        addItemOrder(new com.mycompany.component.ItemOrder());
-        addItemOrder(new com.mycompany.component.ItemOrder());
-        addItemOrder(new com.mycompany.component.ItemOrder());
-        addItemOrder(new com.mycompany.component.ItemOrder());
-        addItemOrder(new com.mycompany.component.ItemOrder());
-        addItemOrder(new com.mycompany.component.ItemOrder());
-        addItemOrder(new com.mycompany.component.ItemOrder("Nhẫn cưới Kim cương Vàng Trắng", null, 9698000, sizes, "DD00W005844"));  
+        initComponents(); 
     }
     
     
@@ -44,6 +34,21 @@ public class ListItemOrder1 extends javax.swing.JPanel {
 //        });
 //    }
 
+        public double getTotal() {
+        double total = 0.0;
+        
+        // Duyệt qua tất cả các components (ItemOrder) trong JPanel
+        for (java.awt.Component component : this.getComponents()) {
+            if (component instanceof ItemOrder) {
+                ItemOrder itemOrder = (ItemOrder) component;
+                total += itemOrder.getTotalItem(); // Cộng dồn giá trị của mỗi itemOrder
+            }
+        }
+        
+        return total; // Trả về tổng giá trị
+    }
+
+    
     
         // Hàm để xóa một ItemCart khỏi JPanel
 //    public void removeItemCart(ItemCart itemCart) {
@@ -86,7 +91,13 @@ public void addItemOrder(ItemOrder ItemOrder) {
 //    // Cập nhật lại layout
     updateLayout();
 }
-    
+    public void addListItem(List<ProductDetail> items)
+    {
+        for(ProductDetail item : items)
+        {
+            addItemOrder(new ItemOrder(item));
+        }
+    }
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -96,11 +107,11 @@ public void addItemOrder(ItemOrder ItemOrder) {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 616, Short.MAX_VALUE)
+            .addGap(0, 207, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 777, Short.MAX_VALUE)
+            .addGap(0, 47, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 

@@ -243,6 +243,9 @@
                 </Property>
                 <Property name="radium" type="int" value="10"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="button21ActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>

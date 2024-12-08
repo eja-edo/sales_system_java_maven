@@ -5,6 +5,7 @@
 package com.mycompany.component;
 
 import com.mycompany.model.entity.ProductDetail;
+import com.mycompany.utils.Formatter;
 import static com.mycompany.utils.Formatter.formatPrice;
 import com.mycompany.utils.RoundBorder;
 import com.mycompany.utils.ScaleImg;
@@ -14,29 +15,69 @@ import java.awt.Image;
 import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.net.URL;
+import java.text.ParseException;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 
 /**
  *
  * @author duyan
  */
 public class ItemCart extends javax.swing.JPanel {
+
+    public ProductDetail getItem() {
+        return Item;
+    }
+
+    public void setItem(ProductDetail Item) {
+        this.Item = Item;
+    }
     
     private boolean isSelected = false; // Trạng thái đã chọn hay chưa
     private ActionListener selectAction; // Callback khi ấn chọn/bỏ chọn
-    
+    private OnQuantityChangeListener listener; // Callback interface
+    private ProductDetail Item;
 
+    
+    
+    // Đăng ký callback
+    public void setOnQuantityChangeListener(OnQuantityChangeListener listener) {
+        this.listener = listener;
+    }
+
+    // Định nghĩa interface callback
+    public interface OnQuantityChangeListener {
+        void onQuantityChanged(double total);
+    }
     
     public ItemCart() {
         initComponents();
         btnSelect.addActionListener(e -> toggleSelection());
+    // Lắng nghe sự thay đổi của JSpinner
+        jSpinner1.addChangeListener(new ChangeListener() {
+            @Override
+            public void stateChanged(ChangeEvent e) {
+                int currentQuantity = (int) jSpinner1.getValue();
+                int change = currentQuantity - Item.getSoLuong(); // Tính mức thay đổi (+ hoặc -)
+
+                if (currentQuantity != Item.getSoLuong() &&  listener != null && isSelected) {
+                    listener.onQuantityChanged(change * Item.getPrice()); // Gửi giá trị thay đổi (tổng tiền) về lớp cha
+                }
+
+                Item.setSoLuong(currentQuantity);// Cập nhật giá trị trước đó
+            }
+        });
     }
     public ItemCart(ProductDetail item)
     {
         this();
-    
+        Item = item;
+        Item.setSoLuong(1);
         // Gán giá trị cho các thành phần giao diện
         labTitle.setText(item.getTitle()); // Gán tiêu đề sản phẩm
         labIdProduct.setText("Mã: " + item.getProductId()); // Gán mã sản phẩm
@@ -76,7 +117,7 @@ public class ItemCart extends javax.swing.JPanel {
         ScaleImg.scaleImg(imgProduct);
         // Gán các kích thước vào ComboBox
         combSize.removeAllItems(); // Xóa các mục hiện có
-            combSize.addItem(item.getSize().toString()); // Thêm từng kích thước vào ComboBox
+        combSize.addItem(item.getSize().toString()); // Thêm từng kích thước vào ComboBox
     }
 public ItemCart(String title, String urlImg, String price, List<Integer> size, String ID) {
     // Gọi hàm khởi tạo mặc định để khởi tạo giao diện
@@ -116,10 +157,26 @@ public ItemCart(String title, String urlImg, String price, List<Integer> size, S
         }
     }
         
+
+    public double getTotalItem() {
+        try {
+            double price = Formatter.parsePrice(labPrice.getText()); // Chuyển đổi giá từ chuỗi
+            int quantity = (int) jSpinner1.getValue(); // Lấy số lượng từ JSpinner
+            return price * quantity; // Tính tổng giá trị
+        } catch (ParseException ex) {
+            Logger.getLogger(ItemCart.class.getName()).log(Level.SEVERE, null, ex);
+            return 0.0; // Giá trị mặc định nếu xảy ra lỗi
+        }
+    }
+        
     public void setSelectAction(ActionListener action) {
         this.selectAction = action;
     }
 
+    public void setChangeQuality(ActionListener action)
+    {
+        
+    }
 
     public boolean isSelected() {
         return isSelected;
@@ -145,6 +202,7 @@ public ItemCart(String title, String urlImg, String price, List<Integer> size, S
         radiumPanel1 = new com.mycompany.swing.RadiumPanel();
         jLabel5 = new javax.swing.JLabel();
         combSize = new com.mycompany.swing.ComboBoxSuggestion();
+        jSpinner1 = new javax.swing.JSpinner();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new java.awt.BorderLayout());
@@ -244,19 +302,26 @@ public ItemCart(String title, String urlImg, String price, List<Integer> size, S
                 .addComponent(combSize, javax.swing.GroupLayout.PREFERRED_SIZE, 18, Short.MAX_VALUE))
         );
 
+        jSpinner1.setModel(new javax.swing.SpinnerNumberModel(1, 1, 20, 1));
+        jSpinner1.setEditor(new javax.swing.JSpinner.NumberEditor(jSpinner1, ""));
+        jSpinner1.setName(""); // NOI18N
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addComponent(labPrice, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(178, 178, 178))
+                .addGap(184, 184, 184))
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(labIdProduct)
-                    .addComponent(radiumPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(348, Short.MAX_VALUE))
-            .addComponent(labTitle, javax.swing.GroupLayout.DEFAULT_SIZE, 481, Short.MAX_VALUE)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(radiumPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(41, 41, 41)
+                        .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(217, Short.MAX_VALUE))
+            .addComponent(labTitle)
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -265,7 +330,9 @@ public ItemCart(String title, String urlImg, String price, List<Integer> size, S
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(labIdProduct)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(radiumPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(radiumPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jSpinner1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(labPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -294,6 +361,7 @@ public ItemCart(String title, String urlImg, String price, List<Integer> size, S
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JSpinner jSpinner1;
     private javax.swing.JLabel labIdProduct;
     private javax.swing.JLabel labPrice;
     private javax.swing.JTextPane labTitle;

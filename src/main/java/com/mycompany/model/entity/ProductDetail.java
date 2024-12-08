@@ -5,11 +5,21 @@ package com.mycompany.model.entity;
  * @author duyan
  */
 public class ProductDetail {
+
+    public int getSoLuong() {
+        return soLuong;
+    }
+
+    public void setSoLuong(int soLuong) {
+        this.soLuong = soLuong;
+    }
     private int productId;
     private String title;
     private ProductSize size;
     private double price;
     private String imageUrl;
+    private int soLuong;
+    
 
     public ProductSize getSize() {
         return size;
@@ -51,4 +61,5 @@ public class ProductDetail {
     public void setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
     }
+
 }
