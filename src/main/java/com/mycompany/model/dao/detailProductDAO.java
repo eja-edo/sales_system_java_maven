@@ -81,7 +81,7 @@ public class detailProductDAO {
     // Phương thức để gọi thủ tục GetCartProductDetails
     public static List<ProductDetail> getCartProductDetails(int userId) {
         List<ProductDetail> productDetails = new ArrayList<>();
-        String query = "EXEC GetCartProductDetails @UserId = ?";
+        String query = "EXEC GetCart @UserId = ?";
 
         try (Connection conn = DBConnection.getConnection();
              PreparedStatement stmt = conn.prepareStatement(query)) {
@@ -90,10 +90,16 @@ public class detailProductDAO {
             try (ResultSet rs = stmt.executeQuery()) {
                 while (rs.next()) {
                     ProductDetail productDetail = new ProductDetail();
-                    productDetail.setUserId(rs.getInt("user_id"));
                     productDetail.setProductId(rs.getInt("product_id"));
                     productDetail.setTitle(rs.getString("title"));
-                    productDetail.setSize(rs.getInt("size"));
+                    
+                    System.out.println(productDetail.getTitle());
+                    ProductSize size = new ProductSize();
+                    size.setExempleId(rs.getInt("exemple_id"));
+                    size.setSize(rs.getInt("size"));
+                    size.setStockQuantity(rs.getInt("stock_quantity"));
+                    
+                    productDetail.setSize(size);
                     productDetail.setPrice(rs.getDouble("price"));
                     productDetail.setImageUrl(rs.getString("ImageURL"));
                     productDetails.add(productDetail);

@@ -4,10 +4,19 @@
  */
 package com.mycompany.component;
 
+import com.mycompany.model.entity.ProductDetail;
+import static com.mycompany.utils.Formatter.formatPrice;
 import com.mycompany.utils.RoundBorder;
+import com.mycompany.utils.ScaleImg;
+import static com.mycompany.utils.resizeIcon.resizeIcon;
 import java.awt.Color;
+import java.awt.Image;
 import java.awt.event.ActionListener;
+import java.io.IOException;
+import java.net.URL;
 import java.util.List;
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -23,6 +32,51 @@ public class ItemCart extends javax.swing.JPanel {
     public ItemCart() {
         initComponents();
         btnSelect.addActionListener(e -> toggleSelection());
+    }
+    public ItemCart(ProductDetail item)
+    {
+        this();
+    
+        // Gán giá trị cho các thành phần giao diện
+        labTitle.setText(item.getTitle()); // Gán tiêu đề sản phẩm
+        labIdProduct.setText("Mã: " + item.getProductId()); // Gán mã sản phẩm
+        labPrice.setText(formatPrice(item.getPrice())); // Gán giá sản phẩm
+        System.out.println(item.getImageUrl());
+        ImageIcon icon = new ImageIcon(getClass().getResource(item.getImageUrl()));
+        imgProduct.setIcon(resizeIcon(icon,90,90));
+//        try {
+//            // Chuyển đổi đường dẫn URL thành định dạng hợp lệ
+//            String imgPath = item.getImageUrl();
+//            if (imgPath != null) {
+//                imgPath = imgPath.replace("\\", "/");
+//                URL url = getClass().getResource(imgPath);
+//
+//                if (url != null) {
+//                    Image img = ImageIO.read(url);
+//                    ImageIcon imgIcon = new ImageIcon(img);
+//                    imgProduct.setIcon(imgIcon);
+//                } else {
+//                    System.out.println("Không thể tìm thấy ảnh từ URL: " + imgPath);
+//                    // Đặt ảnh mặc định nếu không thể tìm thấy ảnh từ URL
+//                    ImageIcon defaultImgIcon = new ImageIcon(getClass().getResource("/image/png259X259.png"));
+//                    
+//                }
+//            } else {
+//                System.out.println("URL Image is null");
+//                // Đặt ảnh mặc định nếu không có URL ảnh
+//                ImageIcon defaultImgIcon = new ImageIcon(getClass().getResource("/image/png259X259.png"));
+//                imgProduct.setIcon(defaultImgIcon);
+//            }
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//            // Đặt ảnh mặc định nếu có lỗi khi tải ảnh
+//            ImageIcon defaultImgIcon = new ImageIcon(getClass().getResource("/image/png259X259.png"));
+//            imgProduct.setIcon(defaultImgIcon);
+//        }
+        ScaleImg.scaleImg(imgProduct);
+        // Gán các kích thước vào ComboBox
+        combSize.removeAllItems(); // Xóa các mục hiện có
+            combSize.addItem(item.getSize().toString()); // Thêm từng kích thước vào ComboBox
     }
 public ItemCart(String title, String urlImg, String price, List<Integer> size, String ID) {
     // Gọi hàm khởi tạo mặc định để khởi tạo giao diện
@@ -130,7 +184,7 @@ public ItemCart(String title, String urlImg, String price, List<Integer> size, S
         btnSelect.setPreferredSize(new java.awt.Dimension(20, 20));
         jPanel1.add(btnSelect, new java.awt.GridBagConstraints());
 
-        imgProduct.setText("jLabel1");
+        imgProduct.setBackground(new java.awt.Color(255, 255, 255));
         imgProduct.setMaximumSize(new java.awt.Dimension(90, 90));
         imgProduct.setMinimumSize(new java.awt.Dimension(90, 90));
         imgProduct.setOpaque(true);
