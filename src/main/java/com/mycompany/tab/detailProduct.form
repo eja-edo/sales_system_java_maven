@@ -31,13 +31,9 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Component id="jSplitPane1" alignment="0" max="32767" attributes="0"/>
-          <Group type="102" alignment="0" attributes="0">
+          <Group type="102" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <Component id="jLabel13" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
-                  </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jLabel11" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -50,6 +46,14 @@
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="ComboStart" min="-2" pref="77" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <Component id="jLabel13" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="jTextPane5" min="-2" pref="655" max="-2" attributes="0"/>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
               </Group>
           </Group>
@@ -78,7 +82,9 @@
                       <Component id="jLabel12" min="-2" pref="29" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace pref="606" max="32767" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="jTextPane5" min="-2" pref="301" max="-2" attributes="0"/>
+              <EmptySpace pref="287" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -136,6 +142,16 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jScrollPane2" max="32767" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <Component id="comboBoxSuggestion1" min="-2" pref="80" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          </Group>
+                      </Group>
+                  </Group>
+                  <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
                               <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
@@ -162,16 +178,6 @@
                           </Group>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jScrollPane2" max="32767" attributes="0"/>
-                          <Group type="102" attributes="0">
-                              <Component id="comboBoxSuggestion1" min="-2" pref="80" max="-2" attributes="0"/>
-                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                          </Group>
-                      </Group>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -268,11 +274,25 @@
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
                       <Connection code="new RoundBorder(Color.BLACK, 20, 1)" type="code"/>
                     </Property>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Segoe UI" size="12" style="3"/>
+                    </Property>
                     <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.editors2.ListModelEditor">
-                      <StringArray count="0"/>
+                      <StringArray count="7">
+                        <StringItem index="0" value="Gi&#x1ea3;m &#x111;&#x1ebf;n 300K khi thanh to&#xe1;n b&#x1eb1;ng&#xa0;VNPAY-QR"/>
+                        <StringItem index="1" value="&#x1af;u &#x111;&#xe3;i th&#xea;m l&#xea;n &#x111;&#x1ebf;n 1.5tr khi thanh to&#xe1;n b&#x1eb1;ng th&#x1ebb; "/>
+                        <StringItem index="2" value="TECHCOMBANK&#xa0;"/>
+                        <StringItem index="3" value="C&#x1a1; h&#x1ed9;i nh&#x1ead;n combo qu&#xe0; t&#x1eb7;ng &#x111;&#x1ebf;n 6 tri&#x1ec7;u &amp; &#x111;&#x1ed3;ng h&#x1ed3; "/>
+                        <StringItem index="4" value="Rado.&#xa0;"/>
+                        <StringItem index="5" value="C&#x1a1; h&#x1ed9;i s&#x1edf; h&#x1eef;u B&#x1ed9; s&#x1b0;u t&#x1ead;p Jasmine c&#xf9;ng qu&#xe0; t&#x1eb7;ng trang "/>
+                        <StringItem index="6" value="s&#x1ee9;c &amp; iPhone 16 Pro Max 256GB.&#xa0;"/>
+                      </StringArray>
                     </Property>
                     <Property name="enabled" type="boolean" value="false"/>
                     <Property name="opaque" type="boolean" value="false"/>
+                    <Property name="selectionBackground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                    </Property>
                   </Properties>
                   <AuxValues>
                     <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
@@ -416,9 +436,18 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jPanel8" pref="548" max="32767" attributes="0"/>
-                  <Component id="jPanel5" max="32767" attributes="0"/>
-                  <Component id="jScrollPane3" alignment="0" pref="0" max="32767" attributes="0"/>
+                  <Component id="jPanel8" pref="560" max="32767" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="68" max="-2" attributes="0"/>
+                      <Component id="jButton2" min="-2" pref="135" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="83" max="-2" attributes="0"/>
+                      <Component id="jPanel5" max="32767" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jScrollPane4" pref="0" max="32767" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                  </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
@@ -426,10 +455,13 @@
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="jPanel8" min="-2" pref="463" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
-                      <Component id="jPanel5" min="-2" pref="43" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jPanel5" min="-2" pref="43" max="-2" attributes="0"/>
+                          <Component id="jButton2" min="-2" pref="43" max="-2" attributes="0"/>
+                      </Group>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jScrollPane3" min="-2" pref="292" max="-2" attributes="0"/>
-                      <EmptySpace min="0" pref="38" max="32767" attributes="0"/>
+                      <Component id="jScrollPane4" pref="312" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -476,14 +508,16 @@
                     <Component class="javax.swing.JLabel" name="jLabel2">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                          <Color blue="68" green="34" red="0" type="rgb"/>
+                          <Color blue="ff" green="ff" red="ff" type="rgb"/>
                         </Property>
-                        <Property name="text" type="java.lang.String" value="icon"/>
+                        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                          <Image iconType="3" name="/image/dl58.png"/>
+                        </Property>
                         <Property name="opaque" type="boolean" value="true"/>
                       </Properties>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                          <AbsoluteConstraints x="410" y="20" width="40" height="40"/>
+                          <AbsoluteConstraints x="400" y="20" width="60" height="30"/>
                         </Constraint>
                       </Constraints>
                     </Component>
@@ -511,15 +545,6 @@
                 <Property name="rows" type="int" value="1"/>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JButton" name="jButton2">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="&lt;html&gt;ch&#xed;nh s&#xe1;ch h&#x1ead;u m&#xe3;i&lt;/html&gt;"/>
-                    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                      <Border info="null"/>
-                    </Property>
-                    <Property name="contentAreaFilled" type="boolean" value="false"/>
-                  </Properties>
-                </Component>
                 <Component class="javax.swing.JButton" name="jButton3">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="&lt;html&gt;M&#xf4; t&#x1ea3; s&#x1ea3;n ph&#x1ea9;m&lt;/html&gt;"/>
@@ -528,19 +553,25 @@
                     </Property>
                     <Property name="contentAreaFilled" type="boolean" value="false"/>
                   </Properties>
-                </Component>
-                <Component class="javax.swing.JButton" name="jButton4">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="&lt;html&gt;C&#xe2;u h&#x1ecf;i th&#x1b0;&#x1edd;ng g&#x1eb7;p&lt;/html&gt;"/>
-                    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                      <Border info="null"/>
-                    </Property>
-                    <Property name="contentAreaFilled" type="boolean" value="false"/>
-                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton3ActionPerformed"/>
+                  </Events>
                 </Component>
               </SubComponents>
             </Container>
-            <Container class="javax.swing.JScrollPane" name="jScrollPane3">
+            <Component class="javax.swing.JButton" name="jButton2">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="&lt;html&gt;Ch&#xed;nh s&#xe1;ch h&#x1ead;u m&#xe3;i&lt;/html&gt;"/>
+                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                  <Border info="null"/>
+                </Property>
+                <Property name="contentAreaFilled" type="boolean" value="false"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>
+              </Events>
+            </Component>
+            <Container class="javax.swing.JScrollPane" name="jScrollPane4">
               <Properties>
                 <Property name="horizontalScrollBarPolicy" type="int" value="31"/>
               </Properties>
@@ -550,7 +581,7 @@
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
               <SubComponents>
-                <Component class="javax.swing.JTextPane" name="jTextPane2">
+                <Component class="javax.swing.JTextPane" name="jTextPane3">
                   <Properties>
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                       <Border info="org.netbeans.modules.form.compat2.border.EmptyBorderInfo">
@@ -605,6 +636,19 @@
           <Font name="Calibri" size="14" style="0"/>
         </Property>
         <Property name="radium" type="int" value="10"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextPane" name="jTextPane5">
+      <Properties>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.EmptyBorderInfo">
+            <EmptyBorder bottom="5" left="0" right="5" top="5"/>
+          </Border>
+        </Property>
+        <Property name="editorKit" type="javax.swing.text.EditorKit" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+          <Connection code="new HTMLEditorKit()" type="code"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="&lt;b&gt;Mi&#x1ec5;n ph&#xed; b&#x1ea3;o h&#xe0;nh 6 th&#xe1;ng&lt;/b&gt;&lt;br&gt;&#xa;     &#x2022; B&#x1ea3;o h&#xe0;nh 6 th&#xe1;ng l&#x1ed7;i k&#x1ef9; thu&#x1ead;t, n&#x1b0;&#x1edb;c xi.&lt;br&gt;&#xa;&lt;b&gt;Mi&#x1ec5;n ph&#xed; si&#xea;u &#xe2;m v&#xe0; &#x111;&#xe1;nh b&#xf3;ng b&#x1eb1;ng m&#xe1;y chuy&#xea;n d&#x1ee5;ng tr&#x1ecd;n &#x111;&#x1edd;i&lt;/b&gt;&lt;br&gt;&#xa;     &#x2022; &#x110;&#x1ed1;i v&#x1edb;i s&#x1ea3;n ph&#x1ea9;m b&#x1ecb; oxy h&#xf3;a, xu&#x1ed1;ng m&#xe0;u, s&#x1ebd; &#x111;&#x1b0;&#x1ee3;c si&#xea;u &#xe2;m l&#xe0;m s&#x1ea1;ch b&#x1eb1;ng m&#xe1;y chuy&#xea;n d&#x1ee5;ng (si&#xea;u &#xe2;m, kh&#xf4;ng xi) mi&#x1ec5;n ph&#xed; tr&#x1ecd;n &#x111;&#x1edd;i t&#x1ea1;i c&#x1eed;a h&#xe0;ng.&lt;br&gt;&#xa;     &#x2022; Mi&#x1ec5;n ph&#xed; &#x111;&#xe1;nh b&#xf3;ng, si&#xea;u &#xe2;m tr&#x1ecd;n &#x111;&#x1edd;i.&lt;br&gt;&#xa;     &#x2022; &#x110;&#x1ed1;i v&#x1edb;i nh&#x1eab;n c&#x1b0;&#x1edb;i &#x111;&#x1b0;&#x1ee3;c l&#xe0;m m&#x1edb;i, &#x111;&#xe1;nh b&#xf3;ng, xi mi&#x1ec5;n ph&#xed; tr&#x1ecd;n &#x111;&#x1edd;i.&lt;br&gt;&#xa;&lt;b&gt;Mi&#x1ec5;n ph&#xed; thay &#x111;&#xe1; ECZ, CZ v&#xe0; &#x111;&#xe1; t&#x1ed5;ng h&#x1ee3;p&lt;/b&gt;&lt;br&gt;&#xa;     &#x2022; Mi&#x1ec5;n ph&#xed; thay &#x111;&#xe1; t&#x1ed5;ng h&#x1ee3;p, ECZ v&#xe0; CZ trong su&#x1ed1;t th&#x1edd;i gian b&#x1ea3;o h&#xe0;nh.&lt;br&gt;&#xa;&lt;b&gt;Kh&#xf4;ng &#xe1;p d&#x1ee5;ng b&#x1ea3;o h&#xe0;nh cho c&#xe1;c tr&#x1b0;&#x1edd;ng h&#x1ee3;p sau:&lt;/b&gt;&lt;br&gt;&#xa;     &#x2022; D&#xe2;y chuy&#x1ec3;n, l&#x1eaf;c ch&#x1ebf; t&#xe1;c b&#x1ecb; &#x111;&#x1ee9;t g&#xe3;y.&lt;br&gt;&#xa;     &#x2022; S&#x1ea3;n ph&#x1ea9;m b&#x1ecb; l&#x1ed7;i do t&#xe1;c &#x111;&#x1ed9;ng b&#xea;n ngo&#xe0;i, do qu&#xe1; tr&#xec;nh s&#x1eed; d&#x1ee5;ng ho&#x1eb7;c s&#x1eed; d&#x1ee5;ng kh&#xf4;ng &#x111;&#xfa;ng c&#xe1;ch d&#x1eab;n &#x111;&#x1ebf;n s&#x1ea3;n ph&#x1ea9;m b&#x1ecb; bi&#x1ebf;n d&#x1ea1;ng ho&#x1eb7;c h&#x1b0; h&#x1ecf;ng.&lt;br&gt;&#xa;     &#x2022; Kh&#xf4;ng b&#x1ea3;o h&#xe0;nh ki&#x1ebf;ng, v&#xf2;ng, n&#x1eef; trang 22K, 24K, d&#xe2;y chuy&#x1ec3;n, d&#xe2;y c&#x1ed5; ch&#x1ebf; t&#xe1;c, l&#x1eaf;c ch&#x1ebf; t&#xe1;c b&#x1ecb; &#x111;&#x1ee9;t, g&#xe3;y v&#xe0; s&#x1ea3;n ph&#x1ea9;m b&#x1ecb; l&#x1ed7;i do t&#xe1;c &#x111;&#x1ed9;ng b&#xea;n ngo&#xe0;i.&lt;br&gt;&#xa;     &#x2022; Kh&#xe1;ch h&#xe0;ng cung c&#x1ea5;p th&#xf4;ng tin truy l&#x1ee5;c h&#xf3;a &#x111;&#x1a1;n kh&#xf4;ng ch&#xed;nh x&#xe1;c.&lt;br&gt;&#xa;&lt;b&gt;L&#x1b0;u &#xfd; v&#x1ec1; ch&#xed;nh s&#xe1;ch b&#x1ea3;o h&#xe0;nh:&lt;/b&gt;&lt;br&gt;&#xa;     &#x2022; PNJ b&#x1ea3;o h&#xe0;nh c&#xe1;c s&#x1ea3;n ph&#x1ea9;m thu&#x1ed9;c h&#x1ec7; th&#x1ed1;ng c&#x1eed;a h&#xe0;ng k&#xea;nh l&#x1ebb; v&#xe0; online c&#x1ee7;a PNJ.&lt;br&gt;&#xa;     &#x2022; Ch&#x1ebf; &#x111;&#x1ed9; b&#x1ea3;o h&#xe0;nh s&#x1ea3;n ph&#x1ea9;m c&#xf3; th&#x1ec3; thay &#x111;&#x1ed5;i theo ch&#xed;nh s&#xe1;ch c&#x1ee7;a PNJ &#x111;&#x1ed1;i v&#x1edb;i c&#xe1;c d&#xf2;ng h&#xe0;ng v&#xe0; ch&#x1b0;&#x1a1;ng tr&#xec;nh khuy&#x1ebf;n m&#xe3;i v&#xe0;o t&#x1eeb;ng th&#x1edd;i &#x111;i&#x1ec3;m.&lt;br&gt;&#xa;     &#x2022; Xem th&#xf4;ng tin chi ti&#x1ebf;t v&#x1ec1; ch&#xed;nh s&#xe1;ch b&#x1ea3;o h&#xe0;nh vui l&#xf2;ng truy c&#x1ead;p t&#x1ea1;i &#x111;&#xe2;y.&lt;br&gt;"/>
       </Properties>
     </Component>
   </SubComponents>

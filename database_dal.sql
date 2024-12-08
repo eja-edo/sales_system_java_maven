@@ -209,97 +209,158 @@ VALUES
 INSERT INTO Products (title, description, category_id, AverageRating, sex, minPrice, views)
 VALUES 
 (N'Nhẫn cưới nam Kim cương Vàng 18K DAL DD00Y003449', 
-N'Vượt qua hành trình mài giũa dưới bàn tay của các nghệ nhân, kim cương gắn liền với biểu tượng của tình yêu thủy chung, son sắt. 
-Với sắc vàng 18K rực rỡ cùng vẻ đẹp lấp lánh và tinh khiết của kim cương, 
-DAL mang đến nhẫn vàng hiện đại nhưng vẫn giữ được nét truyền thống vốn có.
-Không chỉ có vai trò là vật đính ước thiêng liêng, nhẫn cưới kim cương còn thể hiện cá tính và phong cách của mỗi cặp đôi. 
-Tại DAL, các cặp đôi luôn có thể sở hữu những thiết kế nhẫn cưới kim cương vừa hợp lí về tài chính, vừa đẹp về mẫu mã.',
+N'Vượt qua hành trình mài giũa dưới bàn tay của các nghệ nhân,<br>
+kim cương gắn liền với biểu tượng của tình yêu thủy chung, son sắt.<br>
+Với sắc vàng 18K rực rỡ cùng vẻ đẹp lấp lánh và tinh khiết của kim cương, <br>
+DAL mang đến nhẫn vàng hiện đại nhưng vẫn giữ được nét truyền thống vốn có.<br>
+Không chỉ có vai trò là vật đính ước thiêng liêng, nhẫn cưới kim cương còn<br>
+thể hiện cá tính và phong cách của mỗi cặp đôi. <br>
+Tại DAL, các cặp đôi luôn có thể sở hữu những thiết kế nhẫn<br> 
+cưới kim cương vừa hợp lí về tài chính, vừa đẹp về mẫu mã.',
 (SELECT category_id FROM Categories WHERE category_name = N'Trang sức cưới'), 5.0, N'Nam', 10468000.00, 100),
 
-(N'Cặp nhẫn cưới Vàng trắng 14K DAL Trầu cau 02804-11767', N'Vượt qua hành trình mài giũa dưới bàn tay của các nghệ nhân, kim cương gắn liền với biểu tượng của tình yêu thủy chung, son sắt. 
-Với sắc vàng 14K rực rỡ cùng vẻ đẹp lấp lánh và tinh khiết của kim cương, 
-DAL mang đến nhẫn vàng hiện đại nhưng vẫn giữ được nét truyền thống vốn có.
-Không chỉ có vai trò là vật đính ước thiêng liêng, nhẫn cưới kim cương còn thể hiện cá tính và phong cách của mỗi cặp đôi. 
-Tại DAL, các cặp đôi luôn có thể sở hữu những thiết kế nhẫn cưới kim cương vừa hợp lí về tài chính, vừa đẹp về mẫu mã.', 
+(N'Cặp nhẫn cưới Vàng trắng 14K DAL Trầu cau 02804-11767',
+N'Vượt qua hành trình mài giũa dưới bàn tay của các nghệ nhân,<br>
+kim cương gắn liền với biểu tượng của tình yêu thủy chung, son sắt. 
+Với sắc vàng 14K rực rỡ cùng vẻ đẹp lấp lánh và tinh khiết của kim cương, <br>
+DAL mang đến nhẫn vàng hiện đại nhưng vẫn giữ được nét truyền thống vốn có.<br>
+Không chỉ có vai trò là vật đính ước thiêng liêng, nhẫn cưới kim cương<br>
+còn thể hiện cá tính và phong cách của mỗi cặp đôi. <br>
+Tại DAL, các cặp đôi luôn có thể sở hữu những thiết kế nhẫn <br>
+cưới kim cương vừa hợp lí về tài chính, vừa đẹp về mẫu mã.', 
 (SELECT category_id FROM Categories WHERE category_name = N'Trang sức cưới '), 4.8, N'Unsex', 15366000.00, 150),
 
-(N'Dây cổ cưới Vàng 24K DAL 0000Y000423', N'Tôn vinh vẻ đẹp kiêu sa của quý cô, chiếc dây cổ vàng 24K chắc chắn sẽ là điểm nhấn cho ngày trọng đại này. 
-Sức hút riêng của thiết kế được kết tạo từ thiết kế cực kì duyên dáng với điểm nhấn cách điệu tinh xảo, tạo nên sản phẩm tinh tế chinh phục mọi ánh nhìn.
-PNJ tự hào mang đến những mẫu trang sức tinh tế, giúp bạn có nhiều sự lựa chọn cho phong cách của mình. 
-Bằng tất thảy sự trân trọng và cảm xúc dành riêng cho phái đẹp, 
-từng chi tiết đều được các nghệ nhân PNJ nâng niu và cẩn trọng, đặt trọn vào những thiết kế trang sức xứng tầm.', 
+(N'Dây cổ cưới Vàng 24K DAL 0000Y000423',
+N'Tôn vinh vẻ đẹp kiêu sa của quý cô, chiếc dây cổ vàng 24K chắc chắn<br>
+sẽ là điểm nhấn cho ngày trọng đại này. <br>
+Sức hút riêng của thiết kế được kết tạo từ thiết kế cực kì duyên dáng với<br>
+điểm nhấn cách điệu tinh xảo, tạo nên sản phẩm tinh tế chinh phục mọi ánh nhìn.<br>
+PNJ tự hào mang đến những mẫu trang sức tinh tế, giúp bạn có nhiều sự lựa chọn <br>
+cho phong cách của mình. <br>
+Bằng tất thảy sự trân trọng và cảm xúc dành riêng cho phái đẹp, <br>
+từng chi tiết đều được các nghệ nhân PNJ nâng niu và cẩn trọng, đặt<br>
+trọn vào những thiết kế trang sức xứng tầm.', 
 (SELECT category_id FROM Categories WHERE category_name = N'Trang sức cưới '), 4.8, N'Unsex', 9793000.00, 150),
 
-(N'Bông tai Kim cương Vàng Trắng 14K DAL Trầu Cau DDDDW004320', N'Mang vẻ đẹp hoàn hảo, đôi bông tai với điểm nhấn kim cương sẽ là “trợ thủ” nâng tầm nhan sắc 
-của mọi cô nàng ưa chuộng phong cách hiện đại và thanh lịch.', 
+(N'Bông tai Kim cương Vàng Trắng 14K DAL Trầu Cau DDDDW004320', 
+N'Mang vẻ đẹp hoàn hảo, đôi bông tai với điểm nhấn kim cương sẽ<br>
+là “trợ thủ” nâng tầm nhan sắc của mọi cô nàng ưa chuộng<br>
+phong cách hiện đại và thanh lịch.', 
 (SELECT category_id FROM Categories WHERE category_name = N'Trang sức cưới '), 4.9, N'Unsex', 55813000.00, 150),
 
-(N'Nhẫn cưới Kim cương Vàng Trắng 14K DAL DDDDW009976', N'Kim cương đã đẹp, trang sức kim cương lại càng mang sức hấp dẫn khó cưỡng.
-Sự kết hợp mới mẻ này chắc chắn sẽ tạo nên dấu ấn thời trang hiện đại và giúp quý cô trở nên nổi bật,
-tự tin và thu hút sự ngưỡng mộ của mọi người', 
+(N'Nhẫn cưới Kim cương Vàng Trắng 14K DAL DDDDW009976',
+N'Kim cương đã đẹp, trang sức kim cương lại càng mang sức <br>
+hấp dẫn khó cưỡng.<br>
+Sự kết hợp mới mẻ này chắc chắn sẽ tạo nên dấu ấn thời trang <br>
+hiện đại và giúp quý cô trở nên nổi bật,tự tin và thu<br>
+hút sự ngưỡng mộ của mọi người', 
 (SELECT category_id FROM Categories WHERE category_name = N'Trang sức cưới '), 5.0, N'Nữ', 39451000.00, 100),
 
-(N'Nhẫn cưới Kim cương Vàng Trắng 14K DAL DDDDW011925', N'Kim cương đã đẹp, trang sức kim cương lại càng mang sức hấp dẫn khó cưỡng.
-Sự kết hợp mới mẻ này chắc chắn sẽ tạo nên dấu ấn thời trang hiện đại và giúp quý cô trở nên nổi bật,
+(N'Nhẫn cưới Kim cương Vàng Trắng 14K DAL DDDDW011925',
+N'Kim cương đã đẹp, trang sức kim cương lại càng mang <br>
+sức hấp dẫn khó cưỡng.<br>
+Sự kết hợp mới mẻ này chắc chắn sẽ tạo nên dấu ấn thời trang<br>
+hiện đại và giúp quý cô trở nên nổi bật,<br>
 tự tin và thu hút sự ngưỡng mộ của mọi người', 
 (SELECT category_id FROM Categories WHERE category_name = N'Trang sức cưới '), 5.0, N'Nữ', 17691000.00, 100),
 
-(N'Nhẫn cưới Kim cương Vàng Trắng 14K DAL Trầu Cau DDDDW011762', N'Tôn vinh vẻ đẹp và sự chín muồi của tình yêu đích thực, DAL cùng đôi lứa sẵn sàng cho hành trình hôn nhân của các bạn', 
+(N'Nhẫn cưới Kim cương Vàng Trắng 14K DAL Trầu Cau DDDDW011762', N'
+Tôn vinh vẻ đẹp và sự chín muồi của tình yêu đích thực,<br>
+DAL cùng đôi lứa sẵn sàng cho hành trình hôn nhân của các bạn', 
 (SELECT category_id FROM Categories WHERE category_name = N'Trang sức cưới '), 4.6, N'Nữ', 43564000.00, 100),
 
-(N'Nhẫn Kim cương Vàng 18K DAL DDDDY000790', N'Không chỉ có vai trò là vật đính ước thiêng liêng, nhẫn cưới kim cương còn thể hiện cá tính và phong cách của mỗi cặp đôi.', 
+(N'Nhẫn Kim cương Vàng 18K DAL DDDDY000790', N'
+Không chỉ có vai trò là vật đính ước thiêng liêng,<br>
+nhẫn cưới kim cương còn thể hiện cá tính và phong cách của mỗi cặp đôi.', 
 (SELECT category_id FROM Categories WHERE category_name = N'Trang sức cưới '), 4.8, N'Nữ', 20440800.00, 100),
 
-(N'Nhẫn cưới nam Kim cương Vàng Trắng 14K DAL DD00W004085', N'Kim cương vốn là món trang sức mang đến niềm kiêu hãnh và cảm hứng thời trang bất tận.
+(N'Nhẫn cưới nam Kim cương Vàng Trắng 14K DAL DD00W004085', 
+N'Kim cương vốn là món trang sức mang đến niềm kiêu hãnh <br>
+và cảm hứng thời trang bất tận.<br>
 Sở hữu riêng cho mình món trang sức kim cương chính là điều mà ai cũng mong muốn.', 
 (SELECT category_id FROM Categories WHERE category_name = N'Trang sức cưới '), 3.8, N'Nam', 26471000.00, 100),
 
-(N'Nhẫn cưới Kim cương Vàng 18K DAL DD00Y000326', N'Kim cương vốn là món trang sức mang đến niềm kiêu hãnh và cảm hứng thời trang bất tận.
+(N'Nhẫn cưới Kim cương Vàng 18K DAL DD00Y000326',
+N'Kim cương vốn là món trang sức mang đến niềm kiêu hãnh<br>
+và cảm hứng thời trang bất tận.<br>
 Sở hữu riêng cho mình món trang sức kim cương chính là điều mà ai cũng mong muốn.', 
 (SELECT category_id FROM Categories WHERE category_name = N'Trang sức cưới '), 4.7, N'Unsex', 7529000.00, 100),
 
 
-(N'Nhẫn cưới Vàng 24K DAL Trầu Cau 0000Y003194', N'Ưu tiên hàng đầu cho các nàng dâu mới, PNJ mang đến những chiếc nhẫn trong BST Trầu Cau cưới sở hữu thiết kế dựa trên lá trầu quả cau. Chế tác từ vàng 24K (99% vàng nguyên chất), 
-với đặc tính mềm nên thông thường những món trang sức này có kiểu dáng bắt mắt và cầu kỳ.
-Lá trầu bên ngoài được tạo nét theo cánh phượng uyển chuyển bao bọc bên trong là quả cau, thể hiện 
-sự hòa quyện giữa miếng trầu và cánh phượng vừa mang đậm tính văn hóa bản sắc dân tộc vừa thể hiện được tình cảm sắt son của đôi lứa.', 
+(N'Nhẫn cưới Vàng 24K DAL Trầu Cau 0000Y003194',
+N'Ưu tiên hàng đầu cho các nàng dâu mới, PNJ mang đến những chiếc<br>
+nhẫn trong BST Trầu Cau cưới sở hữu thiết kế dựa trên lá trầu quả<br>
+cau. Chế tác từ vàng 24K (99% vàng nguyên chất), với đặc tính mềm<br>
+nên thông thường những món trang sức này có kiểu dáng bắt mắt và <br>
+cầu kỳ.<br>
+Lá trầu bên ngoài được tạo nét theo cánh phượng uyển chuyển bao<br>
+bọc bên trong là quả cau, thể hiện sự hòa quyện giữa miếng trầu<br>
+và cánh phượng vừa mang đậm tính văn hóa bản sắc dân tộc vừa<br>
+thể hiện được tình cảm sắt son của đôi lứa.', 
 (SELECT category_id FROM Categories WHERE category_name = N'Trang sức cưới '), 5.0, N'Unsex', 17529000.00, 100),
 
-(N'Bông tai Kim cương Vàng trắng 14K DAL DDDDW000182', N'Kim cương được xem là biểu tượng của sự quyền lực, giàu sang và quý phái,
-do đó nó được sử dụng để tạo nên các tuyệt tác trang sức kim cương tinh tế. 
-Sự sáng tạo mạnh mẽ của các nhà thiết kế của DAL được phô diễn thông qua đôi bông tai với vẻ đẹp đẳng cấp và thời thượng.', 
+(N'Bông tai Kim cương Vàng trắng 14K DAL DDDDW000182', 
+N'Kim cương được xem là biểu tượng của sự quyền lực, giàu sang và <br>
+quý phái,do đó nó được sử dụng để tạo nên các tuyệt tác trang sức<br>
+kim cương tinh tế. <br>
+Sự sáng tạo mạnh mẽ của các nhà thiết kế của DAL được phô diễn thông<br>
+qua đôi bông tai với vẻ đẹp đẳng cấp và thời thượng.', 
 (SELECT category_id FROM Categories WHERE category_name = N'Trang sức cưới '), 4.8, N'Unsex', 15629000.00, 100),
 
-(N'Bông tai cưới Vàng 24K DAL 0000Y000113', N'Đối với người phương Đông, trang sức cưới mang ý nghĩa tinh thần, chúc phúc cho cuộc sống lứa đôi mà cả hai bên dòng họ gửi đến đôi vợ chồng trẻ, 
-tượng trưng cho hạnh phúc viên mãn, kỷ vật minh chứng tình yêu vĩnh cửu.', 
+(N'Bông tai cưới Vàng 24K DAL 0000Y000113',
+N'Đối với người phương Đông, trang sức cưới mang ý nghĩa tinh thần, <br>
+chúc phúc cho cuộc sống lứa đôi mà cả hai bên dòng họ gửi đến đôi <br>
+vợ chồng trẻ, tượng trưng cho hạnh phúc viên mãn, kỷ vật minh <br>
+chứng tình yêu vĩnh cửu.', 
 (SELECT category_id FROM Categories WHERE category_name = N'Trang sức cưới '), 4.9, N'Unsex', 15549000.00, 100),
 
-(N'Bông tai cưới Vàng 24K DAL Lan Mùa Hạ 0000Y000071', N'Ưu tiên hàng đầu cho các nàng dâu mới, DAL mang đến những đôi bông tai sở hữu thiết kế vừa hiện đại vừa cổ điển. 
-Chế tác từ vàng 24K (99% vàng nguyên chất), với đặc tính mềm nên thông thường những món trang sức này có kiểu dáng bắt mắt và cầu kỳ.', 
+(N'Bông tai cưới Vàng 24K DAL Lan Mùa Hạ 0000Y000071', 
+N'Ưu tiên hàng đầu cho các nàng dâu mới, DAL mang đến những đôi<br>
+bông tai sở hữu thiết kế vừa hiện đại vừa cổ điển. <br>
+Chế tác từ vàng 24K (99% vàng nguyên chất), với đặc tính mềm nên <br>
+thông thường những món trang sức này có kiểu dáng bắt mắt và cầu kỳ.', 
 (SELECT category_id FROM Categories WHERE category_name = N'Trang sức cưới '), 4.9, N'Unsex', 13449000.00, 100),
 
-(N'Bông tai cưới Vàng 24K DAL Duyên Phượng Tình Hồng 0000Y000102', N'Ưu tiên hàng đầu cho các nàng dâu mới, DAL mang đến những đôi bông tai sở hữu thiết kế vừa hiện đại vừa cổ điển. 
-Chế tác từ vàng 24K (99% vàng nguyên chất), với đặc tính mềm nên thông thường những món trang sức này có kiểu dáng bắt mắt và cầu kỳ.', 
+(N'Bông tai cưới Vàng 24K DAL Duyên Phượng Tình Hồng 0000Y000102', 
+N'Ưu tiên hàng đầu cho các nàng dâu mới, DAL mang đến những đôi bông<br>
+tai sở hữu thiết kế vừa hiện đại vừa cổ điển. <br>
+Chế tác từ vàng 24K (99% vàng nguyên chất), với đặc tính mềm nên <br>
+thông thường những món trang sức này có kiểu dáng bắt mắt và cầu kỳ.', 
 (SELECT category_id FROM Categories WHERE category_name = N'Trang sức cưới '), 5.0, N'Unsex', 28449000.00, 100),
 
-(N'Bông tai cưới Vàng 24K DAL 0000Y003038', N'Ưu tiên hàng đầu cho các nàng dâu mới, DAL mang đến những đôi bông tai sở hữu thiết kế vừa hiện đại vừa cổ điển. 
-Chế tác từ vàng 24K (99% vàng nguyên chất), với đặc tính mềm nên thông thường những món trang sức này có kiểu dáng bắt mắt và cầu kỳ.', 
+(N'Bông tai cưới Vàng 24K DAL 0000Y003038', 
+N'Ưu tiên hàng đầu cho các nàng dâu mới, DAL mang đến những đôi <br>
+bông tai sở hữu thiết kế vừa hiện đại vừa cổ điển. <br>
+Chế tác từ vàng 24K (99% vàng nguyên chất), với đặc tính mềm <br>
+nên thông thường những món trang sức này có kiểu dáng bắt mắt và cầu kỳ.', 
 (SELECT category_id FROM Categories WHERE category_name = N'Trang sức cưới '), 4.9, N'Unsex', 37449000.00, 100),
 
-(N'Bông tai cưới Vàng 24K DAL Hạnh Phúc 0000Y000083', N'Ưu tiên hàng đầu cho các nàng dâu mới, DAL mang đến những đôi bông tai sở hữu thiết kế vừa hiện đại vừa cổ điển. 
-Chế tác từ vàng 24K (99% vàng nguyên chất), với đặc tính mềm nên thông thường những món trang sức này có kiểu dáng bắt mắt và cầu kỳ.', 
+(N'Bông tai cưới Vàng 24K DAL Hạnh Phúc 0000Y000083',
+N'Ưu tiên hàng đầu cho các nàng dâu mới, DAL mang đến những<br>
+đôi bông tai sở hữu thiết kế vừa hiện đại vừa cổ điển. <br>
+Chế tác từ vàng 24K (99% vàng nguyên chất), với đặc tính mềm<br>
+nên thông thường những món trang sức này có kiểu dáng bắt mắt và cầu kỳ.', 
 (SELECT category_id FROM Categories WHERE category_name = N'Trang sức cưới '), 4.8, N'Unsex', 56449000.00, 100),
 
-(N'Bông tai cưới Vàng 18K đính đá ECZ DAL Trầu Cau XMXMY006013', N'Ưu tiên hàng đầu cho các nàng dâu mới, DAL mang đến những đôi bông tai sở hữu thiết kế vừa hiện đại vừa cổ điển. 
-Chế tác từ vàng 24K (99% vàng nguyên chất), với đặc tính mềm nên thông thường những món trang sức này có kiểu dáng bắt mắt và cầu kỳ.', 
+(N'Bông tai cưới Vàng 18K đính đá ECZ DAL Trầu Cau XMXMY006013',
+N'Ưu tiên hàng đầu cho các nàng dâu mới, DAL mang đến những đôi bông tai<br>
+sở hữu thiết kế vừa hiện đại vừa cổ điển. <br>
+Chế tác từ vàng 24K (99% vàng nguyên chất), với đặc tính mềm nên thông<br>
+thường những món trang sức này có kiểu dáng bắt mắt và cầu kỳ.', 
 (SELECT category_id FROM Categories WHERE category_name = N'Trang sức cưới '), 4.9, N'Unsex', 42449000.00, 100),
 
-(N'Bông tai cưới Vàng 24K DAL Trầu cau 0000Y002680', N'Ưu tiên hàng đầu cho các nàng dâu mới, DAL mang đến những đôi bông tai sở hữu thiết kế vừa hiện đại vừa cổ điển. 
-Chế tác từ vàng 24K (99% vàng nguyên chất), với đặc tính mềm nên thông thường những món trang sức này có kiểu dáng bắt mắt và cầu kỳ.', 
+(N'Bông tai cưới Vàng 24K DAL Trầu cau 0000Y002680', 
+N'Ưu tiên hàng đầu cho các nàng dâu mới, DAL mang đến những đôi bông tai<br>
+sở hữu thiết kế vừa hiện đại vừa cổ điển. <br>
+Chế tác từ vàng 24K (99% vàng nguyên chất), với đặc tính mềm nên thông <br>
+thường những món trang sức này có kiểu dáng bắt mắt và cầu kỳ.', 
 (SELECT category_id FROM Categories WHERE category_name = N'Trang sức cưới '), 5.0, N'Unsex', 20449000.00, 100),
 
-(N'Bông tai cưới Vàng trắng 10K đính đá ECZ DAL Bạch Khổng Tước XMXMW001971', N'Đôi bông tai được các nghệ nhân kim hoàn khoác lên vẻ ngoài đầy tinh xảo bởi được chế tác từ vàng 10K 
-với 41,6% vàng nguyên chất. Và những viên đá ECZ đạt tiêu chuẩn cao nhất về chất lượng cùng độ chính xác trong từng giác cắt, được đính một cách khéo léo trên đôi khuyên tai càng làm
+(N'Bông tai cưới Vàng trắng 10K đính đá ECZ DAL Bạch Khổng Tước XMXMW001971',
+N'Đôi bông tai được các nghệ nhân kim hoàn khoác lên vẻ ngoài đầy tinh <br>
+xảo bởi được chế tác từ vàng 10K với 41,6% vàng nguyên chất.<br>
+Và những viên đá ECZ đạt tiêu chuẩn cao nhất về chất lượng cùng<br>
+độ chính xác trong từng giác cắt, được đính một cách khéo léo trên đôi khuyên tai càng làm
 cho sản phẩm trở nên rực rỡ và kiêu sa.', 
 (SELECT category_id FROM Categories WHERE category_name = N'Trang sức cưới '), 5.0, N'Unsex', 30449000.00, 100),
 
@@ -308,158 +369,267 @@ cho sản phẩm trở nên rực rỡ và kiêu sa.',
 --watch
 (N'Đồng hồ Disney & Marvel Nam M-6069R Dây Cao Su 50 mm', N'Đồng hồ nhượng quyền Disney', (SELECT category_id FROM Categories WHERE category_name = N'Đồng hồ'), 5.0, N'Nam', 4750000.00, 300),
 (N'Đồng hồ Disney & Marvel Nam M-6072B Dây Cao Su 50 mm', N'Đồng hồ nhượng quyền Disney', (SELECT category_id FROM Categories WHERE category_name = N'Đồng hồ'), 4.8, N'Nam', 4750000.00, 250),
-(N'Đồng Hồ Michael Kors Nữ MK7197 Dây Thép Không Gỉ 33 mm', N'Đồng hồ sử dụng mặt kính cứng và có độ trong suốt cao, ít trầy xước khi có va chạm nhẹ.
-Có thể nói thương hiệu thời trang Michael Kors nói chung và đồng hồ Michael Kors nói riêng đã đốn tim bao nhiêu nàng bởi vẻ đẹp hiện đại, sang trọng
+(N'Đồng Hồ Michael Kors Nữ MK7197 Dây Thép Không Gỉ 33 mm', 
+N'Đồng hồ sử dụng mặt kính cứng và có độ trong suốt cao, <br>
+ít trầy xước khi có va chạm nhẹ.<br>
+Có thể nói thương hiệu thời trang Michael Kors nói chung và đồng<br>
+hồ Michael Kors nói riêng đã đốn tim bao nhiêu nàng bởi vẻ <br>
+đẹp hiện đại, sang trọng
 ', (SELECT category_id FROM Categories WHERE category_name = N'Đồng hồ'), 4.8, N'Nữ', 8020000.00, 250),
-(N'Đồng Hồ Citizen Nữ EM0860-51D Dây Thép Không Gỉ 25 mm', N'Với thiết kế mang hơi hướng cổ điển, chiếc đồng hồ Citizen mang lại sự thanh lịch và sang trọng cho người đeo. 
-Đồng hồ Citizen bộ máy Eco-Drive là một loại đồng hồ đặc biệt với công nghệ tiên tiến và thân thiện với môi trường
+(N'Đồng Hồ Citizen Nữ EM0860-51D Dây Thép Không Gỉ 25 mm', 
+N'Với thiết kế mang hơi hướng cổ điển, chiếc đồng hồ Citizen mang<br>
+lại sự thanh lịch và sang trọng cho người đeo. <br>
+Đồng hồ Citizen bộ máy Eco-Drive là một loại đồng hồ đặc biệt với <br>
+công nghệ tiên tiến và thân thiện với môi trường
 ', (SELECT category_id FROM Categories WHERE category_name = N'Đồng hồ'), 4.8, N'Nữ', 10985000.00, 240),
-(N'Đồng Hồ Citizen Nam NH8390-71L Dây Thép Không Gỉ 40 mm', N'Đây sẽ là một món quà tuyệt vời để tặng cho bạn bè,
-người thân hoặc để tự thưởng cho bản thân để thể hiện phong cách thời trang đẳng cấp của mình.', 
+(N'Đồng Hồ Citizen Nam NH8390-71L Dây Thép Không Gỉ 40 mm', 
+N'Đây sẽ là một món quà tuyệt vời để tặng cho bạn bè,<br>
+người thân hoặc để tự thưởng cho bản thân để thể hiện phong<br>
+cách thời trang đẳng cấp của mình.', 
 (SELECT category_id FROM Categories WHERE category_name = N'Đồng hồ'), 4.8, N'Nam', 8177000.00, 250),
-(N'Đồng Hồ Fossil Nam ME3061 Dây Da 44mm', N'Đồng hồ nam Fossil vẫn luôn được yêu thích ở Dòng máy Automatic - các nhà chế tác vẫn giữ nguyên thiết kế truyền thống vintage của Fossil
+(N'Đồng Hồ Fossil Nam ME3061 Dây Da 44mm', 
+N'Đồng hồ nam Fossil vẫn luôn được yêu thích ở Dòng máy<br>
+Automatic - các nhà chế tác vẫn giữ nguyên thiết kế <br>
+truyền thống vintage của Fossil
 ', (SELECT category_id FROM Categories WHERE category_name = N'Đồng hồ'), 5.0, N'Nam', 7240000.00, 300),
-(N'Đồng Hồ Citizen Nữ EM0502-86P Dây Thép Không Gỉ 32mm', N'Với thiết kế mang hơi hướng cổ điển, chiếc đồng hồ Citizen mang lại sự thanh lịch và sang trọng cho người đeo. 
-Đồng hồ Citizen bộ máy Eco-Drive là một loại đồng hồ đặc biệt với công nghệ tiên tiến và thân thiện với môi trường
+(N'Đồng Hồ Citizen Nữ EM0502-86P Dây Thép Không Gỉ 32mm',
+N'Với thiết kế mang hơi hướng cổ điển, chiếc đồng hồ Citizen <br>
+mang lại sự thanh lịch và sang trọng cho người đeo. <br>
+Đồng hồ Citizen bộ máy Eco-Drive là một loại đồng hồ đặc<br>
+biệt với công nghệ tiên tiến và thân thiện với môi trường
 ', (SELECT category_id FROM Categories WHERE category_name = N'Đồng hồ'), 4.8, N'Nữ', 4263000.00, 240),
-(N'Đồng Hồ Michael Kors Nữ MK3640 Dây Thép Không Gỉ 36mm', N'Được trang bị bộ máy quartz cùng vẻ đẹp cổ điển,
-chiếc đồng hồ Michael Kors  sẽ là phụ kiện giúp phái đẹp trông thật tinh tế và thu hút. 
-Bộ vỏ bên ngoài của đồng hồ được chế tác từ thép không gỉ bền bỉ với thời gian.
+(N'Đồng Hồ Michael Kors Nữ MK3640 Dây Thép Không Gỉ 36mm',
+N'Được trang bị bộ máy quartz cùng vẻ đẹp cổ điển,<br>
+chiếc đồng hồ Michael Kors  sẽ là phụ kiện giúp phái đẹp <br>
+trông thật tinh tế và thu hút. <br>
+Bộ vỏ bên ngoài của đồng hồ được chế tác từ thép không<br>
+gỉ bền bỉ với thời gian.
 ', (SELECT category_id FROM Categories WHERE category_name = N'Đồng hồ'), 4.8, N'Nữ', 9100000.00, 240),
-(N'Đồng Hồ Fossil Nữ ES5192 Dây Thép Không Gỉ 37 mm', N'Được trang bị bộ máy quartz vừa bền, vừa khỏe lại hiện đại bậc nhất nên độ sai số thấp, 
-độ chính xác cao hơn nhiều lần so với những chiếc đồng hồ khác, chiếc đồng hồ Fossil sẽ là phụ kiện giúp phái đẹp trông thật thu hút.
+(N'Đồng Hồ Fossil Nữ ES5192 Dây Thép Không Gỉ 37 mm',
+N'Được trang bị bộ máy quartz vừa bền, vừa khỏe lại hiện <br>
+đại bậc nhất nên độ sai số thấp, <br>
+độ chính xác cao hơn nhiều lần so với những chiếc đồng<br>
+hồ khác, chiếc đồng hồ Fossil sẽ là phụ kiện giúp phái <br>
+trông thật thu hút.
 ', (SELECT category_id FROM Categories WHERE category_name = N'Đồng hồ'), 4.8, N'Nữ', 3423000.00, 240),
-(N'Đồng Hồ Nam Citizen NJ0150-81X Dây Thép Không Gỉ 40 mm', N'Đây sẽ là một món quà tuyệt vời để tặng cho bạn bè,
-người thân hoặc để tự thưởng cho bản thân để thể hiện phong cách thời trang đẳng cấp của mình.', 
+(N'Đồng Hồ Nam Citizen NJ0150-81X Dây Thép Không Gỉ 40 mm', 
+N'Đây sẽ là một món quà tuyệt vời để tặng cho bạn bè,<br>
+người thân hoặc để tự thưởng cho bản thân để thể hiện<br>
+phong cách thời trang đẳng cấp của mình.', 
 (SELECT category_id FROM Categories WHERE category_name = N'Đồng hồ'), 4.8, N'Nam', 12185000.00, 250),
-(N'Đồng hồ Rado True Square Unisex R27073712 Dây Ceramic 38 mm', N'Đây sẽ là một món quà tuyệt vời để tặng cho bạn bè,
-người thân hoặc để tự thưởng cho bản thân để thể hiện phong cách thời trang đẳng cấp của mình.', 
+(N'Đồng hồ Rado True Square Unisex R27073712 Dây Ceramic 38 mm',
+N'Đây sẽ là một món quà tuyệt vời để tặng cho bạn bè,<br>
+người thân hoặc để tự thưởng cho bản thân để thể hiện <br>
+phong cách thời trang đẳng cấp của mình.', 
 (SELECT category_id FROM Categories WHERE category_name = N'Đồng hồ'), 4.9, N'Nam', 18185000.00, 290),
 
-(N'Đồng hồ Tissot Nam PRX T137.410.17.051.00 Dây Cao Su 40 mm', N'Đây sẽ là một món quà tuyệt vời để tặng cho bạn bè,
-người thân hoặc để tự thưởng cho bản thân để thể hiện phong cách thời trang đẳng cấp của mình.', 
+(N'Đồng hồ Tissot Nam PRX T137.410.17.051.00 Dây Cao Su 40 mm', 
+N'Đây sẽ là một món quà tuyệt vời để tặng cho bạn bè,<br>
+người thân hoặc để tự thưởng cho bản thân để thể hiện<br>
+phong cách thời trang đẳng cấp của mình.', 
 (SELECT category_id FROM Categories WHERE category_name = N'Đồng hồ'), 4.9, N'Nam', 21185000.00, 200),
 
-(N'Đồng hồ Tissot Nam PRX Powermatic 80 T137.407.11.351.00 Dây Kim Loại 40 mm', N'Đây sẽ là một món quà tuyệt vời để tặng cho bạn bè,
-người thân hoặc để tự thưởng cho bản thân để thể hiện phong cách thời trang đẳng cấp của mình.', 
+(N'Đồng hồ Tissot Nam PRX Powermatic 80 T137.407.11.351.00 Dây Kim Loại 40 mm',
+N'Đây sẽ là một món quà tuyệt vời để tặng cho bạn bè,<br>
+người thân hoặc để tự thưởng cho bản thân để thể hiện <br>
+phong cách thời trang đẳng cấp của mình.', 
 (SELECT category_id FROM Categories WHERE category_name = N'Đồng hồ'), 4.8, N'Nam', 20185000.00, 300),
 
-(N'Đồng hồ Longines La Grande Nữ L4.209.4.81.6 Dây Kim Loại 24 mm', N'Là phiên bản mới nhất nằm trong bộ sưu tập LA GRANDE CLASSIQUE DE LONGINES 
-- Đại diện cho phong cách quyến rũ của phái đẹp, nổi bật với 12 viên kim cương đính trên mặt số.', 
+(N'Đồng hồ Longines La Grande Nữ L4.209.4.81.6 Dây Kim Loại 24 mm', 
+N'Là phiên bản mới nhất nằm trong bộ sưu tập LA GRANDE<br>
+CLASSIQUE DE LONGINES- Đại diện cho phong cách quyến <br>
+rũ của phái đẹp, nổi bật với 12 viên kim cương đính trên<br>
+mặt số.', 
 (SELECT category_id FROM Categories WHERE category_name = N'Đồng hồ'), 4.9, N'Nữ', 15185000.00, 340),
 
-(N'Đồng hồ Longines Master Nam L2.919.4.92.6 Dây Kim Loại 42 mm', N'Là một trong những mẫu đồng hồ bán chạy nhất thuộc bộ sưu tập LONGINES MASTER COLLECTION - 
-KIỆT TÁC THỜI GIAN ĐẾN TỪ THỤY SỸ. Với những thiết kế thuộc bộ sưu tập Longines Master ra mắt từ năm 2005, vẻ đẹp vượt thời gian được minh chứng qua từng chi tiết dù nhỏ nhất.', 
+(N'Đồng hồ Longines Master Nam L2.919.4.92.6 Dây Kim Loại 42 mm',
+N'Là một trong những mẫu đồng hồ bán chạy nhất thuộc bộ sưu tập <br>
+LONGINES MASTER COLLECTION - KIỆT TÁC THỜI GIAN ĐẾN TỪ THỤY SỸ.<br>
+Với những thiết kế thuộc bộ sưu tập Longines Master ra mắt từ<br>
+năm 2005, vẻ đẹp vượt thời gian được minh chứng qua từng chi<br>
+tiết dù nhỏ nhất.', 
 (SELECT category_id FROM Categories WHERE category_name = N'Đồng hồ'), 4.8, N'Nam', 45185000.00, 320),
 
-(N'Đồng hồ Longines Master Nam L2.893.4.77.3 Dây Da 42 mm', N'Đây sẽ là một món quà tuyệt vời để tặng cho bạn bè,
-người thân hoặc để tự thưởng cho bản thân để thể hiện phong cách thời trang đẳng cấp của mình.', 
+(N'Đồng hồ Longines Master Nam L2.893.4.77.3 Dây Da 42 mm', 
+N'Đây sẽ là một món quà tuyệt vời để tặng cho bạn bè,<br>
+người thân hoặc để tự thưởng cho bản thân để thể hiện<br>
+phong cách thời trang đẳng cấp của mình.', 
 (SELECT category_id FROM Categories WHERE category_name = N'Đồng hồ'), 4.8, N'Nam', 40185000.00, 260),
 
-(N'Đồng hồ Calvin Klein Nam 25200293 Dây Kim Loại 44 mm', N'Đây sẽ là một món quà tuyệt vời để tặng cho bạn bè,
-người thân hoặc để tự thưởng cho bản thân để thể hiện phong cách thời trang đẳng cấp của mình.', 
+(N'Đồng hồ Calvin Klein Nam 25200293 Dây Kim Loại 44 mm', 
+N'Đây sẽ là một món quà tuyệt vời để tặng cho bạn bè,<br>
+người thân hoặc để tự thưởng cho bản thân để thể hiện phong <br>
+cách thời trang đẳng cấp của mình.', 
 (SELECT category_id FROM Categories WHERE category_name = N'Đồng hồ'), 4.9, N'Nam', 65185000.00, 280),
 
-(N'Đồng hồ Calvin Klein Nam 25200303 Dây Kim Loại 44.3 mm', N'Đây sẽ là một món quà tuyệt vời để tặng cho bạn bè,
-người thân hoặc để tự thưởng cho bản thân để thể hiện phong cách thời trang đẳng cấp của mình.', 
+(N'Đồng hồ Calvin Klein Nam 25200303 Dây Kim Loại 44.3 mm', 
+N'Đây sẽ là một món quà tuyệt vời để tặng cho bạn bè,<br>
+người thân hoặc để tự thưởng cho bản thân để thể hiện phong <br>
+cách thời trang đẳng cấp của mình.', 
 (SELECT category_id FROM Categories WHERE category_name = N'Đồng hồ'), 4.9, N'Nam', 55185000.00, 380),
 
-(N'Đồng hồ Rado Centrix Nữ R30029902 Dây Kim Loại 35 mm', N'Đây sẽ là một món quà tuyệt vời để tặng cho bạn bè,
-người thân hoặc để tự thưởng cho bản thân để thể hiện phong cách thời trang đẳng cấp của mình.', 
+(N'Đồng hồ Rado Centrix Nữ R30029902 Dây Kim Loại 35 mm',
+N'Đây sẽ là một món quà tuyệt vời để tặng cho bạn bè,<br>
+người thân hoặc để tự thưởng cho bản thân để thể hiện <br>
+phong cách thời trang đẳng cấp của mình.', 
 (SELECT category_id FROM Categories WHERE category_name = N'Đồng hồ'), 4.9, N'Nữ', 50185000.00, 310),
 
-(N'Đồng hồ Rado Centrix Nữ R30248902 Dây Kim Loại 33 mm', N'Đây sẽ là một món quà tuyệt vời để tặng cho bạn bè,
-người thân hoặc để tự thưởng cho bản thân để thể hiện phong cách thời trang đẳng cấp của mình.', 
+(N'Đồng hồ Rado Centrix Nữ R30248902 Dây Kim Loại 33 mm',
+N'Đây sẽ là một món quà tuyệt vời để tặng cho bạn bè,<br>
+người thân hoặc để tự thưởng cho bản thân để thể hiện <br>
+phong cách thời trang đẳng cấp của mình.', 
 (SELECT category_id FROM Categories WHERE category_name = N'Đồng hồ'), 4.9, N'Nữ', 24185000.00, 350),
 
-(N'Đồng hồ Rado Centrix Nữ R30037742 Dây Kim Loại 35 mm', N'Đây sẽ là một món quà tuyệt vời để tặng cho bạn bè,
-người thân hoặc để tự thưởng cho bản thân để thể hiện phong cách thời trang đẳng cấp của mình.', 
+(N'Đồng hồ Rado Centrix Nữ R30037742 Dây Kim Loại 35 mm', 
+N'Đây sẽ là một món quà tuyệt vời để tặng cho bạn bè,<br>
+người thân hoặc để tự thưởng cho bản thân để thể hiện <br>
+phong cách thời trang đẳng cấp của mình.', 
 (SELECT category_id FROM Categories WHERE category_name = N'Đồng hồ'), 4.9, N'Nữ', 36185000.00, 370),
 
 
 
 
 --gift
-(N'Lắc tay Vàng 14K đính đá CZ Disney|DAL Mickey XMXMY061792', N'Disney|DAL xin giới thiệu đến bạn phiên bản trang sức đặc sắc với một chế tác từ chất liệu vàng 14K, điểm xuyến bởi các chi tiết đậm chất "Disney"
-và đầy tính sáng tạo. Sự sắp xếp các chi tiết trên chiếc lắc tay tựa như những nốt nhạc tạo nên bản hợp xướng êm dịu và bay bổng.
-Đặc biệt hơn, chiếc vòng tay sẽ trở nên ý nghĩa hơn khi trở thành món quà ghi dấu yêu thương vào những dịp quan trọng. 
-Đây chắc chắn sẽ là thứ giúp bạn gắn kết những khoảnh khắc đáng nhớ với mình hoặc người thương.', 
+(N'Lắc tay Vàng 14K đính đá CZ Disney|DAL Mickey XMXMY061792',
+N'Disney|DAL xin giới thiệu đến bạn phiên bản trang sức đặc <br>
+sắc với một chế tác từ chất liệu vàng 14K, điểm xuyến bởi các <br>
+chi tiết đậm chất "Disney" và đầy tính sáng tạo.', 
 (SELECT category_id FROM Categories WHERE category_name = N'Quà tặng'), 5.0, N'Nữ', 12450000.00, 200),
 
-(N'Bông tai Bạc đính ngọc trai DALSilver PF00W000024', N'Dù ở lứa tuổi nào, theo phong cách cổ điển hay hiện đại thì sắc màu của những viên đá ECZ màu trắng vẫn luôn biết "chiều lòng" các tín đồ thời trang',
+(N'Bông tai Bạc đính ngọc trai DALSilver PF00W000024',
+N'Dù ở lứa tuổi nào, theo phong cách cổ điển hay hiện đại thì <br>
+sắc màu của những viên đá ECZ màu trắng vẫn luôn biết<br>
+"chiều lòng" các tín đồ thời trang',
 (SELECT category_id FROM Categories WHERE category_name = N'Quà tặng'), 4.9, N'Nữ', 397500.00, 150),
 
-(N'Bông tai Vàng trắng 10K đính đá ECZ DAL XMXMW002314', N'Mang vẻ đẹp hoàn hảo không thua kém kim cương, đôi bông tai với điểm nhấn đá ECZ sẽ là 
-“trợ thủ” nâng tầm nhan sắc của mọi cô nàng ưa chuộng phong cách hiện đại và thanh lịch.',
+(N'Bông tai Vàng trắng 10K đính đá ECZ DAL XMXMW002314', 
+N'Mang vẻ đẹp hoàn hảo không thua kém kim cương, đôi <br>
+bông tai với điểm nhấn đá ECZ sẽ là <br>
+“trợ thủ” nâng tầm nhan sắc của mọi cô nàng ưa chuộng <br>
+phong cách hiện đại và thanh lịch.',
 (SELECT category_id FROM Categories WHERE category_name = N'Quà tặng'), 4.6, N'Nữ', 2910000.00, 150),
 
 
-(N'Mặt dây chuyền Vàng Trắng 10K đính đá ECZ STYLE by DAL Sunlover XMXMW002476', N'Đặc biệt, những cô nàng công sở còn có thể diện cho mình một số phụ kiện cùng kiểu để 
-tăng thêm tính thời trang, tạo điểm nhấn nổi bật. Và chắc chắn rằng, đồng nghiệp sẽ trầm trồ về gu thời trang chất lừ, thu hút và vẫn cực thanh lịch của nàng.',
+(N'Mặt dây chuyền Vàng Trắng 10K đính đá ECZ STYLE by DAL Sunlover XMXMW002476', 
+N'Đặc biệt, những cô nàng công sở còn có thể diện cho mình một <br>
+số phụ kiện cùng kiểu để tăng thêm tính thời trang, tạo điểm <br>
+nhấn nổi bật. Và chắc chắn rằng, đồng nghiệp sẽ trầm trồ về<br>
+gu thời trang chất lừ, thu hút và vẫn cực thanh lịch của nàng.',
 (SELECT category_id FROM Categories WHERE category_name = N'Quà tặng'), 4.8, N'Nữ', 1700000.00, 150),
 
-(N'Bông tai Vàng Trắng 10K đính đá ECZ STYLE by DAL Sunlover XM00W001263', N'Mang vẻ đẹp hoàn hảo không thua kém kim cương, đôi bông tai trong BST Sunlover với điểm nhấn đá ECZ sẽ là “trợ thủ” 
-nâng tầm nhan sắc của mọi cô nàng ưa chuộng phong cách hiện đại và thanh lịch.',
+(N'Bông tai Vàng Trắng 10K đính đá ECZ STYLE by DAL Sunlover XM00W001263', 
+N'Mang vẻ đẹp hoàn hảo không thua kém kim cương, đôi bông tai<br>
+trong BST Sunlover với điểm nhấn đá ECZ sẽ là “trợ thủ” <br>
+nâng tầm nhan sắc của mọi cô nàng ưa chuộng phong cách <br>
+hiện đại và thanh lịch.',
 (SELECT category_id FROM Categories WHERE category_name = N'Quà tặng'), 4.8, N'Nữ', 3200000.00, 150),
 
-(N'Bông tai Vàng trắng 14K đính đá synthetic Disney|DAL Cinderella ZT00W000014', N'Mang vẻ đẹp hoàn hảo không thua kém kim cương, đôi bông tai trong BST Sunlover với điểm nhấn đá ECZ sẽ là “trợ thủ” 
-nâng tầm nhan sắc của mọi cô nàng ưa chuộng phong cách hiện đại và thanh lịch.',
+(N'Bông tai Vàng trắng 14K đính đá synthetic Disney|DAL Cinderella ZT00W000014', 
+N'Mang vẻ đẹp hoàn hảo không thua kém kim cương, đôi bông <br>
+tai trong BST Sunlover với điểm nhấn đá ECZ sẽ là “trợ thủ” <br>
+nâng tầm nhan sắc của mọi cô nàng ưa chuộng phong cách<br>
+hiện đại và thanh lịch.',
 (SELECT category_id FROM Categories WHERE category_name = N'Quà tặng'), 4.1, N'Nữ', 6800000.00, 150),
 
-(N'Bông tai trẻ em Bạc DALSilver 0000W060048', N'Đặc biệt hơn, đôi bông tai sẽ trở nên ý nghĩa hơn khi trở thành món quà ghi dấu yêu thương
-vào những dịp quan trọng. Đây chắc chắn sẽ là thứ giúp bạn gắn kết những khoảnh khắc đáng nhớ với mình hoặc người thương.',
+(N'Bông tai trẻ em Bạc DALSilver 0000W060048',
+N'Đặc biệt hơn, đôi bông tai sẽ trở nên ý nghĩa hơn<br>
+khi trở thành món quà ghi dấu yêu thương<br>
+vào những dịp quan trọng. Đây chắc chắn sẽ là thứ giúp <br>
+bạn gắn kết những khoảnh khắc đáng nhớ với mình hoặc người thương.',
 (SELECT category_id FROM Categories WHERE category_name = N'Quà tặng'), 4.7, N'Nữ', 580000.00, 112),
 
-(N'Bông tai trẻ em Bạc đính đá DALSilver XMXMW060171', N'Đặc biệt hơn, đôi bông tai sẽ trở nên ý nghĩa hơn khi trở thành món quà ghi dấu yêu thương
-vào những dịp quan trọng. Đây chắc chắn sẽ là thứ giúp bạn gắn kết những khoảnh khắc đáng nhớ với mình hoặc người thương.',
+(N'Bông tai trẻ em Bạc đính đá DALSilver XMXMW060171', 
+N'Đặc biệt hơn, đôi bông tai sẽ trở nên ý nghĩa hơn khi<br>
+trở thành món quà ghi dấu yêu thương<br>
+vào những dịp quan trọng. Đây chắc chắn sẽ là thứ giúp bạn<br>
+gắn kết những khoảnh khắc đáng nhớ với mình hoặc người thương.',
 (SELECT category_id FROM Categories WHERE category_name = N'Quà tặng'), 4.8, N'Nữ', 745000.00, 112),
 
-(N'Bông tai trẻ em Bạc DALSilver 0000W060046', N'Đặc biệt hơn, đôi bông tai sẽ trở nên ý nghĩa hơn khi trở thành món quà ghi dấu yêu thương
-vào những dịp quan trọng. Đây chắc chắn sẽ là thứ giúp bạn gắn kết những khoảnh khắc đáng nhớ với mình hoặc người thương.',
+(N'Bông tai trẻ em Bạc DALSilver 0000W060046', 
+N'Đặc biệt hơn, đôi bông tai sẽ trở nên ý nghĩa hơn<br>
+khi trở thành món quà ghi dấu yêu thương<br>
+vào những dịp quan trọng. Đây chắc chắn sẽ là thứ giúp<br>
+bạn gắn kết những khoảnh khắc đáng nhớ với mình hoặc người thương.',
 (SELECT category_id FROM Categories WHERE category_name = N'Quà tặng'), 4.2, N'Nữ', 645000.00, 120),
 
-(N'Nhẫn trẻ em Bạc DALSilver 0000W060019', N'Chiếc nhẫn DALSilver sở hữu một thiết kế trẻ trung, thể hiện vẻ đẹp đáng yêu của những nàng công chúa nhỏ của ba mẹ. 
-Sự đính kết và sắp xếp những điểm nhấn một cách hoàn hảo mang đến vẻ đẹp của sự phá cách, cá tính và thời thượng cho sản phẩm.',
+(N'Nhẫn trẻ em Bạc DALSilver 0000W060019',
+N'Chiếc nhẫn DALSilver sở hữu một thiết kế trẻ trung,<br>
+thể hiện vẻ đẹp đáng yêu của những nàng công chúa nhỏ của ba mẹ. <br>
+Sự đính kết và sắp xếp những điểm nhấn một cách hoàn <br>
+hảo mang đến vẻ đẹp của sự phá cách, cá tính và thời thượng <br>
+cho sản phẩm.',
 (SELECT category_id FROM Categories WHERE category_name = N'Quà tặng'), 4.9, N'Nữ', 291000.00, 120),
 --
-(N'Bông tai Kim cương Vàng trắng 14K DAL DDDDW060268', N'Đôi bông tai được chế tác từ vàng 14K và sở hữu kiểu dáng nhỏ xinh, phù hợp với những quý cô ưa chuộng
-phong cách sang trọng. Đặc biệt hơn nữa, đôi bông tai sở hữu điểm nhấn Kim cương tạo nên vẻ đẹp tinh tế, tôn lên vẻ đẹp dịu dàng, quý phái cho người đeo.',
+(N'Bông tai Kim cương Vàng trắng 14K DAL DDDDW060268',
+N'Đôi bông tai được chế tác từ vàng 14K và sở hữu kiểu dáng <br>
+nhỏ xinh, phù hợp với những quý cô ưa chuộng<br>
+phong cách sang trọng. Đặc biệt hơn nữa, đôi bông tai<br>
+sở hữu điểm nhấn Kim cương tạo nên vẻ đẹp tinh tế, tôn<br>
+lên vẻ đẹp dịu dàng, quý phái cho người đeo.',
 (SELECT category_id FROM Categories WHERE category_name = N'Quà tặng'), 4.9, N'Nữ', 2391000.00, 190),
 
-(N'Bông tai Kim cương Vàng trắng 14K DAL DDDDW060268', N'Đôi bông tai được chế tác từ vàng 14K và sở hữu kiểu dáng nhỏ xinh, phù hợp với những quý cô ưa chuộng
-phong cách sang trọng. Đặc biệt hơn nữa, đôi bông tai sở hữu điểm nhấn Kim cương tạo nên vẻ đẹp tinh tế, tôn lên vẻ đẹp dịu dàng, quý phái cho người đeo.',
+(N'Bông tai Kim cương Vàng trắng 14K DAL DDDDW060268', 
+N'Đôi bông tai được chế tác từ vàng 14K và sở hữu kiểu<br>
+dáng nhỏ xinh, phù hợp với những quý cô ưa chuộng<br>
+phong cách sang trọng. Đặc biệt hơn nữa, đôi bông tai <br>
+sở hữu điểm nhấn Kim cương tạo nên vẻ đẹp tinh tế, tôn <br>
+lên vẻ đẹp dịu dàng, quý phái cho người đeo.',
 (SELECT category_id FROM Categories WHERE category_name = N'Quà tặng'), 4.9, N'Nữ', 3391000.00, 190),
 
-(N'Bông tai Vàng 18K đính đá Ruby DAL Family Infinity RBXMC000008', N'Một chiếc nhẫn hay đôi bông tai trong BST Family Infinity sẽ là những phụ kiện ưu tiên hàng đầu
-của các nàng. Mẫu trang sức tôn lên sự dịu dàng, nhưng cũng không kém phần nổi bật, DAL tin chắc rằng, quý cô sẽ trông thật sự nổi bật và thu hút sự chú ý xung quanh.',
+(N'Bông tai Vàng 18K đính đá Ruby DAL Family Infinity RBXMC000008',
+N'Một chiếc nhẫn hay đôi bông tai trong BST Family Infinity<br>
+sẽ là những phụ kiện ưu tiên hàng đầu<br>
+của các nàng. Mẫu trang sức tôn lên sự dịu dàng, nhưng <br>
+cũng không kém phần nổi bật, DAL tin chắc rằng, quý cô<br>
+sẽ trông thật sự nổi bật và thu hút sự chú ý xung quanh.',
 (SELECT category_id FROM Categories WHERE category_name = N'Quà tặng'), 4.8, N'Nữ', 1471000.00, 290),
 
-(N'Bông tai Vàng 10K STYLE by DAL 0000Y002594', N'Với mong muốn gửi gắm những cảm xúc yêu thương đến nàng thông qua những món trang sức nói chung và bông tai vàng nói riêng, 
-STYLE By DAL tin rằng đây sẽ là món quà ý nghĩa nhất dành tặng cho người phụ nữ mà bạn yêu thương.',
+(N'Bông tai Vàng 10K STYLE by DAL 0000Y002594', 
+N'Với mong muốn gửi gắm những cảm xúc yêu thương đến nàng<br>
+thông qua những món trang sức nói chung và bông tai vàng<br>
+nói riêng, STYLE By DAL tin rằng đây sẽ là món quà ý nghĩa<br>
+nhất dành tặng cho người phụ nữ mà bạn yêu thương.',
 (SELECT category_id FROM Categories WHERE category_name = N'Quà tặng'), 4.9, N'Nữ', 2571000.00, 390),
 
-(N'Hạt charm xỏ trẻ em DIY DALSilver chữ sweet baby 0000H060002', N'Xu hướng D.I.Y hiện nay vẫn được các cô gái ưa chuộng bởi cảm giác “Do It Yourself”, thể hiện được cá tính
-của mỗi người và Charm DALSilver vẫn đề cao tính sáng tạo theo xu hướng này trong phong cách của các cô nàng.',
+(N'Hạt charm xỏ trẻ em DIY DALSilver chữ sweet baby 0000H060002', 
+N'Xu hướng D.I.Y hiện nay vẫn được các cô gái ưa chuộng bởi <br>
+cảm giác “Do It Yourself”, thể hiện được cá tính<br>
+của mỗi người và Charm DALSilver vẫn đề cao tính sáng tạo<br>
+theo xu hướng này trong phong cách của các cô nàng.',
 (SELECT category_id FROM Categories WHERE category_name = N'Quà tặng'), 4.9, N'Nữ', 391000.00, 180),
 
-(N'Hạt charm xỏ trẻ em DIY DALSilver chữ baby xanh 00XMW060025', N'Xu hướng D.I.Y hiện nay vẫn được các nhiều bạn trẻ ưa chuộng bởi cảm giác “Do It Yourself”, thể hiện được
-cá tính của mỗi người và Charm DALSilver vẫn đề cao tính sáng tạo theo xu hướng này trong phong cách của mỗi người.',
+(N'Hạt charm xỏ trẻ em DIY DALSilver chữ baby xanh 00XMW060025',
+N'Xu hướng D.I.Y hiện nay vẫn được các nhiều bạn trẻ ưa chuộng<br>
+bởi cảm giác “Do It Yourself”, thể hiện được<br>
+cá tính của mỗi người và Charm DALSilver vẫn đề cao tính sáng <br>
+tạo theo xu hướng này trong phong cách của mỗi người.',
 (SELECT category_id FROM Categories WHERE category_name = N'Quà tặng'), 4.9, N'Nữ', 491000.00, 280),
 
-(N'Mặt dây chuyền Kim cương Vàng trắng 14K DAL DDDDW000924', N'DAL xin giới thiệu một món trang sức đặc biệt, giúp nàng thu hút mọi sự chú ý xung quanh với 
-chiếc mặt dây chuyền vàng 14K sở hữu chi tiết Kim cương đính một cách tỉ mỉ trên chất liệu vàng 14K.',
+(N'Mặt dây chuyền Kim cương Vàng trắng 14K DAL DDDDW000924', 
+N'DAL xin giới thiệu một món trang sức đặc biệt, giúp nàng thu<br>
+hút mọi sự chú ý xung quanh với <br>
+chiếc mặt dây chuyền vàng 14K sở hữu chi tiết Kim cương đính<br>
+một cách tỉ mỉ trên chất liệu vàng 14K.',
 (SELECT category_id FROM Categories WHERE category_name = N'Quà tặng'), 4.9, N'Nữ', 9491000.00, 380),
 
-(N'Mặt dây chuyền Vàng 14K đính đá CZ DAL ❤️ HELLO KITTY XM00C060002', N'Sở hữu kiểu dáng lấy cảm hứng từ hình ảnh Hello Kitty như dấu ấn cô bé đáng yêu, 
-chiếc nơ dễ thương, vườn hoa ngát hương,... sản phẩm sẽ làm nổi bật vẻ đẹp đáng yêu của nàng.',
+(N'Mặt dây chuyền Vàng 14K đính đá CZ DAL ❤️ HELLO KITTY XM00C060002',
+N'Sở hữu kiểu dáng lấy cảm hứng từ hình ảnh Hello Kitty như <br>
+dấu ấn cô bé đáng yêu, chiếc nơ dễ thương, vườn hoa ngát<br>
+hương,... sản phẩm sẽ làm nổi bật vẻ đẹp đáng yêu của nàng.',
 (SELECT category_id FROM Categories WHERE category_name = N'Quà tặng'), 4.9, N'Nữ', 3491000.00, 280),
 
-(N'Mặt dây chuyền Kim cương Vàng trắng 14K DAL DDDDW000923', N'DAL xin giới thiệu một món trang sức đặc biệt, giúp nàng thu hút mọi sự chú ý xung quanh 
-với chiếc mặt dây chuyền vàng 14K sở hữu chi tiết Kim cương đính một cách tỉ mỉ trên chất liệu vàng 14K.',
+(N'Mặt dây chuyền Kim cương Vàng trắng 14K DAL DDDDW000923',
+N'DAL xin giới thiệu một món trang sức đặc biệt, giúp nàng thu <br>
+hút mọi sự chú ý xung quanh với chiếc mặt dây chuyền vàng<br>
+14K sở hữu chi tiết Kim cương đính<br>
+một cách tỉ mỉ trên chất liệu vàng 14K.',
 (SELECT category_id FROM Categories WHERE category_name = N'Quà tặng'), 4.8, N'Nữ', 9491000.00, 380),
 
-(N'Bông tai Kim Tiền Vàng trắng Ý 18K DAL 0000W002163', N'Những sản phẩm vàng Ý tinh tế từ DAL đã và đang khuấy động xu hướng thời trang hiện nay. 
-Chọn ngay item để tôn lên vẻ đẹp và khẳng định phong cách của riêng mình, nàng nhé.',
+(N'Bông tai Kim Tiền Vàng trắng Ý 18K DAL 0000W002163',
+N'Những sản phẩm vàng Ý tinh tế từ DAL đã và đang khuấy<br>
+động xu hướng thời trang hiện nay. <br>
+Chọn ngay item để tôn lên vẻ đẹp và khẳng định phong cách <br>
+của riêng mình, nàng nhé.',
 (SELECT category_id FROM Categories WHERE category_name = N'Quà tặng'), 4.9, N'Nữ', 8491000.00, 480),
 
 
@@ -535,27 +705,115 @@ VALUES
 ((SELECT product_id FROM Products WHERE title = N'Dây cổ cưới Vàng 24K DAL 0000Y000423'), 29, 30),
 ((SELECT product_id FROM Products WHERE title = N'Dây cổ cưới Vàng 24K DAL 0000Y000423'), 30, 30),
 ((SELECT product_id FROM Products WHERE title = N'Dây cổ cưới Vàng 24K DAL 0000Y000423'), 31, 30),
+((SELECT product_id FROM Products WHERE title = N'Bông tai Kim cương Vàng Trắng 14K DAL Trầu Cau DDDDW0043203'), 0, 130),
 ((SELECT product_id FROM Products WHERE title = N'Nhẫn cưới Kim cương Vàng Trắng 14K DAL DDDDW009976'), 8, 30),
 ((SELECT product_id FROM Products WHERE title = N'Nhẫn cưới Kim cương Vàng Trắng 14K DAL DDDDW009976'), 13, 30),
 ((SELECT product_id FROM Products WHERE title = N'Nhẫn cưới Kim cương Vàng Trắng 14K DAL DDDDW011925'), 13, 30),
 ((SELECT product_id FROM Products WHERE title = N'Nhẫn cưới Kim cương Vàng Trắng 14K DALTrầu Cau DDDDW011762'), 13, 30),
 ((SELECT product_id FROM Products WHERE title = N'Nhẫn Kim cương Vàng 18K DAL DDDDY000790'), 11, 30),
-((SELECT product_id FROM Products WHERE title = N'Nhẫn Kim cương Vàng 18K DAL DDDDY000790'), 12, 30),
-((SELECT product_id FROM Products WHERE title = N'Nhẫn Kim cương Vàng 18K DAL DDDDY000790'), 13, 30),
-((SELECT product_id FROM Products WHERE title = N'Nhẫn cưới nam Kim cương Vàng Trắng 14K DAL DD00W004085'), 17, 30),
-((SELECT product_id FROM Products WHERE title = N'Nhẫn cưới nam Kim cương Vàng Trắng 14K DAL DD00W004085'), 18, 30),
-((SELECT product_id FROM Products WHERE title = N'Nhẫn cưới nam Kim cương Vàng Trắng 14K DAL DD00W004085'), 19, 30),
-((SELECT product_id FROM Products WHERE title = N'Nhẫn cưới Kim cương Vàng 18K DAL DD00Y000326'), 10, 30),
-((SELECT product_id FROM Products WHERE title = N'Nhẫn cưới Kim cương Vàng 18K DAL DD00Y000326'), 11, 30),
-((SELECT product_id FROM Products WHERE title = N'Nhẫn cưới Kim cương Vàng 18K DAL DD00Y000326'), 12, 30),
-((SELECT product_id FROM Products WHERE title = N'Lắc tay Vàng 14K đính đá CZ Disney|DAL Mickey XMXMY061792'), 16, 30),
-((SELECT product_id FROM Products WHERE title = N'Nhẫn trẻ em Bạc DALSilver 0000W060019'), 6, 30),
-((SELECT product_id FROM Products WHERE title = N'Nhẫn trẻ em Bạc DALSilver 0000W060019'), 7, 30),
-((SELECT product_id FROM Products WHERE title = N'Lắc tay trẻ em Bạc DAL ❤️ HELLO KITTY 0000W000103'), 14, 30),
-((SELECT product_id FROM Products WHERE title = N'Nhẫn cưới Vàng 24K DAL Trầu Cau 0000Y003194'), 11, 30),
-((SELECT product_id FROM Products WHERE title = N'Nhẫn cưới Vàng 24K DAL Trầu Cau 0000Y003194'), 12, 30),
-((SELECT product_id FROM Products WHERE title = N'Nhẫn cưới Vàng 24K DAL Trầu Cau 0000Y003194'), 13, 30);
+((SELECT product_id FROM Products WHERE title = N'Nhẫn Kim cương Vàng 18K DAL DDDDY000790'), 12, 100),
+((SELECT product_id FROM Products WHERE title = N'Nhẫn Kim cương Vàng 18K DAL DDDDY000790'), 13, 300),
+((SELECT product_id FROM Products WHERE title = N'Nhẫn cưới nam Kim cương Vàng Trắng 14K DAL DD00W004085'), 17, 1000),
+((SELECT product_id FROM Products WHERE title = N'Nhẫn cưới nam Kim cương Vàng Trắng 14K DAL DD00W004085'), 18, 100),
+((SELECT product_id FROM Products WHERE title = N'Nhẫn cưới nam Kim cương Vàng Trắng 14K DAL DD00W004085'), 19, 100),
+((SELECT product_id FROM Products WHERE title = N'Nhẫn cưới Kim cương Vàng 18K DAL DD00Y000326'), 10, 100),
+((SELECT product_id FROM Products WHERE title = N'Nhẫn cưới Kim cương Vàng 18K DAL DD00Y000326'), 11, 100),
+((SELECT product_id FROM Products WHERE title = N'Nhẫn cưới Kim cương Vàng 18K DAL DD00Y000326'), 12, 100),
+((SELECT product_id FROM Products WHERE title = N'Nhẫn cưới Vàng 24K DAL Trầu Cau 0000Y003194'), 11, 100),
+((SELECT product_id FROM Products WHERE title = N'Nhẫn cưới Vàng 24K DAL Trầu Cau 0000Y003194'), 12,100),
+((SELECT product_id FROM Products WHERE title = N'Nhẫn cưới Vàng 24K DAL Trầu Cau 0000Y003194'), 13, 100),
+((SELECT product_id FROM Products WHERE title = N'Bông tai Kim cương Vàng trắng 14K DAL DDDDW000182'), 0, 100),
+((SELECT product_id FROM Products WHERE title = N'Bông tai cưới Vàng 24K DAL 0000Y000113'), 0, 100),
+((SELECT product_id FROM Products WHERE title = N'Bông tai cưới Vàng 24K DAL Lan Mùa Hạ 0000Y000071'), 0, 100),
+((SELECT product_id FROM Products WHERE title = N'Bông tai cưới Vàng 24K DAL Duyên Phượng Tình Hồng 0000Y000102'), 0, 100),
+((SELECT product_id FROM Products WHERE title = N'Bông tai cưới Vàng 24K DAL 0000Y003038'), 0, 100),
+((SELECT product_id FROM Products WHERE title = N'Bông tai cưới Vàng 24K DAL Hạnh Phúc 0000Y000083'), 0, 100),
+((SELECT product_id FROM Products WHERE title = N'Bông tai cưới Vàng 18K đính đá ECZ DAL Trầu Cau XMXMY006013'), 0, 100),
+((SELECT product_id FROM Products WHERE title = N'Bông tai cưới Vàng 24K DAL Trầu cau 0000Y002680'), 0, 100),
+((SELECT product_id FROM Products WHERE title = N'Bông tai cưới Vàng trắng 10K đính đá ECZ DAL Bạch Khổng Tước XMXMW001971'), 0, 100),
 
+--watch
+((SELECT product_id FROM Products WHERE title = N'Đồng hồ Disney & Marvel Nam M-6069R Dây Cao Su 50 mm'), 0, 100),
+((SELECT product_id FROM Products WHERE title = N'Đồng hồ Disney & Marvel Nam M-6072B Dây Cao Su 50 mm'), 0, 100),
+((SELECT product_id FROM Products WHERE title = N'Đồng Hồ Michael Kors Nữ MK7197 Dây Thép Không Gỉ 33 mm'), 0, 100),
+((SELECT product_id FROM Products WHERE title = N'Đồng Hồ Citizen Nữ EM0860-51D Dây Thép Không Gỉ 25 mm'), 0, 100),
+((SELECT product_id FROM Products WHERE title = N'Đồng Hồ Citizen Nam NH8390-71L Dây Thép Không Gỉ 40 mm'), 0, 100),
+
+((SELECT product_id FROM Products WHERE title = N'Đồng Hồ Fossil Nam ME3061 Dây Da 44mm'), 0, 100),
+((SELECT product_id FROM Products WHERE title = N'Đồng Hồ Citizen Nữ EM0502-86P Dây Thép Không Gỉ 32mm'), 0, 100),
+((SELECT product_id FROM Products WHERE title = N'Đồng Hồ Michael Kors Nữ MK3640 Dây Thép Không Gỉ 36mm'), 0, 100),
+((SELECT product_id FROM Products WHERE title = N'Đồng Hồ Fossil Nữ ES5192 Dây Thép Không Gỉ 37 mm'), 0, 100),
+((SELECT product_id FROM Products WHERE title = N'Đồng Hồ Nam Citizen NJ0150-81X Dây Thép Không Gỉ 40 mm'), 0, 100),
+
+((SELECT product_id FROM Products WHERE title = N'Đồng hồ Rado True Square Unisex R27073712 Dây Ceramic 38 mm'), 0, 100),
+((SELECT product_id FROM Products WHERE title = N'Đồng hồ Tissot Nam PRX T137.410.17.051.00 Dây Cao Su 40 mm'), 0, 100),
+((SELECT product_id FROM Products WHERE title = N'Đồng hồ Tissot Nam PRX Powermatic 80 T137.407.11.351.00 Dây Kim Loại 40 mm'), 0, 100),
+((SELECT product_id FROM Products WHERE title = N'Đồng hồ Longines La Grande Nữ L4.209.4.81.6 Dây Kim Loại 24 mm'), 0, 100),
+((SELECT product_id FROM Products WHERE title = N'Đồng hồ Longines Master Nam L2.919.4.92.6 Dây Kim Loại 42 mm'), 0, 100),
+
+((SELECT product_id FROM Products WHERE title = N'Đồng hồ Longines Master Nam L2.893.4.77.3 Dây Da 42 mm'), 0, 100),
+((SELECT product_id FROM Products WHERE title = N'Đồng hồ Calvin Klein Nam 25200293 Dây Kim Loại 44 mm'), 0, 100),
+((SELECT product_id FROM Products WHERE title = N'Đồng hồ Calvin Klein Nam 25200303 Dây Kim Loại 44.3 mm'), 0, 100),
+((SELECT product_id FROM Products WHERE title = N'Đồng hồ Rado Centrix Nữ R30029902 Dây Kim Loại 35 mm'), 0, 100),
+((SELECT product_id FROM Products WHERE title = N'Đồng hồ Rado Centrix Nữ R30248902 Dây Kim Loại 33 mm'), 0, 100),
+((SELECT product_id FROM Products WHERE title = N'Đồng hồ Rado Centrix Nữ R30037742 Dây Kim Loại 35 mm'), 0, 100),
+
+--gift
+((SELECT product_id FROM Products WHERE title = N'Lắc tay Vàng 14K đính đá CZ Disney|DAL Mickey XMXMY061792'), 0, 100),
+((SELECT product_id FROM Products WHERE title = N'Bông tai Bạc đính ngọc trai DALSilver PF00W000024'), 0, 100),
+((SELECT product_id FROM Products WHERE title = N'Bông tai Vàng trắng 10K đính đá ECZ DAL XMXMW002314'), 0, 100),
+((SELECT product_id FROM Products WHERE title = N'Mặt dây chuyền Vàng Trắng 10K đính đá ECZ STYLE by DAL Sunlover XMXMW002476'), 0, 100),
+((SELECT product_id FROM Products WHERE title = N'Bông tai Vàng Trắng 10K đính đá ECZ STYLE by DAL Sunlover XM00W001263'), 0, 100),
+
+((SELECT product_id FROM Products WHERE title = N'Bông tai Vàng trắng 14K đính đá synthetic Disney|DAL Cinderella ZT00W000014'), 0, 100),
+((SELECT product_id FROM Products WHERE title = N'Bông tai trẻ em Bạc DALSilver 0000W060048'), 0, 100),
+((SELECT product_id FROM Products WHERE title = N'Bông tai trẻ em Bạc đính đá DALSilver XMXMW060171'), 0, 100),
+((SELECT product_id FROM Products WHERE title = N'Bông tai trẻ em Bạc DALSilver 0000W060046'), 0, 100),
+((SELECT product_id FROM Products WHERE title = N'Nhẫn trẻ em Bạc DALSilver 0000W060019'), 0, 100),
+
+
+((SELECT product_id FROM Products WHERE title = N'Bông tai Kim cương Vàng trắng 14K DAL DDDDW060268'), 0, 100),
+((SELECT product_id FROM Products WHERE title = N'Bông tai Kim cương Vàng trắng 14K DAL DDDDW060268'), 0, 100),
+((SELECT product_id FROM Products WHERE title = N'Bông tai Vàng 18K đính đá Ruby DAL Family Infinity RBXMC000008'), 0, 100),
+((SELECT product_id FROM Products WHERE title = N'Bông tai Vàng 10K STYLE by DAL 0000Y002594'), 0, 100),
+((SELECT product_id FROM Products WHERE title = N'Hạt charm xỏ trẻ em DIY DALSilver chữ sweet baby 0000H060002'), 0, 100),
+
+
+((SELECT product_id FROM Products WHERE title = N'Hạt charm xỏ trẻ em DIY DALSilver chữ baby xanh 00XMW060025'), 0, 100),
+((SELECT product_id FROM Products WHERE title = N'Mặt dây chuyền Kim cương Vàng trắng 14K DAL DDDDW000924'), 0, 100),
+((SELECT product_id FROM Products WHERE title = N'Mặt dây chuyền Vàng 14K đính đá CZ DAL ❤️ HELLO KITTY XM00C060002'), 0, 100),
+((SELECT product_id FROM Products WHERE title = N'Mặt dây chuyền Kim cương Vàng trắng 14K DAL DDDDW000923'), 0, 100),
+((SELECT product_id FROM Products WHERE title = N'Bông tai Kim Tiền Vàng trắng Ý 18K DAL 0000W002163'), 0, 100),
+
+
+--thuong hieu
+
+((SELECT product_id FROM Products WHERE title = N'Mặt dây chuyền Vàng Ý 10K DAL ❤️ HELLO KITTY 0000Y001639'), 0, 100),
+((SELECT product_id FROM Products WHERE title = N'Mặt dây chuyền Vàng Ý 10K DAL ❤️ HELLO KITTY 0000Y001637'), 0, 100),
+((SELECT product_id FROM Products WHERE title = N'Thẻ May mắn Vàng 10K DAL ❤️ HELLO KITTY Như Ý 0000Y000962'), 0, 100),
+((SELECT product_id FROM Products WHERE title = N'Bông tai trẻ em Bạc DAL ❤️ HELLO KITTY 0000W000123'), 0, 100),
+((SELECT product_id FROM Products WHERE title = N'Bông tai Vàng trắng Ý 10K DAL ❤️ HELLO KITTY 0000W002716'), 0, 100),
+
+
+((SELECT product_id FROM Products WHERE title = N'Bông tai Bạc đính đá DAL ❤️ HELLO KITTY ZT00H000005'), 0, 100),
+((SELECT product_id FROM Products WHERE title = N'Bông tai Bạc đính đá DAL ❤️ HELLO KITTY XMXMW000085'), 0, 100),
+((SELECT product_id FROM Products WHERE title = N'Lắc tay trẻ em Bạc DAL ❤️ HELLO KITTY 0000W000103'), 0, 100),
+((SELECT product_id FROM Products WHERE title = N'Hạt charm Bạc đính đá DAL ❤️ HELLO KITTY XMXMW000039'), 0, 100),
+((SELECT product_id FROM Products WHERE title = N'Bông tai Bạc đính đá DAL ❤️ HELLO KITTY XMXMW000084'), 0, 100),
+
+
+((SELECT product_id FROM Products WHERE title = N'Hạt Charm Bạc đính đá DALSilver hình chiếc thuyền ZTZTW060029'), 0, 100),
+((SELECT product_id FROM Products WHERE title = N'Hạt Charm Bạc đính đá DALSilver XMXMW060430'), 0, 100),
+((SELECT product_id FROM Products WHERE title = N'Hạt Charm Bạc đính đá DALSilver hình gấu hồng ZTXMW060008'), 0, 100),
+((SELECT product_id FROM Products WHERE title = N'Mặt dây chuyền Vàng 14K đính đá CZ DAL ❤️ HELLO KITTY XMXMY063473'), 0, 100),
+((SELECT product_id FROM Products WHERE title = N'Bông tai Vàng 10K đính Ngọc trai Freshwater DAL ❤️ HELLO KITTY PF00Y000156'), 0, 100),
+
+
+((SELECT product_id FROM Products WHERE title = N'Bông tai Vàng 10K đính Ngọc trai Freshwater DAL ❤️ HELLO KITTY PFXMY000642'), 0, 100),
+((SELECT product_id FROM Products WHERE title = N'Mặt dây chuyền Vàng trắng 14K Disney|DAL Minnie alone 0000W001137'), 0, 100),
+((SELECT product_id FROM Products WHERE title = N'Mặt dây chuyền Vàng 18K DAL Kim Bảo Như Ý 0000Y001485'), 0, 100),
+((SELECT product_id FROM Products WHERE title = N'Mặt dây chuyền Kim cương Vàng trắng 14K DAL DDDDW000957'), 0, 100),
+((SELECT product_id FROM Products WHERE title = N'Mặt dây chuyền Kim cương Vàng trắng 14K DAL DDDDW002605'), 0, 100),
 
 
 
@@ -1606,4 +1864,56 @@ BEGIN
     WHERE title LIKE '%' + @TuKhoa + '%'
 END
 
-EXEC TimKiemSanPham @TuKhoa = N'đồng hồ';
+EXEC TimKiemSanPham @TuKhoa = N'00';
+
+
+alter PROCEDURE AddToCart
+    @UserID INT,
+    @SizeID INT
+AS
+BEGIN
+    DECLARE @ProductID INT
+    DECLARE @Price DECIMAL(10, 2)
+    DECLARE @Title NVARCHAR(100)
+    DECLARE @ImageURL NVARCHAR(255)
+    DECLARE @Size INT
+
+    -- Lấy ProductID, Price, Title, ImageURL và Size từ ProductSize và Products
+    SELECT 
+        @ProductID = ps.product_id, 
+        @Price = p.minPrice,
+        @Title = p.title,
+        @ImageURL = pi.ImageURL,
+        @Size = ps.size
+    FROM ProductSize ps
+    JOIN Products p ON ps.product_id = p.product_id
+    LEFT JOIN (SELECT ProductID, MIN(ImageURL) AS ImageURL FROM ProductImages GROUP BY ProductID) pi ON pi.ProductID = p.product_id
+    WHERE ps.exemple_id = @SizeID
+
+    -- Kiểm tra nếu sản phẩm đã có trong giỏ hàng của người dùng
+    IF EXISTS (SELECT 1 FROM ShoppingCart WHERE user_id = @UserID AND exemple_id = @SizeID)
+    BEGIN
+        -- Nếu sản phẩm đã tồn tại, cập nhật số lượng
+        UPDATE ShoppingCart
+        SET quantity = quantity + 1
+        WHERE user_id = @UserID AND exemple_id = @SizeID
+    END
+    ELSE
+    BEGIN
+        -- Nếu sản phẩm chưa tồn tại, thêm mới vào giỏ hàng
+        INSERT INTO ShoppingCart (user_id, exemple_id, quantity)
+        VALUES (@UserID, @SizeID, 1)
+    END
+    
+    -- Trả về thông tin sản phẩm cho vào giỏ hàng
+    SELECT 
+        @ProductID AS ProductID,
+        @Title AS Title,
+        @Price AS Price,
+        @ImageURL AS ImageURL,
+        @Size AS Size
+END
+
+
+-- Giả sử bạn có người dùng với UserID là 1 và SizeID là 2
+EXEC AddToCart @UserID = 1, @SizeID = 10;
