@@ -9,6 +9,7 @@ import com.mycompany.model.entity.ItemProductEntity;
 import com.mycompany.tab.detailProduct;
 import com.mycompany.utils.RoundBorder;
 import java.awt.Color;
+import java.awt.Component;
 import java.util.List;
 import javax.swing.JFrame;
 
@@ -70,9 +71,36 @@ public class trangcon extends javax.swing.JPanel {
         };
 
         for (int i = 0; i < productEntities.size() && i < componentsArray.length; i++) {
+               
             componentsArray[i].setItemProduct(productEntities.get(i));
+            componentsArray[i].addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                itemProductMouseClicked(evt);
+            }
+        });
+            
+            
         }
     }
+    
+    private void itemProductMouseClicked(java.awt.event.MouseEvent evt) {                                          
+        // Lấy Component đã được click
+        Component clickedComponent = (Component) evt.getSource();
+
+        // Kiểm tra nếu clickedComponent là kiểu ItemProduct
+        if (clickedComponent instanceof ItemProduct) {
+            ItemProduct item = (ItemProduct) clickedComponent;
+
+            // Gọi phương thức openDetail với item đã được click
+            openDetail(item);
+        }
+    }
+
+    
+    
+    
+    
+    
     private void setupTuthaplencao(int loaiID) {
         List<ItemProductEntity> productEntities = loadProductController.getProductsSorted(loaiID,20,"price_asc");
 

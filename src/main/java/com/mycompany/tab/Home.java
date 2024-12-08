@@ -131,8 +131,26 @@ public class Home extends javax.swing.JPanel {
             }
         });
         jPanel1.add(itemProduct1);
+
+        itemProduct2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                itemProduct2MouseClicked(evt);
+            }
+        });
         jPanel1.add(itemProduct2);
+
+        itemProduct4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                itemProduct4MouseClicked(evt);
+            }
+        });
         jPanel1.add(itemProduct4);
+
+        itemProduct3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                itemProduct3MouseClicked(evt);
+            }
+        });
         jPanel1.add(itemProduct3);
 
         jPanel2.setPreferredSize(new java.awt.Dimension(1000, 1));
@@ -169,9 +187,33 @@ public class Home extends javax.swing.JPanel {
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
         jPanel3.setOpaque(false);
         jPanel3.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 10, 10));
+
+        itemProduct6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                itemProduct6MouseClicked(evt);
+            }
+        });
         jPanel3.add(itemProduct6);
+
+        itemProduct7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                itemProduct7MouseClicked(evt);
+            }
+        });
         jPanel3.add(itemProduct7);
+
+        itemProduct8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                itemProduct8MouseClicked(evt);
+            }
+        });
         jPanel3.add(itemProduct8);
+
+        itemProduct9.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                itemProduct9MouseClicked(evt);
+            }
+        });
         jPanel3.add(itemProduct9);
 
         jPanel4.setPreferredSize(new java.awt.Dimension(1000, 1));
@@ -212,9 +254,33 @@ public class Home extends javax.swing.JPanel {
         jPanel5.setBackground(new java.awt.Color(255, 255, 255));
         jPanel5.setOpaque(false);
         jPanel5.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 10, 10));
+
+        itemProduct16.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                itemProduct16MouseClicked(evt);
+            }
+        });
         jPanel5.add(itemProduct16);
+
+        itemProduct17.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                itemProduct17MouseClicked(evt);
+            }
+        });
         jPanel5.add(itemProduct17);
+
+        itemProduct18.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                itemProduct18MouseClicked(evt);
+            }
+        });
         jPanel5.add(itemProduct18);
+
+        itemProduct19.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                itemProduct19MouseClicked(evt);
+            }
+        });
         jPanel5.add(itemProduct19);
 
         jPanel7.setPreferredSize(new java.awt.Dimension(1000, 1));
@@ -306,6 +372,160 @@ public class Home extends javax.swing.JPanel {
         openDetail(item);
     }
     }//GEN-LAST:event_itemProduct1MouseClicked
+
+    private void itemProduct2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_itemProduct2MouseClicked
+        // TODO add your handling code here:
+        // Lấy Component đã được click
+    Component clickedComponent = (Component) evt.getSource();
+    
+    // Kiểm tra nếu clickedComponent là kiểu ItemProduct (nếu đúng kiểu)
+    if (clickedComponent instanceof ItemProduct) {
+        ItemProduct item = (ItemProduct) clickedComponent;
+        
+        // Gọi phương thức openDetail với item đã được click
+        openDetail(item);
+    }
+    }//GEN-LAST:event_itemProduct2MouseClicked
+
+    private void itemProduct4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_itemProduct4MouseClicked
+        // TODO add your handling code here:
+        // Lấy Component đã được click
+    Component clickedComponent = (Component) evt.getSource();
+    
+    // Kiểm tra nếu clickedComponent là kiểu ItemProduct (nếu đúng kiểu)
+    if (clickedComponent instanceof ItemProduct) {
+        ItemProduct item = (ItemProduct) clickedComponent;
+        
+        // Gọi phương thức openDetail với item đã được click
+        openDetail(item);
+    }
+    }//GEN-LAST:event_itemProduct4MouseClicked
+
+    private void itemProduct3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_itemProduct3MouseClicked
+       // TODO add your handling code here:
+        // Lấy Component đã được click
+    Component clickedComponent = (Component) evt.getSource();
+    
+    // Kiểm tra nếu clickedComponent là kiểu ItemProduct (nếu đúng kiểu)
+    if (clickedComponent instanceof ItemProduct) {
+        ItemProduct item = (ItemProduct) clickedComponent;
+        
+        // Gọi phương thức openDetail với item đã được click
+        openDetail(item);
+    }
+    }//GEN-LAST:event_itemProduct3MouseClicked
+
+    private void itemProduct6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_itemProduct6MouseClicked
+       // TODO add your handling code here:
+        // Lấy Component đã được click
+    Component clickedComponent = (Component) evt.getSource();
+    
+    // Kiểm tra nếu clickedComponent là kiểu ItemProduct (nếu đúng kiểu)
+    if (clickedComponent instanceof ItemProduct) {
+        ItemProduct item = (ItemProduct) clickedComponent;
+        
+        // Gọi phương thức openDetail với item đã được click
+        openDetail(item);
+    }
+    }//GEN-LAST:event_itemProduct6MouseClicked
+
+    private void itemProduct7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_itemProduct7MouseClicked
+         // TODO add your handling code here:
+        // Lấy Component đã được click
+    Component clickedComponent = (Component) evt.getSource();
+    
+    // Kiểm tra nếu clickedComponent là kiểu ItemProduct (nếu đúng kiểu)
+    if (clickedComponent instanceof ItemProduct) {
+        ItemProduct item = (ItemProduct) clickedComponent;
+        
+        // Gọi phương thức openDetail với item đã được click
+        openDetail(item);
+    }
+    }//GEN-LAST:event_itemProduct7MouseClicked
+
+    private void itemProduct8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_itemProduct8MouseClicked
+       // TODO add your handling code here:
+        // Lấy Component đã được click
+    Component clickedComponent = (Component) evt.getSource();
+    
+    // Kiểm tra nếu clickedComponent là kiểu ItemProduct (nếu đúng kiểu)
+    if (clickedComponent instanceof ItemProduct) {
+        ItemProduct item = (ItemProduct) clickedComponent;
+        
+        // Gọi phương thức openDetail với item đã được click
+        openDetail(item);
+    }
+    }//GEN-LAST:event_itemProduct8MouseClicked
+
+    private void itemProduct9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_itemProduct9MouseClicked
+         // TODO add your handling code here:
+        // Lấy Component đã được click
+    Component clickedComponent = (Component) evt.getSource();
+    
+    // Kiểm tra nếu clickedComponent là kiểu ItemProduct (nếu đúng kiểu)
+    if (clickedComponent instanceof ItemProduct) {
+        ItemProduct item = (ItemProduct) clickedComponent;
+        
+        // Gọi phương thức openDetail với item đã được click
+        openDetail(item);
+    }
+    }//GEN-LAST:event_itemProduct9MouseClicked
+
+    private void itemProduct16MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_itemProduct16MouseClicked
+       // TODO add your handling code here:
+        // Lấy Component đã được click
+    Component clickedComponent = (Component) evt.getSource();
+    
+    // Kiểm tra nếu clickedComponent là kiểu ItemProduct (nếu đúng kiểu)
+    if (clickedComponent instanceof ItemProduct) {
+        ItemProduct item = (ItemProduct) clickedComponent;
+        
+        // Gọi phương thức openDetail với item đã được click
+        openDetail(item);
+    }
+    }//GEN-LAST:event_itemProduct16MouseClicked
+
+    private void itemProduct17MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_itemProduct17MouseClicked
+        // TODO add your handling code here:
+        // Lấy Component đã được click
+    Component clickedComponent = (Component) evt.getSource();
+    
+    // Kiểm tra nếu clickedComponent là kiểu ItemProduct (nếu đúng kiểu)
+    if (clickedComponent instanceof ItemProduct) {
+        ItemProduct item = (ItemProduct) clickedComponent;
+        
+        // Gọi phương thức openDetail với item đã được click
+        openDetail(item);
+    }
+    }//GEN-LAST:event_itemProduct17MouseClicked
+
+    private void itemProduct18MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_itemProduct18MouseClicked
+       // TODO add your handling code here:
+        // Lấy Component đã được click
+    Component clickedComponent = (Component) evt.getSource();
+    
+    // Kiểm tra nếu clickedComponent là kiểu ItemProduct (nếu đúng kiểu)
+    if (clickedComponent instanceof ItemProduct) {
+        ItemProduct item = (ItemProduct) clickedComponent;
+        
+        // Gọi phương thức openDetail với item đã được click
+        openDetail(item);
+    }
+    }//GEN-LAST:event_itemProduct18MouseClicked
+
+    private void itemProduct19MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_itemProduct19MouseClicked
+       // TODO add your handling code here:
+        // Lấy Component đã được click
+    Component clickedComponent = (Component) evt.getSource();
+    
+    // Kiểm tra nếu clickedComponent là kiểu ItemProduct (nếu đúng kiểu)
+    if (clickedComponent instanceof ItemProduct) {
+        ItemProduct item = (ItemProduct) clickedComponent;
+        
+        // Gọi phương thức openDetail với item đã được click
+        openDetail(item);
+    }
+    }//GEN-LAST:event_itemProduct19MouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

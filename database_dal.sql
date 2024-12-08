@@ -1916,18 +1916,31 @@ END;
 --EXEC GetCart @UserId = 1;
 go
 
-CREATE PROCEDURE TimKiemSanPham
-    @TuKhoa NVARCHAR(100)
+ALTER PROCEDURE TimKiemSanPham
+    @TuKhoa NVARCHAR(100),
+    @CategoryID INT = NULL -- Thêm tham số category_id, mặc định là NULL
 AS
 BEGIN
-    SELECT * 
-    FROM Products
-    WHERE title LIKE '%' + @TuKhoa + '%'
+    SELECT 
+        p.product_id,
+        p.title,
+        p.minPrice,
+        p.AverageRating,
+        (SELECT TOP 1 pi.ImageURL FROM ProductImages pi WHERE pi.ProductID = p.product_id) AS img,
+        p.views,
+        c.category_name
+    FROM 
+        Products p
+    LEFT JOIN 
+        Categories c ON p.category_id = c.category_id
+    WHERE 
+        p.title LIKE '%' + @TuKhoa + '%'
+        AND (@CategoryID IS NULL OR p.category_id = @CategoryID)
 END
+GO
 
---EXEC TimKiemSanPham @TuKhoa = N'cưới';
 
-
+EXEC TimKiemSanPham @TuKhoa = N'nhẫn' , @CategoryID = 1;
 
 
 
@@ -1982,4 +1995,70 @@ END
 
 
 -- Giả sử bạn có người dùng với UserID là 1 và SizeID là 2
---EXEC AddToCart @UserID = 1, @SizeID = 2;
+--EXEC AddToCart @UserID = 1, @SizeID =15;
+
+
+CREATE PROCEDURE InsertOrder
+    @UserID INT,
+    @OrderStatus NVARCHAR(50),
+    @TotalPrice DECIMAL(10, 2),
+    @AddressID INT,
+    @ShuID INT,
+    @PaymentMethod NVARCHAR(50)
+AS
+BEGIN
+    DECLARE @OrderID INT;
+
+    -- Tạo đơn hàng mới
+    INSERT INTO Orders (user_id, order_status, total_price, address_id, shu_id, created_at, payment_method)
+    VALUES (@UserID, @OrderStatus, @TotalPrice, @AddressID, @ShuID, GETDATE(), @PaymentMethod);
+
+    -- Lấy OrderID vừa mới thêm
+    SET @OrderID = SCOPE_IDENTITY();
+
+    -- Trả về OrderID
+    SELECT @OrderID AS OrderID;
+END
+GO
+
+alter PROCEDURE InsertOrderItem
+    @OrderID INT,
+    @ExempleID INT,
+    @Quantity INT,
+    @Price DECIMAL(10, 2)
+AS
+BEGIN
+    -- Kiểm tra xem sản phẩm đã tồn tại trong đơn hàng hay chưa
+    IF EXISTS (SELECT 1 FROM OrderItems WHERE order_id = @OrderID AND exemple_id = @ExempleID)
+    BEGIN
+        -- Nếu sản phẩm đã tồn tại, cập nhật số lượng và giá
+        UPDATE OrderItems
+        SET quantity = quantity + @Quantity,
+            price = @Price
+        WHERE order_id = @OrderID AND exemple_id = @ExempleID;
+
+        -- Trả về xác nhận cập nhật thành công
+        SELECT 'OrderItem successfully updated' AS Status;
+    END
+    ELSE
+    BEGIN
+        -- Nếu sản phẩm chưa tồn tại, chèn mới
+        INSERT INTO OrderItems (order_id, exemple_id, quantity, price)
+        VALUES (@OrderID, @ExempleID, @Quantity, @Price);
+
+        -- Trả về xác nhận chèn thành công
+        SELECT 'OrderItem successfully inserted' AS Status;
+    END
+END
+GO
+
+
+-- Thực thi thủ tục InsertOrderItem và truyền các tham số trực tiếp
+EXEC InsertOrderItem 
+    @OrderID = 1, 
+    @ExempleID = 2, 
+    @Quantity = 3, 
+    @Price = 100.50;
+
+
+	SELECT * FROM OrderItems WHERE order_id = 1;
