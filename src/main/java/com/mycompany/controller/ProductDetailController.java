@@ -3,6 +3,7 @@ package com.mycompany.controller;
 import com.mycompany.model.dao.detailProductDAO;
 import com.mycompany.model.entity.CartProductEntity;
 import com.mycompany.model.entity.ProductDetail;
+import com.mycompany.model.entity.ProductSize;
 import com.mycompany.model.entity.Products;
 import com.mycompany.tab.detailProduct;
 import static com.mycompany.utils.Formatter.formatPrice;
@@ -41,7 +42,14 @@ public class ProductDetailController {
     }
     
     // Phương thức để thêm sản phẩm vào giỏ hàng
-    public CartProductEntity addToCart(int sizeId) {
-        return detailProductDAO.addToCart(sizeId); // Gọi phương thức từ DAO
+    public CartProductEntity addToCart( ) {
+        int size = view.getSelectedProduct();
+        int sizeId = model.getSize().stream()
+            .filter(productSize -> productSize.getSize() == size)
+            .map(ProductSize::getExempleId)
+            .findFirst()
+            .orElse(-1); // Trả về -1 nếu không tìm thấy
+
+            return detailProductDAO.addToCart(sizeId);
     }
 }

@@ -146,7 +146,7 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jScrollPane2" max="32767" attributes="0"/>
                           <Group type="102" attributes="0">
-                              <Component id="comboBoxSuggestion1" min="-2" pref="80" max="-2" attributes="0"/>
+                              <Component id="comboSize" min="-2" pref="80" max="-2" attributes="0"/>
                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           </Group>
                       </Group>
@@ -201,14 +201,14 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="comboBoxSuggestion1" min="-2" max="-2" attributes="0"/>
+                      <Component id="comboSize" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jScrollPane2" min="-2" pref="193" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="button1" min="-2" pref="40" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jPanel6" min="-2" pref="40" max="-2" attributes="0"/>
-                      <EmptySpace pref="406" max="32767" attributes="0"/>
+                      <EmptySpace pref="400" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -416,7 +416,7 @@
                 </Component>
               </SubComponents>
             </Container>
-            <Component class="com.mycompany.swing.ComboBoxSuggestion" name="comboBoxSuggestion1">
+            <Component class="com.mycompany.swing.ComboBoxSuggestion" name="comboSize">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
               </Properties>

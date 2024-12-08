@@ -150,13 +150,5 @@ public class detailProductDAO {
 
         return cartProduct;
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
 }
