@@ -49,7 +49,8 @@ public class ListImgProduct extends javax.swing.JPanel {
         jList1.addListSelectionListener(e -> {
             if (!e.getValueIsAdjusting()) { // Đảm bảo chỉ khi thay đổi cuối cùng
                 int selectedIndex = jList1.getSelectedIndex();
-                if (selectedIndex != -1 && imageSelectionListener != null) {
+                System.out.println(selectedIndex);
+                if (selectedIndex != -1 && imageSelectionListener != null && imageListModel.size()>0) {
                     // Lấy imagePath từ danh sách và gửi đến panel lớn hơn
                     String selectedImagePath = imageListModel.getElementAt(selectedIndex);
                     imageSelectionListener.onImageSelected(selectedImagePath);
@@ -66,6 +67,7 @@ public class ListImgProduct extends javax.swing.JPanel {
 
     // Phương thức để thêm nhiều hình ảnh vào danh sách
     public void addImages(List<String> imagePaths) {
+        imageListModel.removeAllElements();
         for (String imagePath : imagePaths) {
             imageListModel.addElement(imagePath);
         }

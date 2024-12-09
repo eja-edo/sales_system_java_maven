@@ -35,7 +35,7 @@ public class Login extends javax.swing.JPanel {
     public Login() {
         initComponents();
         LoginDAO model = new LoginDAO();
-
+        
         // Tạo bộ điều khiển
         LoginController controller = new LoginController(model, this);
         btnLogin.addActionListener(controller.new LoginButtonListener());
