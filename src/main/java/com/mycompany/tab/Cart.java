@@ -36,7 +36,6 @@ public class Cart extends javax.swing.JDialog {
          setLocationRelativeTo(null);
     }
     
-    
     public void setTotalTemp(double total)
     {
         jLabel4.setText(Formatter.formatPrice(total));

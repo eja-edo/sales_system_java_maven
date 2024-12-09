@@ -91,7 +91,7 @@ public class header extends javax.swing.JPanel {
         jPanel2.add(radiumPanel1, new java.awt.GridBagConstraints());
 
         button21.setBackground(new java.awt.Color(249, 241, 236));
-        button21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/user-profile-circle.png"))); // NOI18N
+        button21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/enter.png"))); // NOI18N
         button21.setBorderPainted(false);
         button21.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -152,7 +152,18 @@ public class header extends javax.swing.JPanel {
            showLogoutDialog();
        }
     }//GEN-LAST:event_button21ActionPerformed
-        // Phương thức để hiển thị dialog
+    
+    public void setLogin()
+    {
+        button21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/user-profile-circle.png")));
+    }
+    
+    public void setLogout()
+    {
+        button21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/enter.png")));
+    }
+
+    // Phương thức để hiển thị dialog
     private void showLogoutDialog() {
         // Tạo một dialog mới
         JDialog dialog = new JDialog((Frame) null, "Thông báo", true);
