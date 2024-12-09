@@ -249,7 +249,7 @@ public class Home extends javax.swing.JPanel {
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/bg.png"))); // NOI18N
         jLabel1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jPanel6.add(jLabel1);
-        jLabel1.setBounds(-10, 0, 1480, 450);
+        jLabel1.setBounds(-10, 0, 1340, 450);
 
         jPanel5.setBackground(new java.awt.Color(255, 255, 255));
         jPanel5.setOpaque(false);
