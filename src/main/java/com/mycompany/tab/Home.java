@@ -32,7 +32,7 @@ public class Home extends javax.swing.JPanel {
     public Home() {
         initComponents();
         loadProductController  = new LoadProductController();
-        setupProductComponents();
+//        setupProductComponents();
     }
 
     private void setupProductComponents() {
