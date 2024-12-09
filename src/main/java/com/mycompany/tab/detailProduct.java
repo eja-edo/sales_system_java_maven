@@ -8,6 +8,7 @@ import com.mycompany.component.ListImgProduct;
 import com.mycompany.controller.ProductDetailController;
 import com.mycompany.model.entity.ProductSize;
 import com.mycompany.model.entity.Products;
+import com.mycompany.utils.CurrentUser;
 import com.mycompany.utils.RoundBorder;
 import static com.mycompany.utils.ScaleImg.scaleImg;
 import static com.mycompany.utils.resizeIcon.resizeIcon;
@@ -21,6 +22,7 @@ import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JList;
+import javax.swing.JOptionPane;
 import javax.swing.JTextPane;
 import javax.swing.SwingConstants;
 import javax.swing.plaf.basic.BasicComboBoxRenderer;
@@ -209,7 +211,7 @@ public class detailProduct extends javax.swing.JPanel {
         Integer selectedItem = (Integer) comboSize.getSelectedItem(); // Lấy giá trị được chọn
         return selectedItem != null ? selectedItem : -1; // Trả về giá trị hoặc -1 nếu không có giá trị được chọn
     }
-    
+ 
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -326,6 +328,11 @@ public class detailProduct extends javax.swing.JPanel {
         button1.setForeground(new java.awt.Color(255, 255, 255));
         button1.setText("<html><center>Mua ngay</center><i><p style =\"font-size :8px\">(Giao hàng miến phí tận nhà hoặc tại của hàng)<p></i></html>");
         button1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        button1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button1ActionPerformed(evt);
+            }
+        });
 
         jPanel6.setLayout(new java.awt.GridLayout(1, 0, 3, 0));
 
@@ -585,8 +592,18 @@ public class detailProduct extends javax.swing.JPanel {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void button2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button2ActionPerformed
+                                 
+    if (CurrentUser.getUser() != null) {
         controller.addToCart();
+          JOptionPane.showMessageDialog(this, "Thêm vào giỏ hàng thành công!", "Thông báo", JOptionPane.WARNING_MESSAGE);
+    } else {
+        JOptionPane.showMessageDialog(this, "Bạn chưa đăng nhập!", "Thông báo", JOptionPane.WARNING_MESSAGE);
+    }
     }//GEN-LAST:event_button2ActionPerformed
+
+    private void button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_button1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

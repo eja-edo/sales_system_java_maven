@@ -90,6 +90,11 @@ public class SignUp extends javax.swing.JPanel {
         btnSignUp.setForeground(new java.awt.Color(255, 255, 255));
         btnSignUp.setText("Đăng ký");
         btnSignUp.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        btnSignUp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSignUpActionPerformed(evt);
+            }
+        });
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Hoặc");
@@ -155,6 +160,10 @@ public class SignUp extends javax.swing.JPanel {
     private void ghiNhoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ghiNhoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_ghiNhoActionPerformed
+
+    private void btnSignUpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSignUpActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnSignUpActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
