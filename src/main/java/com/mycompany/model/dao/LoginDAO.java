@@ -50,7 +50,7 @@ public class LoginDAO {
                         String query2 = "EXEC getUserInfo @login = ?, @password = ?";
                         try (PreparedStatement stmt2 = conn.prepareStatement(query2)) {
                             stmt2.setString(1, usn); // Gán giá trị cho tham số @login
-                            stmt2.setString(2, pass); // Gán giá trị cho tham số @password
+                            stmt2.setString(2, retrievedPassword); // Gán giá trị cho tham số @password
                             try (ResultSet rs2 = stmt2.executeQuery()) {
                                 // Kiểm tra xem có kết quả hay không
                                 if (rs2.next()) {
