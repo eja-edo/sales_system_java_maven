@@ -22,20 +22,17 @@ public class ttkh extends javax.swing.JPanel {
      */
     public ttkh() {
         initComponents();
-        loadUserData(CurrentUser.getUser());
+//        loadUserData(CurrentUser.getUser());
     }
 
-    private void loadUserData(Users user) {
-        if (user != null) {
-            jTextField2.setText(user.getUsername());
-            jTextField3.setText(user.getLastName());
-            jTextField6.setText(user.getEmail());
-            jTextField7.setText(user.getPhone());
-            jTextField8.setText(user.getProvince());
-        } else {
-            JOptionPane.showMessageDialog(this, "Bạn chưa đăng nhập!", "Thông báo", JOptionPane.WARNING_MESSAGE);
-        }
-    }
+//    private void loadUserData(Users user) {
+//            jTextField2.setText(user.getUsername());
+//            jTextField3.setText(user.getLastName());
+//            jTextField6.setText(user.getEmail());
+//            jTextField7.setText(user.getPhone());
+//            jTextField8.setText(user.getProvince());
+//        
+//    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always

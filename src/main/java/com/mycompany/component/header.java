@@ -9,6 +9,7 @@ package com.mycompany.component;
 import com.mycompany.main.Main;
 import com.mycompany.tab.Cart;
 import com.mycompany.tab.LoginTab;
+import com.mycompany.tab.Notishow;
 import com.mycompany.utils.CurrentUser;
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
@@ -222,7 +223,8 @@ public class header extends javax.swing.JPanel {
     }
     
     private void button22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button22ActionPerformed
-     
+      Notishow notiForm = new Notishow();
+    notiForm.setVisible(true);
     }//GEN-LAST:event_button22ActionPerformed
 
     private void button23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button23ActionPerformed
