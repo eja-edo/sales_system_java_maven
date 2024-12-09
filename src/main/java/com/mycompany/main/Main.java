@@ -11,7 +11,6 @@ import com.mycompany.utils.CardSelectionListener;
 import com.mycompany.utils.CurrentUser;
 import com.mycompany.utils.UserChangeListener;
 import java.awt.CardLayout;
-import javax.swing.JPanel;
 import javax.swing.UIDefaults;
 import javax.swing.UIManager;
 
@@ -25,8 +24,6 @@ public class Main extends javax.swing.JFrame implements CardSelectionListener, U
 //    private final String[] cardName;
 //    private int CurrentCard;
     private CardLayout cardLayout;
-    
-    private JPanel comingsoon;
     public Main() {
         initComponents();
 //        cardName = new String[]{"jScrollPane1","jScrollPane2","jScrollPane3","jScrollPane4","jScrollPane5","jScrollPane6","jScrollPane7","jScrollPane18"};
@@ -41,7 +38,8 @@ public class Main extends javax.swing.JFrame implements CardSelectionListener, U
     }   
    
     private Users user; 
-  
+
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -57,15 +55,15 @@ public class Main extends javax.swing.JFrame implements CardSelectionListener, U
         jScrollPane1 = new javax.swing.JScrollPane();
         home1 = new com.mycompany.tab.Home();
         jScrollPane2 = new javax.swing.JScrollPane();
-        trangcon1 = new com.mycompany.component.trang_con();
+        trangcon1 = new com.mycompany.component.trangcon();
         jScrollPane4 = new javax.swing.JScrollPane();
-        trangcon2 = new com.mycompany.component.trang_con();
+        trangcon2 = new com.mycompany.component.trangcon();
         jScrollPane5 = new javax.swing.JScrollPane();
-        trangcon3 = new com.mycompany.component.trang_con();
+        trangcon3 = new com.mycompany.component.trangcon();
         jScrollPane6 = new javax.swing.JScrollPane();
-        trangcon4 = new com.mycompany.component.trang_con();
+        trangcon4 = new com.mycompany.component.trangcon();
         jScrollPane7 = new javax.swing.JScrollPane();
-        trangcon5 = new com.mycompany.component.trang_con();
+        trangcon5 = new com.mycompany.component.trangcon();
         jScrollPane3 = new javax.swing.JScrollPane();
         livestream1 = new com.mycompany.component.livestream();
         jScrollPane8 = new javax.swing.JScrollPane();
@@ -165,11 +163,11 @@ public class Main extends javax.swing.JFrame implements CardSelectionListener, U
     private javax.swing.JScrollPane jScrollPane8;
     private com.mycompany.component.livestream livestream1;
     private com.mycompany.component.Menu menu1;
-    private com.mycompany.component.trang_con trangcon1;
-    private com.mycompany.component.trang_con trangcon2;
-    private com.mycompany.component.trang_con trangcon3;
-    private com.mycompany.component.trang_con trangcon4;
-    private com.mycompany.component.trang_con trangcon5;
+    private com.mycompany.component.trangcon trangcon1;
+    private com.mycompany.component.trangcon trangcon2;
+    private com.mycompany.component.trangcon trangcon3;
+    private com.mycompany.component.trangcon trangcon4;
+    private com.mycompany.component.trangcon trangcon5;
     private com.mycompany.tab.ttkh ttkh1;
     // End of variables declaration//GEN-END:variables
 

@@ -68,7 +68,7 @@
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
           <SubComponents>
-            <Component class="com.mycompany.component.trang_con" name="trang_con1">
+            <Component class="com.mycompany.component.trangcon" name="trangcon1">
             </Component>
           </SubComponents>
         </Container>
@@ -81,7 +81,7 @@
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
           <SubComponents>
-            <Component class="com.mycompany.component.trang_con" name="trang_con2">
+            <Component class="com.mycompany.component.trangcon" name="trangcon2">
             </Component>
           </SubComponents>
         </Container>
@@ -94,7 +94,7 @@
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
           <SubComponents>
-            <Component class="com.mycompany.component.trang_con" name="trang_con3">
+            <Component class="com.mycompany.component.trangcon" name="trangcon3">
             </Component>
           </SubComponents>
         </Container>
@@ -107,7 +107,7 @@
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
           <SubComponents>
-            <Component class="com.mycompany.component.trang_con" name="trang_con4">
+            <Component class="com.mycompany.component.trangcon" name="trangcon4">
             </Component>
           </SubComponents>
         </Container>
@@ -120,7 +120,7 @@
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
           <SubComponents>
-            <Component class="com.mycompany.component.trang_con" name="trang_con5">
+            <Component class="com.mycompany.component.trangcon" name="trangcon5">
             </Component>
           </SubComponents>
         </Container>

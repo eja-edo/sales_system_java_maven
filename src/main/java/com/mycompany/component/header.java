@@ -9,6 +9,9 @@ package com.mycompany.component;
 import com.mycompany.main.Main;
 import com.mycompany.tab.Cart;
 import com.mycompany.tab.LoginTab;
+import com.mycompany.utils.CurrentUser;
+import java.awt.BorderLayout;
+import java.awt.FlowLayout;
 import java.awt.Frame;
 import javax.swing.*;
 
@@ -142,9 +145,52 @@ public class header extends javax.swing.JPanel {
     
     private void button21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button21ActionPerformed
         // Tạo JPanel LoginTab
+       if(CurrentUser.getUser() == null)
        ShowLoginDialog();
+       else{
+           showLogoutDialog();
+       }
     }//GEN-LAST:event_button21ActionPerformed
-    
+        // Phương thức để hiển thị dialog
+    private void showLogoutDialog() {
+        // Tạo một dialog mới
+        JDialog dialog = new JDialog((Frame) null, "Thông báo", true);
+        dialog.setLayout(new BorderLayout());
+
+        // Thêm thông báo vào dialog
+        JLabel messageLabel = new JLabel("Bạn đã đăng nhập!", JLabel.CENTER);
+        dialog.add(messageLabel, BorderLayout.CENTER);
+
+        // Tạo panel chứa các nút
+        JPanel buttonPanel = new JPanel();
+        buttonPanel.setLayout(new FlowLayout());
+
+        // Nút "Đăng xuất"
+        JButton logoutButton = new JButton("Đăng xuất");
+        logoutButton.addActionListener(e -> {
+            System.out.println("Đã đăng xuất!");
+            CurrentUser.setUser(null);
+            dialog.dispose(); 
+        });
+
+        // Nút "Thoát"
+        JButton exitButton = new JButton("Thoát");
+        exitButton.addActionListener(e -> {
+            System.exit(0);  // Thoát chương trình
+        });
+
+        // Thêm các nút vào panel
+        buttonPanel.add(logoutButton);
+        buttonPanel.add(exitButton);
+
+        // Thêm panel vào dialog
+        dialog.add(buttonPanel, BorderLayout.SOUTH);
+
+        // Đặt kích thước và hiển thị dialog
+        dialog.setSize(300, 150);
+        dialog.setLocationRelativeTo(this);  // Đặt vị trí dialog vào giữa màn hình
+        dialog.setVisible(true);  // Hiển thị dialog
+    }
     public static void ShowLoginDialog()
     {
        // Tạo JPanel LoginTab
@@ -180,16 +226,26 @@ public class header extends javax.swing.JPanel {
     }//GEN-LAST:event_button22ActionPerformed
 
     private void button23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button23ActionPerformed
-        Cart cart = new Cart((Frame) null,true);
-        cart.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
-               // Căn chỉnh kích thước và vị trí của loginDialog
-       cart.pack();
-       cart.setLocationRelativeTo(null); // Đặt loginDialog vào giữa màn hình
+        
+        if(CurrentUser.getUser() == null)
+        {
+            ShowLoginDialog();
+        }
+        else
+        {
+            Cart cart = new Cart((Frame) null,true);
+            cart.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+                   // Căn chỉnh kích thước và vị trí của loginDialog
+           cart.pack();
+           cart.setLocationRelativeTo(null); // Đặt loginDialog vào giữa màn hình
 
-       // Đảm bảo loginDialog không thể resize
-       cart.setResizable(true);
-        // Hiển thị loginDialog
-       cart.setVisible(true); 
+           // Đảm bảo loginDialog không thể resize
+           cart.setResizable(true);
+            // Hiển thị loginDialog
+           cart.setVisible(true); 
+        }
+        
+
     }//GEN-LAST:event_button23ActionPerformed
 
 
