@@ -265,6 +265,7 @@ public class Menu extends javax.swing.JPanel {
     private void button28ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button28ActionPerformed
         changeButtonState(button28);
         cardSelectionListener.setShowPanel("jScrollPane8");
+        // them kiem tra tai khoan null bat dang nhap. k null in du lieu 
     }//GEN-LAST:event_button28ActionPerformed
 
 

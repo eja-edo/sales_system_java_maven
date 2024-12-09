@@ -33,6 +33,7 @@ public class Cart extends javax.swing.JDialog {
         
         initComponents();loadData(CurrentUser.getUser().getUserId());
         listItemCart1.setParent(this);
+         setLocationRelativeTo(null);
     }
     
     

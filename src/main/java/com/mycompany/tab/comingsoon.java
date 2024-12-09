@@ -17,6 +17,7 @@ public class comingsoon extends javax.swing.JFrame {
      */
     public comingsoon() {
         initComponents();
+         setLocationRelativeTo(null);
     }
 
     /**
