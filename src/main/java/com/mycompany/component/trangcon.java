@@ -227,6 +227,7 @@ private void searchAndDisplayProducts(String keyword, Integer categoryId) {
 
         setBackground(new java.awt.Color(255, 255, 255));
 
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/z6056783267859_fa8269f989fded0dfb04358efd3ba6eb.jpg"))); // NOI18N
 
         comboBoxSuggestion1.setBorder(new RoundBorder(Color.GRAY,10,1));

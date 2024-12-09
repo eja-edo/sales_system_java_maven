@@ -7,6 +7,7 @@ package com.mycompany.tab;
 import com.mycompany.component.ItemCart;
 import com.mycompany.controller.ProductDetailController;
 import com.mycompany.model.entity.ProductDetail;
+import com.mycompany.utils.CurrentUser;
 import com.mycompany.utils.Formatter;
 import java.awt.Dimension;
 import java.awt.Frame;
@@ -27,7 +28,9 @@ public class Cart extends javax.swing.JDialog {
     
     public Cart(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
-        initComponents();loadData(1);
+
+        
+        initComponents();loadData(CurrentUser.getUser().getUserId());
         listItemCart1.setParent(this);
     }
     
@@ -260,7 +263,7 @@ public class Cart extends javax.swing.JDialog {
         /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                Cart dialog = new Cart(new javax.swing.JFrame(), true);
+                Cart dialog = new Cart(new javax.swing.JFrame(), true );
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
                     @Override
                     public void windowClosing(java.awt.event.WindowEvent e) {
