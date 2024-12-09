@@ -64,9 +64,10 @@ public class Main extends javax.swing.JFrame implements CardSelectionListener, U
         trangcon4 = new com.mycompany.component.trangcon();
         jScrollPane7 = new javax.swing.JScrollPane();
         trangcon5 = new com.mycompany.component.trangcon();
-        jScrollPane3 = new javax.swing.JScrollPane();
         jScrollPane8 = new javax.swing.JScrollPane();
         ttkh1 = new com.mycompany.tab.ttkh();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        livecount1 = new com.mycompany.component.livecount();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().add(header1, java.awt.BorderLayout.PAGE_START);
@@ -97,11 +98,14 @@ public class Main extends javax.swing.JFrame implements CardSelectionListener, U
         jScrollPane7.setViewportView(trangcon5);
 
         jPanel1.add(jScrollPane7, "jScrollPane6");
-        jPanel1.add(jScrollPane3, "jScrollPane7");
 
         jScrollPane8.setViewportView(ttkh1);
 
         jPanel1.add(jScrollPane8, "jScrollPane8");
+
+        jScrollPane3.setViewportView(livecount1);
+
+        jPanel1.add(jScrollPane3, "jScrollPane7");
 
         getContentPane().add(jPanel1, java.awt.BorderLayout.CENTER);
 
@@ -157,6 +161,7 @@ public class Main extends javax.swing.JFrame implements CardSelectionListener, U
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JScrollPane jScrollPane8;
+    private com.mycompany.component.livecount livecount1;
     private com.mycompany.component.Menu menu1;
     private com.mycompany.component.trangcon trangcon1;
     private com.mycompany.component.trangcon trangcon2;

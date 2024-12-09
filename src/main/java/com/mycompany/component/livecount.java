@@ -16,16 +16,17 @@ public class livecount extends JPanel {
     private int seconds = 0;
 
     public livecount() {
-        setLayout(new BorderLayout(20,20));
-       
+        setLayout(new BorderLayout(20, 20));
+
         // Countdown timer
         timeLabel = new JLabel("Thời gian đến phiên LIVE tiếp theo: " + formatTime(hours, minutes, seconds), JLabel.CENTER);
         timeLabel.setFont(new Font("SansSerif", Font.BOLD, 30));
+        timeLabel.setBorder(BorderFactory.createEmptyBorder(30, 0, 0, 0)); // Cách lề trên 30px
         add(timeLabel, BorderLayout.NORTH);
 
         // Image label
         imageLabel = new JLabel();
-        imageLabel.setPreferredSize(new Dimension(750, 490));
+        imageLabel.setHorizontalAlignment(JLabel.CENTER); // Căn giữa ảnh
         add(imageLabel, BorderLayout.CENTER);
 
         String defaultImgPath = "/image/lstream.png";
