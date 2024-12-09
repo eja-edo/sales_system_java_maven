@@ -7,11 +7,13 @@ package com.mycompany.tab;
 import com.mycompany.component.ItemCart;
 import com.mycompany.controller.ProductDetailController;
 import com.mycompany.model.entity.ProductDetail;
+import com.mycompany.utils.CurrentUser;
 import com.mycompany.utils.Formatter;
 import java.awt.Dimension;
 import java.awt.Frame;
 import java.util.List;
 import javax.swing.JDialog;
+import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
 
 
@@ -38,22 +40,27 @@ public class Cart extends javax.swing.JDialog {
     }
     
  // Phương thức để tải dữ liệu giỏ hàng
-    public void loadData(int userId) {
-        // Giả sử userId là ID người dùng hiện tại
-        List<ProductDetail> cartDetails = ProductDetailController.getCartProductDetails(1);
+   public void loadData(int userId) {
+    // Kiểm tra nếu người dùng đã đăng nhập
+    if (CurrentUser.getUser() != null) {
+        // Lấy danh sách chi tiết sản phẩm trong giỏ hàng cho người dùng hiện tại
+        List<ProductDetail> cartDetails = ProductDetailController.getCartProductDetails(userId);
 
         // Xóa các mục hiện tại trong giỏ hàng
         listItemCart1.removeAll();
 
         // Thêm các mục mới vào giỏ hàng
         for (ProductDetail detail : cartDetails) {
-            
             listItemCart1.addItemCart(new ItemCart(detail));
         }
 
         // Tính toán và hiển thị tổng giá
-        //updateTotalPrice(cartDetails);
+        // updateTotalPrice(cartDetails);
+    } else {
+        JOptionPane.showMessageDialog(this, "Bạn chưa đăng nhập!", "Thông báo", JOptionPane.WARNING_MESSAGE);
     }
+}
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
