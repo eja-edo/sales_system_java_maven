@@ -65,7 +65,6 @@ public class Main extends javax.swing.JFrame implements CardSelectionListener, U
         jScrollPane7 = new javax.swing.JScrollPane();
         trangcon5 = new com.mycompany.component.trangcon();
         jScrollPane3 = new javax.swing.JScrollPane();
-        livestream1 = new com.mycompany.component.livestream();
         jScrollPane8 = new javax.swing.JScrollPane();
         ttkh1 = new com.mycompany.tab.ttkh();
 
@@ -98,9 +97,6 @@ public class Main extends javax.swing.JFrame implements CardSelectionListener, U
         jScrollPane7.setViewportView(trangcon5);
 
         jPanel1.add(jScrollPane7, "jScrollPane6");
-
-        jScrollPane3.setViewportView(livestream1);
-
         jPanel1.add(jScrollPane3, "jScrollPane7");
 
         jScrollPane8.setViewportView(ttkh1);
@@ -161,7 +157,6 @@ public class Main extends javax.swing.JFrame implements CardSelectionListener, U
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JScrollPane jScrollPane8;
-    private com.mycompany.component.livestream livestream1;
     private com.mycompany.component.Menu menu1;
     private com.mycompany.component.trangcon trangcon1;
     private com.mycompany.component.trangcon trangcon2;
