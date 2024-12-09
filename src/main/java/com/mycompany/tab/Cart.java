@@ -34,7 +34,6 @@ public class Cart extends javax.swing.JDialog {
         listItemCart1.setParent(this);
     }
     
-    
     public void setTotalTemp(double total)
     {
         jLabel4.setText(Formatter.formatPrice(total));

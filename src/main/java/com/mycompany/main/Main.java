@@ -182,7 +182,9 @@ public class Main extends javax.swing.JFrame implements CardSelectionListener, U
     public void onUserChanged(Users newUser) {
         if (newUser != null) {
             header.cloceLoginDialog();
+            header1.setLogin();
         } else {
+            header1.setLogout();
             System.out.println("User has been cleared.");
         }
     } 
